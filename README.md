@@ -9,3 +9,10 @@ SEED and StationXML are maintained by FDSN Working Group II.
 ## Releases
 
 Approved releases are available from [http://www.fdsn.org/xml/station/](http://www.fdsn.org/xml/station/).
+
+## Update workflow
+
+Proposed additions to the schema should be added to a branch of
+*master* and a pull request should be opened.  Once the addition
+has been approved by the FDSN it will eventually merged with the
+master branch and included in the next release.
