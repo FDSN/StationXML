@@ -14,8 +14,13 @@ Approved releases are available from [http://www.fdsn.org/xml/station/](http://w
 
 Proposed additions to the schema should be created to a branch of
 *master* and a pull request should be opened.  Once the addition
-has been approved by the FDSN it will eventually merged with the
-master branch and included in the next release.
+has been approved by the FDSN it will be merged with the master
+branch and included in the next release.
 
 For discussion of a potential change without creating a branch
-an issue should be created.
+an issue should be created.  If the issue is likely to result in 
+changes to the schema it is recommended that the individual or
+organization proposing the change to do so in a branch for review.
+
+Changes and issues should only be grouped together when logically
+related in order to streamline review and acceptance.
