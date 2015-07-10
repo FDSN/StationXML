@@ -4,7 +4,7 @@ by the [International Federation of Digital Seismograph Networks (FDSN)](http://
 
 StationXML is a schema definition for representing the [Standard for the Exchange of Earthquake (SEED)](http://www.fdsn.org/seed_manual/SEEDManual_V2.4.pdf) metadata in XML.
 
-SEED and StationXML are maintained by FDSN Working Group II.
+SEED and StationXML are maintained by FDSN Working Group II (WG-II).
 
 ## Releases
 
@@ -12,15 +12,22 @@ Approved releases are available from [http://www.fdsn.org/xml/station/](http://w
 
 ## Change procedure
 
-Proposed additions to the schema should be created to a branch of
-*master* and a pull request should be opened.  Once the addition
-has been approved by the FDSN it will be merged with the master
-branch and included in the next release.
+To propose changes to the schema a submitter must provide two things:
 
-For discussion of a potential change without creating a branch
-an issue should be created.  If the issue is likely to result in 
-changes to the schema it is recommended that the individual or
-organization proposing the change to do so in a branch for review.
+* A written description of the change (motivations, potential impact, etc.).
+* A fork of the most recent *master* branch of the StationXML repository submitted as a pull request on Github.  The fork should include the schema changes being proposed.  In effect, this is a patch to the schema in a form ready to merge with the master repository.
+
+The procedure is as follows:
+
+1a. Submitter sends written proposal to the WG-II mailing list, with or without a link to a Github pull request.
+1b. If written proposal is approved by WG-II but no pull request was submitted, the proposer should submit a pull request to the StationXML repository and send a link to the WG-II for technical review.
+2. If the written proposal and technical review of the pull request are approved by WG-II, the gatekeeper will merge the pull request with the master repository.
+
+The change will be included in the next release of the schema.
+
+For technical discussion of a potential change without creating a
+branch an issue may be created.  The procedure for Working Group II,
+described above, must be followed for any changes to the schema.
 
 Changes and issues should only be grouped together when logically
 related in order to streamline review and acceptance.
