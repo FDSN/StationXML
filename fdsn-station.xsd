@@ -297,12 +297,6 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:group ref="fsx:SampleRateGroup" minOccurs="0"/>
-					<xs:element name="StorageFormat" type="xs:string" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>The storage format of the recorded data (e.g.
-								SEED).</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="ClockDrift" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>A tolerance value, measured in seconds per sample,
