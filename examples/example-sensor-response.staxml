@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<FDSNStationXML xmlns:iris="http://www.fdsn.org/xml/station/1/iris" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.0" xsi:schemaLocation="http://www.fdsn.org/xml/station/1 http://www.fdsn.org/xml/station/fdsn-station-1.0.xsd">
+ <Source>IRIS-DMC</Source>
+ <Sender>IRIS-DMC</Sender>
+ <Module>IRIS WEB SERVICE: fdsnws-station | version: 1.1.16</Module>
+ <ModuleURI>http://service.iris.edu/fdsnws/station/1/query?net=CO&amp;sta=JSC&amp;loc=00&amp;cha=HHZ&amp;starttime=2015-08-06T11:07:48&amp;endtime=2015-08-06T11:07:54&amp;level=response&amp;format=xml&amp;includecomments=true&amp;nodata=404</ModuleURI>
+ <Created>2015-08-06T15:08:26</Created>
+    <PartialResponse id="TrilliumAtJSC">
+     <Stage number="1">
+      <PolesZeros>
+       <InputUnits>
+        <Name>M/S</Name>
+        <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+        <Name>V</Name>
+        <Description>Volts</Description>
+       </OutputUnits>
+       <PzTransferFunctionType>LAPLACE (RADIANS/SECOND)</PzTransferFunctionType>
+       <NormalizationFactor>308000.0</NormalizationFactor>
+       <NormalizationFrequency>1.00000</NormalizationFrequency>
+       <Zero number="0">
+        <Real plusError="0.00000" minusError="0.00000">0.00000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Zero>
+       <Zero number="1">
+        <Real plusError="0.00000" minusError="0.00000">0.00000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Zero>
+       <Zero number="2">
+        <Real plusError="0.00000" minusError="0.00000">-90.0000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Zero>
+       <Zero number="3">
+        <Real plusError="0.00000" minusError="0.00000">-160.700</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Zero>
+       <Zero number="4">
+        <Real plusError="0.00000" minusError="0.00000">-3108.00</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Zero>
+       <Pole number="0">
+        <Real plusError="0.00000" minusError="0.00000">-0.0385200</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.0365800</Imaginary>
+       </Pole>
+       <Pole number="1">
+        <Real plusError="0.00000" minusError="0.00000">-0.0385200</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">-0.0365800</Imaginary>
+       </Pole>
+       <Pole number="2">
+        <Real plusError="0.00000" minusError="0.00000">-178.000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Pole>
+       <Pole number="3">
+        <Real plusError="0.00000" minusError="0.00000">-135.000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">160.000</Imaginary>
+       </Pole>
+       <Pole number="4">
+        <Real plusError="0.00000" minusError="0.00000">-135.000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">-160.000</Imaginary>
+       </Pole>
+       <Pole number="5">
+        <Real plusError="0.00000" minusError="0.00000">-671.000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">1154.00</Imaginary>
+       </Pole>
+       <Pole number="6">
+        <Real plusError="0.00000" minusError="0.00000">-671.000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">-1154.00</Imaginary>
+       </Pole>
+      </PolesZeros>
+      <StageGain>
+       <Value>1201.0</Value>
+       <Frequency>1.0</Frequency>
+      </StageGain>
+     </Stage>
+     <Stage number="2">
+      <StageGain>
+       <Value>1.0</Value>
+       <Frequency>0.05</Frequency>
+      </StageGain>
+     </Stage>
+    </PartialResponse>
+</FDSNStationXML>
