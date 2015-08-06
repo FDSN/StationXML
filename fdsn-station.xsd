@@ -180,19 +180,6 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
-					<xs:element name="CreationDate" type="xs:dateTime">
-						<xs:annotation>
-							<xs:documentation>Date and time (UTC) when the station was first
-								installed.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="TerminationDate" type="xs:dateTime" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Date and time (UTC) when the station was terminated or
-								will be terminated. A blank value should be assumed to mean that the
-								station is still active.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="TotalNumberChannels" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Total number of channels recorded at this
