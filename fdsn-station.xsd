@@ -51,9 +51,9 @@
 	<!-- Type definitions -->
 	<xs:complexType name="RootType">
 		<xs:annotation>
-			<xs:documentation>Top-level type for Station XML. Required field are Source (network ID
-				of the institution sending the message) and one or more Network containers or one or
-				more Station containers. </xs:documentation>
+			<xs:documentation>Top-level type for Station XML. Required fields are Source (network ID
+				of the institution sending the message), Created (creation time of the document)
+				and one or more Network containers. </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Source" type="xs:string">
