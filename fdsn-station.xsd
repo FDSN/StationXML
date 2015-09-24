@@ -166,14 +166,14 @@
 					<xs:element name="Operator" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>An operating agency and associated contact persons. If
-								there multiple operators, each one should be encapsulated within an
+								there multiple agencies acting as operators, each one should be encapsulated within an
 								Operator tag. Since the Contact element is a generic type that
 								represents any contact person, it also has its own optional Agency
 								element.</xs:documentation>
 						</xs:annotation>
 						<xs:complexType>
 							<xs:sequence>
-								<xs:element name="Agency" type="xs:string" maxOccurs="unbounded"/>
+								<xs:element name="Agency" type="xs:string"/>
 								<xs:element name="Contact" type="fsx:PersonType" minOccurs="0"
 									maxOccurs="unbounded"/>
 								<xs:element name="WebSite" type="xs:anyURI" minOccurs="0"/>
