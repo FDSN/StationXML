@@ -156,7 +156,7 @@
 								formation.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Equipment" type="fsx:EquipmentType" minOccutorrs="0"
+					<xs:element name="Equipment" type="fsx:EquipmentType" minOccurs="0"
 						maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Equipment used by all channels at a
@@ -165,7 +165,12 @@
 					</xs:element>
 					<xs:element name="Operator" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>An operating agency and associated contact persons. If there multiple operators, each one should be encapsulated within an Operator tag. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact’s optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing Station should be include in the Operator tag.</xs:documentation>
+							<xs:documentation>An operating agency and associated contact persons. 
+								If there multiple operators, each one should be encapsulated within an Operator tag. 
+								Since the Contact element is a generic type that represents any contact person, 
+								it also has its own optional Agency element. It is expected that typically the 
+								contact’s optional Agency tag will match the Operator Agency. 
+								Only contacts appropriate for the enclosing Station should be include in the Operator tag.</xs:documentation>
 						</xs:annotation>
 						<xs:complexType>
 							<xs:sequence>
