@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<FDSNStationXML xmlns:iris="http://www.fdsn.org/xml/station/1/iris" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.fdsn.org/xml/station/1" xmlns:xlink="http://www.w3.org/1999/xlink" schemaVersion="1.0" xsi:schemaLocation="http://www.fdsn.org/xml/station/1 http://www.fdsn.org/xml/station/fdsn-station-1.0.xsd">
+ <Source>IRIS-DMC</Source>
+ <Sender>IRIS-DMC</Sender>
+ <Module>IRIS WEB SERVICE: fdsnws-station | version: 1.1.16</Module>
+ <ModuleURI>http://service.iris.edu/fdsnws/station/1/query?net=CO&amp;sta=JSC&amp;loc=00&amp;cha=HHZ&amp;starttime=2015-08-06T11:07:48&amp;endtime=2015-08-06T11:07:54&amp;level=response&amp;format=xml&amp;includecomments=true&amp;nodata=404</ModuleURI>
+ <Created>2015-08-06T15:08:26</Created>
+ <Network code="CO" startDate="1987-01-01T00:00:00" endDate="2500-12-31T23:59:59" restrictedStatus="open">
+  <Description>South Carolina Seismic Network</Description>
+  <TotalNumberStations>13</TotalNumberStations>
+  <SelectedNumberStations>1</SelectedNumberStations>
+  <Station code="JSC" startDate="2009-04-13T00:00:00" endDate="2999-12-31T23:59:59" restrictedStatus="open" iris:alternateNetworkCodes=".CEUSN-CONTRIB,_REALTIME,_US-REGIONAL,.UNRESTRICTED,_CEUSN">
+   <Latitude>34.2818</Latitude>
+   <Longitude>-81.25966</Longitude>
+   <Elevation>103.0</Elevation>
+   <Site>
+    <Name>Jenkinsville, South Carolina</Name>
+   </Site>
+   <CreationDate>2009-04-13T00:00:00</CreationDate>
+   <TotalNumberChannels>12</TotalNumberChannels>
+   <SelectedNumberChannels>1</SelectedNumberChannels>
+   <Channel locationCode="00" startDate="2013-09-09T14:00:00" restrictedStatus="open" endDate="2599-12-31T23:59:59" code="HHZ">
+    <Comment>
+     <Value>Trillium_120P=00026</Value>
+    </Comment>
+    <Comment>
+     <Value>Install equipment [SENSOR::TRILLIUM 120PA::001026], [SENSOR::EPISENSOR</Value>
+     <BeginEffectiveTime>2013-09-09T14:00:00</BeginEffectiveTime>
+     <EndEffectiveTime>2014-03-31T17:00:00</EndEffectiveTime>
+    </Comment>
+    <Comment>
+     <Value>Remove logger and equipment [SENSOR::TRILLIUM 120PA::001026], [SENSOR:</Value>
+     <BeginEffectiveTime>2013-09-09T14:00:00</BeginEffectiveTime>
+     <EndEffectiveTime>2014-03-31T17:00:00</EndEffectiveTime>
+    </Comment>
+    <Comment>
+     <Value>Install equipment [SENSOR::EPISENSOR ES-T::3309], [SENSOR::TRILLIUM 12</Value>
+     <BeginEffectiveTime>2014-05-29T18:43:20</BeginEffectiveTime>
+     <EndEffectiveTime>2599-12-31T23:59:59</EndEffectiveTime>
+    </Comment>
+    <Comment>
+     <Value>Reconfigure Hub Logger and change instrumentation</Value>
+     <BeginEffectiveTime>2014-05-29T18:43:20</BeginEffectiveTime>
+     <EndEffectiveTime>2599-12-31T23:59:59</EndEffectiveTime>
+    </Comment>
+    <Latitude>34.2818</Latitude>
+    <Longitude>-81.25966</Longitude>
+    <Elevation>102.5</Elevation>
+    <Depth>0.5</Depth>
+    <Azimuth>0.0</Azimuth>
+    <Dip>-90.0</Dip>
+    <Type>CONTINUOUS</Type>
+    <SampleRate>100.0</SampleRate>
+    <ClockDrift>0.0</ClockDrift>
+    <CalibrationUnits>
+     <Name>V</Name>
+     <Description>Volts</Description>
+    </CalibrationUnits>
+    <Sensor resourceId="GENERATOR:Trillium120P_001251" >
+     <Description>Trillium 120P, 120 s, 1201 V/m/s-Q330SR, gain 1, 1</Description>
+    </Sensor>
+    <DataLogger resourceId="GENERATOR:Q330SR_5463" >
+     <Description>Q330SR, gain 1, 1</Description>
+    </DataLogger>
+    
+    <Response>
+     <InstrumentSensitivity>
+      <Value>5.0142E8</Value>
+      <Frequency>0.05</Frequency>
+      <InputUnits>
+       <Name>M/S</Name>
+       <Description>Velocity in Meters Per Second</Description>
+      </InputUnits>
+      <OutputUnits>
+       <Name>COUNTS</Name>
+       <Description>Digital Counts</Description>
+      </OutputUnits>
+     </InstrumentSensitivity>
+     <PartialResponseRef xlink:href="#TrilliumAtJSC" fromStageNum="1" toStageNum="1" >
+         <EquipmentRef>GENERATOR:Trillium120P_001251</EquipmentRef>
+     </PartialResponseRef>
+     <PartialResponseRef xlink:href="#Q330_HHZatJSC" fromStageNum="1" toStageNum="3" >
+         <EquipmentRef>GENERATOR:Q330SR_5463</EquipmentRef>
+     </PartialResponseRef>
+    </Response>
+   </Channel>
+  </Station>
+ </Network>
+    <PartialResponse id="TrilliumAtJSC">
+     <Stage number="1">
+      <PolesZeros>
+       <InputUnits>
+        <Name>M/S</Name>
+        <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+        <Name>V</Name>
+        <Description>Volts</Description>
+       </OutputUnits>
+       <PzTransferFunctionType>LAPLACE (RADIANS/SECOND)</PzTransferFunctionType>
+       <NormalizationFactor>308000.0</NormalizationFactor>
+       <NormalizationFrequency>1.00000</NormalizationFrequency>
+       <Zero number="0">
+        <Real plusError="0.00000" minusError="0.00000">0.00000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Zero>
+       <Zero number="1">
+        <Real plusError="0.00000" minusError="0.00000">0.00000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Zero>
+       <Zero number="2">
+        <Real plusError="0.00000" minusError="0.00000">-90.0000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Zero>
+       <Zero number="3">
+        <Real plusError="0.00000" minusError="0.00000">-160.700</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Zero>
+       <Zero number="4">
+        <Real plusError="0.00000" minusError="0.00000">-3108.00</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Zero>
+       <Pole number="0">
+        <Real plusError="0.00000" minusError="0.00000">-0.0385200</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.0365800</Imaginary>
+       </Pole>
+       <Pole number="1">
+        <Real plusError="0.00000" minusError="0.00000">-0.0385200</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">-0.0365800</Imaginary>
+       </Pole>
+       <Pole number="2">
+        <Real plusError="0.00000" minusError="0.00000">-178.000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">0.00000</Imaginary>
+       </Pole>
+       <Pole number="3">
+        <Real plusError="0.00000" minusError="0.00000">-135.000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">160.000</Imaginary>
+       </Pole>
+       <Pole number="4">
+        <Real plusError="0.00000" minusError="0.00000">-135.000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">-160.000</Imaginary>
+       </Pole>
+       <Pole number="5">
+        <Real plusError="0.00000" minusError="0.00000">-671.000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">1154.00</Imaginary>
+       </Pole>
+       <Pole number="6">
+        <Real plusError="0.00000" minusError="0.00000">-671.000</Real>
+        <Imaginary plusError="0.00000" minusError="0.00000">-1154.00</Imaginary>
+       </Pole>
+      </PolesZeros>
+      <StageGain>
+       <Value>1201.0</Value>
+       <Frequency>1.0</Frequency>
+      </StageGain>
+     </Stage>
+     <Stage number="2">
+      <StageGain>
+       <Value>1.0</Value>
+       <Frequency>0.05</Frequency>
+      </StageGain>
+     </Stage>
+    </PartialResponse>
+    <PartialResponse id="Q330_HHZatJSC">
+     <Stage number="1">
+      <StageGain>
+       <Value>1.0</Value>
+       <Frequency>0.05</Frequency>
+      </StageGain>
+     </Stage>
+     <Stage number="2">
+      <Coefficients>
+       <InputUnits>
+        <Name>V</Name>
+        <Description>Volts</Description>
+       </InputUnits>
+       <OutputUnits>
+        <Name>COUNTS</Name>
+        <Description>Digital Counts</Description>
+       </OutputUnits>
+       <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
+       <Numerator plusError="0.00000" minusError="0.00000">1.00000</Numerator>
+      </Coefficients>
+      <Decimation>
+       <InputSampleRate>100.0</InputSampleRate>
+       <Factor>1</Factor>
+       <Offset>0</Offset>
+       <Delay>0.0</Delay>
+       <Correction>0.0</Correction>
+      </Decimation>
+      <StageGain>
+       <Value>419430.0</Value>
+       <Frequency>0.05</Frequency>
+      </StageGain>
+     </Stage>
+     <Stage number="3">
+      <Coefficients>
+       <InputUnits>
+        <Name>COUNTS</Name>
+        <Description>Digital Counts</Description>
+       </InputUnits>
+       <OutputUnits>
+        <Name>COUNTS</Name>
+        <Description>Digital Counts</Description>
+       </OutputUnits>
+       <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0000000000000643711</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0000000658258</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.000000753118</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.000000626743</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00000247069</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00000315256</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00000548240</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00000778113</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00000510559</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0000331568</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.000268238</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.000353056</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.000622489</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00101006</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00127276</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00118431</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.000512697</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.000910091</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00309045</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00581107</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00857787</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0106344</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.0110399</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00881308</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00307778</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00464808</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0160170</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.0372088</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0536013</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.0726163</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0878551</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.0979276</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0946782</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.888891</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.138422</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.115331</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0951158</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.0743198</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0521264</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.0339684</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0122831</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00140239</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00585837</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0107618</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.0121488</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0110276</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00845663</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00539437</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00257072</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.000426728</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.000881093</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00141391</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00137928</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00102993</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.000596299</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.000303778</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.000298773</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.0000341094</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00000526981</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00000809269</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00000556459</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.00000295383</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.00000226184</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">0.000000769085</Numerator>
+       <Numerator plusError="0.00000" minusError="0.00000">-0.000000749759</Numerator>
+      </Coefficients>
+      <Decimation>
+       <InputSampleRate>100.0</InputSampleRate>
+       <Factor>1</Factor>
+       <Offset>0</Offset>
+       <Delay>0.33</Delay>
+       <Correction>0.33</Correction>
+      </Decimation>
+      <StageGain>
+       <Value>1.0</Value>
+       <Frequency>0.05</Frequency>
+      </StageGain>
+     </Stage>
+    </PartialResponse>
+</FDSNStationXML>

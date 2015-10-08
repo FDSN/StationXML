@@ -38,8 +38,10 @@
 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fsx="http://www.fdsn.org/xml/station/1"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
 	targetNamespace="http://www.fdsn.org/xml/station/1" elementFormDefault="qualified"
 	attributeFormDefault="unqualified" version="1.0">
+        <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
 	<xs:annotation>
 		<xs:documentation> FDSN StationXML schema. Designed as an XML representation of SEED
 			metadata, the schema maps to the most important and commonly used structures of SEED
@@ -82,7 +84,8 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Created" type="xs:dateTime"/>
-			<xs:element name="Network" type="fsx:NetworkType" maxOccurs="unbounded"/>
+			<xs:element name="Network" type="fsx:NetworkType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="PartialResponse" type="fsx:PartialResponseType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="schemaVersion" type="xs:decimal" use="required">
@@ -1014,8 +1017,12 @@
 					</xs:annotation>
 				</xs:element>
 			</xs:choice>
-			<xs:element name="Stage" type="fsx:ResponseStageType" minOccurs="0"
+			<xs:choice>
+                            <xs:element name="PartialResponseRef" type="fsx:PartialResponseRefType" minOccurs="0"
 				maxOccurs="unbounded"/>
+                            <xs:element name="Stage" type="fsx:ResponseStageType" minOccurs="0"
+				maxOccurs="unbounded"/>
+			</xs:choice>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="resourceId" type="xs:string">
@@ -1024,6 +1031,42 @@
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="PartialResponseRefType">
+                <xs:annotation>
+                    <xs:documentation>Link to a partial response. It is preferred that this be another StationXML document
+                        with a single PartialResponse, but it may be an alternative such as a RESP file.</xs:documentation>
+                </xs:annotation>
+            <xs:sequence>
+                <xs:element name="EquipmentRef" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Contain an Equipment:resourceId of an Equipment like Sensor or DataLogger
+                            within the current Channel for which this contains the partial response of that equipment for this channel. </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="xlink:href" use="required">
+                <xs:annotation>
+                    <xs:documentation>Link to a partial response. This may refer to  another StationXML document
+                        or a PartialResponse within this document.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="fromStageNum"/>
+            <xs:attribute name="toStageNum"/>
+	</xs:complexType>
+	<xs:complexType name="PartialResponseType">
+		<xs:sequence>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Stage" type="fsx:ResponseStageType" minOccurs="1"
+				maxOccurs="unbounded"/>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+                <xs:attribute name="id" type="xs:ID" use="required">
+                    <xs:annotation>
+                        <xs:documentation> Unique identifier for this PartialResponse within its document. This allows for
+                           refering to a PartialResponse via a PartialResponseRef using xml:xlink="#refid" style links.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="BaseNodeType">
 		<xs:annotation>
