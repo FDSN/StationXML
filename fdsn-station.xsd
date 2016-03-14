@@ -39,7 +39,7 @@
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fsx="http://www.fdsn.org/xml/station/1"
 	targetNamespace="http://www.fdsn.org/xml/station/1" elementFormDefault="qualified"
-	attributeFormDefault="unqualified" version="1.0">
+	attributeFormDefault="unqualified" version="dev">
 	<xs:annotation>
 		<xs:documentation> FDSN StationXML schema. Designed as an XML representation of SEED
 			metadata, the schema maps to the most important and commonly used structures of SEED
