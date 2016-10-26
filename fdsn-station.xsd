@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 	
+<!--
 	FDSN StationXML (www.fdsn.org/xml/station)
 
 	The purpose of this schema is to define an XML representation of the most important
@@ -9,10 +9,10 @@
 	little transformation or loss of information as possible while at the same time simplifying
 	station metadata representation when possible.  Also, content and clarification has been added
 	where lacking in the SEED standard.
-	
+
 	When definitions and usage are underdefined the SEED manual should be referred to for
 	clarification.  SEED specifiation: http://www.fdsn.org/publications.htm
-	
+
 	Another goal is to create a base schema that can be extended to represent similar data types.
 
 
@@ -20,7 +20,7 @@
 
 	The 'version' attribute of the schema definition identifies the version of the schema.  This
 	version is not enforced when validating documents.
-	
+
 	The required 'schemaVersion' attribute of the root element identifies the version of the schema
 	that the document is compatible with.  Validation only requires that a value is present but
 	not that it matches the schema used for validation.
@@ -49,6 +49,14 @@
 	<!-- Root element -->
 	<xs:element name="FDSNStationXML" type="fsx:RootType"/>
 	<!-- Type definitions -->
+	<xs:simpleType name="UTCDateTimeType">
+		<xs:annotation>
+			<xs:documentation>UTC only datetime type.</xs:documentation>
+		</xs:annotation>
+        <xs:restriction base="xs:dateTime">
+            <xs:pattern value=".*Z"></xs:pattern>
+        </xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="RootType">
 		<xs:annotation>
 			<xs:documentation>Top-level type for Station XML. Required fields are Source (network ID
@@ -81,7 +89,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Created" type="xs:dateTime"/>
+			<xs:element name="Created" type="fsx:UTCDateTimeType"/>
 			<xs:element name="Network" type="fsx:NetworkType" maxOccurs="unbounded"/>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
@@ -180,13 +188,13 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
-					<xs:element name="CreationDate" type="xs:dateTime">
+					<xs:element name="CreationDate" type="fsx:UTCDateTimeType">
 						<xs:annotation>
 							<xs:documentation>Date and time (UTC) when the station was first
 								installed.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="TerminationDate" type="xs:dateTime" minOccurs="0">
+					<xs:element name="TerminationDate" type="fsx:UTCDateTimeType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date and time (UTC) when the station was terminated or
 								will be terminated. A blank value should be assumed to mean that the
@@ -408,9 +416,9 @@
 			<xs:element name="Vendor" type="xs:string" minOccurs="0"/>
 			<xs:element name="Model" type="xs:string" minOccurs="0"/>
 			<xs:element name="SerialNumber" type="xs:string" minOccurs="0"/>
-			<xs:element name="InstallationDate" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="RemovalDate" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="CalibrationDate" type="xs:dateTime" minOccurs="0"
+			<xs:element name="InstallationDate" type="fsx:UTCDateTimeType" minOccurs="0"/>
+			<xs:element name="RemovalDate" type="fsx:UTCDateTimeType" minOccurs="0"/>
+			<xs:element name="CalibrationDate" type="fsx:UTCDateTimeType" minOccurs="0"
 				maxOccurs="unbounded"/>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
@@ -484,8 +492,8 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Value" type="xs:string"/>
-			<xs:element name="BeginEffectiveTime" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="EndEffectiveTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="BeginEffectiveTime" type="fsx:UTCDateTimeType" minOccurs="0"/>
+			<xs:element name="EndEffectiveTime" type="fsx:UTCDateTimeType" minOccurs="0"/>
 			<xs:element name="Author" type="fsx:PersonType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="id" type="fsx:CounterType"/>
@@ -1050,8 +1058,8 @@
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="code" type="xs:string" use="required"/>
-		<xs:attribute name="startDate" type="xs:dateTime"/>
-		<xs:attribute name="endDate" type="xs:dateTime"/>
+		<xs:attribute name="startDate" type="fsx:UTCDateTimeType"/>
+		<xs:attribute name="endDate" type="fsx:UTCDateTimeType"/>
 		<xs:attribute name="restrictedStatus" type="fsx:RestrictedStatusType" use="optional"/>
 		<xs:attribute name="alternateCode" type="xs:string" use="optional">
 			<xs:annotation>
