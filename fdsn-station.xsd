@@ -565,10 +565,24 @@
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
-					<xs:element name="Numerator" type="fsx:FloatType" minOccurs="0"
-						maxOccurs="unbounded"/>
-					<xs:element name="Denominator" type="fsx:FloatType" minOccurs="0"
-						maxOccurs="unbounded"/>
+					<xs:element name="Numerator" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="fsx:FloatNoUnitType">
+									<xs:attribute name="number" type="fsx:CounterType"/>
+								</xs:extension>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Denominator" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="fsx:FloatNoUnitType">
+									<xs:attribute name="number" type="fsx:CounterType"/>
+								</xs:extension>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
