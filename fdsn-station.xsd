@@ -1061,6 +1061,17 @@
 			<xs:element name="Description" type="xs:string" minOccurs="0"/>
 			<xs:element name="Identifier" type="fsx:IdentifierType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="Comment" type="fsx:CommentType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DataAvailability" type="fsx:DataAvailabilityType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A description of time series data availability. This
+						information should be considered transient and is primarily useful as a
+						guide for generating time series data requests. The information for a
+						DataAvailability:Span may be specific to the time range used in a request
+						that resulted in the document or limited to the availability of data withing
+						the request range. These details may or may not be retained when
+						synchronizing metadata between data centers. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="code" type="xs:string" use="required"/>
@@ -1079,6 +1090,52 @@
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="DataAvailabilityExtentType">
+		<xs:annotation>
+			<xs:documentation> A type for describing data availability extents, the earliest and
+				latest data available. No information is included about the continuity of the data
+				is included or implied. </xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="start" type="xs:dateTime" use="required"/>
+		<xs:attribute name="end" type="xs:dateTime" use="required"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="DataAvailabilitySpanType">
+		<xs:annotation>
+			<xs:documentation> A type for describing data availability spans, with variable
+				continuity. The time range described may be based on the request parameters that
+				generated the document and not necessarily relate to continuity outside of the
+				range. It may also be a smaller time window than the request depending on the data
+				characteristics. </xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="start" type="xs:dateTime" use="required"/>
+		<xs:attribute name="end" type="xs:dateTime" use="required"/>
+		<xs:attribute name="numberSegments" type="xs:integer" use="required">
+			<xs:annotation>
+				<xs:documentation> The number of continuous time series segments contained in the
+					specified time range. A value of 1 indicates that the time series is continuous
+					from start to end. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="maximumTimeTear" type="xs:decimal" use="optional">
+			<xs:annotation>
+				<xs:documentation> The maximum time tear (gap or overlap) in seconds between time
+					series segments in the specified range. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="DataAvailabilityType">
+		<xs:annotation>
+			<xs:documentation>An type for describing data availability.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Extent" type="fsx:DataAvailabilityExtentType" minOccurs="0"/>
+			<xs:element name="Span" type="fsx:DataAvailabilitySpanType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
 </xs:schema>
