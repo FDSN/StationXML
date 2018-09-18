@@ -169,11 +169,13 @@
 								there multiple operators, each one should be encapsulated within an
 								Operator tag. Since the Contact element is a generic type that
 								represents any contact person, it also has its own optional Agency
-								element.</xs:documentation>
+								element.
+								It is expected that typically the contact’s optional Agency tag will match the Operator Agency. 
+								Only contacts appropriate for the enclosing Station should be include in the Operator tag.</xs:documentation>
 						</xs:annotation>
 						<xs:complexType>
 							<xs:sequence>
-								<xs:element name="Agency" type="xs:string" maxOccurs="unbounded"/>
+								<xs:element name="Agency" type="xs:string"/>
 								<xs:element name="Contact" type="fsx:PersonType" minOccurs="0"
 									maxOccurs="unbounded"/>
 								<xs:element name="WebSite" type="xs:anyURI" minOccurs="0"/>
