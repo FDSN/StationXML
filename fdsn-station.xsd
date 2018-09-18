@@ -180,7 +180,7 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
-					<xs:element name="CreationDate" type="xs:dateTime">
+					<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date and time (UTC) when the station was first
 								installed.</xs:documentation>
