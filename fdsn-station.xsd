@@ -626,9 +626,9 @@
 					</xs:element>
 					<xs:element name="FrequencyLowerBound" type="fsx:FrequencyType"/>
 					<xs:element name="FrequencyUpperBound" type="fsx:FrequencyType"/>
-					<xs:element name="ApproximationLowerBound" type="xs:decimal"/>
-					<xs:element name="ApproximationUpperBound" type="xs:decimal"/>
-					<xs:element name="MaximumError" type="xs:decimal"/>
+					<xs:element name="ApproximationLowerBound" type="xs:double"/>
+					<xs:element name="ApproximationUpperBound" type="xs:double"/>
+					<xs:element name="MaximumError" type="xs:double"/>
 					<xs:element name="Coefficient" maxOccurs="unbounded">
 						<xs:complexType>
 							<xs:simpleContent>
