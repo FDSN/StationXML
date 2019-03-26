@@ -103,6 +103,12 @@
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
 				<xs:sequence>
+					<xs:element name="Operator" type="fsx:OperatorType" minOccurs="0"
+						maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>An operator and associated contanct persons</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="TotalNumberStations" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation> The total number of stations contained in this
@@ -163,24 +169,11 @@
 								station.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Operator" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="Operator" type="fsx:OperatorType" minOccurs="0"
+						maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>An operating agency and associated contact persons. If
-								there multiple operators, each one should be encapsulated within an
-								Operator tag. Since the Contact element is a generic type that
-								represents any contact person, it also has its own optional Agency
-								element.
-								It is expected that typically the contact’s optional Agency tag will match the Operator Agency. 
-								Only contacts appropriate for the enclosing Station should be include in the Operator tag.</xs:documentation>
+							<xs:documentation>An operator and associated contanct persons</xs:documentation>
 						</xs:annotation>
-						<xs:complexType>
-							<xs:sequence>
-								<xs:element name="Agency" type="xs:string"/>
-								<xs:element name="Contact" type="fsx:PersonType" minOccurs="0"
-									maxOccurs="unbounded"/>
-								<xs:element name="WebSite" type="xs:anyURI" minOccurs="0"/>
-							</xs:sequence>
-						</xs:complexType>
 					</xs:element>
 					<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
@@ -853,6 +846,21 @@
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="OperatorType">
+		<xs:annotation>
+			<xs:documentation>An operating agency and associated contact persons.
+				Since the Contact element is a generic type that represents any contact
+				person, it also has its own optional Agency element.
+				It is expected that typically the contact’s optional Agency tag will match the Operator Agency.
+				Only contacts appropriate for the enclosing element should be include in the Operator tag.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Agency" type="xs:string"/>
+			<xs:element name="Contact" type="fsx:PersonType" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<xs:element name="WebSite" type="xs:anyURI" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="PersonType">
 		<xs:annotation>
 			<xs:documentation>Representation of a person's contact information. A person can belong
