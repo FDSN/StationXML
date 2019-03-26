@@ -1081,6 +1081,11 @@
 		<xs:attribute name="code" type="xs:string" use="required"/>
 		<xs:attribute name="startDate" type="xs:dateTime"/>
 		<xs:attribute name="endDate" type="xs:dateTime"/>
+		<xs:attribute name="sourceID" type="xs:anyURI">
+			<xs:annotation>
+				<xs:documentation>A data source identifier in URI form</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 		<xs:attribute name="restrictedStatus" type="fsx:RestrictedStatusType" use="optional"/>
 		<xs:attribute name="alternateCode" type="xs:string" use="optional">
 			<xs:annotation>
