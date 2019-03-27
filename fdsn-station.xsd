@@ -150,6 +150,19 @@
 								etc.).</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Elevation of the water surface in meters for underwater sites,
+								where 0 is sea level.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LocalizationMethod" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Description of the method used to determine the location
+								of the site.  Examples: "GPS", "Laser-based distance and compass-based angle from location XY"
+								or “Acoustic survey”</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="Vault" type="xs:string" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Type of vault, e.g. WWSSN, tunnel, transportable
