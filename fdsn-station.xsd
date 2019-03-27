@@ -475,14 +475,6 @@
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
-	<xs:complexType name="LogType">
-		<xs:annotation>
-			<xs:documentation>Container for log entries.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Entry" type="fsx:CommentType" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="CommentType">
 		<xs:annotation>
 			<xs:documentation>Container for a comment or log entry. Corresponds to SEED blockettes
@@ -494,7 +486,14 @@
 			<xs:element name="EndEffectiveTime" type="xs:dateTime" minOccurs="0"/>
 			<xs:element name="Author" type="fsx:PersonType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-		<xs:attribute name="id" type="fsx:CounterType"/>
+		<xs:attribute name="id" type="fsx:CounterType" use="optional"/>
+		<xs:attribute name="subject" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>A subject for this comment.  Multiple comments with the same
+					subject should be considered related.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="PolesZerosType">
 		<xs:annotation>
