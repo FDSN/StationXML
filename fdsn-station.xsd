@@ -656,6 +656,7 @@
 		</xs:annotation>
 		<xs:attribute name="plusError" type="xs:double" use="optional"/>
 		<xs:attribute name="minusError" type="xs:double" use="optional"/>
+		<xs:attribute name="measurementMethod" type="xs:string" use="optional"/>
 	</xs:attributeGroup>
 	<xs:complexType name="FloatNoUnitType">
 		<xs:simpleContent>
