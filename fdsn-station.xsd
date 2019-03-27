@@ -434,12 +434,12 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:choice>
+				<xs:annotation>
+					<xs:documentation>A choice of polynomial versus all other response types.
+						There should be one response per stage.</xs:documentation>
+				</xs:annotation>
 				<xs:sequence>
 					<xs:choice>
-						<xs:annotation>
-							<xs:documentation>A choice of response types. There should be one response per
-								stage.</xs:documentation>
-						</xs:annotation>
 						<xs:element name="PolesZeros" type="fsx:PolesZerosType" minOccurs="0"/>
 						<xs:element name="Coefficients" type="fsx:CoefficientsType" minOccurs="0"/>
 						<xs:element name="ResponseList" type="fsx:ResponseListType" minOccurs="0"/>
@@ -448,16 +448,16 @@
 					<xs:element name="Decimation" type="fsx:DecimationType" minOccurs="0"/>
 					<xs:element name="StageGain" type="fsx:GainType">
 						<xs:annotation>
-							<xs:documentation>StageSensitivity is the gain at the stage of the encapsulating
-								response element and corresponds to SEED blockette 58. In the SEED
-								convention, stage 0 gain represents the overall sensitivity of the channel.
+							<xs:documentation>The gain at the stage of the encapsulating
+								response element at a specific frequencey and corresponds to SEED blockette 58.
+								In the SEED convention, stage 0 gain represents the overall sensitivity of the channel.
 								In this schema, stage 0 gains are allowed but are considered deprecated.
 								Overall sensitivity should be specified in the InstrumentSensitivity
 								element.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:element name="Polynomial" type="fsx:PolynomialType" minOccurs="0"/>
+				<xs:element name="Polynomial" type="fsx:PolynomialType"/>
 			</xs:choice>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
