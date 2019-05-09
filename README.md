@@ -12,7 +12,7 @@ Approved releases are available from [http://www.fdsn.org/xml/station/](http://w
 
 ## Change history
 
-Changes to the format are listed in the the (Changes file)[Changes.md]
+Changes to the format are listed in the the [Changes file](Changes.md)
 
 ## Change procedure
 
