@@ -10,6 +10,10 @@ SEED and StationXML are maintained by FDSN Working Group II (WG-II).
 
 Approved releases are available from [http://www.fdsn.org/xml/station/](http://www.fdsn.org/xml/station/).
 
+## Change history
+
+Changes to the format are listed in the the (Changes file)[Changes.md]
+
 ## Change procedure
 
 To propose changes to the schema a submitter must provide two things:
