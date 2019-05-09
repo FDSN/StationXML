@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 	
+<!--
 	FDSN StationXML (www.fdsn.org/xml/station)
 
 	The purpose of this schema is to define an XML representation of the most important
@@ -9,10 +9,10 @@
 	little transformation or loss of information as possible while at the same time simplifying
 	station metadata representation when possible.  Also, content and clarification has been added
 	where lacking in the SEED standard.
-	
+
 	When definitions and usage are underdefined the SEED manual should be referred to for
 	clarification.  SEED specifiation: http://www.fdsn.org/publications.htm
-	
+
 	Another goal is to create a base schema that can be extended to represent similar data types.
 
 
@@ -20,7 +20,7 @@
 
 	The 'version' attribute of the schema definition identifies the version of the schema.  This
 	version is not enforced when validating documents.
-	
+
 	The required 'schemaVersion' attribute of the root element identifies the version of the schema
 	that the document is compatible with.  Validation only requires that a value is present but
 	not that it matches the schema used for validation.
@@ -39,7 +39,7 @@
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fsx="http://www.fdsn.org/xml/station/1"
 	targetNamespace="http://www.fdsn.org/xml/station/1" elementFormDefault="qualified"
-	attributeFormDefault="unqualified" version="1.1DRAFT">
+	attributeFormDefault="unqualified" version="1.1">
 	<xs:annotation>
 		<xs:documentation> FDSN StationXML schema. Designed as an XML representation of SEED
 			metadata, the schema maps to the most important and commonly used structures of SEED
