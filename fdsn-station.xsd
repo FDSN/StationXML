@@ -440,10 +440,10 @@
 				</xs:annotation>
 				<xs:sequence>
 					<xs:choice>
-						<xs:element name="PolesZeros" type="fsx:PolesZerosType" minOccurs="0"/>
-						<xs:element name="Coefficients" type="fsx:CoefficientsType" minOccurs="0"/>
-						<xs:element name="ResponseList" type="fsx:ResponseListType" minOccurs="0"/>
-						<xs:element name="FIR" type="fsx:FIRType" minOccurs="0"/>
+						<xs:element name="PolesZeros" type="fsx:PolesZerosType" />
+						<xs:element name="Coefficients" type="fsx:CoefficientsType" />
+						<xs:element name="ResponseList" type="fsx:ResponseListType" />
+						<xs:element name="FIR" type="fsx:FIRType" />
 					</xs:choice>
 					<xs:element name="Decimation" type="fsx:DecimationType" minOccurs="0"/>
 					<xs:element name="StageGain" type="fsx:GainType">
