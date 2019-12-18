@@ -4,7 +4,7 @@
 
 * Add (persistent) `<Identifier>` element to all base nodes (Network, Station, Channel)
 
-* Unify response elements, allow "number" attribute to `<Numerator>` and `<Denominator>`
+* Unify response elements, allow "number" and disallow "unit" attribute to `<Numerator>` and `<Denominator>`
 
 * Allow `<CreationDate>` to be optional
 
@@ -22,11 +22,11 @@
 
 * Add "sourceID" attribute, with URI value, to the base node type for `<Network>`,`<Station>`,`<Channel>`
 
-* Do not require and disallow `<StageGain>` for `<Polynomial>` response stages
+* Do not require and disallow `<StageGain>` and `<Decimation>` for `<Polynomial>` response stages
 
 * Add "measurementMethod" attribute to "uncertaintyDouble" attribute group used by azimuth, dip, distance, latitude, longitude, elevation, etc. types
 
-* Add `<WaterLevel>` and within `<Station>` and `<Channel>`
+* Add `<WaterLevel>` within `<Station>` and `<Channel>`
 
 * Add "subject" attribute to `<Comment>` to allow relating comments, make "id" attribute optional.
 
