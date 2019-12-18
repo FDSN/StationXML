@@ -2,6 +2,8 @@
 
 ## Changes from version 1.0 to 1.1 (2019-5-3)
 
+(Edited 2019-12-18 for small clarifications)
+
 * Add (persistent) `<Identifier>` element to all base nodes (Network, Station, Channel)
 
 * Unify response elements, allow "number" and disallow "unit" attribute to `<Numerator>` and `<Denominator>`
@@ -10,13 +12,13 @@
 
 * Use xs:double for `<ApproximationLowerBound>`, `<ApproximationUpperBound>` and `<MaximumError>`
 
-* Include data availability elements described in the fdsn-station+availability-1.0.xsd extension schema as options elements of the main schema
+* Include data availability elements described in the fdsn-station+availability-1.0.xsd extension schema as optional elements of the main schema
 
 * Remove `<StorageFormat>` from `<Channel>`
 
 * Limit each `<Operator>` to a single `<Agency>`
 
-* Allow more than a single `<Equipment>` occurrences in `<Channel>`, same as in `<Station>`
+* Allow more than a single `<Equipment>` occurrence in `<Channel>`, same as in `<Station>`
 
 * Allow `<Operator>` at the `<Network>` level, same as in `<Station>`
 
