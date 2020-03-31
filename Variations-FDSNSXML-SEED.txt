@@ -39,8 +39,8 @@ Features and content supported by FDSN StationXML and not in SEED:
  and frequency.
 
 * Start times and end times are allowed at the Network level, in addition
- to the Station and Channel levels.  The start times are required but the
- end times are optional, allowing for currently operating epochs.
+ to the Station and Channel levels.
+ 2020-3-31 Clarification: Both start and end times are optional.
 
 * Comments are allowed at the Network level, in addition to the Station and
  Channel levels.
