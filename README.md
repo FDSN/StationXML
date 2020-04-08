@@ -35,3 +35,8 @@ described above, must be followed for any changes to the schema.
 
 Changes and issues should only be grouped together when logically
 related in order to streamline review and acceptance.
+
+## Translating StationXML 1.0 to 1.1
+
+An [XSLT definition for StationXML 1.0 to 1.1 conversion](StationXML-1.0to1.1.xslt) exists to assist
+with the conversion of version 1.0 documents to the version 1.1 schema.
