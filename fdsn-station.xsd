@@ -541,8 +541,8 @@
 					<xs:element name="NumeratorCoefficient" minOccurs="0" maxOccurs="unbounded">
 						<xs:complexType>
 							<xs:simpleContent>
-								<xs:extension base="xs:double">
-									<xs:attribute name="i" type="xs:integer"/>
+								<xs:extension base="fsx:FloatNoUnitType">
+									<xs:attribute name="number" type="fsx:CounterType"/>
 								</xs:extension>
 							</xs:simpleContent>
 						</xs:complexType>
