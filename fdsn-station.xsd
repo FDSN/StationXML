@@ -58,13 +58,14 @@
 		<xs:sequence>
 			<xs:element name="Source" type="xs:string">
 				<xs:annotation>
-					<xs:documentation>Generator of the information contained in the document.
+					<xs:documentation>Initiator of the information contained in the document.
 						 Likely to be the Network ID of the institution sending the message.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Sender" type="xs:string" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Name of the institution sending message.</xs:documentation>
+					<xs:documentation>Name of the institution sending this
+						message. Default is IRIS.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Module" type="xs:string" minOccurs="0">
@@ -176,8 +177,7 @@
 					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Elevation of the water surface in meters for underwater sites,
-                where 0 is sea level. For example, an OBS on the bottom of a lake will have elevation equal
-                to the elevation of the lake surface ??.</xs:documentation>
+                where 0 is sea level. if you put an OBS on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.</xs:documentation>
               <xs:documentation>Example:&lt;WaterLevel&gt;1200.&lt;/WaterLevel&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -264,15 +264,17 @@
 					<xs:element name="Latitude" type="fsx:LatitudeType">
 						<xs:annotation>
 							<xs:documentation>Latitude coordinate of this channel's
-								sensor. Should be the same as the Station's latitudee.
-								If they are different, then the Channel's latitude should be used and the Station's shouldn't be.</xs:documentation>
+								sensor. Should be the same as the Station's latitude.
+								If they are different, then the Channel's latitude should be used.</xs:documentation>
+								<xs:documentation>Example:&lt;Latitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;34.9459&lt;/Latitude&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Longitude" type="fsx:LongitudeType">
 						<xs:annotation>
 							<xs:documentation>Longitude coordinate of this channel's
 								sensor. Should be the same as the Station's longitude.
-								If they are different, then the Channel's longitude should be used and the Station's shouldn't be.</xs:documentation>
+								If they are different, then the Channel's longitude should be used.</xs:documentation>
+								<xs:documentation>Example:&lt;Longitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;-106.4572&lt;/Longitude&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
@@ -283,36 +285,38 @@
 					<xs:element name="Depth" type="fsx:DistanceType">
 						<xs:annotation>
 							<xs:documentation>The local depth or overburden of the instrument's
-								location in meters. For downhole instruments, the depth of the instrument
-								under the surface ground level. For underground vaults, the distance
-								from the instrument to the local ground level.
-								above.</xs:documentation>
+								location in positive meters. It is the depth of the instrument
+								under the surface ground level. </xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Azimuth" type="fsx:AzimuthType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Azimuth of the sensor in degrees from True North,
-								clockwise.</xs:documentation>
+							<xs:documentation>Azimuth of the sensor in degrees clockwise from True North.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Dip" type="fsx:DipType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Dip of the instrument in degrees, down from
+							<xs:documentation>Dip of the instrument in degrees, positive down from
 								horizontal</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Elevation of the water surface in meters for underwater sites,
-								where 0 is sea level.</xs:documentation>
+								where 0 is sea level. if you put an OBS on a lake bottom, where the lake surface is at elevation=0,
+								 then you should set WaterLevel=0.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Type" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>The type of data this channel collects. Corresponds to
-								channel flags in SEED blockette 52. The SEED volume producer could
-								use the first letter of an Output value as the SEED channel
-								flag.</xs:documentation>
+							<xs:documentation>The type of data this channel collects. One or more &lt;Type&gt; tags
+								can be used to specify the nature of the data this channel collects.  For example,
+								&lt;Type&gt;Specific&lt;/Type&gt;,
+
+								where Type is in {TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG, SYNTHESIZED}, and Specific might be
+								{Seismic, Pressure, Temperature, Status of system peripherals, etc.}
+							</xs:documentation>
+							<xs:documentation>Example: &lt;HEALTH&gt;Status of system peripherals&lt;/HEALTH&gt;</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:NMTOKEN">
@@ -342,31 +346,42 @@
 								<xs:restriction base="fsx:FloatType">
 									<xs:minInclusive value="0"/>
 									<xs:attribute name="unit" type="xs:string" use="optional"
-										fixed="SECONDS/SAMPLE"/>
+										fixed="SECONDS/SAMPLE">
+											<xs:annotation>
+												<xs:documentation>The type of unit being used.
+												</xs:documentation>
+												<xs:documentation>Example:unit='SECONDS/SAMPLE'
+												</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
 								</xs:restriction>
 							</xs:simpleContent>
 						</xs:complexType>
 					</xs:element>
-					<xs:element name="CalibrationUnits" type="fsx:UnitsType" minOccurs="0"/>
+					<xs:element name="CalibrationUnits" type="fsx:UnitsType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>A description of the units of calibration</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="Sensor" type="fsx:EquipmentType" minOccurs="0">
 							<xs:annotation>
-								<xs:documentation>If this was entered at the Station level,
+								<xs:documentation> Details of the (typically analog) sensor attached to this channel. If this was entered at the Station level,
 									it is not necesary to do it for each Channel, unless you have differences in equipment.
-									If using a sensor, use this field.</xs:documentation>
+								</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					<xs:element name="PreAmplifier" type="fsx:EquipmentType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>If this was entered at the Station level,
+							<xs:documentation>Preamplifier (if any) used by this channel. If this was entered at the Station level,
 								it is not necesary to do it for each Channel, unless you have differences in equipment.
-								If using a preamplifier, use this field.</xs:documentation>
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="DataLogger" type="fsx:EquipmentType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>If this was entered at the Station level,
+							<xs:documentation>Datalogger from which this channel is derived. If this was entered at the Station level,
 								it is not necesary to do it for each Channel, unless you have differences in equipment.
-								If using a datalogger, use this field.</xs:documentation>
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Equipment" type="fsx:EquipmentType" minOccurs="0" maxOccurs="unbounded">
@@ -397,7 +412,7 @@
 		<xs:annotation>
 			<xs:documentation>Complex type for sensitivity and frequency ranges. This complex type
 				can be used to represent both overall sensitivities and individual stage gains. The
-				FrequencyRangeGroup is an optional construct that defines a pass band in Hertz (
+				FrequencyRangeGroup is an optional construct that defines a pass band in hertz (
 				FrequencyStart and FrequencyEnd) in which the SensitivityValue is valid within the
 				number of decibels specified in FrequencyDBVariation. </xs:documentation>
 		</xs:annotation>
@@ -410,7 +425,7 @@
 			</xs:element>
 			<xs:element name="Frequency" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>The frequency (in Hertz) at which the Value is
+					<xs:documentation>The frequency (in hertz) at which the Value is
 						valid.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -418,11 +433,19 @@
 	</xs:complexType>
 	<xs:group name="FrequencyRangeGroup">
 		<xs:sequence>
-			<xs:element name="FrequencyStart" type="xs:double"/>
-			<xs:element name="FrequencyEnd" type="xs:double"/>
+			<xs:element name="FrequencyStart" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>The lowest frequency for which the InstrumentSensitivity is valid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FrequencyEnd" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>The highest frequency for which the InstrumentSensitivity is valid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="FrequencyDBVariation" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Variation in decibels within the specified
+					<xs:documentation>Variation in decibels within the specified frequency
 						range.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -431,7 +454,7 @@
 	<xs:complexType name="SensitivityType">
 		<xs:annotation>
 			<xs:documentation>Sensitivity and frequency ranges. The FrequencyRangeGroup is an
-				optional construct that defines a pass band in Hertz (FrequencyStart and
+				optional construct that defines a pass band in hertz (FrequencyStart and
 				FrequencyEnd) in which the SensitivityValue is valid within the number of decibels
 				specified in FrequencyDBVariation. </xs:documentation>
 		</xs:annotation>
@@ -469,16 +492,52 @@
 				If using a preamplifier, sensor, or datalogger, use their appropriate fields instead. </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Type" type="xs:string" minOccurs="0"/>
-			<xs:element name="Description" type="xs:string" minOccurs="0"/>
-			<xs:element name="Manufacturer" type="xs:string" minOccurs="0"/>
-			<xs:element name="Vendor" type="xs:string" minOccurs="0"/>
-			<xs:element name="Model" type="xs:string" minOccurs="0"/>
-			<xs:element name="SerialNumber" type="xs:string" minOccurs="0"/>
-			<xs:element name="InstallationDate" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="RemovalDate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="Type" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Type of equipment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Description of equipment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Manufacturer" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Manufacturer of equipment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Vendor" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Vendor of equipment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Model" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Model of equipment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SerialNumber" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Serial number of equipment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InstallationDate" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Installation date of equipment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RemovalDate" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Removal date of equipment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="CalibrationDate" type="xs:dateTime" minOccurs="0"
-				maxOccurs="unbounded"/>
+				maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>A description of the units of the calibration.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="resourceId" type="xs:string" use="optional">
@@ -495,8 +554,7 @@
 	</xs:complexType>
 	<xs:complexType name="ResponseStageType">
 		<xs:annotation>
-			<xs:documentation> This complex type represents channel response and covers SEED
-				blockettes 53 to 56. </xs:documentation>
+			<xs:documentation> This complex type represents channel response. </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:choice>
@@ -515,28 +573,47 @@
 					<xs:element name="Decimation" type="fsx:DecimationType" minOccurs="0"/>
 					<xs:element name="StageGain" type="fsx:GainType">
 						<xs:annotation>
+							<xs:documentation>Warning: to Chad: Should reference to "historically" be here?</xs:documentation>
 							<xs:documentation>The gain at the stage of the encapsulating
-								response element at a specific frequencey and corresponds to SEED blockette 58.
-								In the SEED convention, stage 0 gain represents the overall sensitivity of the channel.
+								response element at a specific frequencey.
+								Historically, stage 0 gain represents the overall sensitivity of the channel.
 								In this schema, stage 0 gains are allowed but are considered deprecated.
 								Overall sensitivity should be specified in the InstrumentSensitivity
 								element.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:element name="Polynomial" type="fsx:PolynomialType"/>
+        <xs:element name="Polynomial" type="fsx:PolynomialType">
+						<xs:annotation>
+              <xs:documentation>
+                When a response is given in terms of a polynomial expansion of
+                powers of the sensor output signal (e.g., Volts),
+                a Polynomial Stage is required to specify the MacLaurin coefficients
+                of the expansion.
+
+                In addition, an InstrumentPolynomial element must be present in
+                the StationXML which contains the same MacLaurin coefficients,
+                but scaled by powers of the overall gain representing the
+                complete acquisition system.
+              </xs:documentation>
+            </xs:annotation>
+        </xs:element>
 			</xs:choice>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="number" type="fsx:CounterType" use="required">
 			<xs:annotation>
 				<xs:documentation>Stage sequence number. This is used in all the response SEED
-					blockettes. Start from name="1" and iterate sequentially </xs:documentation>
+					blockettes. Start from name='1' and iterate sequentially. </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="resourceId" type="xs:string">
 			<xs:annotation>
-				<xs:documentation> Same meaning as Equipment:resourceId. </xs:documentation>
+				<xs:documentation> This field contains a string that should serve as a unique resource identifier.
+					This identifier can be interpreted differently depending on the datacenter/software that
+					generated the document. Also, we recommend to use something like GENERATOR:Meaningful ID.
+					 As a common behaviour equipment with the same ID should contains the same information/be derived from
+					 the same base instruments. </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -590,13 +667,17 @@
 	</xs:complexType>
 	<xs:complexType name="PolesZerosType">
 		<xs:annotation>
-			<xs:documentation>Response: complex poles and zeros. Corresponds to SEED blockette
-				53.</xs:documentation>
+			<xs:documentation>Response: complex poles and zeros.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseFilterType">
 				<xs:sequence>
 					<xs:element name="PzTransferFunctionType">
+						<xs:annotation>
+							<xs:documentation>Either a Laplace transform analog response in rad/sec or hertz, or
+								a Digital Z-transform.
+							</xs:documentation>
+						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:enumeration value="LAPLACE (RADIANS/SECOND)"/>
@@ -612,7 +693,8 @@
 					</xs:element>
 					<xs:element name="NormalizationFrequency" type="fsx:FrequencyType">
 						<xs:annotation>
-							<xs:documentation>Should be within the passband, and the same for all stages. </xs:documentation>
+							<xs:documentation>Should be within the passband, and the same for all stages.
+								It is the frequency in which the value is normalized </xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Zero" type="fsx:PoleZeroType" minOccurs="0"
@@ -625,7 +707,7 @@
 	</xs:complexType>
 	<xs:complexType name="FIRType">
 		<xs:annotation>
-			<xs:documentation>Response: FIR filter. Specifically for symmetrical filters. Corresponds to SEED blockette 61. FIR filters
+			<xs:documentation>Response: FIR filter. Specifically for symmetrical filters. FIR filters
 				are also commonly documented using the CoefficientsType element. </xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
@@ -657,12 +739,18 @@
 		<xs:annotation>
 			<xs:documentation>Response: coefficients for FIR filter. Laplace transforms or IIR
 				filters can be expressed using type as well but the PolesAndZerosType should be used
-				instead. Corresponds to SEED blockette 54.</xs:documentation>
+				instead.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseFilterType">
 				<xs:sequence>
 					<xs:element name="CfTransferFunctionType">
+						<xs:annotation>
+							<xs:documentation>
+						Either an analog response in rad/sec or hertz, or
+							a digital response.
+								</xs:documentation>
+						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:enumeration value="ANALOG (RADIANS/SECOND)"/>
@@ -672,6 +760,11 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="Numerator" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>
+									Numerator for the coefficient
+								</xs:documentation>
+						</xs:annotation>
 						<xs:complexType>
 							<xs:simpleContent>
 								<xs:extension base="fsx:FloatNoUnitType">
@@ -681,6 +774,11 @@
 						</xs:complexType>
 					</xs:element>
 					<xs:element name="Denominator" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>
+									Denominator for the coefficient
+								</xs:documentation>
+						</xs:annotation>
 						<xs:complexType>
 							<xs:simpleContent>
 								<xs:extension base="fsx:FloatNoUnitType">
@@ -702,8 +800,7 @@
 	</xs:complexType>
 	<xs:complexType name="ResponseListType">
 		<xs:annotation>
-			<xs:documentation>Response: list of frequency, amplitude and phase values. Corresponds
-				to SEED blockette 55. </xs:documentation>
+			<xs:documentation>Response: list of frequency, amplitude and phase values.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseFilterType">
@@ -717,24 +814,47 @@
 	<xs:complexType name="PolynomialType">
 		<xs:annotation>
 			<xs:documentation>Response: expressed as a polynomial (allows non-linear sensors to be
-				described). Corresponds to SEED blockette 62. Can be used to describe a stage of
+				described). Can be used to describe a stage of
 				acquisition or a complete system. </xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseFilterType">
 				<xs:sequence>
 					<xs:element name="ApproximationType" default="MACLAURIN">
+						<xs:annotation>
+							<xs:documentation>Warning: To Chad: Please suggest text to be placed here.</xs:documentation>
+						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:enumeration value="MACLAURIN"/>
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
-					<xs:element name="FrequencyLowerBound" type="fsx:FrequencyType"/>
-					<xs:element name="FrequencyUpperBound" type="fsx:FrequencyType"/>
-					<xs:element name="ApproximationLowerBound" type="xs:double"/>
-					<xs:element name="ApproximationUpperBound" type="xs:double"/>
-					<xs:element name="MaximumError" type="xs:double"/>
+					<xs:element name="FrequencyLowerBound" type="fsx:FrequencyType">
+						<xs:annotation>
+							<xs:documentation>The lower bound of the frequency.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="FrequencyUpperBound" type="fsx:FrequencyType">
+						<xs:annotation>
+							<xs:documentation>The upper bound of the frequency.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ApproximationLowerBound" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>The lower bound of the approximation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ApproximationUpperBound" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>The upper bound of the approximation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MaximumError" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>The maximum error of the approximation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="Coefficient" maxOccurs="unbounded">
 						<xs:complexType>
 							<xs:simpleContent>
@@ -750,20 +870,30 @@
 	</xs:complexType>
 	<xs:complexType name="DecimationType">
 		<xs:annotation>
-			<xs:documentation>Corresponds to SEED blockette 57.</xs:documentation>
+			<xs:documentation>Representation of decimation stage</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="InputSampleRate" type="fsx:FrequencyType"/>
-			<xs:element name="Factor" type="xs:integer"/>
-			<xs:element name="Offset" type="xs:integer"/>
+			<xs:element name="Factor" type="xs:integer">
+		    <xs:annotation>
+          <xs:documentation> The factor of the input's sample rate.
+          </xs:documentation>
+		    </xs:annotation>
+      </xs:element>
+			<xs:element name="Offset" type="xs:integer">
+		    <xs:annotation>
+          <xs:documentation> The offset of the input's sample rate.
+          </xs:documentation>
+		    </xs:annotation>
+      </xs:element>
 			<xs:element name="Delay" type="fsx:FloatType">
 		    <xs:annotation>
-          <xs:documentation>The estimated pure delay for the stage. This value will almost always b positive
+          <xs:documentation>The estimated pure delay for the stage. This value will almost always be positive
             to indicate a delayed signal. Due to the difficulty in estimating the pure delay
             of a stage and because dispersion is neglected, this value should be
             considered nominal.  Normally the delay would be corrected by the
             recording system and the correction applied would be specified in &lt;Correction&gt; below.
-            See Decimation Section Fig. XX for a schematic description of delay sign convention.
+            See Decimation Section here urlHere:https://stationxml-doc.readthedocs.io/en/latest/response-theory.html#decimation for a schematic description of delay sign convention.
           </xs:documentation>
 		    </xs:annotation>
       </xs:element>
@@ -777,7 +907,7 @@
             Commonly, the estimated delay and the applied correction are both positive to cancel each
             other.
             A zero indicates no correction was applied.
-            See Decimation Section Fig. XX for a schematic description of delay sign convention.
+            See Decimation Section here urlHere:https://stationxml-doc.readthedocs.io/en/latest/response-theory.html#decimation for a schematic description of delay sign convention.
           </xs:documentation>
 		    </xs:annotation>
       </xs:element>
@@ -821,7 +951,9 @@
 				<xs:attribute name="unit" type="xs:string" use="optional">
 		      <xs:annotation>
 			      <xs:documentation>The unit of measurement</xs:documentation>
-			      <xs:documentation>Example:unit=&apos;DEGREES&apos;</xs:documentation>
+			      <xs:documentation>Example:Default2:unit=&apos;SECONDS&apos;
+															Choice:W unit=&apos;METERS&apos;  <!-- Should be differet for Water LEvel, Delay, amplitude and Correction -->
+															Choice:A unit=&apos;METERS&apos;</xs:documentation>
 		      </xs:annotation>
         </xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
@@ -835,7 +967,14 @@
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:restriction base="fsx:FloatType">
-				<xs:attribute name="unit" type="xs:string" fixed="SECONDS"/>
+				<xs:attribute name="unit" type="xs:string" fixed="SECONDS">
+						<xs:annotation>
+							<xs:documentation>The type of unit being used.
+							</xs:documentation>
+							<xs:documentation>Example:unit='SECONDS'
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
 			</xs:restriction>
 		</xs:simpleContent>
@@ -843,7 +982,14 @@
 	<xs:complexType name="VoltageType">
 		<xs:simpleContent>
 			<xs:restriction base="fsx:FloatType">
-				<xs:attribute name="unit" type="xs:string" fixed="VOLTS"/>
+				<xs:attribute name="unit" type="xs:string" fixed="VOLTS">
+						<xs:annotation>
+							<xs:documentation>The type of unit being used.
+							</xs:documentation>
+							<xs:documentation>Example:unit='VOLTS'
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
 			</xs:restriction>
 		</xs:simpleContent>
@@ -853,7 +999,14 @@
 			<xs:restriction base="fsx:FloatType">
 				<xs:minInclusive value="-360"/>
 				<xs:maxInclusive value="360"/>
-				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES"/>
+				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
+					<xs:annotation>
+						<xs:documentation>The type of unit being used.
+						</xs:documentation>
+						<xs:documentation>Example:unit='DEGREES'
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
 			</xs:restriction>
 		</xs:simpleContent>
@@ -868,7 +1021,14 @@
 			<xs:restriction base="fsx:FloatType">
 				<xs:minInclusive value="-90"/>
 				<xs:maxExclusive value="90"/>
-				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES"/>
+				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
+					<xs:annotation>
+						<xs:documentation>The type of unit being used.
+						</xs:documentation>
+						<xs:documentation>Example:unit='DEGREES'
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
 			</xs:restriction>
 		</xs:simpleContent>
@@ -885,7 +1045,14 @@
 			<xs:restriction base="fsx:FloatType">
 				<xs:minInclusive value="-180"/>
 				<xs:maxInclusive value="180"/>
-				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES"/>
+				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
+					<xs:annotation>
+						<xs:documentation>The type of unit being used.
+						</xs:documentation>
+						<xs:documentation>Example:unit='DEGREES'
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
 			</xs:restriction>
 		</xs:simpleContent>
@@ -905,7 +1072,14 @@
 			<xs:restriction base="fsx:FloatType">
 				<xs:minInclusive value="0"/>
 				<xs:maxExclusive value="360"/>
-				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES"/>
+				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
+					<xs:annotation>
+						<xs:documentation>The type of unit being used.
+						</xs:documentation>
+						<xs:documentation>Example:unit='DEGREES'
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
 			</xs:restriction>
 		</xs:simpleContent>
@@ -920,7 +1094,14 @@
 			<xs:restriction base="fsx:FloatType">
 				<xs:minInclusive value="-90"/>
 				<xs:maxInclusive value="90"/>
-				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES"/>
+				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
+						<xs:annotation>
+							<xs:documentation>The type of unit being used.
+							</xs:documentation>
+							<xs:documentation>Example:unit='DEGREES'
+							</xs:documentation>
+						</xs:annotation>
+				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
 			</xs:restriction>
 		</xs:simpleContent>
@@ -932,7 +1113,14 @@
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:restriction base="fsx:FloatType">
-				<xs:attribute name="unit" type="xs:string" use="optional" default="METERS"/>
+				<xs:attribute name="unit" type="xs:string" use="optional" default="METERS">
+					<xs:annotation>
+						<xs:documentation>The type of unit being used.
+						</xs:documentation>
+						<xs:documentation>Example:unit='METERS'
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
 			</xs:restriction>
 		</xs:simpleContent>
@@ -940,7 +1128,14 @@
 	<xs:complexType name="FrequencyType">
 		<xs:simpleContent>
 			<xs:restriction base="fsx:FloatType">
-				<xs:attribute name="unit" type="xs:string" use="optional" fixed="HERTZ"/>
+				<xs:attribute name="unit" type="xs:string" use="optional" fixed="HERTZ">
+					<xs:annotation>
+						<xs:documentation>The type of unit being used.
+						</xs:documentation>
+						<xs:documentation>Example:unit='HERTZ'
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:restriction>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -963,7 +1158,14 @@
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:restriction base="fsx:FloatType">
-				<xs:attribute name="unit" type="xs:string" use="optional" fixed="SAMPLES/S"/>
+				<xs:attribute name="unit" type="xs:string" use="optional" fixed="SAMPLES/S">
+					<xs:annotation>
+						<xs:documentation>The type of unit being used.
+						</xs:documentation>
+						<xs:documentation>Example:unit='SAMPLES/S'
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:restriction>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -979,12 +1181,26 @@
 	</xs:complexType>
 	<xs:complexType name="PoleZeroType">
 		<xs:annotation>
-			<xs:documentation> Complex numbers used as poles or zeros in channel
-				response.</xs:documentation>
+			<xs:documentation>Default2:Complex numbers used as poles or zeros in channel
+				response.
+				Choice:P Complex numbers used as poles in channel	response.
+				Choice:Z Complex numbers used as zeros in channel	response.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Real" type="fsx:FloatNoUnitType"/>
-			<xs:element name="Imaginary" type="fsx:FloatNoUnitType"/>
+			<xs:element name="Real" type="fsx:FloatNoUnitType">
+				<xs:annotation>
+					<xs:documentation>Default2:Real part of the poles or zeros.
+						Choice:P Real part of the poles.
+						Choice:Z Real part of the zeros.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Imaginary" type="fsx:FloatNoUnitType">
+				<xs:annotation>
+					<xs:documentation>Default2:Imaginary part of the poles or zeros.
+						Choice:P Imaginary part of the poles.
+						Choice:Z Imaginary part of the zeros.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="number" type="xs:integer"/>
 	</xs:complexType>
@@ -1110,8 +1326,16 @@
 				may want to reference in StationXML.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="URI" type="xs:anyURI"/>
-			<xs:element name="Description" type="xs:string"/>
+			<xs:element name="URI" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>URI of the external reference.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Description of the external reference.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<!-- Simple types -->
@@ -1168,7 +1392,7 @@
 		<xs:sequence>
 			<xs:element name="Name" type="xs:string">
 				<xs:annotation>
-					<xs:documentation>Name of true SI units, e.g. "m/s", "V", "Pa", "C".</xs:documentation>
+					<xs:documentation>Name of true SI units, e.g. "m/s", "V", "Pa", "C". See here urlHere:https://github.com/iris-edu/stationxml-validator/wiki/Unit-name-overview-for-IRIS-StationXML-validator for further information.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Description" type="xs:string" minOccurs="0">
@@ -1197,7 +1421,11 @@
 			<xs:documentation> The BaseFilterType is derived by all filters. </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation> The description of the response</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="InputUnits" type="fsx:UnitsType">
 				<xs:annotation>
 					<xs:documentation> The units of the data as input from the perspective of data
@@ -1216,7 +1444,11 @@
 		</xs:sequence>
 		<xs:attribute name="resourceId" type="xs:string">
 			<xs:annotation>
-				<xs:documentation> Same meaning as Equipment:resourceId. </xs:documentation>
+				<xs:documentation> This field contains a string that should serve as a unique resource identifier.
+					This identifier can be interpreted differently depending on the datacenter/software that
+					generated the document. Also, we recommend to use something like GENERATOR:Meaningful ID.
+					 As a common behaviour equipment with the same ID should contains the same information/be derived from
+					 the same base instruments. </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="name" type="xs:string">
@@ -1228,9 +1460,8 @@
 	</xs:complexType>
 	<xs:complexType name="ResponseType">
 				<xs:annotation>
-					<xs:documentation>Instrument sensitivities, or the complete system sensitivity,
-						can be expressed using either a sensitivity value or a polynomial. The
-						information can be used to convert raw data to Earth at a specified
+					<xs:documentation>The complete instrument response for this channel that expresses the effect of the geophysical instrumentation used to record the input ground motion.
+						 The information can be used to convert raw data to Earth at a specified
 						frequency or within a range of frequencies. It is suggested that either InstrumentSensitivity or
 						InstrumentPolynomial should be present. </xs:documentation>
 				</xs:annotation>
@@ -1245,16 +1476,28 @@
 				<xs:element name="InstrumentSensitivity" type="fsx:SensitivityType" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation> The total sensitivity for a channel, representing the
-							complete acquisition system expressed as a scalar. Equivalent to SEED
-							stage 0 gain (blockette 58) with the ability to specify a frequency
-							range.</xs:documentation>
+							complete acquisition system expressed as a scalar.
+							All instrument responses except polynomial response should have an InstrumentSensitivity. </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="InstrumentPolynomial" type="fsx:PolynomialType" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation> The total sensitivity for a channel, representing the
-							complete acquisition system expressed as a polynomial. Equivalent to
-							SEED stage 0 polynomial (blockette 62). </xs:documentation>
+            <xs:documentation>For some sensors (e.g., some thermistors, pressure transducers,
+               extensiometers, etc.), it is more convenient to
+               express the sensor input (e.g., Temp) as a MacLaurin Polynomial expansion of powers of the
+               *output* units (e.g., Volts):
+               .. math::
+                 [Temp(V)=\sum_{k=0}^{N} a_k V^{k}]endEQ
+
+              For sensors with nonlinear response (e.g., :math:`N\ge 2`) , this is often the only way of
+              representing the sensor response.
+
+              For such responses, two StationXML components are required to specify the response:
+              1. A Polynomial stage, which contains the values of the MacLaurin coefficients,
+              :math:`a_k`, and 2. An InstrumentPolynomial element that contains the
+              same coefficients, but scaled by powers of the overall gain representing the
+              combined effect of all the stages in the complete acquisition system.
+            </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:choice>
@@ -1265,7 +1508,11 @@
 		</xs:sequence>
 		<xs:attribute name="resourceId" type="xs:string">
 			<xs:annotation>
-				<xs:documentation> Same meaning as Equipment:resourceId. </xs:documentation>
+				<xs:documentation> This field contains a string that should serve as a unique resource identifier.
+					This identifier can be interpreted differently depending on the datacenter/software that
+					generated the document. Also, we recommend to use something like GENERATOR:Meaningful ID.
+					 As a common behaviour equipment with the same ID should contains the same information/be derived from
+					 the same base instruments. </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
