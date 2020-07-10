@@ -89,14 +89,13 @@
 	</xs:complexType>
 	<xs:complexType name="NetworkType">
 		<xs:annotation>
-      <xs:documentation>This represents the Network layer, all station metadata is
-				contained within this element. The official name of the network or other descriptive
-				information can be included in the Description element. The Network level contains 0 or more Stations.
-      </xs:documentation>
-      <xs:documentation>Example:&lt;Network code="IU" startDate=2016-01-27T13:00:00&gt;</xs:documentation>
+		<xs:documentation>The Network container. All station metadata for this network is contained within this element.
+		A Description element may be included with the official network name and other descriptive information.
+		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation.
+		A Comment element may be included for arbitrary comments.
+      		</xs:documentation>
+      		<xs:documentation>Example:&lt;Network code="IU" startDate=2016-01-27T13:00:00&gt;</xs:documentation>
 		</xs:annotation>
-    <!--
-    -->
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
 				<xs:sequence>
@@ -108,18 +107,20 @@
 					</xs:element>
 					<xs:element name="TotalNumberStations" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation> The total number of stations contained in this
+							<xs:documentation> The total number of stations in this
 								network, including inactive or terminated stations.
 							</xs:documentation>
               <xs:documentation>Example:&lt;TotalNumberStations&gt;24&lt;/TotalNumberStations&gt;</xs:documentation>
-              <xs:documentation>Warning:This field isn't super useful and is likely to be deprecated in future versions of StationXML</xs:documentation>
+              <xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="SelectedNumberStations" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation> The SelectedNumberOfStations will be some number less than the possible number of stations for this Network. For instance, if you requested only 12 stations for a 24 station network, then SelectedNumberOfStations=12.</xs:documentation>
+							<xs:documentation> The number of stations selected in the request that resulted
+								in this document.
+							</xs:documentation>
               <xs:documentation>Example:&lt;SelectedNumberStations&gt;12&lt;/SelectedNumberStations&gt;</xs:documentation>
-              <xs:documentation>Warning:This field isn't super useful and is likely to be deprecated in future versions of StationXML</xs:documentation>
+              <xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Station" type="fsx:StationType" minOccurs="0"
@@ -130,9 +131,11 @@
 	</xs:complexType>
 	<xs:complexType name="StationType">
 		<xs:annotation>
-			<xs:documentation>This type represents a Station epoch. It is common to only have a
-				single station epoch with the station's creation and termination dates as the epoch
-				start and end dates. </xs:documentation>
+		<xs:documentation>The Station container. All channel metadata for this station is contained within this element.
+		A Description element may be included with the official station name and other descriptive information.
+		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference.
+		A Comment element may be included for arbitrary comments.
+		</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
