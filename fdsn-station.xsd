@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	FDSN StationXML (www.fdsn.org/xml/station) MTH Test
+	FDSN StationXML (www.fdsn.org/xml/station)
 
 	The purpose of this schema is to define an XML representation of the most important
 	and commonly used structures of SEED 2.4 metadata.
