@@ -2,21 +2,12 @@
 <!--
 	FDSN StationXML (www.fdsn.org/xml/station)
 
-	The purpose of this schema is to define an XML representation of the most important
-	and commonly used structures of SEED 2.4 metadata.
+	The purpose of this schema is to define a metadata standard for seismological and related data.
 
-	The goal is to allow mapping between SEED 2.4 dataless SEED volumes and this schema with as
-	little transformation or loss of information as possible while at the same time simplifying
-	station metadata representation when possible.  Also, content and clarification has been added
-	where lacking in the SEED standard.
+ 	As a successor to the metadata headers of the SEED 2.4 standard (http://www.fdsn.org/publications.htm)
+	this format contains similar constructs and a superset of information.
 
-	When definitions and usage are underdefined the SEED manual should be referred to for
-	clarification.  SEED specifiation: http://www.fdsn.org/publications.htm
-
-	Another goal is to create a base schema that can be extended to represent similar data types.
-
-
-	Versioning for FDSN StationXML:
+ 	Versioning for FDSN StationXML:
 
 	The 'version' attribute of the schema definition identifies the version of the schema.  This
 	version is not enforced when validating documents.
@@ -41,50 +32,47 @@
 	targetNamespace="http://www.fdsn.org/xml/station/1" elementFormDefault="qualified"
 	attributeFormDefault="unqualified" version="1.1">
 	<xs:annotation>
-		<xs:documentation>  FDSN StationXML schema. Designed as an XML representation of SEED
-			metadata, the schema maps to the most important and commonly used structures of SEED
-			2.4. When definitions and usage are underdefined the SEED manual should be referred to
-			for clarification.
-</xs:documentation>
+		<xs:documentation>FDSN StationXML schema. A metadata standard for seismological and related data.
+		</xs:documentation>
 	</xs:annotation>
 	<!-- Root element -->
 	<xs:element name="FDSNStationXML" type="fsx:RootType"/>
 	<!-- Type definitions -->
 	<xs:complexType name="RootType">
 		<xs:annotation>
-			<xs:documentation>Top-level for StationXML. Contains information about who produced the StationXML and where it came from.
+			<xs:documentation>Root-level for StationXML documents.
 			 </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Source" type="xs:string">
 				<xs:annotation>
-					<xs:documentation>Initiator of the information contained in the document.
-						 Likely to be the Network ID of the institution sending the message.</xs:documentation>
+					<xs:documentation>Generator of the information contained in the document.
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Sender" type="xs:string" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Name of the institution sending this
-						message. Default is IRIS.</xs:documentation>
+					<xs:documentation>Name of the institution sending this message.
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Module" type="xs:string" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Name of the software module that that generated this document. The module is about the senders, e.g. seiscomp3.
+					<xs:documentation>Name of the software module that that generated this document.
 					</xs:documentation>
-					<xs:documentation>Example:&lt;Module&gt;Seiscomp3&lt;/Module&gt;</xs:documentation>
+					<xs:documentation>Example:&lt;Module&gt;SeisComp3&lt;/Module&gt;</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ModuleURI" type="xs:anyURI" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation> This is the address of the query that generated the document,
+					<xs:documentation>Address of the query that generated the document,
 						or, if applicable, the address of the software that generated this document.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Created" type="xs:dateTime">
 				<xs:annotation>
-					<xs:documentation> The documentation's creation date.
+					<xs:documentation> Creation date of the documentation.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
