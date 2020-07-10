@@ -58,14 +58,13 @@
 		<xs:sequence>
 			<xs:element name="Source" type="xs:string">
 				<xs:annotation>
-					<xs:documentation>Initiator of the information contained in the document.
+					<xs:documentation>Generator of the information contained in the document.
 						 Likely to be the Network ID of the institution sending the message.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Sender" type="xs:string" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Name of the institution sending this
-						message. Default is IRIS.</xs:documentation>
+					<xs:documentation>Name of the institution sending message.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Module" type="xs:string" minOccurs="0">
