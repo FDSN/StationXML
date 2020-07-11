@@ -142,86 +142,83 @@
 				<xs:sequence>
 					<xs:element name="Latitude" type="fsx:LatitudeType">
 						<xs:annotation>
-							<xs:documentation>Station latitude coordinate, where the bulk of the equipment is located (or another appropriate site location).</xs:documentation>
-              <xs:documentation>Example:&lt;Latitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;34.9459&lt;/Latitude&gt;</xs:documentation>
+		<xs:documentation>Station latitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location).</xs:documentation>
+		<xs:documentation>Example:&lt;Latitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;34.9459&lt;/Latitude&gt;</xs:documentation>
 						</xs:annotation>
-          </xs:element>
+					</xs:element>
 					<xs:element name="Longitude" type="fsx:LongitudeType">
 						<xs:annotation>
-							<xs:documentation>Station longitude coordinate, where the bulk of the equipment is located (or another appropriate site location).</xs:documentation>
-              <xs:documentation>Example:&lt;Longitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;-106.4572&lt;/Longitude&gt;</xs:documentation>
+		<xs:documentation>Station longitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location).</xs:documentation>
+		<xs:documentation>Example:&lt;Longitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;-106.4572&lt;/Longitude&gt;</xs:documentation>
 						</xs:annotation>
-          </xs:element>
+					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
 						<xs:annotation>
-							<xs:documentation>Station elevation</xs:documentation>
-              <xs:documentation>Example:&lt;Elevation unit=&quot;m&quot;&gt;1850.0&lt;/Elevation&gt;</xs:documentation>
+							<xs:documentation>Station elevation.  By default in meters.</xs:documentation>
+							<xs:documentation>Example:&lt;Elevation unit=&quot;m&quot;&gt;1850.0&lt;/Elevation&gt;</xs:documentation>
 						</xs:annotation>
-          </xs:element>
+					</xs:element>
 					<xs:element name="Site" type="fsx:SiteType">
 						<xs:annotation>
-							<xs:documentation>These fields describe the location of the station
-								using geopolitical entities (country, city,
-								etc.).</xs:documentation>
+							<xs:documentation>Description of the location of the station
+								using geopolitical entities (country, city, etc.).
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Elevation of the water surface in meters for underwater sites,
-                where 0 is sea level. if you put an OBS on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.</xs:documentation>
-              <xs:documentation>Example:&lt;WaterLevel&gt;1200.&lt;/WaterLevel&gt;</xs:documentation>
+		<xs:documentation>Elevation of the water surface (in meters) for underwater sites, where 0 is sea level.
+		If you put an OBS on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
+		</xs:documentation>
+		<xs:documentation>Example:&lt;WaterLevel&gt;1200&lt;/WaterLevel&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Vault" type="xs:string" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Type of vault, e.g. WWSSN, tunnel, transportable
-								array, etc.</xs:documentation>
+							<xs:documentation>Type of vault, e.g. WWSSN, tunnel, transportable array, etc.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Geology" type="xs:string" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Type of rock and/or geologic
-								formation.</xs:documentation>
+							<xs:documentation>Type of rock and/or geologic formation at the station.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Equipment" type="fsx:EquipmentType" minOccurs="0"
 						maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>Equipment used by all channels at a
-								station.</xs:documentation>
+							<xs:documentation>Equipment used by all channels at a station.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Operator" type="fsx:OperatorType" minOccurs="0"
 						maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>An operator and associated contact persons</xs:documentation>
+							<xs:documentation>Operator and associated contact persons</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Date and time (UTC) when the station was first
-								installed.</xs:documentation>
+							<xs:documentation>Date and time (UTC) when the station was first installed.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="TerminationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date and time (UTC) when the station was terminated or
-								will be terminated. Do not include this field if it is irrelevant. </xs:documentation>
+								will be terminated. Do not include this field if it is irrelevant.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="TotalNumberChannels" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Total number of channels recorded at this
-								station.</xs:documentation>
-							<xs:documentation>Warning:This field isn't super useful and is likely to be deprecated in future versions of StationXML</xs:documentation>
+							<xs:documentation>Total number of channels recorded at this station.</xs:documentation>
+							<xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="SelectedNumberChannels" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Number of channels recorded at this station and
-								selected by the query that produced this
-								document.</xs:documentation>
-								<xs:documentation>Warning:This field isn't super useful and is likely to be deprecated in future versions of StationXML</xs:documentation>
+							<xs:documentation>The number of channels selected in the request that resulted in this document.</xs:documentation>
+							<xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="ExternalReference" type="fsx:ExternalReferenceType"
