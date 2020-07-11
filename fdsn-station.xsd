@@ -154,7 +154,7 @@
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
 						<xs:annotation>
-							<xs:documentation>Station elevation.  By default in meters.</xs:documentation>
+							<xs:documentation>Station elevation, by default in meters.</xs:documentation>
 							<xs:documentation>Example:&lt;Elevation unit=&quot;m&quot;&gt;1850.0&lt;/Elevation&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -236,8 +236,11 @@
 	<!-- End StationType-->
 	<xs:complexType name="ChannelType">
 		<xs:annotation>
-			<xs:documentation>Parent element for the related
-				response blockettes.</xs:documentation>
+		<xs:documentation>The Channel container.
+		A Description element may be included with other information.
+		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference.
+		A Comment element may be included for arbitrary comments.
+		</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
@@ -245,64 +248,63 @@
 					<xs:element name="ExternalReference" type="fsx:ExternalReferenceType"
 						minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>URI of any type of external report, such as data
-								quality reports.</xs:documentation>
+							<xs:documentation>URI of any type of external report, such as data quality reports.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Latitude" type="fsx:LatitudeType">
 						<xs:annotation>
-							<xs:documentation>Latitude coordinate of this channel's
-								sensor. Should be the same as the Station's latitude.
-								If they are different, then the Channel's latitude should be used.</xs:documentation>
-								<xs:documentation>Example:&lt;Latitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;34.9459&lt;/Latitude&gt;</xs:documentation>
+							<xs:documentation>Latitude of this channel's sensor, by default in degrees.
+								Often the same as the station latitude, but
+								when different the channel latitude is the true location of the sensor.
+							</xs:documentation>
+							<xs:documentation>Example:&lt;Latitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;34.9459&lt;/Latitude&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Longitude" type="fsx:LongitudeType">
 						<xs:annotation>
-							<xs:documentation>Longitude coordinate of this channel's
-								sensor. Should be the same as the Station's longitude.
-								If they are different, then the Channel's longitude should be used.</xs:documentation>
-								<xs:documentation>Example:&lt;Longitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;-106.4572&lt;/Longitude&gt;</xs:documentation>
+							<xs:documentation>Longitude of this channel's sensor, by default in degrees.
+								Often the same as the station longitude, but
+								when different the channel longitude is the true location of the sensor.
+							</xs:documentation>
+							<xs:documentation>Example:&lt;Longitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;-106.4572&lt;/Longitude&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
 						<xs:annotation>
-							<xs:documentation>Elevation of the sensor.</xs:documentation>
+							<xs:documentation>Elevation of the sensor, by default in meters.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Depth" type="fsx:DistanceType">
 						<xs:annotation>
-							<xs:documentation>The local depth or overburden of the instrument's
-								location in positive meters. It is the depth of the instrument
-								under the surface ground level. </xs:documentation>
+							<xs:documentation>The depth of the sensor under the local surface ground level, in positive meters.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Azimuth" type="fsx:AzimuthType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Azimuth of the sensor in degrees clockwise from True North.</xs:documentation>
+							<xs:documentation>Azimuth of the sensor in degrees clockwise from geographic (true) north.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Dip" type="fsx:DipType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Dip of the instrument in degrees, positive down from
-								horizontal</xs:documentation>
+							<xs:documentation>Dip of the instrument in degrees, positive down from horizontal</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Elevation of the water surface in meters for underwater sites,
-								where 0 is sea level. if you put an OBS on a lake bottom, where the lake surface is at elevation=0,
-								 then you should set WaterLevel=0.</xs:documentation>
+							<xs:documentation>Elevation of the water surface in meters for underwater sites, where 0 is sea level.
+								If you put an OBS on a lake bottom, where the lake surface is at elevation=0,
+								then you should set WaterLevel=0.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Type" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>The type of data this channel collects. One or more &lt;Type&gt; tags
-								can be used to specify the nature of the data this channel collects.  For example,
-								&lt;Type&gt;Specific&lt;/Type&gt;,
-
-								where Type is in {TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG, SYNTHESIZED}, and Specific might be
-								{Seismic, Pressure, Temperature, Status of system peripherals, etc.}
+							<xs:documentation>Data type for this channel. One or more &lt;Type&gt; tags
+								can be used to specify the nature of the data this channel collects.
+								For example, &lt;Type&gt;Specific&lt;/Type&gt;,
+								where Type is in {TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG, SYNTHESIZED},
+								and Specific might be {Seismic, Pressure, Temperature, Status of system peripherals, etc.}
 							</xs:documentation>
 							<xs:documentation>Example: &lt;HEALTH&gt;Status of system peripherals&lt;/HEALTH&gt;</xs:documentation>
 						</xs:annotation>
@@ -325,18 +327,17 @@
 					<xs:group ref="fsx:SampleRateGroup" minOccurs="0"/>
 					<xs:element name="ClockDrift" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>A tolerance value, measured in seconds per sample,
-								used as a threshold for time error detection in data from the
-								channel.</xs:documentation>
+							<xs:documentation>Tolerance value, measured in seconds per sample,
+								used as a threshold for time error detection in data from the channel.
+							</xs:documentation>
 						</xs:annotation>
 						<xs:complexType>
 							<xs:simpleContent>
 								<xs:restriction base="fsx:FloatType">
 									<xs:minInclusive value="0"/>
-									<xs:attribute name="unit" type="xs:string" use="optional"
-										fixed="SECONDS/SAMPLE">
+									<xs:attribute name="unit" type="xs:string" use="optional" fixed="SECONDS/SAMPLE">
 											<xs:annotation>
-												<xs:documentation>The type of unit being used.
+												<xs:documentation>The unit of drift value.
 												</xs:documentation>
 												<xs:documentation>Example:unit='SECONDS/SAMPLE'
 												</xs:documentation>
@@ -348,12 +349,12 @@
 					</xs:element>
 					<xs:element name="CalibrationUnits" type="fsx:UnitsType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>A description of the units of calibration</xs:documentation>
+							<xs:documentation>Units of calibration</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Sensor" type="fsx:EquipmentType" minOccurs="0">
 							<xs:annotation>
-								<xs:documentation> Details of the (typically analog) sensor attached to this channel. If this was entered at the Station level,
+								<xs:documentation>Details of the (typically analog) sensor attached to this channel. If this was entered at the Station level,
 									it is not necesary to do it for each Channel, unless you have differences in equipment.
 								</xs:documentation>
 							</xs:annotation>
@@ -367,7 +368,7 @@
 					</xs:element>
 					<xs:element name="DataLogger" type="fsx:EquipmentType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Datalogger from which this channel is derived. If this was entered at the Station level,
+							<xs:documentation>Datalogger that recorded this channel. If this was entered at the Station level,
 								it is not necesary to do it for each Channel, unless you have differences in equipment.
 							</xs:documentation>
 						</xs:annotation>
@@ -376,45 +377,48 @@
 						<xs:annotation>
 							<xs:documentation>If the Equipment is entered at the Station level,
 								it is not necesary to do it for each Channel, unless you have differences in equipment.
-								If using a preamplifier, sensor, or datalogger, use their appropriate fields instead.</xs:documentation>
+								If using a preamplifier, sensor, or datalogger, use their appropriate fields instead.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Response" type="fsx:ResponseType" minOccurs="0"/>
 				</xs:sequence>
-        <xs:attribute name="locationCode" type="xs:string" use="required">
-		      <xs:annotation>
-			      <xs:documentation>
-              The locationCode is typically used to group channel coming from a common
-              sensor.  For example, the channels of the primary sensor at global IDA-IRIS
-              stations has locationCode = &apos;00&apos;: 00-BHZ, 00-BHE, 00-BHN, 00-LHZ, ..., etc.
-							Even though it is required, it may be an empty string.
-				    </xs:documentation>
-			      <xs:documentation>Example:locationCode=&apos;30&apos;</xs:documentation>
-		      </xs:annotation>
-        </xs:attribute>
+				<xs:attribute name="locationCode" type="xs:string" use="required">
+					<xs:annotation>
+	<xs:documentation>
+		The locationCode is typically used to group channel coming from a common sensor.
+		For example, the channels of the primary sensor at global IDA-IRIS
+		stations has locationCode = &apos;00&apos;: 00-BHZ, 00-BHE, 00-BHN, 00-LHZ, ..., etc.
+		Even though it is required, it may be an empty string.
+	</xs:documentation>
+	<xs:documentation>Example:locationCode=&apos;30&apos;</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- End ChannelType -->
 	<xs:complexType name="GainType">
 		<xs:annotation>
-			<xs:documentation>Complex type for sensitivity and frequency ranges. This complex type
+			<xs:documentation>Type for sensitivity and frequency ranges. This complex type
 				can be used to represent both overall sensitivities and individual stage gains. The
-				FrequencyRangeGroup is an optional construct that defines a pass band in hertz (
-				FrequencyStart and FrequencyEnd) in which the SensitivityValue is valid within the
-				number of decibels specified in FrequencyDBVariation. </xs:documentation>
+				FrequencyRangeGroup is an optional construct that defines a pass band in hertz
+				(FrequencyStart and FrequencyEnd) in which the SensitivityValue is valid within the
+				number of decibels specified in FrequencyDBVariation. 
+			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Value" type="xs:double">
 				<xs:annotation>
 					<xs:documentation>A scalar that, when applied to the data values, converts the
-						data to different units (e.g. Earth units)</xs:documentation>
+						data to different units (e.g. Earth units)
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Frequency" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>The frequency (in hertz) at which the Value is
-						valid.</xs:documentation>
+					<xs:documentation>The frequency (in hertz) at which the Value is valid.
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -433,8 +437,8 @@
 			</xs:element>
 			<xs:element name="FrequencyDBVariation" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Variation in decibels within the specified frequency
-						range.</xs:documentation>
+					<xs:documentation>Variation in decibels within the specified frequency range.
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -442,9 +446,10 @@
 	<xs:complexType name="SensitivityType">
 		<xs:annotation>
 			<xs:documentation>Sensitivity and frequency ranges. The FrequencyRangeGroup is an
-				optional construct that defines a pass band in hertz (FrequencyStart and
+				optional construct that defines a pass band in Hertz (FrequencyStart and
 				FrequencyEnd) in which the SensitivityValue is valid within the number of decibels
-				specified in FrequencyDBVariation. </xs:documentation>
+				specified in FrequencyDBVariation.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:GainType">
@@ -453,20 +458,23 @@
 						<xs:annotation>
 							<xs:documentation> The units of the data as input from the perspective
 								of data acquisition. After correcting data for this response, these
-								would be the resulting units. </xs:documentation>
+								would be the resulting units.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="OutputUnits" type="fsx:UnitsType">
 						<xs:annotation>
 							<xs:documentation> The units of the data as output from the perspective
 								of data acquisition. These would be the units of the data prior to
-								correcting for this response. </xs:documentation>
+								correcting for this response.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:group ref="fsx:FrequencyRangeGroup" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>The frequency range for which the SensitivityValue is
-								valid within the dB variation specified.</xs:documentation>
+								valid within the dB variation specified.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:group>
 				</xs:sequence>
@@ -477,7 +485,8 @@
 		<xs:annotation>
 			<xs:documentation>If the EquipmentType is entered at the Station level,
 				it is not necesary to do it for each Channel, unless you have differences in equipment.
-				If using a preamplifier, sensor, or datalogger, use their appropriate fields instead. </xs:documentation>
+				If using a preamplifier, sensor, or datalogger, use their appropriate fields instead.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Type" type="xs:string" minOccurs="0">
@@ -533,16 +542,17 @@
 				<xs:documentation>This field contains a string that should serve as a unique
 					resource identifier. This identifier can be interpreted differently depending on
 					the datacenter/software that generated the document. Also, we recommend to use
-					something like GENERATOR:Meaningful ID. As a common behaviour equipment with the
-					same ID should contains the same information/be derived from the same base
-					instruments. </xs:documentation>
+					a prefix, like GENERATOR:Meaningful ID. It should be expected that equipment with the
+					same ID should indicate the same information/be derived from the same base
+					instruments.
+				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
 	<xs:complexType name="ResponseStageType">
 		<xs:annotation>
-			<xs:documentation> This complex type represents channel response. </xs:documentation>
+			<xs:documentation>Type for channel response. </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:choice>
