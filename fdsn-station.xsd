@@ -1417,7 +1417,7 @@
 				<xs:attribute name="type" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Identifier type</xs:documentation>
-						<xs:documentation>Example:"DOI"</xs:documentation>
+						<xs:documentation>Example:&apos;DOI&apos;</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
