@@ -306,7 +306,7 @@
 								where Type is in {TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG, SYNTHESIZED},
 								and Specific might be {Seismic, Pressure, Temperature, Status of system peripherals, etc.}
 							</xs:documentation>
-							<xs:documentation>Example: &lt;HEALTH&gt;Status of system peripherals&lt;/HEALTH&gt;</xs:documentation>
+							<xs:documentation>Example:&lt;HEALTH&gt;Status of system peripherals&lt;/HEALTH&gt;</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:NMTOKEN">
@@ -946,7 +946,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional">
 				<xs:annotation>
 					<xs:documentation>The unit of measurement.  Use SI unit names and symbols whenever possible.</xs:documentation>
-					<xs:documentation>Example: unit='SECONDS'
+					<xs:documentation>Example:unit='SECONDS'
 					Choice:W unit=&apos;METERS&apos;  <!-- Should be different for Water Level, Delay, Amplitude and Correction -->
 					Choice:A unit=&apos;METERS&apos;</xs:documentation>
 				</xs:annotation>
@@ -966,7 +966,7 @@
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
 							</xs:documentation>
-							<xs:documentation>Example: unit='SECONDS'
+							<xs:documentation>Example:unit='SECONDS'
 							</xs:documentation>
 						</xs:annotation>
 					</xs:attribute>
@@ -981,7 +981,7 @@
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
 							</xs:documentation>
-							<xs:documentation>Example: unit='VOLTS'
+							<xs:documentation>Example:unit='VOLTS'
 							</xs:documentation>
 						</xs:annotation>
 					</xs:attribute>
@@ -998,7 +998,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example: unit='DEGREES'
+						<xs:documentation>Example:unit='DEGREES'
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1018,7 +1018,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example: unit='DEGREES'
+						<xs:documentation>Example:unit='DEGREES'
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1047,7 +1047,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example: unit='DEGREES'
+						<xs:documentation>Example:unit='DEGREES'
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1077,7 +1077,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example: unit='DEGREES'
+						<xs:documentation>Example:unit='DEGREES'
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1098,7 +1098,7 @@
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
 							</xs:documentation>
-							<xs:documentation>Example: unit='DEGREES'
+							<xs:documentation>Example:unit='DEGREES'
 							</xs:documentation>
 						</xs:annotation>
 				</xs:attribute>
@@ -1117,7 +1117,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example: unit='METERS'
+						<xs:documentation>Example:unit='METERS'
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1132,7 +1132,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example: unit='HERTZ'
+						<xs:documentation>Example:unit='HERTZ'
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
