@@ -386,10 +386,10 @@
 				<xs:attribute name="locationCode" type="xs:string" use="required">
 					<xs:annotation>
 	<xs:documentation>
-		The locationCode is typically used to group channel coming from a common sensor.
+		The locationCode is typically used to group channels from a common sensor.
 		For example, the channels of the primary sensor at global IDA-IRIS
-		stations has locationCode = &apos;00&apos;: 00-BHZ, 00-BHE, 00-BHN, 00-LHZ, ..., etc.
-		Even though it is required, it may be an empty string.
+		stations have locationCode = &apos;00&apos;: 00_BHZ, 00_BHE, 00_BHN, 00_LHZ, ..., etc.
+		Even though it is required, locationCode may be, and often is, an empty string.
 	</xs:documentation>
 	<xs:documentation>Example:locationCode=&apos;30&apos;</xs:documentation>
 					</xs:annotation>
@@ -400,11 +400,8 @@
 	<!-- End ChannelType -->
 	<xs:complexType name="GainType">
 		<xs:annotation>
-			<xs:documentation>Type for sensitivity and frequency ranges. This complex type
-				can be used to represent both overall sensitivities and individual stage gains. The
-				FrequencyRangeGroup is an optional construct that defines a pass band in hertz
-				(FrequencyStart and FrequencyEnd) in which the SensitivityValue is valid within the
-				number of decibels specified in FrequencyDBVariation. 
+			<xs:documentation>Type for sensitivity at a given frequency. This complex type
+				can be used to represent both total sensitivities and individual stage gains.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
@@ -417,13 +414,18 @@
 			</xs:element>
 			<xs:element name="Frequency" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>The frequency (in hertz) at which the Value is valid.
+					<xs:documentation>The frequency (in Hertz) at which the Value is valid.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:group name="FrequencyRangeGroup">
+		<xs:annotation>
+			<xs:documentation>Type for defining a pass band (in Hertz) from FrequencyStart to FrequencyEnd
+				in which a sensitivity value is valid within the number of decibels specified in FrequencyDBVariation. 
+			</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="FrequencyStart" type="xs:double">
 				<xs:annotation>
@@ -445,10 +447,7 @@
 	</xs:group>
 	<xs:complexType name="SensitivityType">
 		<xs:annotation>
-			<xs:documentation>Sensitivity and frequency ranges. The FrequencyRangeGroup is an
-				optional construct that defines a pass band in Hertz (FrequencyStart and
-				FrequencyEnd) in which the SensitivityValue is valid within the number of decibels
-				specified in FrequencyDBVariation.
+			<xs:documentation>Type for sensitivity, input/output units and relevant frequency range.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
@@ -472,7 +471,7 @@
 					</xs:element>
 					<xs:group ref="fsx:FrequencyRangeGroup" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>The frequency range for which the SensitivityValue is
+							<xs:documentation>The frequency range for which the sensitivity value is
 								valid within the dB variation specified.
 							</xs:documentation>
 						</xs:annotation>
@@ -483,9 +482,7 @@
 	</xs:complexType>
 	<xs:complexType name="EquipmentType">
 		<xs:annotation>
-			<xs:documentation>If the EquipmentType is entered at the Station level,
-				it is not necesary to do it for each Channel, unless you have differences in equipment.
-				If using a preamplifier, sensor, or datalogger, use their appropriate fields instead.
+			<xs:documentation>A type for equipment related to data acquisition or processing.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
@@ -529,22 +526,20 @@
 					<xs:documentation>Removal date of equipment</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CalibrationDate" type="xs:dateTime" minOccurs="0"
-				maxOccurs="unbounded">
-					<xs:annotation>
-						<xs:documentation>A description of the units of the calibration.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
+			<xs:element name="CalibrationDate" type="xs:dateTime" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A description of the units of the calibration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="resourceId" type="xs:string" use="optional">
 			<xs:annotation>
-				<xs:documentation>This field contains a string that should serve as a unique
-					resource identifier. This identifier can be interpreted differently depending on
-					the datacenter/software that generated the document. Also, we recommend to use
-					a prefix, like GENERATOR:Meaningful ID. It should be expected that equipment with the
-					same ID should indicate the same information/be derived from the same base
-					instruments.
+				<xs:documentation>An identifier (string) that serves to unique identify this resource.
+					This identifier can be interpreted differently depending on the datacenter/software
+					that generated the document. Also, we recommend to use a prefix, like GENERATOR:Meaningful ID.
+					It should be expected that equipment with the same ID should indicate the same information/be
+					derived from the same base instruments.
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
@@ -552,13 +547,16 @@
 	</xs:complexType>
 	<xs:complexType name="ResponseStageType">
 		<xs:annotation>
-			<xs:documentation>Type for channel response. </xs:documentation>
+			<xs:documentation>Type for channel response entry or stage.  A full response is
+				represented as a sequence of these stages.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:choice>
 				<xs:annotation>
-					<xs:documentation>A choice of polynomial versus all other response types.
-						There should be one response per stage.</xs:documentation>
+					<xs:documentation>A choice of polynomial versus all other response types,
+						To enforce one response per stage.
+					</xs:documentation>
 				</xs:annotation>
 				<xs:sequence>
 					<xs:choice>
@@ -571,47 +569,45 @@
 					<xs:element name="Decimation" type="fsx:DecimationType" minOccurs="0"/>
 					<xs:element name="StageGain" type="fsx:GainType">
 						<xs:annotation>
-							<xs:documentation>Warning: to Chad: Should reference to "historically" be here?</xs:documentation>
 							<xs:documentation>The gain at the stage of the encapsulating
-								response element at a specific frequencey.
-								Historically, stage 0 gain represents the overall sensitivity of the channel.
-								In this schema, stage 0 gains are allowed but are considered deprecated.
-								Overall sensitivity should be specified in the InstrumentSensitivity
-								element.</xs:documentation>
+								response element at a specific frequency.
+								Total channel sensitivity should be specified in the InstrumentSensitivity
+								element.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-        <xs:element name="Polynomial" type="fsx:PolynomialType">
-						<xs:annotation>
-              <xs:documentation>
-                When a response is given in terms of a polynomial expansion of
-                powers of the sensor output signal (e.g., Volts),
-                a Polynomial Stage is required to specify the MacLaurin coefficients
-                of the expansion.
+				<xs:element name="Polynomial" type="fsx:PolynomialType">
+					<xs:annotation>
+           					<xs:documentation>
+						When a response is given in terms of a polynomial expansion of
+						powers of the sensor output signal (e.g., Volts), a Polynomial Stage is 
+						required to specify the MacLaurin coefficients of the expansion.
 
-                In addition, an InstrumentPolynomial element must be present in
-                the StationXML which contains the same MacLaurin coefficients,
-                but scaled by powers of the overall gain representing the
-                complete acquisition system.
-              </xs:documentation>
-            </xs:annotation>
-        </xs:element>
+						In addition, an InstrumentPolynomial element must be present at Response level
+						to represent the whole acquisition process, which contains the same MacLaurin
+						coefficients, but scaled by powers of the overall gain for all stages.
+						</xs:documentation>
+            				</xs:annotation>
+        			</xs:element>
 			</xs:choice>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="number" type="fsx:CounterType" use="required">
 			<xs:annotation>
-				<xs:documentation>Stage sequence number. This is used in all the response SEED
-					blockettes. Start from name='1' and iterate sequentially. </xs:documentation>
+				<xs:documentation>Stage sequence number. This is used in all the response
+					blockettes. Start from name='1' and iterate sequentially.
+				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="resourceId" type="xs:string">
 			<xs:annotation>
-				<xs:documentation> This field contains a string that should serve as a unique resource identifier.
-					This identifier can be interpreted differently depending on the datacenter/software that
-					generated the document. Also, we recommend to use something like GENERATOR:Meaningful ID.
-					 As a common behaviour equipment with the same ID should contains the same information/be derived from
-					 the same base instruments. </xs:documentation>
+				<xs:documentation> An identifier (string) that serves to unique identify this resource.
+					This identifier can be interpreted differently depending on the datacenter/software
+					that generated the document. Also, we recommend to use a prefix, like GENERATOR:Meaningful ID.
+					It should be expected that equipment with the same ID should indicate the same information/be
+					derived from the same base instruments.
+				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -622,35 +618,33 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Value" type="xs:string">
-			  <xs:annotation>
-					<xs:documentation>This is where the comment text goes.</xs:documentation>
-          <xs:documentation>Example:&lt;Value&gt;GPS clock is lost&lt;/Value&gt;</xs:documentation>
+				<xs:annotation>
+					<xs:documentation>Comment text.</xs:documentation>
+					<xs:documentation>Example:&lt;Value&gt;GPS clock is lost&lt;/Value&gt;</xs:documentation>
 			  </xs:annotation>
-      </xs:element>
+      			</xs:element>
 			<xs:element name="BeginEffectiveTime" type="xs:dateTime" minOccurs="0">
-			  <xs:annotation>
-					<xs:documentation>This is where the comment text goes.</xs:documentation>
-          <xs:documentation>Example:&lt;BeginEffectiveTime&gt;2008-09-15T00:00:00&lt;/BeginEffectiveTime&gt;</xs:documentation>
-			  </xs:annotation>
-      </xs:element>
+				<xs:annotation>
+					<xs:documentation>Start time for when comment applies.</xs:documentation>
+					<xs:documentation>Example:&lt;BeginEffectiveTime&gt;2008-09-15T00:00:00&lt;/BeginEffectiveTime&gt;</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="EndEffectiveTime" type="xs:dateTime" minOccurs="0">
-			  <xs:annotation>
-					<xs:documentation>End time for where comment applies.</xs:documentation>
-          <xs:documentation>Example:&lt;EndEffectiveTime&gt;2008-09-16T12:00:00&lt;/EndEffectiveTime&gt;</xs:documentation>
-			  </xs:annotation>
-      </xs:element>
+				<xs:annotation>
+					<xs:documentation>End time for when comment applies.</xs:documentation>
+ 					<xs:documentation>Example:&lt;EndEffectiveTime&gt;2008-09-16T12:00:00&lt;/EndEffectiveTime&gt;</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="Author" type="fsx:PersonType" minOccurs="0" maxOccurs="unbounded">
-			<xs:annotation>
-				<xs:documentation>Element to hold contact information of Author of Comment. A person can belong
-					to multiple agencies and have multiple email addresses and phone
-					numbers.</xs:documentation>
-			</xs:annotation>
+				<xs:annotation>
+					<xs:documentation>Author of Comment.</xs:documentation>
+				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="id" type="fsx:CounterType" use="optional">
 			<xs:annotation>
-				<xs:documentation> An id for this comment</xs:documentation>
-        <xs:documentation>Example:id=12345</xs:documentation>
+				<xs:documentation>An ID for this comment</xs:documentation>
+				<xs:documentation>Example:id=12345</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 
@@ -659,21 +653,21 @@
 				<xs:documentation>A subject for this comment.  Multiple comments with the same
 					subject should be considered related.
 				</xs:documentation>
-        <xs:documentation>Example:subject=&apos;Scheduled maintenance&apos;</xs:documentation>
+				<xs:documentation>Example:subject=&apos;Scheduled maintenance&apos;</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="PolesZerosType">
 		<xs:annotation>
-			<xs:documentation>Response: complex poles and zeros.</xs:documentation>
+			<xs:documentation>Response type for complex poles and zeros.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseFilterType">
 				<xs:sequence>
 					<xs:element name="PzTransferFunctionType">
 						<xs:annotation>
-							<xs:documentation>Either a Laplace transform analog response in rad/sec or hertz, or
-								a Digital Z-transform.
+							<xs:documentation>Either a Laplace transform analog response in rad/sec or Hertz, or
+								a digital Z-transform (e.g. for IIR filters).
 							</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
@@ -686,27 +680,27 @@
 					</xs:element>
 					<xs:element name="NormalizationFactor" type="xs:double" default="1.0">
 						<xs:annotation>
-							<xs:documentation>Should be positive. </xs:documentation>
+							<xs:documentation>Normalization scale factor</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="NormalizationFrequency" type="fsx:FrequencyType">
 						<xs:annotation>
-							<xs:documentation>Should be within the passband, and the same for all stages.
-								It is the frequency in which the value is normalized </xs:documentation>
+							<xs:documentation>Frequency at which the NormalizationFactor is valid.
+								This should be the same for all stages adn within the passband, if any.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Zero" type="fsx:PoleZeroType" minOccurs="0"
-						maxOccurs="unbounded"/>
-					<xs:element name="Pole" type="fsx:PoleZeroType" minOccurs="0"
-						maxOccurs="unbounded"/>
+					<xs:element name="Zero" type="fsx:PoleZeroType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Pole" type="fsx:PoleZeroType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="FIRType">
 		<xs:annotation>
-			<xs:documentation>Response: FIR filter. Specifically for symmetrical filters. FIR filters
-				are also commonly documented using the CoefficientsType element. </xs:documentation>
+			<xs:documentation>Response type for FIR filter.  FIR filters
+				are also commonly documented using the Coefficients element.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseFilterType">
@@ -1469,13 +1463,16 @@
 					<xs:documentation>Instrument sensitivities, or the complete system sensitivity,
 						can be expressed using either a sensitivity value or a polynomial. The
 						information can be used to convert raw data to Earth at a specified
-						frequency or within a range of frequencies.  </xs:documentation>
+						frequency or within a range of frequencies.
+					</xs:documentation>
 				</xs:annotation>
 				<xs:element name="InstrumentSensitivity" type="fsx:SensitivityType" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation> The total sensitivity for a channel, representing the
 							complete acquisition system expressed as a scalar.
-							All instrument responses except polynomial response should have an InstrumentSensitivity. </xs:documentation>
+							All instrument responses except polynomial response should have
+							an InstrumentSensitivity.
+						</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="InstrumentPolynomial" type="fsx:PolynomialType" minOccurs="0">
