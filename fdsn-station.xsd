@@ -1027,8 +1027,10 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="LatitudeType">
-		<xs:documentation>Latitude type extending the base type to add datum as an attribute with default.
-		</xs:documentation>
+		<xs:annotation>
+			<xs:documentation>Latitude type extending the base type to add datum as an attribute with default.
+			</xs:documentation>
+		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="fsx:LatitudeBaseType">
 				<xs:attribute name="datum" type="xs:NMTOKEN" use="optional" default="WGS84"/>
@@ -1056,8 +1058,10 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="LongitudeType">
-		<xs:documentation>Longitude type extending the base type to add datum as an attribute with default.
-		</xs:documentation>
+		<xs:annotation>
+			<xs:documentation>Longitude type extending the base type to add datum as an attribute with default.
+			</xs:documentation>
+		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="fsx:LongitudeBaseType">
 				<xs:attribute name="datum" type="xs:NMTOKEN" use="optional" default="WGS84"/>
