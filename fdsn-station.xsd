@@ -18,7 +18,7 @@
 
 	The targetNamespace of the document identifies the major version of the schema and document,
 	version 1.x of the schema uses a target namespace of "http://www.fdsn.org/xml/station/1".
-	All minor versions of a will be backwards compatible with previous minor releases.  For
+	All minor versions of the schema will be backwards compatible with previous minor releases.  For
 	example, all 1.x schemas are backwards compatible with and will validate documents for 1.0.
 	Major changes to the schema that would break backwards compabibility will increment the major
 	version number, e.g. 2.0, and the namespace, e.g. "http://www.fdsn.org/xml/station/2".
@@ -168,14 +168,15 @@
 					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
 						<xs:annotation>
 		<xs:documentation>Elevation of the water surface (in meters) for underwater sites, where 0 is sea level.
-		If you put an OBS on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
+		If you put an ocean-bottom seismometer (OBS) on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
 		</xs:documentation>
 		<xs:documentation>Example:&lt;WaterLevel&gt;1200&lt;/WaterLevel&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Vault" type="xs:string" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Type of vault, e.g. WWSSN, tunnel, transportable array, etc.
+							<xs:documentation>Type of vault, e.g. World-Wide Standardized Seismograph Network (WWSSN), tunnel, 
+								transportable array, etc.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -205,7 +206,7 @@
 					<xs:element name="TerminationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date and time (UTC) when the station was terminated or
-								will be terminated. Do not include this field if it is irrelevant.
+								will be terminated. Do not include this field if a termination date is not available or is not relevant.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -354,8 +355,9 @@
 					</xs:element>
 					<xs:element name="Sensor" type="fsx:EquipmentType" minOccurs="0">
 							<xs:annotation>
-								<xs:documentation>Details of the (typically analog) sensor attached to this channel. If this was entered at the Station level,
-									it is not necesary to do it for each Channel, unless you have differences in equipment.
+								<xs:documentation>Details of the (typically analog) sensor attached to this channel. 
+									If this was entered at the Station level, it is not necesary to do it for each Channel, 
+									unless you have differences in equipment.
 								</xs:documentation>
 							</xs:annotation>
 						</xs:element>
@@ -537,7 +539,7 @@
 			<xs:annotation>
 				<xs:documentation>An identifier that serves to unique identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
-					that generated the document. Also, we recommend to use a prefix, like GENERATOR:Meaningful ID.
+					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
 					It should be expected that equipment with the same ID should indicate the same information/be
 					derived from the same base instruments.
 				</xs:documentation>
@@ -555,7 +557,7 @@
 			<xs:choice>
 				<xs:annotation>
 					<xs:documentation>A choice of polynomial versus all other response types,
-						To enforce one response per stage.
+						to enforce one response per stage.
 					</xs:documentation>
 				</xs:annotation>
 				<xs:sequence>
@@ -602,9 +604,9 @@
 		</xs:attribute>
 		<xs:attribute name="resourceId" type="xs:string">
 			<xs:annotation>
-				<xs:documentation> An identifier that serves to unique identify this resource.
+				<xs:documentation> An identifier that serves to uniquely identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
-					that generated the document. Also, we recommend to use a prefix, like GENERATOR:Meaningful ID.
+					that generated the document. Also, we recommend using a prefix, like GENERATOR:Meaningful ID.
 					It should be expected that equipment with the same ID should indicate the same information/be
 					derived from the same base instruments.
 				</xs:documentation>
@@ -790,7 +792,7 @@
 	</xs:complexType>
 	<xs:complexType name="ResponseListType">
 		<xs:annotation>
-			<xs:documentation>Response tyep for a list of frequency, amplitude and phase values.</xs:documentation>
+			<xs:documentation>Response type for a list of frequency, amplitude, and phase values.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseFilterType">
@@ -803,7 +805,7 @@
 	</xs:complexType>
 	<xs:complexType name="PolynomialType">
 		<xs:annotation>
-			<xs:documentation>Response type for a reponse represnted as a polynomial expansion,
+			<xs:documentation>Response type for a reponse represented as a polynomial expansion,
 				which allows non-linear sensors to be described. Used at either a stage of
 				acquisition response or a complete system. </xs:documentation>
 		</xs:annotation>
@@ -872,7 +874,7 @@
 			</xs:element>
 			<xs:element name="Offset" type="xs:integer">
 				<xs:annotation>
-					<xs:documentation> Sample offset chosen for use. Make the value greater than or equal to zero,
+					<xs:documentation> Sample offset chosen for use. The value should be greater than or equal to zero,
 						but less than the decimation factor. If the first sample is used, set this field to zero.
 						If the second sample, set it to 1, and so forth.
 					</xs:documentation>
@@ -908,7 +910,7 @@
 	<xs:attributeGroup name="uncertaintyDouble">
 		<xs:annotation>
 			<xs:documentation>Attributes for expressing uncertainties or errors with positive and negative
-				components. Both values should be given as positive integers, but the minuserror is
+				components. Both values should be given as positive integers, but the minusError is
 				understood to be negative. </xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="plusError" type="xs:double" use="optional">
@@ -945,7 +947,7 @@
 			<xs:extension base="xs:double">
 				<xs:attribute name="unit" type="xs:string" use="optional">
 				<xs:annotation>
-					<xs:documentation>The unit of measurement.  Use SI unit names and symbols whenever possible.</xs:documentation>
+					<xs:documentation>The unit of measurement. Use SI unit names and symbols whenever possible.</xs:documentation>
 					<xs:documentation>Example:unit='SECONDS'
 					Choice:W unit=&apos;METERS&apos;  <!-- Should be different for Water Level, Delay, Amplitude and Correction -->
 					Choice:A unit=&apos;METERS&apos;</xs:documentation>
@@ -1187,8 +1189,8 @@
 		<xs:annotation>
 			<xs:documentation>Default2:Complex numbers used as poles or zeros in channel
 				response.
-				Choice:P Complex numbers used as poles in channel	response.
-				Choice:Z Complex numbers used as zeros in channel	response.</xs:documentation>
+				Choice:P Complex numbers used as poles in channel response.
+				Choice:Z Complex numbers used as zeros in channel response.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Real" type="fsx:FloatNoUnitType">
@@ -1455,7 +1457,7 @@
 			<xs:annotation>
 				<xs:documentation> An identifier that serves to unique identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
-					that generated the document. Also, we recommend to use a prefix, like GENERATOR:Meaningful ID.
+					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
 					It should be expected that equipment with the same ID should indicate the same information/be
 					derived from the same base instruments.
 				</xs:documentation>
@@ -1522,7 +1524,7 @@
 			<xs:annotation>
 				<xs:documentation> An identifier that serves to unique identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
-					that generated the document. Also, we recommend to use a prefix, like GENERATOR:Meaningful ID.
+					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
 					It should be expected that equipment with the same ID should indicate the same information/be
 					derived from the same base instruments.
 				</xs:documentation>
@@ -1532,13 +1534,13 @@
 	</xs:complexType>
 	<xs:complexType name="BaseNodeType">
 		<xs:annotation>
-			<xs:documentation>A base node type use in Network, Station and Channel types.
+			<xs:documentation>A base node type use in Network, Station, and Channel types.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Description" type="xs:string" minOccurs="0">
 				<xs:annotation>
-          				<xs:documentation>Default:Description of the Network, Station or Channel
+          				<xs:documentation>Default:Description of the Network, Station, or Channel
 					Choice:N Description of the Network
 					Choice:S Description of the Station
 					Choice:C Description of the Channel
@@ -1554,7 +1556,7 @@
 						information should be considered transient and is primarily useful as a
 						guide for generating time series data requests. The information for a
 						DataAvailability:Span may be specific to the time range used in a request
-						that resulted in the document or limited to the availability of data withing
+						that resulted in the document or limited to the availability of data within
 						the request range. These details may or may not be retained when
 						synchronizing metadata between data centers.
 					</xs:documentation>
@@ -1611,7 +1613,7 @@
 	<xs:complexType name="DataAvailabilityExtentType">
 		<xs:annotation>
 			<xs:documentation>Data availability extents, the earliest and
-				latest data available. No information is included about the continuity of the data
+				latest data available. No information about the continuity of the data
 				is included or implied.
 			</xs:documentation>
 		</xs:annotation>
