@@ -1567,9 +1567,11 @@
 		<xs:attribute name="code" type="xs:string" use="required">
 			<xs:annotation>
 				<xs:documentation>Identifying code.</xs:documentation>
-				<xs:documentation>Example:Default:code='IU' or code='ANMO'
-				Choice:N For Network Name 'IU', code='IU'
-				Choice:S For Station Name 'ANMO', code='ANMO'</xs:documentation>
+				<xs:documentation>
+				Choice:N code='IU'
+				Choice:S code='ANMO'
+        Choice:C code='BHZ'
+        </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="startDate" type="xs:dateTime">
