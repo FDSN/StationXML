@@ -81,8 +81,8 @@
 		</xs:sequence>
 		<xs:attribute name="schemaVersion" type="xs:decimal" use="required">
 			<xs:annotation>
-				<xs:documentation>The schema version compatible with the document.
-				</xs:documentation>
+				<xs:documentation>The schema version compatible with the document.</xs:documentation>
+				<xs:documentation>Example:schemaVersion=&apos;1.1&apos;</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
