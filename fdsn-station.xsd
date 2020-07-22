@@ -58,7 +58,7 @@
 			</xs:element>
 			<xs:element name="Module" type="xs:string" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Name of the software module that that generated this document.
+					<xs:documentation>Name of the software module that generated this document.
 					</xs:documentation>
 					<xs:documentation>Example:&lt;Module&gt;SeisComp3&lt;/Module&gt;</xs:documentation>
 				</xs:annotation>
@@ -176,7 +176,7 @@
 					<xs:element name="Vault" type="xs:string" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Type of vault, e.g. World-Wide Standardized Seismograph Network (WWSSN), tunnel, 
-								transportable array, etc.
+								USArray Transportable Array Generation 2, etc.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -356,7 +356,7 @@
 					<xs:element name="Sensor" type="fsx:EquipmentType" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>Details of the (typically analog) sensor attached to this channel. 
-									If this was entered at the Station level, it is not necesary to do it for each Channel, 
+									If this was entered at the Station level, it is not necessary to do it for each Channel, 
 									unless you have differences in equipment.
 								</xs:documentation>
 							</xs:annotation>
@@ -364,21 +364,21 @@
 					<xs:element name="PreAmplifier" type="fsx:EquipmentType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Preamplifier (if any) used by this channel. If this was entered at the Station level,
-								it is not necesary to do it for each Channel, unless you have differences in equipment.
+								it is not necessary to do it for each Channel, unless you have differences in equipment.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="DataLogger" type="fsx:EquipmentType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Datalogger that recorded this channel. If this was entered at the Station level,
-								it is not necesary to do it for each Channel, unless you have differences in equipment.
+								it is not necessary to do it for each Channel, unless you have differences in equipment.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Equipment" type="fsx:EquipmentType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>If the Equipment is entered at the Station level,
-								it is not necesary to do it for each Channel, unless you have differences in equipment.
+								it is not necessary to do it for each Channel, unless you have differences in equipment.
 								If using a preamplifier, sensor, or datalogger, use their appropriate fields instead.
 							</xs:documentation>
 						</xs:annotation>
@@ -391,7 +391,8 @@
 		The locationCode is typically used to group channels from a common sensor.
 		For example, the channels of the primary sensor at global IDA-IRIS
 		stations have locationCode = &apos;00&apos;: 00_BHZ, 00_BHE, 00_BHN, 00_LHZ, ..., etc.
-		Even though it is required, locationCode may be, and often is, an empty string.
+    Even though it is required, locationCode may be, and often is, an empty string,
+    however, it is recommended that the locationCode not be empty.
 	</xs:documentation>
 	<xs:documentation>Example:locationCode=&apos;30&apos;</xs:documentation>
 					</xs:annotation>
@@ -1412,7 +1413,7 @@
 		<xs:annotation>
 			<xs:documentation>A type to document persistent identifiers.
 				Identifier values should be specified without a URI scheme (prefix),
-				instead the identifer type is documented as an attribute.
+				instead the identifier type is documented as an attribute.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
@@ -1420,7 +1421,7 @@
 				<xs:attribute name="type" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Identifier type</xs:documentation>
-						<xs:documentation>Example:&apos;DOI&apos;</xs:documentation>
+						<xs:documentation>Example:type=&apos;DOI&apos;</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -1501,7 +1502,7 @@
 				<xs:element name="InstrumentPolynomial" type="fsx:PolynomialType" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>For non-linear sensors (e.g., :math:`N\ge 2`), such as some thermistors,
-						pressure transducers, extensiometers, etc.), it is required to
+						pressure transducers, extensometers, etc.), it is required to
 						express the sensor input (e.g., Temp) as a Maclaurin series expansion of powers of the
 						*output* units (e.g., Volts):
 						.. math::
