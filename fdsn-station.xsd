@@ -948,13 +948,12 @@
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
 				<xs:attribute name="unit" type="xs:string" use="optional">
-				<xs:annotation>
-          <xs:documentation>The unit of measurement. Use SI unit names and symbols whenever possible.</xs:documentation>
+				  <xs:annotation>
+            <xs:documentation>The unit of measurement. Use SI unit names and symbols whenever possible.</xs:documentation>
             <xs:documentation>Example:unit='SECONDS'</xs:documentation>
             <xs:documentation>ElementChoice:WATERLEVEL Example:unit=&apos;METERS&apos;</xs:documentation> 
             <xs:documentation>ElementChoice:AMPLITUDE Example:unit=&apos;METERS&apos;</xs:documentation>
-          </xs:annotation>
-				</xs:annotation>
+				  </xs:annotation>
 				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
 			</xs:extension>
