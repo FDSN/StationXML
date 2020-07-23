@@ -950,10 +950,10 @@
 				<xs:attribute name="unit" type="xs:string" use="optional">
 				<xs:annotation>
           <xs:documentation>The unit of measurement. Use SI unit names and symbols whenever possible.</xs:documentation>
-          <xs:documentation>ElementDefault: Example:unit='SECONDS'
-            ElementChoice:W Example:unit=&apos;METERS&apos;  <!-- Should be different for Water Level, Delay, Amplitude and Correction -->
-            ElementChoice:A Example:unit=&apos;METERS&apos;
-          </xs:documentation>
+            <xs:documentation>Example:unit='SECONDS'</xs:documentation>
+            <xs:documentation>ElementChoice:WATERLEVEL Example:unit=&apos;METERS&apos;</xs:documentation> 
+            <xs:documentation>ElementChoice:AMPLITUDE Example:unit=&apos;METERS&apos;</xs:documentation>
+          </xs:annotation>
 				</xs:annotation>
 				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
@@ -1190,24 +1190,19 @@
 	</xs:complexType>
 	<xs:complexType name="PoleZeroType">
 		<xs:annotation>
-			<xs:documentation>Default2:Complex numbers used as poles or zeros in channel
-				response.
-				Choice:P Complex numbers used as poles in channel response.
-				Choice:Z Complex numbers used as zeros in channel response.</xs:documentation>
+			<xs:documentation>
+        Complex numbers used to store the poles and zeros of a PolesZeros response stage type.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Real" type="fsx:FloatNoUnitType">
 				<xs:annotation>
-					<xs:documentation>Default2:Real part of the poles or zeros.
-						Choice:P Real part of the poles.
-						Choice:Z Real part of the zeros.</xs:documentation>
+					<xs:documentation>Real part of the pole or zero.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Imaginary" type="fsx:FloatNoUnitType">
 				<xs:annotation>
-					<xs:documentation>Default2:Imaginary part of the poles or zeros.
-						Choice:P Imaginary part of the poles.
-						Choice:Z Imaginary part of the zeros.</xs:documentation>
+					<xs:documentation>Imaginary part of the pole or zero.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
