@@ -675,8 +675,15 @@
 				<xs:sequence>
 					<xs:element name="PzTransferFunctionType">
 						<xs:annotation>
-							<xs:documentation>Either a Laplace transform analog response in rad/sec or Hertz, or
-								a digital Z-transform (e.g. for IIR filters).
+              <xs:documentation>
+                One of three allowable strings should be selected.
+                For an analog stage this should be the units of the poles and zeros of
+                the Laplace Transform, either:
+                "LAPLACE (RADIANS/SECOND)" or "LAPLACE (HERTZ)".
+                For a digial z-transform (e.g., for an IIR filter), this should be
+                "DIGITAL (Z-TRANSFORM)"
+							</xs:documentation>
+              <xs:documentation>Example: &lt;PzTransferFunctionType&gt;"LAPLACE (RADIANS/SECOND)"&lt;/PzTransferFunctionType&gt;"
 							</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
