@@ -677,8 +677,6 @@
 						<xs:annotation>
               <xs:documentation>
                 Allowable values are:"LAPLACE (RADIANS/SECOND)", "LAPLACE (HERTZ)", "DIGITAL (Z-TRANSFORM)".
-              </xs:documentation>
-              <xs:documentation>
                 For an analog stage this should be the units of the poles and zeros of
                 the Laplace Transform, either:
                 "LAPLACE (RADIANS/SECOND)" or "LAPLACE (HERTZ)".
