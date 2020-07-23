@@ -1550,12 +1550,10 @@
 		<xs:sequence>
 			<xs:element name="Description" type="xs:string" minOccurs="0">
 				<xs:annotation>
-          <xs:documentation>
-            LevelDefault: Description of the Network, Station, or Channel
-					  LevelChoice:N Description of the Network
-					  LevelChoice:S Description of the Station
-					  LevelChoice:C Description of the Channel
-					</xs:documentation>
+          <xs:documentation>Description of the Network, Station, or Channel</xs:documentation>
+          <xs:documentation>LevelChoice:N Description of the Network</xs:documentation>
+          <xs:documentation>LevelChoice:S Description of the Station</xs:documentation>
+          <xs:documentation>LevelChoice:C Description of the Channel</xs:documentation>
 					<xs:documentation>Example:&lt;Description&gt;This is a description&lt;/Description&gt;</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -1577,33 +1575,27 @@
 		</xs:sequence>
 		<xs:attribute name="code" type="xs:string" use="required">
 			<xs:annotation>
-        <xs:documentation>
-          LevelDefault: This is the default code description Example:Default code example
-          LevelChoice:N Name of Network Example:code='IU'
-          LevelChoice:S Name of Station Example:code='ANMO'
-          LevelChoice:C Name of Channel Example:code='BHZ'
-        </xs:documentation>
+        <xs:documentation>Example:code='IU' or code='ANMO'</xs:documentation>
+        <xs:documentation>LevelChoice:N Name of Network Example:code='IU'</xs:documentation>
+        <xs:documentation>LevelChoice:S Name of Station Example:code='ANMO'</xs:documentation>
+        <xs:documentation>LevelChoice:C Name of Channel Example:code='BHZ'</xs:documentation>
       </xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="startDate" type="xs:dateTime">
 			<xs:annotation>
 				<xs:documentation>Start date of network/station/channel epoch </xs:documentation>
-        <xs:documentation>
-          LevelDefault: Start date of network/station/channel epoch
-          LevelChoice:N Start date of network
-          LevelChoice:S Start date of station epoch
-          LevelChoice:C Start date of channel epoch
-        </xs:documentation>
+        <xs:documentation>LevelChoice:N Start date of network</xs:documentation>
+        <xs:documentation>LevelChoice:S Start date of station epoch</xs:documentation>
+        <xs:documentation>LevelChoice:C Start date of channel epoch</xs:documentation>
         <xs:documentation>Example:startDate=2016-07-01T00:00:00</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="endDate" type="xs:dateTime">
 			<xs:annotation>
-        <xs:documentation>
-          LevelDefault: End date of network/station/channel epoch
-          LevelChoice:N End date of network.
-          LevelChoice:S End date of station epoch
-          LevelChoice:C End date of channel epoch</xs:documentation>
+        <xs:documentation>End date of network/station/channel epoch</xs:documentation>
+        <xs:documentation>LevelChoice:N End date of network</xs:documentation>
+        <xs:documentation>LevelChoice:S End date of station epoch</xs:documentation>
+        <xs:documentation>LevelChoice:C End date of channel epoch</xs:documentation>
         <xs:documentation>Example:endDate=2018-01-27T00:00:00</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
