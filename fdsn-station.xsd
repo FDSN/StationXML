@@ -564,7 +564,15 @@
 				</xs:annotation>
 				<xs:sequence>
 					<xs:choice>
-						<xs:element name="PolesZeros" type="fsx:PolesZerosType" minOccurs="0"/>
+						<xs:element name="PolesZeros" type="fsx:PolesZerosType" minOccurs="0">
+		          <xs:annotation>
+                <xs:documentation>
+                  Response stage described by the complex poles and zeros of the Laplace Transform (or z-transform) 
+                  of the transfer function for this stage.
+                </xs:documentation>
+		          </xs:annotation>
+						</xs:element>
+
 						<xs:element name="Coefficients" type="fsx:CoefficientsType" minOccurs="0"/>
 						<xs:element name="ResponseList" type="fsx:ResponseListType" minOccurs="0"/>
 						<xs:element name="FIR" type="fsx:FIRType" minOccurs="0">
@@ -662,9 +670,6 @@
 		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="PolesZerosType">
-		<xs:annotation>
-			<xs:documentation>Response type for complex poles and zeros.</xs:documentation>
-		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseFilterType">
 				<xs:sequence>
@@ -694,8 +699,16 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Zero" type="fsx:PoleZeroType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="Pole" type="fsx:PoleZeroType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Zero" type="fsx:PoleZeroType" minOccurs="0" maxOccurs="unbounded">
+		        <xs:annotation>
+			        <xs:documentation>Complex zero of the polezero stage.</xs:documentation>
+		        </xs:annotation>
+					</xs:element>
+					<xs:element name="Pole" type="fsx:PoleZeroType" minOccurs="0" maxOccurs="unbounded">
+		        <xs:annotation>
+			        <xs:documentation>Complex pole of the polezero stage.</xs:documentation>
+		        </xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1188,11 +1201,6 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="PoleZeroType">
-		<xs:annotation>
-			<xs:documentation>
-        Complex numbers used to store the poles and zeros of a PolesZeros response stage type.
-			</xs:documentation>
-		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Real" type="fsx:FloatNoUnitType">
 				<xs:annotation>
@@ -1205,7 +1213,12 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute name="number" type="xs:integer"/>
+		<xs:attribute name="number" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>The position index of the pole (or zero) in the array of poles[] (or zeros[])</xs:documentation>
+          <xs:documentation>Example:&lt;Pole number=&apos;1&apos;&gt;</xs:documentation>
+				</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:simpleType name="CounterType">
 		<xs:annotation>
@@ -1429,7 +1442,7 @@
 		<xs:sequence>
 			<xs:element name="Description" type="xs:string" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation> The description of the response</xs:documentation>
+          <xs:documentation> The description of the filter/stage/response</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="InputUnits" type="fsx:UnitsType">
