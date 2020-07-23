@@ -410,8 +410,9 @@
 		<xs:sequence>
 			<xs:element name="Value" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>A scalar that, when applied to the data values, converts the
-						data to different units (e.g. Earth units)
+          <xs:documentation>
+            A scalar value representing the amount of amplification or diminuition, if any,
+            the current stage applies to the input signal.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -538,7 +539,7 @@
 		</xs:sequence>
 		<xs:attribute name="resourceId" type="xs:string" use="optional">
 			<xs:annotation>
-				<xs:documentation>An identifier that serves to unique identify this resource.
+				<xs:documentation> An identifier that serves to uniquely identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
 					It should be expected that equipment with the same ID should indicate the same information/be
@@ -607,7 +608,7 @@
 			<xs:annotation>
 				<xs:documentation> An identifier that serves to uniquely identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
-					that generated the document. Also, we recommend using a prefix, like GENERATOR:Meaningful ID.
+					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
 					It should be expected that equipment with the same ID should indicate the same information/be
 					derived from the same base instruments.
 				</xs:documentation>
@@ -689,7 +690,7 @@
 					<xs:element name="NormalizationFrequency" type="fsx:FrequencyType">
 						<xs:annotation>
 							<xs:documentation>Frequency at which the NormalizationFactor is valid.
-								This should be the same for all stages adn within the passband, if any.
+								This should be the same for all stages and within the passband, if any.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -1457,7 +1458,7 @@
 		</xs:sequence>
 		<xs:attribute name="resourceId" type="xs:string">
 			<xs:annotation>
-				<xs:documentation> An identifier that serves to unique identify this resource.
+				<xs:documentation> An identifier that serves to uniquely identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
 					It should be expected that equipment with the same ID should indicate the same information/be
@@ -1524,7 +1525,7 @@
 		</xs:sequence>
 		<xs:attribute name="resourceId" type="xs:string">
 			<xs:annotation>
-				<xs:documentation> An identifier that serves to unique identify this resource.
+				<xs:documentation> An identifier that serves to uniquely identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
 					It should be expected that equipment with the same ID should indicate the same information/be
