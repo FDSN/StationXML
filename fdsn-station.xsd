@@ -683,7 +683,7 @@
                 For a digial z-transform (e.g., for an IIR filter), this should be
                 "DIGITAL (Z-TRANSFORM)"
 							</xs:documentation>
-              <xs:documentation>Example: &lt;PzTransferFunctionType&gt;"LAPLACE (RADIANS/SECOND)"&lt;/PzTransferFunctionType&gt;"
+              <xs:documentation>Example: &lt;PzTransferFunctionType&gt;LAPLACE (RADIANS/SECOND)&lt;/PzTransferFunctionType&gt;"
 							</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
