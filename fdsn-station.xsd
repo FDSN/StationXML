@@ -1178,16 +1178,18 @@
 		<xs:sequence>
 			<xs:element name="SampleRate" type="fsx:SampleRateType">
 		    <xs:annotation>
-			    <xs:documentation>Sample rate in samples per second.</xs:documentation>
-          <xs:documentation>SampleRate is optional unless SampleRateRatio is
-            present, in which case it's required.</xs:documentation>
+          <xs:documentation>
+            Sample rate in samples per second.
+            SampleRate is optional unless SampleRateRatio is present, in which case it's required.
+          </xs:documentation>
 		    </xs:annotation>
       </xs:element>
 			<xs:element name="SampleRateRatio" type="fsx:SampleRateRatioType" minOccurs="0">
 		    <xs:annotation>
-			    <xs:documentation>Sample rate expressed as number of samples in a number of
-				    seconds.</xs:documentation>
-          <xs:documentation>If present, then &lt;SampleRate&gt; must also be present</xs:documentation>
+          <xs:documentation>
+            Sample rate expressed as number of samples in a number of seconds.
+            If present, then &lt;SampleRate&gt; must also be present
+          </xs:documentation>
 		    </xs:annotation>
 		  </xs:element>
 		</xs:sequence>
