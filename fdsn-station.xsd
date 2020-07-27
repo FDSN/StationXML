@@ -1181,6 +1181,7 @@
           <xs:documentation>
             Sample rate in samples per second.
             SampleRate is optional unless SampleRateRatio is present, in which case it's required.
+            Example:&lt;SampleRate units='SAMPLES/S'&gt;40.0&lt;/SampleRate&gt;
           </xs:documentation>
 		    </xs:annotation>
       </xs:element>
@@ -1188,7 +1189,12 @@
 		    <xs:annotation>
           <xs:documentation>
             Sample rate expressed as number of samples in a number of seconds.
-            If present, then &lt;SampleRate&gt; must also be present
+            If present, then &lt;SampleRate&gt; must also be present.
+            It can be useful for very slow data (greater than 10 days).
+            Example:&lt;SampleRate&gt;3.859999367e-07&lt;/SampleRate&gt;
+            &lt;SampleRateRatio&gt;&lt;NumberSamples&gt;1&lt;/NumberSamples&gt;
+            &lt;NumberSeconds&gt;2590674&lt;/NumberSeconds&gt;
+            &lt;/SampleRateRatio&gt;
           </xs:documentation>
 		    </xs:annotation>
 		  </xs:element>
