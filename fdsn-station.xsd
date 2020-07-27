@@ -1180,7 +1180,8 @@
 		    <xs:annotation>
           <xs:documentation>
             Sample rate in samples per second.
-            SampleRate is optional unless SampleRateRatio is present, in which case it's required.
+            SampleRate is optional unless SampleRateRatio is present, in which case 
+            SampleRate is required.
             Example:&lt;SampleRate units='SAMPLES/S'&gt;40.0&lt;/SampleRate&gt;
           </xs:documentation>
 		    </xs:annotation>
