@@ -985,7 +985,7 @@
 			<xs:extension base="xs:double">
 				<xs:attribute name="unit" type="xs:string" use="optional">
 				  <xs:annotation>
-            <xs:documentation>The unit of measurement. Use SI unit names and symbols whenever possible
+            <xs:documentation>The unit of measurement. Use *SI* unit names and symbols whenever possible
               (e.g., 'm' instead of 'METERS').</xs:documentation>
             <xs:documentation>Example:unit='SECONDS'</xs:documentation>
             <xs:documentation>ElementChoice:WATERLEVEL Example:unit=&apos;m&apos;</xs:documentation> 
