@@ -200,13 +200,17 @@
 					</xs:element>
 					<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Date and time (UTC) when the station was first installed.</xs:documentation>
+              <xs:documentation>
+                Date and time (UTC) when the station was first installed.
+                Warning:This field is likely to be deprecated in future versions of StationXML
+              </xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="TerminationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date and time (UTC) when the station was terminated or
 								will be terminated. Do not include this field if a termination date is not available or is not relevant.
+                Warning:This field is likely to be deprecated in future versions of StationXML
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -303,11 +307,11 @@
 						<xs:annotation>
 							<xs:documentation>Data type for this channel. One or more &lt;Type&gt; tags
 								can be used to specify the nature of the data this channel collects.
-								For example, &lt;Type&gt;Specific&lt;/Type&gt;,
-								where Type is in {TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG, SYNTHESIZED},
-								and Specific might be {Seismic, Pressure, Temperature, Status of system peripherals, etc.}
+                The value between the &lt;Type&gt; tags must be one of:
+								TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG or SYNTHESIZED.
 							</xs:documentation>
-							<xs:documentation>Example:&lt;HEALTH&gt;Status of system peripherals&lt;/HEALTH&gt;</xs:documentation>
+              <xs:documentation>Example:&lt;Type&gt;CONTINUOUS&lt;/Type&gt;</xs:documentation>
+
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:NMTOKEN">
@@ -350,7 +354,8 @@
 					</xs:element>
 					<xs:element name="CalibrationUnits" type="fsx:UnitsType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Units of calibration</xs:documentation>
+							<xs:documentation>Units of calibration (e.g., 'V' (Volts) or 'A' (amps))</xs:documentation>
+              <xs:documentation>Example: &lt;CalibrationUnits&gt;V&lt;/CalibrationUnits&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Sensor" type="fsx:EquipmentType" minOccurs="0">
@@ -433,17 +438,25 @@
 		<xs:sequence>
 			<xs:element name="FrequencyStart" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>The lowest frequency for which the InstrumentSensitivity is valid.</xs:documentation>
+          <xs:documentation>The lowest frequency for which the InstrumentSensitivity is valid.
+            &lt;FrequencyStart&gt;, &lt;FrequencyEnd&gt; and &lt;FrequencyDBVariation&gt; are not
+            required, however, if one of these is present, then all must be present.
+          </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="FrequencyEnd" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>The highest frequency for which the InstrumentSensitivity is valid.</xs:documentation>
+					<xs:documentation>The highest frequency for which the InstrumentSensitivity is valid.
+            &lt;FrequencyStart&gt;, &lt;FrequencyEnd&gt; and &lt;FrequencyDBVariation&gt; are not
+            required, however, if one of these is present, then all must be present.
+          </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="FrequencyDBVariation" type="xs:double">
 				<xs:annotation>
 					<xs:documentation>Variation in decibels within the specified frequency range.
+            &lt;FrequencyStart&gt;, &lt;FrequencyEnd&gt; and &lt;FrequencyDBVariation&gt; are not
+            required, however, if one of these is present, then all must be present.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -632,7 +645,9 @@
 			<xs:element name="Value" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Comment text.</xs:documentation>
-					<xs:documentation>Example:&lt;Value&gt;GPS clock is lost&lt;/Value&gt;</xs:documentation>
+          <xs:documentation>LevelChoice:N Example:&lt;Value&gt;Temporary network deployment&lt;/Value&gt;</xs:documentation>
+          <xs:documentation>LevelChoice:S Example:&lt;Value&gt;GPS CLock is unlocked&lt;/Value&gt;</xs:documentation>
+          <xs:documentation>LevelChoice:C Example:&lt;Value&gt;Large number of spikes&lt;/Value&gt;</xs:documentation>
 			  </xs:annotation>
       			</xs:element>
 			<xs:element name="BeginEffectiveTime" type="xs:dateTime" minOccurs="0">
@@ -1191,7 +1206,8 @@
           <xs:documentation>
             Sample rate expressed as number of samples in a number of seconds.
             If present, then &lt;SampleRate&gt; must also be present.
-            It can be useful for very slow data (greater than 10 days).
+            It can be useful for very slow data (e.g., greater than 10 days),
+            since it allows for greater precision in the stored value.
             Example:&lt;SampleRate&gt;3.859999367e-07&lt;/SampleRate&gt;
             &lt;SampleRateRatio&gt;&lt;NumberSamples&gt;1&lt;/NumberSamples&gt;
             &lt;NumberSeconds&gt;2590674&lt;/NumberSeconds&gt;
@@ -1649,7 +1665,7 @@
         <xs:documentation>A code use for display or association</xs:documentation>
         <xs:documentation>
           LevelDefault: A code use for display or association
-          LevelChoice:N Example:alternateCode='IX'
+          LevelChoice:N Example:alternateCode='GSN'
           LevelChoice:S Example:alternateCode='ALQ'
           LevelChoice:C Example:alternateCode='Z'
         </xs:documentation>
