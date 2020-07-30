@@ -983,10 +983,11 @@
 			<xs:extension base="xs:double">
 				<xs:attribute name="unit" type="xs:string" use="optional">
 				  <xs:annotation>
-            <xs:documentation>The unit of measurement. Use SI unit names and symbols whenever possible.</xs:documentation>
+            <xs:documentation>The unit of measurement. Use SI unit names and symbols whenever possible
+              (e.g., 'm' instead of 'METERS').</xs:documentation>
             <xs:documentation>Example:unit='SECONDS'</xs:documentation>
-            <xs:documentation>ElementChoice:WATERLEVEL Example:unit=&apos;METERS&apos;</xs:documentation> 
-            <xs:documentation>ElementChoice:AMPLITUDE Example:unit=&apos;METERS&apos;</xs:documentation>
+            <xs:documentation>ElementChoice:WATERLEVEL Example:unit=&apos;m&apos;</xs:documentation> 
+            <xs:documentation>ElementChoice:AMPLITUDE Example:unit=&apos;m&apos;</xs:documentation>
 				  </xs:annotation>
 				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
@@ -1155,11 +1156,11 @@
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:restriction base="fsx:FloatType">
-				<xs:attribute name="unit" type="xs:string" use="optional" default="METERS">
+				<xs:attribute name="unit" type="xs:string" use="optional" default="m">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example:unit='METERS'
+						<xs:documentation>Example:unit='m'
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1448,12 +1449,12 @@
 	</xs:simpleType>
 	<xs:complexType name="UnitsType">
 		<xs:annotation>
-			<xs:documentation>A type to document units, SI whenever possible.</xs:documentation>
+			<xs:documentation>A type to document units; use SI whenever possible.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Name" type="xs:string">
 				<xs:annotation>
-					<xs:documentation>Symbol or name of units, e.g. "m/s", "V", "Pa", "C".  SI whenever possible.</xs:documentation>
+					<xs:documentation>Symbol or name of units, e.g. "m/s", "V", "Pa", "C".  Use SI whenever possible.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Description" type="xs:string" minOccurs="0">
