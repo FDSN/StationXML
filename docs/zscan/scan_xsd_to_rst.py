@@ -39,8 +39,9 @@ def printit(element):
     print(".. _%s:\n" % href)
 
     # MTH: Hack to fix: SampleRate is not required *unless* SampleRateRatio is present:
-    if element.name == 'SampleRate':
-        #print("MTH: Element.name=%s required=%s" % (element.name, element.required))
+    elements_in_groups = ['SampleRate', 'SampleRateRatio', 'FrequencyStart', 'FrequencyEnd',
+                          'FrequencyDBVariation']
+    if element.name in elements_in_groups:
         element.required = False
 
     if element.required:

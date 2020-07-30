@@ -208,8 +208,8 @@
 						<xs:annotation>
 							<xs:documentation>Date and time (UTC) when the station was terminated or
 								will be terminated. Do not include this field if a termination date is not available or is not relevant.
-                Warning:This field is likely to be deprecated in future versions of StationXML
 							</xs:documentation>
+              <xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="TotalNumberChannels" type="fsx:CounterType" minOccurs="0">
