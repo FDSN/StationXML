@@ -200,10 +200,8 @@
 					</xs:element>
 					<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
-              <xs:documentation>
-                Date and time (UTC) when the station was first installed.
-                Warning:This field is likely to be deprecated in future versions of StationXML
-              </xs:documentation>
+              <xs:documentation>Date and time (UTC) when the station was first installed.</xs:documentation>
+              <xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="TerminationDate" type="xs:dateTime" minOccurs="0">
@@ -354,7 +352,8 @@
 					</xs:element>
 					<xs:element name="CalibrationUnits" type="fsx:UnitsType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Units of calibration (e.g., 'V' (Volts) or 'A' (amps))</xs:documentation>
+							<xs:documentation>Units of calibration (e.g., V (for Volts) or A (for amps))</xs:documentation>
+							<xs:documentation>Use *SI* units when possible</xs:documentation>
               <xs:documentation>Example: &lt;CalibrationUnits&gt;V&lt;/CalibrationUnits&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
