@@ -1217,20 +1217,8 @@
 	</xs:complexType>
 	<xs:complexType name="SampleRateRatioType">
 		<xs:sequence>
-			<xs:element name="NumberSamples" type="xs:integer">
-					<xs:annotation>
-						<xs:documentation>
-              Integer number of samples that span a number of seconds.
-						</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-			<xs:element name="NumberSeconds" type="xs:integer">
-					<xs:annotation>
-						<xs:documentation>
-              Integer number of seconds that span a number of samples.
-						</xs:documentation>
-					</xs:annotation>
-				</xs:element>
+			<xs:element name="NumberSamples" type="xs:integer"/>
+			<xs:element name="NumberSeconds" type="xs:integer"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="PoleZeroType">
