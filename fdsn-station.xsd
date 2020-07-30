@@ -354,7 +354,9 @@
 						<xs:annotation>
 							<xs:documentation>Units of calibration (e.g., V (for Volts) or A (for amps))</xs:documentation>
 							<xs:documentation>Use *SI* units when possible</xs:documentation>
-              <xs:documentation>Example: &lt;CalibrationUnits&gt;V&lt;/CalibrationUnits&gt;</xs:documentation>
+              <xs:documentation>Example: &lt;CalibrationUnits&gt;&lt;Name&gt;V&lt;/Name&gt;
+                                &lt;Description&gt;Volts&lt;/Description&gt;
+                                &lt;/CalibrationUnits&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Sensor" type="fsx:EquipmentType" minOccurs="0">
