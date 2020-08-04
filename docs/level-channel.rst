@@ -159,7 +159,7 @@
 
    .. container:: example
 
-      **Example**: <Value>GPS clock is lost</Value>
+      **Example**: <Value>Large number of spikes</Value>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -724,7 +724,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='METERS'" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='m'" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -764,7 +764,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='METERS'" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='m'" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -884,7 +884,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use SI unit names and symbols whenever possible.", "unit='METERS'" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit='m'" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -914,11 +914,11 @@
 
    .. container:: description
 
-      Data type for this channel. One or more <Type> tags can be used to specify the nature of the data this channel collects. For example, <Type>Specific</Type>, where Type is in {TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG, SYNTHESIZED}, and Specific might be {Seismic, Pressure, Temperature, Status of system peripherals, etc.}.
+      Data type for this channel. One or more <Type> tags can be used to specify the nature of the data this channel collects. The value between the <Type> tags must be one of: TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG or SYNTHESIZED.
 
    .. container:: example
 
-      **Example**: <HEALTH>Status of system peripherals</HEALTH>
+      **Example**: <Type>CONTINUOUS</Type>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -979,7 +979,7 @@
 
    .. container:: description
 
-      Sample rate expressed as number of samples in a number of seconds. If present, then <SampleRate> must also be present. It can be useful for very slow data (greater than 10 days).
+      Sample rate expressed as number of samples in a number of seconds. If present, then <SampleRate> must also be present. It can be useful for very slow data (e.g., greater than 10 days), since it allows for greater precision in the stored value.
 
    .. container:: example
 
@@ -1008,6 +1008,10 @@
 
 					type:`integer <appendices.html#glossary-integer>`_
 
+   .. container:: description
+
+      Integer number of samples that span a number of seconds.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -1030,6 +1034,10 @@
 			.. only:: html
 
 					type:`integer <appendices.html#glossary-integer>`_
+
+   .. container:: description
+
+      Integer number of seconds that span a number of samples.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1086,7 +1094,11 @@
 
    .. container:: description
 
-      Units of calibration.
+      Units of calibration (e.g., V (for Volts) or A (for amps)).
+
+   .. container:: example
+
+      **Example**:  <CalibrationUnits><Name>V</Name> <Description>Volts</Description> </CalibrationUnits>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1113,7 +1125,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
