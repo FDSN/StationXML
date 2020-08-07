@@ -29,7 +29,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode='IX' " 
+      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode='GSN' " 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Network ", "code='IU'" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of network", "endDate=2018-01-27T00:00:00" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "historicalCode='II' " 
@@ -162,7 +162,7 @@
 
    .. container:: example
 
-      **Example**: <Value>GPS clock is lost</Value>
+      **Example**: <Value>Temporary network deployment</Value>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`

@@ -140,7 +140,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -211,7 +211,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -245,7 +245,7 @@
 
 .. _response-instrumentsensitivity-frequencystart:
 
-<FrequencyStart>     :red:`required`
+<FrequencyStart>
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. container:: hatnote hatnote-gray
 
@@ -265,14 +265,14 @@
 
    .. container:: description
 
-      The lowest frequency for which the InstrumentSensitivity is valid.
+      The lowest frequency for which the InstrumentSensitivity is valid. <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not required, however, if one of these is present, then all must be present.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _response-instrumentsensitivity-frequencyend:
 
-<FrequencyEnd>     :red:`required`
+<FrequencyEnd>
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. container:: hatnote hatnote-gray
 
@@ -292,14 +292,14 @@
 
    .. container:: description
 
-      The highest frequency for which the InstrumentSensitivity is valid.
+      The highest frequency for which the InstrumentSensitivity is valid. <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not required, however, if one of these is present, then all must be present.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _response-instrumentsensitivity-frequencydbvariation:
 
-<FrequencyDBVariation>     :red:`required`
+<FrequencyDBVariation>
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. container:: hatnote hatnote-gray
 
@@ -319,7 +319,7 @@
 
    .. container:: description
 
-      Variation in decibels within the specified frequency range.
+      Variation in decibels within the specified frequency range. <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not required, however, if one of these is present, then all must be present.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -425,7 +425,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -496,7 +496,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -874,7 +874,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -945,7 +945,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1379,7 +1379,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1450,7 +1450,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1683,7 +1683,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1754,7 +1754,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1867,7 +1867,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use SI unit names and symbols whenever possible.", "unit='METERS'" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit='m'" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -2005,7 +2005,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2076,7 +2076,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2303,7 +2303,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use SI unit names and symbols whenever possible.", "unit='SECONDS'" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit='SECONDS'" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -2343,7 +2343,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use SI unit names and symbols whenever possible.", "unit='SECONDS'" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit='SECONDS'" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -2516,7 +2516,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2587,7 +2587,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`

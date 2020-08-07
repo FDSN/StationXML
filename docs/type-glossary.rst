@@ -44,6 +44,7 @@
      -
 
    * .. _type-glossary-decimal:
+
      - .. container::
              :name: glossary-decimal
 
@@ -53,6 +54,7 @@
        * 53.7
 
    * .. _type-glossary-double:
+
      - .. container::
              :name: glossary-double
 
@@ -62,6 +64,7 @@
        * -32
 
    * .. _type-glossary-integer:
+
      - .. container::
              :name: glossary-integer
 
@@ -70,6 +73,7 @@
      - ...-2,-1,0,1, 2, ...
 
    * .. _type-glossary-restrictedstatustype:
+
      - .. container::
              :name: glossary-restrictedstatustype
 
@@ -79,6 +83,7 @@
        * closed
 
    * .. _type-glossary-string:
+
      - .. container::
              :name: glossary-string
 
@@ -88,6 +93,7 @@
 
 
    * .. _type-glossary-nmtoken:
+
      - .. container::
              :name: glossary-nmtoken
 

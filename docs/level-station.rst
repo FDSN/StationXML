@@ -158,7 +158,7 @@
 
    .. container:: example
 
-      **Example**: <Value>GPS clock is lost</Value>
+      **Example**: <Value>GPS CLock is unlocked</Value>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -656,7 +656,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='METERS'" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='m'" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -903,7 +903,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use SI unit names and symbols whenever possible.", "unit='METERS'" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit='m'" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -1554,6 +1554,10 @@
 
       Station :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` CreationDate
 
+   .. admonition:: Warning
+
+      This field is likely to be deprecated in future versions of StationXML
+
    .. container:: type
 
 			.. only:: latex
@@ -1580,6 +1584,10 @@
    .. container:: crumb
 
       Station :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` TerminationDate
+
+   .. admonition:: Warning
+
+      This field is likely to be deprecated in future versions of StationXML
 
    .. container:: type
 
