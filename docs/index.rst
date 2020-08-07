@@ -22,7 +22,7 @@ Welcome to the StationXML documentation!
    response.rst
    tools.rst
    appendices.rst
-   Download PDF <http://docs.fdsn.org/_/downloads/stationxml/en/latest/pdf/>
+   Specification home <https://www.fdsn.org/xml/station/>
    FDSN home <https://www.fdsn.org/>
 
 Indices and tables
