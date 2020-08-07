@@ -34,4 +34,3 @@ Indices and tables
 * :doc:`response-theory`
 * :doc:`tools`
 * :doc:`appendices`
-* `Download PDF <http://docs.fdsn.org/_/downloads/stationxml/en/latest/pdf/>`_
