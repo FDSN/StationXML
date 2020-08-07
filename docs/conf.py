@@ -27,7 +27,7 @@ author = 'International FDSN'
 version = '1.1.0'
 
 # Documentation version, schema + date
-full_version = version + ' (2020-08-01)'
+doc_version = version + ' (2020-08-01)'
 
 def setup(app):
     app.add_css_file('css/custom.css')
@@ -54,7 +54,7 @@ latex_maketitle = r'''
     \sphinxlogo
     \sffamily\bfseries
     {\Huge '''+project+r''' }\par
-    {\itshape\large '''+full_version+r''' \releaseinfo}\par
+    {\itshape\large '''+doc_version+r''' \releaseinfo}\par
     \vspace{25pt}
     {\Large
       \begin{tabular}[t]{c}
