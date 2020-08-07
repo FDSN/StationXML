@@ -92,7 +92,7 @@ located at:
    `<https://www.fdsn.org/xml/station/fdsn-station-1.1.xsd>`_
 
 
-How This Documentation is Organized
+Documentation Organization
 =========================================
 
 This documentation has 5 parts:
@@ -140,10 +140,17 @@ transformation or loss of information as possible, while at the same time simpli
 metadata representation when possible. Also, content and clarification has been added where
 lacking in the SEED standard.
 
-
-ChangeLog
-=======================
-
-History of changes to FDSN schema
+StationXML Schema Changes
+=================================
 
 .. include:: changelog.rst
+
+Documentation Changes
+=================================
+
+Changes to this documentation.
+
+Version 2020-08-01:
+
+- Initial StationXML documentation.
+

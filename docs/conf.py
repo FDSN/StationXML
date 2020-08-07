@@ -21,16 +21,13 @@
 
 project = 'StationXML'
 copyright = '2020, International FDSN'
-author = 'FDSN'
+author = 'International FDSN'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
-
 version = '1.1.0'
 
-author = ''
-
-date= 'Jul 29, 2020'
+# Documentation version, schema + date
+full_version = version + ' (2020-08-01)'
 
 def setup(app):
     app.add_css_file('css/custom.css')
@@ -57,14 +54,14 @@ latex_maketitle = r'''
     \sphinxlogo
     \sffamily\bfseries
     {\Huge '''+project+r''' }\par
-    {\itshape\large '''+release+r''' \releaseinfo}\par
+    {\itshape\large '''+full_version+r''' \releaseinfo}\par
     \vspace{25pt}
     {\Large
       \begin{tabular}[t]{c}
         '''+author+r'''
       \end{tabular}\kern-\tabcolsep}\par
     \vspace{25pt}
-    '''+date+r''' \par
+    \par
   \end{flushright}
   \setcounter{footnote}{0}
   \let\thanks\relax\let\maketitle\relax
@@ -88,7 +85,9 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','example_1.rst','examples','level-preamble.rst','level-network.rst','level-channel.rst','level-response.rst','level-station.rst', 'response-practical.rst']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','example_1.rst','examples',
+                    'level-preamble.rst','level-network.rst','level-channel.rst',
+                    'level-response.rst','level-station.rst','response-practical.rst']
 
 
 # -- Options for HTML output -------------------------------------------------
