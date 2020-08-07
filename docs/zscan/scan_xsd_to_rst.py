@@ -11,7 +11,6 @@ from xmlschema.validators.complex_types import XsdComplexType
 from xmlschema.validators.facets import *
 
 
-
 def printit(element):
 
     global first_time

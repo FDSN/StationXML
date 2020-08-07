@@ -20,6 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'StationXML'
+copyright = '2020, International FDSN'
+author = 'FDSN'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
@@ -32,6 +34,7 @@ date= 'Jul 29, 2020'
 
 def setup(app):
     app.add_css_file('css/custom.css')
+    app.add_css_file('css/theme_overrides.css')
     app.add_js_file('js/custom.js')
 
 # -- General configuration ---------------------------------------------------
@@ -94,12 +97,15 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','example_1.rst','examples
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-#
 html_theme_options = {
     'navigation_depth': 0,
     'sticky_navigation': False,
 }
-html_logo='_images/fdsn-logo.png'
+html_logo='_static/FDSN-logo.png'
+html_favicon = '_static/favicon.ico'
+html_title = 'FDSN StationXML'
+html_show_sphinx = False
+html_search_language = 'en'
 
 navigation_depth = -2
 
@@ -107,14 +113,3 @@ navigation_depth = -2
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
-# These paths are either relative to html_static_path
-# or fully qualified paths (eg. https://...)
-html_css_files = [
-    'css/custom.css',  # MTH: this was already added above
-    'css/theme_overrides.css',
-]
-
-html_js_files = [
-    'js/custom.js',
-]

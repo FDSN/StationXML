@@ -26,8 +26,7 @@ Welcome to StationXML-Docs's documentation!
    response.rst
    tools.rst
    appendices.rst
-   Download PDF <https://stationxml-doc.readthedocs.io/_/downloads/en/latest/pdf/>
-
+   Download PDF <http://docs.fdsn.org/_/downloads/stationxml/en/latest/pdf/>
 
 Indices and tables
 ==================
@@ -40,4 +39,4 @@ Indices and tables
 * :doc:`response-theory`
 * :doc:`tools`
 * :doc:`appendices`
-* `Download PDF <https://stationxml-doc.readthedocs.io/_/downloads/en/latest/pdf/>`_
+* `Download PDF <http://docs.fdsn.org/_/downloads/stationxml/en/latest/pdf/>`_
