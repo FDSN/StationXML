@@ -654,20 +654,7 @@ import wget
 import os
 import sys
 
-schemafile = 'fdsn-schema/fdsn-station.xsd'
-
-test = True
-test = False
-
-try:
-    url = "https://raw.githubusercontent.com/iris-edu/StationXML/docs/fdsn-station.xsd"
-    if not test:
-        if os.path.isfile(schemafile):
-            target = "%s.0" % schemafile
-            shutil.move(schemafile, target)
-        wget.download(url, schemafile)
-except:
-    raise
+schemafile = '../../fdsn-station.xsd'
 
 schema = xmlschema.XMLSchema(schemafile)
 
@@ -676,7 +663,6 @@ level_xpaths = ['fsx:FDSNStationXML',
                 'fsx:FDSNStationXML/fsx:Network/fsx:Station',
                 'fsx:FDSNStationXML/fsx:Network/fsx:Station/fsx:Channel',
                 'fsx:FDSNStationXML/fsx:Network/fsx:Station/fsx:Channel/fsx:Response']
-
 
 stop_element = None
 
