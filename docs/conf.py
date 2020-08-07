@@ -19,21 +19,18 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'StationXML-Docs'
-#copyright = '2020, Mike Hagerty and Maura Allen'
-#author = 'Mike Hagerty and Maura Allen'
+project = 'StationXML'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
 
-version = 'v.1.1.0'
+version = '1.1.0'
 
 author = ''
 
 date= 'Jul 29, 2020'
 
 def setup(app):
-#   app.add_stylesheet('css/custom.css')
     app.add_css_file('css/custom.css')
     app.add_js_file('js/custom.js')
 
@@ -96,10 +93,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','example_1.rst','examples
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-#html_theme = 'alabaster'
-#html_theme = 'cloud_sptheme'
-#html_theme = 'cloud'
-#html_theme = 'nature'
 html_theme = 'sphinx_rtd_theme'
 #
 html_theme_options = {

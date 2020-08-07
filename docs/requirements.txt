@@ -1,6 +1,5 @@
 wget==3.2
 xmlschema==1.2.2
-alabaster==0.7.12
 docutils==0.15.2
 Sphinx==2.3.0
 sphinx-rtd-theme==0.5.0rc1
