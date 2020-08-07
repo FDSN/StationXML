@@ -28,9 +28,6 @@ Welcome to the StationXML documentation!
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 * :doc:`introduction`
 * :doc:`reference`
 * :doc:`response-theory`
