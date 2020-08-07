@@ -1,45 +1,15 @@
 
+/* FDSN-style font baseline */
 body {
   font-family: "Quattrocento Sans", Avenir, Helvetica, Arial, sans-serif;
 }
 
-h3, h4, h5, h6 {
-    display: block;
-    width: 100%;
-    background-color: #e8e8e8 ;
-    margin-bottom: 0 ;
-    margin-top: 0.9em ;
-    padding-left: 0.5em ;
-    padding-right: 0.5em ;
-    padding-top: 0.2em ;
-    padding-bottom: 0.2em ;
-}
-h2 {
-    display: block;
-    width: 100%;
-    /*background-color: #D6D6D6 ;*/
-    background-color: #e8e8e8 ;
-    margin-bottom: 0 ;
-    margin-top: 0.9em ;
-    padding-left: 0.5em ;
-    padding-right: 0.5em ;
-    padding-top: 0.2em ;
-    padding-bottom: 0.2em ;
-}
-h1 {
-    display: block;
-    width: 100%;
-    /*background-color: #2980b9 ;*/
-    background-color: #0088cc ;
-    margin-bottom: 0 ;
-    margin-top: 0.9em ;
-    padding-left: 0.5em ;
-    padding-right: 0.5em ;
-    padding-top: 0.2em ;
-    padding-bottom: 0.2em ;
-    color:white;
+/* Keep the logo from dominating the upper search pane */
+.logo {
+  max-height: 80px;
 }
 
+/* Set colors for search and navigation sidebar */
 .wy-side-nav-search,
 .wy-side-nav-search > a,
 .wy-side-nav-search > div.version,
@@ -91,6 +61,44 @@ h1 {
 
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3.current > a {
   background: white;
+}
+
+/* Stuff ISTI set */
+h3, h4, h5, h6 {
+    display: block;
+    width: 100%;
+    background-color: #e8e8e8 ;
+    margin-bottom: 0 ;
+    margin-top: 0.9em ;
+    padding-left: 0.5em ;
+    padding-right: 0.5em ;
+    padding-top: 0.2em ;
+    padding-bottom: 0.2em ;
+}
+h2 {
+    display: block;
+    width: 100%;
+    /*background-color: #D6D6D6 ;*/
+    background-color: #e8e8e8 ;
+    margin-bottom: 0 ;
+    margin-top: 0.9em ;
+    padding-left: 0.5em ;
+    padding-right: 0.5em ;
+    padding-top: 0.2em ;
+    padding-bottom: 0.2em ;
+}
+h1 {
+    display: block;
+    width: 100%;
+    /*background-color: #2980b9 ;*/
+    background-color: #0088cc ;
+    margin-bottom: 0 ;
+    margin-top: 0.9em ;
+    padding-left: 0.5em ;
+    padding-right: 0.5em ;
+    padding-top: 0.2em ;
+    padding-bottom: 0.2em ;
+    color:white;
 }
 
 .MathJax_Display{
