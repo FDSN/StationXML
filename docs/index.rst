@@ -15,7 +15,6 @@ Welcome to the StationXML documentation!
 
 .. toctree::
    :glob:
-   :caption: Contents:
    :numbered: 3
 
    introduction.rst
@@ -24,6 +23,7 @@ Welcome to the StationXML documentation!
    tools.rst
    appendices.rst
    Download PDF <http://docs.fdsn.org/_/downloads/stationxml/en/latest/pdf/>
+   FDSN home <https://www.fdsn.org/>
 
 Indices and tables
 ==================
