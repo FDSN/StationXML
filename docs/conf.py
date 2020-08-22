@@ -27,6 +27,7 @@ author = 'International FDSN'
 version = '1.1.0'
 
 # Documentation version, schema + date
+# ALSO UPDATE the documentation version in introduction.rst
 doc_version = version + ' (2020-08-22)'
 
 # -- General configuration ---------------------------------------------------

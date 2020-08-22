@@ -150,7 +150,7 @@ Documentation Changes
 
 Changes to this documentation.
 
-Version 2020-08-01:
+Version 2020-08-22:
 
 - Initial StationXML documentation.
 
