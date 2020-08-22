@@ -15,7 +15,7 @@
 
    .. container:: description
 
-      The complete instrument response for this channel that expresses the effect of the geophysical instrumentation used to record the input ground motion. The information can be used to convert raw data to Earth at a specified frequency or within a range of frequencies. It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present.
+      The complete instrument response for this channel that expresses the effect of the geophysical instrumentation used to record the input ground motion. The information can be used to convert raw data to Earth unit measurement at a specified frequency or within a range of frequencies. It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -354,7 +354,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -764,7 +764,7 @@
 
    .. container:: description
 
-      Type for channel response entry or stage. A full response is represented as a sequence of these stages.
+      Type for channel response entry or stage. A full response is represented as an ordered sequence of these stages.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -775,7 +775,7 @@
       :widths: auto
 
       **number**, :ref:`CounterType<type-glossary>`, :red:`yes`, "Stage sequence number. This is used in all the response blockettes. Start from name='1' and iterate sequentially.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to uniquely identify this response stage. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -803,7 +803,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1308,7 +1308,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1612,7 +1612,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1934,7 +1934,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2445,7 +2445,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`

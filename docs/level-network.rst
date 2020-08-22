@@ -15,7 +15,7 @@
 
    .. container:: description
 
-      The Network container. All station metadata for this network is contained within this element. A Description element may be included with the official network name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation. A Comment element may be included for arbitrary comments.
+      The Network container. All station metadata for this network is contained within this element. A Description element may be included with the official network name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation. A Comment element may be included for additional comments.
 
    .. container:: example
 
@@ -450,7 +450,7 @@
 
    .. container:: description
 
-      Telephone phonenumber.
+      Telephone number.
 
    .. container:: example
 
@@ -803,7 +803,7 @@
 
    .. container:: description
 
-      Telephone phonenumber.
+      Telephone number.
 
    .. container:: example
 

@@ -15,7 +15,7 @@
 
    .. container:: description
 
-      The Station container. All channel metadata for this station is contained within this element. A Description element may be included with the official station name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference. A Comment element may be included for arbitrary comments.
+      The Station container. All channel metadata for this station is contained within this element. A Description element may be included with the official station name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference. A Comment element may be included for additional comments.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -446,7 +446,7 @@
 
    .. container:: description
 
-      Telephone phonenumber.
+      Telephone number.
 
    .. container:: example
 
@@ -889,7 +889,7 @@
 
    .. container:: description
 
-      Elevation of the water surface (in meters) for underwater sites, where 0 is sea level. If you put an ocean-bottom seismometer (OBS) on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
+      Elevation of the water surface (in meters) for underwater sites, where 0 is mean sea level. If you put an ocean-bottom seismometer (OBS) on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
 
    .. container:: example
 
@@ -1176,7 +1176,7 @@
 
    .. container:: description
 
-      Installation date of equipment.
+      Date this equipment was installed.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1203,7 +1203,7 @@
 
    .. container:: description
 
-      Removal date of equipment.
+      Date this equipment was removed.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1230,7 +1230,7 @@
 
    .. container:: description
 
-      A description of the units of the calibration.
+      Date this equipment was calibrated.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1504,7 +1504,7 @@
 
    .. container:: description
 
-      Telephone phonenumber.
+      Telephone number.
 
    .. container:: example
 
