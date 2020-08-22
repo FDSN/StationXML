@@ -3,22 +3,29 @@ StationXML Documentation
 
 ## To generate the html/pdf documents
 
-    >sphinx-build -b html . _build
+    >make html
 
-This will update the html files in _build/
+and/or
 
-## To scan the fdsn xsd to auto-generate the Reference Network | Station | Channel | Response sections:
+    >make latexpdf
 
-    >cd zscan
-    >python scan_xsd_to_rst.py
+or running sphinx-build manually
 
-This will scan the modified fdsn xsd to create the following files:
+    >sphinx-build -b html . _build/html
+
+This will update the html files in _build/html
+
+## To update ReStructuredText documentation generated from the StationXML schema file
+
+    >python3 convert_xsd_to_rst.py ../fdsn-station.xsd .
+
+This will re-generate the following files from the XSD schema document:
  - level-network.rst
  - level-station.rst
  - level-channel.rst
  - level-response.rst
- 
- ## To modify the look and feel of the auto-generated level docs
+
+## To modify the look and feel of the auto-generated level docs
  
  The following css divs are described in:
  _static/css/custom.css

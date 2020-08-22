@@ -9,7 +9,6 @@ Output is written to 4 files for each main level of the schema:
 """
 
 import shutil
-import wget
 import os
 import sys
 import argparse

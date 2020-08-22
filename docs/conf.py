@@ -27,7 +27,7 @@ author = 'International FDSN'
 version = '1.1.0'
 
 # Documentation version, schema + date
-doc_version = version + ' (2020-08-01)'
+doc_version = version + ' (2020-08-22)'
 
 # -- General configuration ---------------------------------------------------
 
