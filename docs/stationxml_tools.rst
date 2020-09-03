@@ -1,7 +1,7 @@
 .. Put any comments here
    Be sure to indent at this level to keep it in comment.
 
-As StationXML files are ordinary ascii files, they may be editted with
+As StationXML files are ordinary text files, they may be editted with
 any text editor (e.g., vi/VIM, TextWrangler, Notepad/Wordpad, etc)
 
 However, StationXML files can become very large and unwieldly as more
