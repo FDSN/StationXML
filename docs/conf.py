@@ -27,8 +27,11 @@ author = 'International FDSN'
 version = '1.1.0'
 
 # Documentation version, schema + date
-# ALSO UPDATE the documentation version in introduction.rst
-doc_version = version + ' (2020-08-22)'
+# ALSO UPDATE the release documentation version in introduction.rst
+doc_version = version + ' (2020-09-02)'
+
+# Allow |doc_version| to be used in RST
+rst_epilog = '.. |doc_version| replace:: %s' % doc_version
 
 # -- General configuration ---------------------------------------------------
 

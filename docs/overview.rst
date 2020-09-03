@@ -2,7 +2,7 @@
    Be sure to indent at this level to keep it in comment.
 
 ****************
-Introduction
+Overview
 ****************
 
 .. include..:: metadata.rst
@@ -10,22 +10,11 @@ Introduction
 Introducing StationXML
 =======================
 
-StationXML is an XML representation of metadata that describes the data collected by
+StationXML is an `XML <https://en.wikipedia.org/wiki/XML>`_ representation of
+`metadata <https://en.wikipedia.org/wiki/Metadata>`_ that describes the data collected by
 geophysical instrumentation.
 
--------
-
-metadata
-   - Information that describes how/where/when data was collected
-   - Data that describes data
-
-XML = eXtensible Markup Language
-   - Designed to be self-descriptive
-   - Commonly used to distribute data over the internet
-
--------
-
-StationXML is defined by a schema that specifies the allowable format of StationXML files.
+StationXML is defined by a schema that specifies the allowable format of StationXML documents.
 
 StationXML Example
 -----------------------
@@ -72,7 +61,7 @@ of a <Station> and a <Station> may not exist outside of a <Network>, etc.).
 The FDSN and StationXML schema
 ----------------------------------
 StationXML was developed through the International Federation of Digital Seismograph Networks
-(FDSN) to provide a standardized format for geophysical metadata.
+(`FDSN <https://www.fdsn.org/`_) to provide a standardized format for geophysical metadata.
 
 Notice that the example StationXML excerpt above contains the following line::
 
@@ -125,7 +114,7 @@ Some History - SEED
 For three decades, the Standard for the Exchange of Earthquake Data
 (`SEED <https://www.fdsn.org/publications/>`_) was the standard
 format for archiving and distributing metadata within the seismological community.
-Once representing file volumes binding metadata to data, a provision was later developed 
+Once representing file volumes binding metadata to data, a provision was later developed
 that allowed SEED metadata to stand on its own and was given the designation 'dataless SEED'.
 
 StationXML was developed through the FDSN (International Federation of Digital Seismograph Networks)
@@ -150,7 +139,11 @@ Documentation Changes
 
 Changes to this documentation.
 
-Version 2020-08-22:
+Version 2020-09-02:
 
 - Initial StationXML documentation.
 
+The initial version of StationXML documentation was prepared by
+`ISTI <https://isti.com>`_ and sponsored by
+`IRIS Data Services <https://ds.iris.edu>`_ and
+`ORFEUS <https://www.orfeus-eu.org/>`_.

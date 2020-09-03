@@ -9,7 +9,9 @@
    :format: latex
 
 Welcome to the StationXML documentation!
-===========================================
+========================================
+
+Version: |doc_version|
 
 ..  :numbered=3:
 
@@ -17,19 +19,19 @@ Welcome to the StationXML documentation!
    :glob:
    :numbered: 3
 
-   Overview <self>
-   introduction.rst
-   reference.rst
-   response.rst
-   tools.rst
-   appendices.rst
+   Contents <self>
+   overview
+   reference
+   response
+   tools
+   appendices
    Specification home <https://www.fdsn.org/xml/station/>
    FDSN home <https://www.fdsn.org/>
 
 Indices and tables
 ==================
 
-* :doc:`introduction`
+* :doc:`overview`
 * :doc:`reference`
 * :doc:`response-theory`
 * :doc:`tools`
