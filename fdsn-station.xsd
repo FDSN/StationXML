@@ -27,6 +27,30 @@
 	versioned and allows the schema to be updated with backward compatible changes (e.g. 1.2)
 	and still validate documents created for previous major versions of the schema (e.g. 1.0).
 
+  Section 2. StationXML Reference of the StationXML documentation is auto-generated
+  from this schema, allowing this schema to be "self-documenting".
+
+  This is achieved by embedding this schema with documentation tags at the appropriate
+  levels. These tags are read by a python script and used to generate the 
+  StationXML Reference.
+
+  In addition, the schema contains special keyword tags within some of the documentation
+  element values that have special meaning:
+
+    1. "Example:" - Text that follows appears after Example for the relevent element
+                    in the StationXML documentation
+
+    2. "Warning:" - Text that follows appears wrapped in an rst admonition wrapper.
+                    It's typically used to indicate features that may be deprecated in the futuer.
+
+    3. "LevelChoice:X" - Where X is one of "N" (network), "S" (station) or "C" (channel).
+                         This is used so that documentation can be specific to level X for
+                         shared XML elements
+
+    4. "ElementChoice:TAG_NAME" - Similar to 3. but allows elements built off a common basetype
+                          to have specific documentation.
+                          For example: <xs:documentation>ElementChoice:WATERLEVEL Example:...
+                            The text after example will only be used for the WATERLEVEL element.
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fsx="http://www.fdsn.org/xml/station/1"
 	targetNamespace="http://www.fdsn.org/xml/station/1" elementFormDefault="qualified"
