@@ -1,6 +1,19 @@
-from pprint import pprint
-import xmlschema
+#!/usr/bin/env python3
 
+"""
+Scan an FDSN StationXML XSD schema file, extract documentation values,
+and convert them to ReStructuredText format with html/latex where needed.
+
+Output is written to 4 files for each main level of the schema:
+  Preamble (root), Network, Station, Channel, Response
+"""
+
+import shutil
+import os
+import sys
+import argparse
+
+import xmlschema
 from xmlschema.validators import XsdComplexType
 from xmlschema.validators.wildcards import XsdAnyElement
 from xmlschema.validators.elements import XsdElement
@@ -11,10 +24,16 @@ from xmlschema.validators.complex_types import XsdComplexType
 from xmlschema.validators.facets import *
 
 
+def write_tree(element, outfile, first_time = True):
+    """Convert to RST and write element and children to output file.
 
-def printit(element):
+    Starting at `element` recursively operate on all child elements,
+    converting them to ReStructured Text and writing to output file.
 
-    global first_time
+    `outfile` specifies the output file as used with print(, file=outfile)
+    `first_time` flag denoting the first element, original caller should
+    not set this.
+    """
 
     headings = ['=', '-', '^', '\'', '\"', '+']
 
@@ -22,21 +41,21 @@ def printit(element):
     space *= " "
 
     if first_time:
-        print(".. Auto-generated rst file from scan of fdsn xsd\n")
+        print(".. Auto-generated rst file from scan of fdsn xsd\n", file=outfile)
 
         for role in ('blue', 'red'): #blue doesn't need to be here atm
-            print(".. role:: %s" % role)
-        print(".. role::  raw-html(raw)\n\t:format: html")
-        print(".. role::  raw-latex(raw)\n\t:format: latex")
-        print()
+            print(".. role:: %s" % role, file=outfile)
+        print(".. role::  raw-html(raw)\n\t:format: html", file=outfile)
+        print(".. role::  raw-latex(raw)\n\t:format: latex", file=outfile)
+        print(file=outfile)
     else:
-        print("\n:raw-latex:`\\noindent\\rule{\\textwidth}{1pt}`\n")
+        print("\n:raw-latex:`\\noindent\\rule{\\textwidth}{1pt}`\n", file=outfile)
 
     href = element.crumb[0].lower()
     for c in element.crumb[1:]:
         href = href + "-" + c.lower()
 
-    print(".. _%s:\n" % href)
+    print(".. _%s:\n" % href, file=outfile)
 
     # MTH: Hack to fix: SampleRate is not required *unless* SampleRateRatio is present:
     elements_in_groups = ['SampleRate', 'SampleRateRatio', 'FrequencyStart', 'FrequencyEnd',
@@ -45,22 +64,22 @@ def printit(element):
         element.required = False
 
     if element.required:
-        print("<%s>     :red:`required`" % (element.name))
+        print("<%s>     :red:`required`" % (element.name), file=outfile)
     else:
-        print("<%s>" % element.name)
+        print("<%s>" % element.name, file=outfile)
 
-    print(headings[element.level - 1]*60)
+    print(headings[element.level - 1]*60, file=outfile)
 
-    print(".. container:: hatnote hatnote-gray\n")
+    print(".. container:: hatnote hatnote-gray\n", file=outfile)
 
     crumb = element.crumb[0]
     for c in element.crumb[1:]:
         crumb = crumb + " :raw-html:`&rarr;`:raw-latex:`$\\rightarrow$` " + c
 
     if not first_time:
-        print("   .. container:: crumb\n")
-        print("      %s\n" % crumb)
-        #print("      crumb:%s\n" % crumb)
+        print("   .. container:: crumb\n", file=outfile)
+        print("      %s\n" % crumb, file=outfile)
+        #print("      crumb:%s\n" % crumb, file=outfile)
 
     examples = []
     warnings = []
@@ -92,8 +111,6 @@ def printit(element):
                         examples.append(note[example_location+8:])
                         stored_example_default=True
 
-
-
                 if example_location!=0:
                     #If we have one that isn't default, and there are ones that are default, replace.
                     #If we have one that isn't default, and there aren't, just add.
@@ -107,25 +124,22 @@ def printit(element):
                              descriptions.clear()
                          descriptions.append(toAdd)
 
-
                     elif isDefault and len(descriptions)==0:
                         descriptions.append(toAdd)
                         stored_description_default=True
-
 
                 if note.find("Warning:") == 0:
                     warnings.append(note[8:])
 
     for warning in warnings:
-        print("   .. admonition:: Warning\n")
-        print("      %s\n" % warning)
+        print("   .. admonition:: Warning\n", file=outfile)
+        print("      %s\n" % warning, file=outfile)
 
     if element.type:
-        print("   .. container:: type\n")
+        print("   .. container:: type\n", file=outfile)
         latex_words="\t\t\t.. only:: latex\n\n"
         html_words="\t\t\t.. only:: html\n\n"
 
-        #words="      type: :ref:`%s <type-glossary-%s>`" % (element.type,element.type.lower())
         latex_words+="\t\t\t\t\ttype: :ref:`%s<type-glossary>`" % (element.type)
         html_words+="\t\t\t\t\ttype:`%s <appendices.html#glossary-%s>`_" % (element.type,element.type.lower())
         if element.range_string:
@@ -139,7 +153,6 @@ def printit(element):
                     result.append(":math:`%s`" % el)
             result=" ".join(result)
 
-            #words+=" range::math:`%s`\n" % (element.range_string)
             latex_words+=" range:"+result+"\n"
             html_words+=" range:"+result+"\n"
 
@@ -147,69 +160,53 @@ def printit(element):
             latex_words+="\n"
             html_words+="\n"
 
-        print(latex_words)
-        print(html_words)
+        print(latex_words, file=outfile)
+        print(html_words, file=outfile)
 
-
-            #add . to end?
-#    #if we just want the main description, just make it so
-#    for description in descriptions:
-#        print("   .. container:: description\n")
-#        if description[-1]==".":
-#            print("      %s\n" % description)
-#        else:
-#            print("      %s.\n" % description)
-
-
-
-
-    if len(descriptions)>0:
+    if len(descriptions) > 0:
 
         description=descriptions[0]
 
-        #if the annotation involves multiple options depending on its location
+        # If the annotation involves multiple options depending on its location
 
         #description=choiceChooser(description,element)
         description=urlInserter(description)
         description=mathBlock(description,element.level)
 
-        #remove whitespace from beginning and end
-        description=description.lstrip()
-        description=description.rstrip()
+        # Remove whitespace from beginning and end
+        description=description.strip()
 
-        #add period if needs it
-        print("   .. container:: description\n")
+        # Add period if needs it
+        print("   .. container:: description\n", file=outfile)
         if description[-1]==".":
-            print("      %s\n" % description)
+            print("      %s\n" % description, file=outfile)
         else:
-            print("      %s.\n" % description)
+            print("      %s.\n" % description, file=outfile)
 
-    #add period if needs it
+    # Add period if needs it
     for example in examples:
         #example=choiceChooser(example,element)
-        print("   .. container:: example\n")
+        print("   .. container:: example\n", file=outfile)
         if (example[-1]==">" or example[-1]=="."):
-            print("      **Example**: %s\n" % example)
+            print("      **Example**: %s\n" % example, file=outfile)
         else:
-            print("     **Example**: %s.\n" % example)
+            print("     **Example**: %s.\n" % example, file=outfile)
 
     if element.attributes:
-        print(".. tabularcolumns::|l|l|l|1|1| \n")
-        print(".. csv-table::")
-        print("      :class: rows")
-        print("      :escape: \ ")
-        print('      :header: "attribute", "type", "required", "description", "example"')
-        print("      :widths: auto\n")
+        print(".. tabularcolumns::|l|l|l|1|1| \n", file=outfile)
+        print(".. csv-table::", file=outfile)
+        print("      :class: rows", file=outfile)
+        print("      :escape: \ ", file=outfile)
+        print('      :header: "attribute", "type", "required", "description", "example"', file=outfile)
+        print("      :widths: auto\n", file=outfile)
+
         for attrib in element.attributes:
-
-
             required = "no"
             if attrib.required == "required":
                 required = ":red:`yes`"
 
             description = ""
             example = ""
-
 
             for note in attrib.annotation:
                 old_note=note[:]
@@ -231,7 +228,6 @@ def printit(element):
                         elif isDefault and len(example)==0:
                             example = note[example_location+8:]
 
-
                     if example_location != 0:
                         if example_location!=-1:
                             toAdd= note[:example_location]
@@ -244,31 +240,22 @@ def printit(element):
                         elif isDefault and len(description)==0:
                             description = toAdd
 
+            print("      **%s**, :ref:`%s<type-glossary>`, %s, \"%s\", \"%s\" " % (attrib.name, attrib.type,required, description, example), file=outfile)
 
-
-            #print("      **%s**, `%s <appendices.html#glossary-%s>`_, %s, \"%s\", \"%s\" " % (attrib.name, attrib.type, attrib.type.lower(),required, description, example))
-            print("      **%s**, :ref:`%s<type-glossary>`, %s, \"%s\", \"%s\" " % (attrib.name, attrib.type,required, description, example))
-
-        print()
-            #if attrib.annotation:
-                #print("%s          <li>annotn:%s</li>" % (space, attrib.annotation))
-
-    first_time = False
+        print(file=outfile)
 
     if element.children:
-
         for child in element.children:
-            printit(child)
-
+            write_tree(child, outfile, first_time = False)
 
     return
 
 
-#when given a documentation (Typically Example or Description) and the element, and it starts with default, will
-#return the correct documentation based off where it is in the xsd
-#Default:Default thing
-#Choice:N Documentation for network
-#Choice:S Documentation for station
+# when given a documentation (Typically Example or Description) and the element, and it starts with default, will
+# return the correct documentation based off where it is in the xsd
+# Default:Default thing
+# Choice:N Documentation for network
+# Choice:S Documentation for station
 def choiceChooser(documentation,theElement):
     if documentation.find("LevelDefault:")==0:
         documentationChoices=documentation.split("LevelChoice:")
@@ -282,6 +269,7 @@ def choiceChooser(documentation,theElement):
         documentation=elementChoiceChooser(documentation,theElement)
 
     return documentation
+
 
 def elementChoiceChooser(documentation,theElement):
     documentationChoices=documentation.split("ElementChoice:")
@@ -446,13 +434,6 @@ class Element(object):
         self.crumb.append(x)
 
 
-class FloatRange(object):
-    def __init__(self, minval=None, maxval=None, left_sym=None, right_sym=None):
-        self.minval = minval
-        self.maxval = maxval
-        self.left_sym = left_sym
-        self.rightt_sym = rightt_sym
-
 def get_type(x, field_name):
 
     keep_type = None
@@ -493,80 +474,59 @@ def get_type(x, field_name):
                 symb = 'g%s' % min_symb[1]
                 range_string = "%s \%s %s" % (field_name, symb, minval)
 
-        # print("range_string:%s" % range_string)
+        # print("range_string:%s" % range_string, file=sys.stderr)
 
     return keep_type, range_string
 
-root_elem = None
 
-l = [None] * 10
+def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
+    """Recursively walk the schema element tree until stop_element is encountered"""
 
-def f(x, level, last_elem=None):
-
-    global root_elem
-    global l
-
+    level_elem = None
     space = (level - 1) * 8 + 6
     space *= " "
 
-    # When entering, x.type = XsdComplexType (always)
-    #                x.type.content_type = XsdGroup, XsdAtomicBuiltin or XsdAtomicRestriction
+    # Create initial context list
+    if context is None:
+        context = []
 
-    #print("%sEnter level:%d x=[%s] content_type=[%s]" % \
-          #(space, level, x.local_name, x.type.content_type))
+    if args.verbose > 1:
+        print (f'Working on xsd_element: {xsd_element}, level: {level}, stop_element: {stop_element}')
 
-    #if x.local_name == "Response":
-    #if x.local_name == "Channel":
-    #if x.local_name == "Station":
-    if stop_element and x.local_name == stop_element:
-        return
+    # Recursion is complete if the stop element is reached
+    if stop_element and xsd_element.local_name == stop_element:
+        return level_elem
 
-    # Make the breadcrumb. Set the current level and clear all levels *below* this
-    l[level-1] = x.local_name
-    l[level:] = [None] * (len(l) - level)
+    # Store the context for breadcrumbs
+    context.append(xsd_element.local_name)
 
-    crumb = []
-    i=0
-    while l[i]:
-        crumb.append(l[i])
-        i+=1
+    keep_type, range_string = get_type(xsd_element.type.content_type, xsd_element.local_name)
+    this_elem = Element(name=xsd_element.local_name, level=level, type=keep_type, range_string=range_string, crumb=context)
 
-    keep_type, range_string = get_type(x.type.content_type, x.local_name)
-    this_elem = Element(name=x.local_name, level=level, type=keep_type, range_string=range_string, crumb=crumb)
-
-    #print("Elem:%s level:%d [%s]" % (x.local_name, level, crumb))
-
-    debug = False
-    if x.local_name == "SampleRate" or x.local_name == "SampleRateRatio":
-        debug = True
-    debug = False
-
-    if x.min_occurs == 1:
+    if xsd_element.min_occurs == 1:
         this_elem.required = True
 
     if level == 1:
-        root_elem = this_elem
+        level_elem = this_elem
 
     if last_elem is not None:
         last_elem.add_child(this_elem)
-        # print("Elem level:%d name:%s --> add_child:%s" % (last_elem.level, last_elem.name, this_elem.name))
+        # print("Elem level:%d name:%s --> add_child:%s" % (last_elem.level, last_elem.name, this_elem.name), file=sys.stderr)
 
-    if x.annotation is not None:
-        for y in x.annotation.documentation:
+    if xsd_element.annotation is not None:
+        for y in xsd_element.annotation.documentation:
             text = " ".join(y.text.split())
             this_elem.add_annotation(text)
-            if debug:
-                print("%s MTH: Add annotation:[%s]" % (space, text))
 
     # May not want these:
-    if x.type.annotation is not None:
-        for y in x.type.annotation.documentation:
+    if xsd_element.type.annotation is not None:
+        for y in xsd_element.type.annotation.documentation:
             text = " ".join(y.text.split())
             this_elem.add_annotation(text)
-            #print("%s MTH: Add (type) annotation:[%s]" % (space, text))
+            #print("%s MTH: Add (type) annotation:[%s]" % (space, text), file=sys.stderr)
 
-    for k in x.attributes:
-        attrib = x.attributes[k]
+    for k in xsd_element.attributes:
+        attrib = xsd_element.attributes[k]
         if not isinstance(attrib, XsdAnyAttribute):
             attr = Attribute(name=attrib.name, local_name=attrib.type.local_name,
                              required=attrib.use, type=attrib.type.local_name)
@@ -576,13 +536,14 @@ def f(x, level, last_elem=None):
             for y in attrib.annotation.documentation:
                 text = " ".join(y.text.split())
                 attr.add_annotation(text)
-                #print("%s MTH: Add attrib annotation:[%s]" % (space, text))
+                #print("%s MTH: Add attrib annotation:[%s]" % (space, text), file=sys.stderr)
 
-    # x.type is always some form of XsdComplexType
-    # x.type.content_type is either XsdGroup, XsdAtomicBuiltin or XsdAtomicRestriction
-    if isinstance(x.type.content_type, XsdGroup):
+    # xsd_element.type is always some form of XsdComplexType
+    # xsd_element.type.content_type is either XsdGroup, XsdAtomicBuiltin or XsdAtomicRestriction
+    if isinstance(xsd_element.type.content_type, XsdGroup):
 
-        for e in x.type.content_type.iter_elements():
+        # Iterate through contained elements
+        for e in xsd_element.type.content_type.iter_elements():
 
             if not isinstance(e, XsdAnyElement):
 
@@ -592,27 +553,18 @@ def f(x, level, last_elem=None):
 
                 keep_type, range_string = get_type(e.type, e.local_name)
 
-                # print("e.local_name:%s e.type:%s" % (e.local_name, e.type))
-
                 if isinstance(e.type, XsdAtomicBuiltin) or isinstance(e.type, XsdAtomicRestriction):
 
-                    l[level] = e.local_name
-                    l[level+1:] = [None] * (len(l) - level)
-                    crumb = []
-                    i=0
-                    while l[i]:
-                        crumb.append(l[i])
-                        i+=1
-
+                    # Store subelement, while adding name to context
                     subElement = Element(name=e.local_name, required=required, type=keep_type, level=level+1,
-                                         range_string=range_string, crumb=crumb)
+                                         range_string=range_string, crumb=context + [e.local_name])
                     this_elem.add_child(subElement)
 
                     if e.annotation is not None:
                         for y in e.annotation.documentation:
                             text = " ".join(y.text.split())
                             subElement.add_annotation(text)
-                            # print("  has annotation=[%s]" % text)
+                            # print("  has annotation=[%s]" % text, file=sys.stderr)
 
                     for k in e.attributes:
                         attrib = e.attributes[k]
@@ -627,85 +579,72 @@ def f(x, level, last_elem=None):
                                 attr.add_annotation(text)
 
                 else:
-                    #print("%s  elem: %s [complex type:%s] [required:%s]" % (space, e.local_name, e.type.local_name, required))
-                    f(e, level+1, last_elem=this_elem)
+                    walk_tree(e, stop_element, level=level+1, last_elem=this_elem, context=context)
+                    context.pop()
+
     else:
-        #print("  NOT XsdGroup x.local_name=%s x.type=%s x.content_type=%s" % (x.local_name, x.type.local_name, x.type.content_type.local_name))
-        return
+        #print("  NOT XsdGroup x.local_name=%s x.type=%s x.content_type=%s" % (x.local_name, x.type.local_name, x.type.content_type.local_name), file=sys.stderr)
+        return level_elem
 
-    return
-
-
-#currently unused.
-def changeToPreamble():
-    global root_elem
-
-    root_elem.name="Preamble"
+    return level_elem
 
 
-'''
-print('{0:20} {1:20} {2:}'.format("<li>sourceID", "[Optional]", "A data source identifier in URI form </li>"))
-print('{0:20} {1:20} {2:}'.format("<li>restrictedStatus", "[Optional]", ""))
-print('{0:20} {1:20} {2:}'.format("<li>alternateCode", "[Optional]", "A code used for display or association, alternate to the SEED-compliant code.</li>"))
-'''
+def main():
+    """Generate RST from XSD documentation tags
 
-import shutil
-import wget
-import os
-import sys
+    Iterate through specified schema file, accumulate documentation
+    elements, convert to RST and write to output files.
 
-schemafile = 'fdsn-schema/fdsn-station.xsd'
+    Output files are opened (overwritting) for each main level of the
+    schema: Preamble, Network, Station, Channel, Response in the pattern:
+    `OUTDIR/level-LEVEL.rst`
+    """
 
-test = True
-test = False
+    print (f'Reading schema file {args.schemafile} and writing RST to directory {args.outdir}')
 
-try:
-    url = "https://raw.githubusercontent.com/iris-edu/StationXML/docs/fdsn-station.xsd"
-    if not test:
-        if os.path.isfile(schemafile):
-            target = "%s.0" % schemafile
-            shutil.move(schemafile, target)
-        wget.download(url, schemafile)
-except:
-    raise
+    schema = xmlschema.XMLSchema(args.schemafile)
 
-schema = xmlschema.XMLSchema(schemafile)
+    level_xpaths = ['fsx:FDSNStationXML',
+                    'fsx:FDSNStationXML/fsx:Network',
+                    'fsx:FDSNStationXML/fsx:Network/fsx:Station',
+                    'fsx:FDSNStationXML/fsx:Network/fsx:Station/fsx:Channel',
+                    'fsx:FDSNStationXML/fsx:Network/fsx:Station/fsx:Channel/fsx:Response']
 
-level_xpaths = ['fsx:FDSNStationXML',
-                'fsx:FDSNStationXML/fsx:Network',
-                'fsx:FDSNStationXML/fsx:Network/fsx:Station',
-                'fsx:FDSNStationXML/fsx:Network/fsx:Station/fsx:Channel',
-                'fsx:FDSNStationXML/fsx:Network/fsx:Station/fsx:Channel/fsx:Response']
+    for i, xpath in enumerate(level_xpaths):
+        xsd_element = schema.find(xpath)
 
+        stop_element = None
+        this_element = os.path.basename(xpath).split(':')[1]
+        if i < 4:
+            stop_element = os.path.basename(level_xpaths[i+1]).split(':')[1]
 
-stop_element = None
+        level_elem = walk_tree(xsd_element, stop_element)
 
-orig = sys.stdout
+        # Use Preamble instead of root element name
+        if this_element=="FDSNStationXML":
+            this_element="Preamble"
 
-for i, xpath in enumerate(level_xpaths):
-    x = schema.find(xpath)
+        # Generate output file name for this level
+        rst_file = os.path.join (args.outdir, f'level-{this_element.lower()}.rst')
 
-    stop_element = None
-    this_element = os.path.basename(xpath).split(':')[1]
-    if i < 4:
-        stop_element = os.path.basename(level_xpaths[i+1]).split(':')[1]
+        if args.verbose:
+            print (f'Writing to {rst_file}')
+
+        with open(rst_file, 'w') as outfile:
+            write_tree(level_elem, outfile = outfile)
 
 
-    #changes name of file
-    if this_element=="FDSNStationXML":
-        this_element="Preamble"
+if __name__ == "__main__":
 
-    rst_file = '../level-%s.rst' % this_element.lower()
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Generate RST output from XSD documentation tags')
+    parser.add_argument('schemafile',
+                        help='input XSD schema file')
+    parser.add_argument('outdir', nargs='?', default=os.getcwd(),
+                        help='directory for output RST files, default is current working directory')
+    parser.add_argument('--verbose', '-v', action='count', default=0,
+                        help='increase verbosity')
 
-    sys.stdout = open(rst_file, 'w')
+    args = parser.parse_args()
 
-    f(x, 1)
-
-    #If we want the header to actually be the preamble
-    #if this_element=="Preamble":
-    #    changeToPreamble()
-
-    first_time = True
-    printit(root_elem)
-
-    sys.stdout = orig
+    main()

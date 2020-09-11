@@ -22,7 +22,7 @@ where :math:`X(f)` is the Fourier Transform of the recorded time series,
 and :math:`Z(f)` is the Fourier Transform of the data with the instrument response removed.
 
 
-So how does one obtain the Fourier Transform of the instrument response ?
+So how does one obtain the Fourier Transform of the instrument response?
 Very often, this is calculated by combining the information describing
 each stage of the instrument response in specific formats.
 

@@ -1,10 +1,10 @@
 .. Put any comments here
    Be sure to indent at this level to keep it in comment.
 
-As StationXML files are ordinary ascii files, they may be editted with 
-any text editor (e.g., vi/VIM, TextWrangler, Notepad/Wordpad, etc) 
+As StationXML files are ordinary text files, they may be editted with
+any text editor (e.g., vi/VIM, TextWrangler, Notepad/Wordpad, etc)
 
-However, StationXML files can become very large and unwieldly as more 
+However, StationXML files can become very large and unwieldly as more
 stations and channels are added.  For instance a regional seismic network
 can generate a StationXML file of size > 30Mb on disk (>400,000 lines).
 
@@ -16,7 +16,7 @@ obspy + NRL
 
 ObsPy contains a number of very useful modules for working with StationXML.
 In particular, ObsPy contain a module able to connect
-to the IRIS Nominal Resource Library (NRL) and 
+to the IRIS Nominal Resource Library (NRL) and
 download full responses (sensor + datalogger) for various combinations
 of sensor + datalogger contained within the NRL.
 
@@ -206,8 +206,6 @@ exports this to StationXML, and validates it against the StationXML schema.
          channel.response = response
 
          inventory.write("Test.xml", format="stationxml", validate=False)
-
-
 
 
 .. toggle-header::
@@ -1000,9 +998,20 @@ exports this to StationXML, and validates it against the StationXML schema.
       </FDSNStationXML>
 
 
-IRIS SEED-stationXML Converter
+IRIS SEED-StationXML Converter
 ====================================
 
-IRIS maintains a java tool that can convert between dataless SEED and StationXML formats at:
+IRIS maintains a Java-based tool that can convert between dataless SEED and StationXML formats at:
 
 `<https://github.com/iris-edu/stationxml-seed-converter>`_
+
+
+IRIS StationXML Validator
+====================================
+
+IRIS maintains a Java-based validator for StationXML documents.
+
+Note: this tool validates documents against the official schema in addition
+to a set of rules that are not possible to represent in the XML Schema language.
+
+`<https://github.com/iris-edu/stationxml-validator>`_

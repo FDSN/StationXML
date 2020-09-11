@@ -447,7 +447,7 @@
 
    .. container:: description
 
-      Telephone phonenumber.
+      Telephone number.
 
    .. container:: example
 
@@ -874,7 +874,7 @@
 
    .. container:: description
 
-      Elevation of the water surface in meters for underwater sites, where 0 is sea level. If you put an OBS on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
+      Elevation of the water surface in meters for underwater sites, where 0 is mean sea level. If you put an OBS on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1368,7 +1368,7 @@
 
    .. container:: description
 
-      Installation date of equipment.
+      Date this equipment was installed.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1395,7 +1395,7 @@
 
    .. container:: description
 
-      Removal date of equipment.
+      Date this equipment was removed.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1422,7 +1422,7 @@
 
    .. container:: description
 
-      A description of the units of the calibration.
+      Date this equipment was calibrated.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1638,7 +1638,7 @@
 
    .. container:: description
 
-      Installation date of equipment.
+      Date this equipment was installed.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1665,7 +1665,7 @@
 
    .. container:: description
 
-      Removal date of equipment.
+      Date this equipment was removed.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1692,7 +1692,7 @@
 
    .. container:: description
 
-      A description of the units of the calibration.
+      Date this equipment was calibrated.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1908,7 +1908,7 @@
 
    .. container:: description
 
-      Installation date of equipment.
+      Date this equipment was installed.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1935,7 +1935,7 @@
 
    .. container:: description
 
-      Removal date of equipment.
+      Date this equipment was removed.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1962,7 +1962,7 @@
 
    .. container:: description
 
-      A description of the units of the calibration.
+      Date this equipment was calibrated.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2178,7 +2178,7 @@
 
    .. container:: description
 
-      Installation date of equipment.
+      Date this equipment was installed.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2205,7 +2205,7 @@
 
    .. container:: description
 
-      Removal date of equipment.
+      Date this equipment was removed.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2232,5 +2232,5 @@
 
    .. container:: description
 
-      A description of the units of the calibration.
+      Date this equipment was calibrated.
 

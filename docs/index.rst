@@ -1,7 +1,4 @@
-.. StationXML-Docs documentation master file, created by
-   sphinx-quickstart on Wed Jan  8 15:32:46 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. StationXML documentation master file
    :titlesonly:
    :maxdepth: 5
 
@@ -11,33 +8,31 @@
 .. role:: latex(raw)
    :format: latex
 
-Welcome to StationXML-Docs's documentation!
-===========================================
+Welcome to the StationXML documentation!
+========================================
+
+Version: |doc_version|
 
 ..  :numbered=3:
 
 .. toctree::
    :glob:
-   :caption: Contents:
    :numbered: 3
 
-   introduction.rst
-   reference.rst
-   response.rst
-   tools.rst
-   appendices.rst
-   Download PDF <https://stationxml-doc.readthedocs.io/_/downloads/en/latest/pdf/>
-
+   Contents <self>
+   overview
+   reference
+   response
+   tools
+   appendices
+   Specification home <https://www.fdsn.org/xml/station/>
+   FDSN home <https://www.fdsn.org/>
 
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-* :doc:`introduction`
+* :doc:`overview`
 * :doc:`reference`
 * :doc:`response-theory`
 * :doc:`tools`
 * :doc:`appendices`
-* `Download PDF <https://stationxml-doc.readthedocs.io/_/downloads/en/latest/pdf/>`_

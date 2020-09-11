@@ -1,11 +1,72 @@
-/*h1, h2, h3, h4, h5, h6 {*/
+
+/* FDSN-style font baseline */
+body {
+  font-family: "Quattrocento Sans", Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Keep the logo from dominating the upper search pane */
+.logo {
+  max-height: 80px;
+}
+
+/* Set colors for search and navigation sidebar */
+.wy-side-nav-search,
+.wy-side-nav-search > a,
+.wy-side-nav-search > div.version,
+.wy-nav-top {
+  color: black;
+  background: white;
+}
+
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+  color: lightgray;
+  font-weight: bolder;
+}
+
+.wy-menu-vertical a,
+.wy-menu-vertical li.current > a {
+  color: white;
+}
+
+.wy-menu-vertical li.toctree-l2 a,
+.wy-menu-vertical li.toctree-l3 a,
+.wy-menu-vertical li.toctree-l4 a,
+.wy-menu-vertical li.toctree-l5 a,
+.wy-menu-vertical li.toctree-l6 a {
+  color: #404040;
+}
+
+.wy-nav-side {
+  color: black;
+  background: rgb(51,123,184); /* Darker blue */
+}
+
+.wy-menu-vertical li.toctree-l1.current > a,
+.wy-menu-vertical li.toctree-l1.current {
+  background: rgb(116,182,236); /* Medium blue */
+  border-bottom: rgb(116,182,236);
+  border-top: rgb(116,182,236);
+}
+
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+  background: rgb(207,226,242); /* Light blue */
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 a:hover {
+  background: #d6d6d6;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3.current > a {
+  background: white;
+}
+
+/* Stuff ISTI set */
 h3, h4, h5, h6 {
     display: block;
     width: 100%;
-    /*background-color: #c8c8c8 ;
-     background-color: pink ;
-    background-color: #ede ;
-     * */
     background-color: #e8e8e8 ;
     margin-bottom: 0 ;
     margin-top: 0.9em ;
@@ -40,46 +101,12 @@ h1 {
     color:white;
 }
 
-
-.wy-menu-vertical li.toctree-l2.current>a{
-  background:#fcfcfc !important
-}
-
-.wy-menu-vertical li.toctree-l3.current>a{
-  background:#fcfcfc !important
-}
-
-.wy-menu-vertical li.toctree-l4.current>a{
-  background:#fcfcfc !important
-}
-
-.wy-menu-vertical li.toctree-l5.current>a{
-  background:#fcfcfc !important
-}
-
-.wy-menu-vertical li.toctree-l6.current>a{
-  background:#fcfcfc !important
-}
-
-.wy-menu-vertical li.toctree-l7.current>a{
-  background:#fcfcfc !important
-}
-
-
-/*uncomment out to be basically same color*/
-
-.wy-menu-vertical li.toctree-l2t>a, .wy-menu-vertical li.toctree-l4>a, .wy-menu-vertical li.toctree-l5>a, .wy-menu-vertical li.toctree-l6>a,.wy-menu-vertical li.toctree-l7>a{
-  background:#c9c9c9 !important
-}
-
 .MathJax_Display{
 }
 
-div.hatnote.hatnote-gray.docutils.container > div.description.docutils.container > blockquote > div > div > div{
+div.hatnote.hatnote-gray.docutils.container > div.description.docutils.container > blockquote > div > div > div {
   font-size: 117% !important
 }
-
-
 
 .box
 {
@@ -87,18 +114,6 @@ div.hatnote.hatnote-gray.docutils.container > div.description.docutils.container
     border-style: solid ;
     border-width: 1px ;
 }
-
-/*
-.crumb {
-  height: 0;
-  position: relative;
-  left: 300px;
-  top: -25px;
-  color:#585858;
-  font-size:medium;
-  display: block;
-}
-*/
 
 .crumb {
   height: 0;
@@ -108,7 +123,7 @@ div.hatnote.hatnote-gray.docutils.container > div.description.docutils.container
   color:#585858;
 }
 
-div.crumb>p{
+div.crumb > p {
   font-size:small !important;
 }
 

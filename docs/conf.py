@@ -19,23 +19,19 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'StationXML-Docs'
-#copyright = '2020, Mike Hagerty and Maura Allen'
-#author = 'Mike Hagerty and Maura Allen'
+project = 'StationXML'
+copyright = '2020, International FDSN'
+author = 'International FDSN'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+version = '1.1.0'
 
-version = 'v.1.1.0'
+# Documentation version, schema + date
+# ALSO UPDATE the release documentation version in introduction.rst
+doc_version = version + ' (2020-09-02)'
 
-author = ''
-
-date= 'Jul 29, 2020'
-
-def setup(app):
-#   app.add_stylesheet('css/custom.css')
-    app.add_css_file('css/custom.css')
-    app.add_js_file('js/custom.js')
+# Allow |doc_version| to be used in RST
+rst_epilog = '.. |doc_version| replace:: %s' % doc_version
 
 # -- General configuration ---------------------------------------------------
 
@@ -57,14 +53,14 @@ latex_maketitle = r'''
     \sphinxlogo
     \sffamily\bfseries
     {\Huge '''+project+r''' }\par
-    {\itshape\large '''+release+r''' \releaseinfo}\par
+    {\itshape\large '''+doc_version+r''' \releaseinfo}\par
     \vspace{25pt}
     {\Large
       \begin{tabular}[t]{c}
         '''+author+r'''
       \end{tabular}\kern-\tabcolsep}\par
     \vspace{25pt}
-    '''+date+r''' \par
+    \par
   \end{flushright}
   \setcounter{footnote}{0}
   \let\thanks\relax\let\maketitle\relax
@@ -88,7 +84,9 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','example_1.rst','examples','level-preamble.rst','level-network.rst','level-channel.rst','level-response.rst','level-station.rst', 'response-practical.rst']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','example_1.rst','examples',
+                    'level-preamble.rst','level-network.rst','level-channel.rst',
+                    'level-response.rst','level-station.rst','response-practical.rst']
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -96,17 +94,16 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','example_1.rst','examples
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-#html_theme = 'alabaster'
-#html_theme = 'cloud_sptheme'
-#html_theme = 'cloud'
-#html_theme = 'nature'
 html_theme = 'sphinx_rtd_theme'
-#
 html_theme_options = {
     'navigation_depth': 0,
     'sticky_navigation': False,
 }
-html_logo='_images/fdsn-logo.png'
+html_logo='_static/FDSN-logo.png'
+html_favicon = '_static/favicon.ico'
+html_title = 'FDSN StationXML'
+html_show_sphinx = False
+html_search_language = 'en'
 
 navigation_depth = -2
 
@@ -115,13 +112,12 @@ navigation_depth = -2
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# These paths are either relative to html_static_path
-# or fully qualified paths (eg. https://...)
 html_css_files = [
-    'css/custom.css',  # MTH: this was already added above
-    'css/theme_overrides.css',
+  'css/custom.css',
+  'css/theme_overrides.css',
 ]
 
 html_js_files = [
-    'js/custom.js',
+  'js/sidebar_context.js'
 ]
+
