@@ -172,9 +172,16 @@ Examples
 
 Example 1
 """"""""""""
-Consider a system with zeros at :math:`z=1,-1` and poles at :math:`z=\pm 0.95e^{j\pi/4}`
+Consider a system with zeros at :math:`z=1,-1` and poles at :math:`z=0.95e^{\pm j\pi/4}`,
+with response function
 
-.. figure:: z-transform_fig1.png
+.. math::
+
+   |H(e^{-j\omega})| = \frac{|(e^{j\omega}-1)||(e^{j\omega}+1)|} {|(e^{j\omega}-0.95e^{j\pi/4})||(e^{j\omega}-0.95e^{-j\pi/4})|}
+
+.. figure:: z-transform_fig1a.png
+
+.. figure:: z-transform_fig1b.png
 
 Poles near the unit circle push the magnitude response up at those frequencies,
 while zeros near the unit circle pull it down; if the zero is actually *on* the unit

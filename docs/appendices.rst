@@ -57,6 +57,11 @@ B62 Response Polynomial
 
 .. include:: blockettes/b62_table.rst
 
+FDSN-schema Embedded Keywords
+===========================================
+
+.. include:: fdsn-schema-keywords.rst
+
 Channel Naming Conventions
 ===========================================
 
