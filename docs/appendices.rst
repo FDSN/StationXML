@@ -2,7 +2,6 @@
    Be sure to indent at this level to keep it in comment.
    :file: StationXMLtoSEEDmapping.html
    .. raw:: html
-      :url: http://love.isti.com/~kevin/Datatables/index.html
    .. include:: blockette_map.rst
 
 *******************************************
@@ -57,25 +56,32 @@ B62 Response Polynomial
 
 .. include:: blockettes/b62_table.rst
 
-FDSN-schema Embedded Keywords
+Embedded Schema Keywords
 ===========================================
 
-.. include:: fdsn-schema-keywords.rst
+.. include:: schema-keywords.rst
 
-Channel Naming Conventions
+Identifiers and codes
 ===========================================
 
-For information on Network, Station and Channel
-naming conventions and recommendations, see:
+For information on Network, Station, Location, and Channel codes, in addition to
+their combination into Source Identifiers, used in StationXML see:
 
-https://iris-edu.github.io/xFDSN-source-identifiers/
+(as of this writing, this documentation is in progress)
+http://docs.fdsn.org/projects/source-identifiers
 
 Unit Naming Rules
 ===========================================
-For information on the rules for specifying unit names, see:
+The FDSN stronly recommends the use of SI unit names whenever possible, which are
+defined case sensitively.
 
-https://github.com/iris-edu/stationxml-validator/wiki/Unit-name-overview-for-IRIS-StationXML-validator
-
+In the SEED format all unit names are recommended to be uppercase and
+SI when possible.  For this reason, some unit documentation and
+required declarations in StationXML are in "uppercase SI" and these
+remain in order to maintain backward compatiblity with the initial
+schema version.  With the next major change to the specification the
+FDSN will very likely remove these "uppercase SI" unit names in favor
+of proper SI unit names.
 
 .. _type-glossary:
 

@@ -5,6 +5,7 @@
 
 .. role:: red
 
+.. _reference:
 
 ************************
 StationXML Reference

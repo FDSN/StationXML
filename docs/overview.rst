@@ -61,7 +61,7 @@ of a <Station> and a <Station> may not exist outside of a <Network>, etc.).
 The FDSN and StationXML schema
 ----------------------------------
 StationXML was developed through the International Federation of Digital Seismograph Networks
-(`FDSN <https://www.fdsn.org/`_) to provide a standardized format for geophysical metadata.
+(`FDSN <https://www.fdsn.org/>`_) to provide a standardized format for geophysical metadata.
 
 Notice that the example StationXML excerpt above contains the following line::
 
