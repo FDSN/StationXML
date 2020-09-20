@@ -642,7 +642,7 @@
 
    .. container:: description
 
-      Station elevation, by default in meters.
+      Elevation of local ground surface level at station, by default in meters.
 
    .. container:: example
 

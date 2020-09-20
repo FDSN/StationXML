@@ -714,7 +714,7 @@
 
    .. container:: description
 
-      Elevation of the sensor, by default in meters.
+      Elevation of the sensor, by default in meters. To find the local ground surface level, add the Depth value to this elevation.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -754,7 +754,7 @@
 
    .. container:: description
 
-      The depth of the sensor under the local surface ground level, in positive meters.
+      The depth of the sensor relative to the local ground surface level, in meters.
 
 .. tabularcolumns::|l|l|l|1|1| 
 

@@ -27,36 +27,35 @@
 	versioned and allows the schema to be updated with backward compatible changes (e.g. 1.2)
 	and still validate documents created for previous major versions of the schema (e.g. 1.0).
 
-  Section 2. StationXML Reference of the StationXML documentation is auto-generated
-  from this schema, allowing this schema to be "self-documenting".
 
-  This is achieved by embedding this schema with documentation tags at the appropriate
-  levels. These tags are read by a python script and used to generate the 
-  StationXML Reference.
+        Regarding embedded documentation keywords:
+        StationXML reference documentation details are auto-generated from <documentation> tags
+        in this this schema document.
 
-  In addition, the schema contains special keyword tags within some of the documentation
-  element values that have special meaning:
+        To allow additional granularity and clarity in the generated documentation, special embedded
+        keywords are parsed from the content (value) of the <documentation> tags.  These embedded
+        keywords are as follows:
 
-    1. "Example:" - Text that follows appears after Example for the relevent element
-                    in the StationXML documentation
+        1. "Example:" - Text that follows appears after Example for the relevent element
+           in the StationXML documentation.
 
-    2. "Warning:" - Text that follows appears wrapped in an rst admonition wrapper.
-                    It's typically used to indicate features that may be deprecated in the futuer.
+        2. "Warning:" - Text that follows appears included in an admonition wrapper.
+           It is typically used to indicate features that may be deprecated in the future.
 
-    3. "LevelChoice:X" - Where X is one of "N" (network), "S" (station) or "C" (channel).
-                         This is used so that documentation can be specific to level X for
-                         shared XML elements
+        3. "LevelChoice:X" - Where X is one of "N" (network), "S" (station) or "C" (channel).
+           This is used so that documentation can be specific to level X for shared XML elements.
 
-    4. "ElementChoice:TAG_NAME" - Similar to 3. but allows elements built off a common basetype
-                          to have specific documentation.
-                          For example: <xs:documentation>ElementChoice:WATERLEVEL Example:...
-                            The text after example will only be used for the WATERLEVEL element.
+        4. "ElementChoice:TAG_NAME" - Similar to LevelChoice, but allows elements built off a
+           common basetype to have specific documentation.
+           For example: <xs:documentation>ElementChoice:WATERLEVEL Example:...  </xs:documentation>
+           The text after example will only be used for the WATERLEVEL element.
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fsx="http://www.fdsn.org/xml/station/1"
 	targetNamespace="http://www.fdsn.org/xml/station/1" elementFormDefault="qualified"
 	attributeFormDefault="unqualified" version="1.1">
 	<xs:annotation>
-		<xs:documentation>FDSN StationXML schema. A metadata standard for seismological and related data.
+		<xs:documentation>FDSN StationXML schema. A metadata
+		standard for seismological and related data.
 		</xs:documentation>
 	</xs:annotation>
 	<!-- Root element -->
@@ -178,7 +177,7 @@
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
 						<xs:annotation>
-							<xs:documentation>Station elevation, by default in meters.</xs:documentation>
+							<xs:documentation>Elevation of local ground surface level at station, by default in meters.</xs:documentation>
 							<xs:documentation>Example:&lt;Elevation unit=&quot;m&quot;&gt;1850.0&lt;/Elevation&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -199,7 +198,7 @@
 					</xs:element>
 					<xs:element name="Vault" type="xs:string" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Type of vault, e.g. World-Wide Standardized Seismograph Network (WWSSN), tunnel, 
+							<xs:documentation>Type of vault, e.g. World-Wide Standardized Seismograph Network (WWSSN), tunnel,
 								USArray Transportable Array Generation 2, etc.
 							</xs:documentation>
 						</xs:annotation>
@@ -298,12 +297,13 @@
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
 						<xs:annotation>
-							<xs:documentation>Elevation of the sensor, by default in meters.</xs:documentation>
+						  <xs:documentation>Elevation of the sensor, by default in meters.  To find the local ground surface level,
+                                                  add the Depth value to this elevation. </xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Depth" type="fsx:DistanceType">
 						<xs:annotation>
-							<xs:documentation>The depth of the sensor under the local surface ground level, in positive meters.
+							<xs:documentation>The depth of the sensor relative to the local ground surface level, in meters.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -385,8 +385,8 @@
 					</xs:element>
 					<xs:element name="Sensor" type="fsx:EquipmentType" minOccurs="0">
 							<xs:annotation>
-								<xs:documentation>Details of the (typically analog) sensor attached to this channel. 
-									If this was entered at the Station level, it is not necessary to do it for each Channel, 
+								<xs:documentation>Details of the (typically analog) sensor attached to this channel.
+									If this was entered at the Station level, it is not necessary to do it for each Channel,
 									unless you have differences in equipment.
 								</xs:documentation>
 							</xs:annotation>
@@ -605,7 +605,7 @@
 						<xs:element name="PolesZeros" type="fsx:PolesZerosType" minOccurs="0">
 		          <xs:annotation>
                 <xs:documentation>
-                  Response stage described by the complex poles and zeros of the Laplace Transform (or z-transform) 
+                  Response stage described by the complex poles and zeros of the Laplace Transform (or z-transform)
                   of the transfer function for this stage.
                 </xs:documentation>
 		          </xs:annotation>
@@ -631,7 +631,7 @@
 					<xs:annotation>
            					<xs:documentation>
 						When a response is given in terms of a polynomial expansion of
-						powers of the sensor output signal (e.g., Volts), a Polynomial Stage is 
+						powers of the sensor output signal (e.g., Volts), a Polynomial Stage is
 						required to specify the Maclaurin coefficients of the expansion.
 
 						In addition, an InstrumentPolynomial element must be present at Response level
@@ -1012,7 +1012,7 @@
             <xs:documentation>The unit of measurement. Use *SI* unit names and symbols whenever possible
               (e.g., 'm' instead of 'METERS').</xs:documentation>
             <xs:documentation>Example:unit='SECONDS'</xs:documentation>
-            <xs:documentation>ElementChoice:WATERLEVEL Example:unit=&apos;m&apos;</xs:documentation> 
+            <xs:documentation>ElementChoice:WATERLEVEL Example:unit=&apos;m&apos;</xs:documentation>
             <xs:documentation>ElementChoice:AMPLITUDE Example:unit=&apos;m&apos;</xs:documentation>
 				  </xs:annotation>
 				</xs:attribute>
@@ -1221,7 +1221,7 @@
 		    <xs:annotation>
           <xs:documentation>
             Sample rate in samples per second.
-            SampleRate is optional unless SampleRateRatio is present, in which case 
+            SampleRate is optional unless SampleRateRatio is present, in which case
             SampleRate is required.
             Example:&lt;SampleRate units='SAMPLES/S'&gt;40.0&lt;/SampleRate&gt;
           </xs:documentation>
