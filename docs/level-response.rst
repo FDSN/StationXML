@@ -42,7 +42,7 @@
 
    .. container:: description
 
-      The total sensitivity for a channel, representing the complete acquisition system expressed as a scalar. All instrument responses except polynomial response should have an InstrumentSensitivity.
+      The total sensitivity for a channel, representing the complete acquisition system expressed as a scalar. All instrument responses except polynomial response should have an InstrumentSensitivity. Type for sensitivity, input/output units and relevant frequency range.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -113,7 +113,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units.
+      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -184,7 +184,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response.
+      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -343,7 +343,7 @@
 
 			\begin{eqnarray}Temp(V)=\sum_{k=0}^{N} a_k V^{k}\end{eqnarray}
 
-		For such responses, two StationXML components are required to specify the response: 1. A Polynomial stage, which contains the values of the Maclaurin coefficients, :math:`a_k`, and 2. An InstrumentPolynomial element that contains the same coefficients, but scaled by powers of the overall gain representing the combined effect of all the stages in the complete acquisition system.
+		For such responses, two StationXML components are required to specify the response: 1. A Polynomial stage, which contains the values of the Maclaurin coefficients, :math:`a_k`, and 2. An InstrumentPolynomial element that contains the same coefficients, but scaled by powers of the overall gain representing the combined effect of all the stages in the complete acquisition system. Response type for a reponse represented as a polynomial expansion, which allows non-linear sensors to be described. Used at either a stage of acquisition response or a complete system.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -398,7 +398,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units.
+      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -469,7 +469,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response.
+      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -587,9 +587,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='HERTZ'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -627,9 +627,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='HERTZ'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -744,8 +744,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
       **number**, :ref:`CounterType<type-glossary>`, no, "", "" 
 
@@ -847,7 +847,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units.
+      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -918,7 +918,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response.
+      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1003,7 +1003,7 @@
 
    .. container:: example
 
-     **Example**:  <PzTransferFunctionType>LAPLACE (RADIANS/SECOND)</PzTransferFunctionType>".
+      **Example**: <PzTransferFunctionType>LAPLACE (RADIANS/SECOND)</PzTransferFunctionType>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1067,9 +1067,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='HERTZ'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -1097,7 +1097,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **number**, :ref:`integer<type-glossary>`, no, "The position index of the pole (or zero) in the array of poles[] (or zeros[])", "<Pole number='1'>" 
+      **number**, :ref:`integer<type-glossary>`, no, "The position index of the pole (or zero) in the array of poles[] (or zeros[])", "number=\"None\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1124,7 +1124,7 @@
 
    .. container:: description
 
-      Real part of the pole or zero.
+      Real part of the pole or zero. Representation of floating-point numbers without unit.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1134,8 +1134,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -1163,7 +1163,7 @@
 
    .. container:: description
 
-      Imaginary part of the pole or zero.
+      Imaginary part of the pole or zero. Representation of floating-point numbers without unit.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1173,8 +1173,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -1202,7 +1202,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **number**, :ref:`integer<type-glossary>`, no, "The position index of the pole (or zero) in the array of poles[] (or zeros[])", "<Pole number='1'>" 
+      **number**, :ref:`integer<type-glossary>`, no, "The position index of the pole (or zero) in the array of poles[] (or zeros[])", "number=\"None\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1229,7 +1229,7 @@
 
    .. container:: description
 
-      Real part of the pole or zero.
+      Real part of the pole or zero. Representation of floating-point numbers without unit.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1239,8 +1239,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -1268,7 +1268,7 @@
 
    .. container:: description
 
-      Imaginary part of the pole or zero.
+      Imaginary part of the pole or zero. Representation of floating-point numbers without unit.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1278,8 +1278,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -1352,7 +1352,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units.
+      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1423,7 +1423,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response.
+      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1541,8 +1541,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
       **number**, :ref:`CounterType<type-glossary>`, no, "", "" 
 
@@ -1581,8 +1581,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
       **number**, :ref:`CounterType<type-glossary>`, no, "", "" 
 
@@ -1656,7 +1656,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units.
+      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1727,7 +1727,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response.
+      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1827,9 +1827,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='HERTZ'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -1867,9 +1867,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit='m'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit=\"m\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -1903,9 +1903,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='DEGREES'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -1978,7 +1978,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units.
+      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2049,7 +2049,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response.
+      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2209,9 +2209,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='HERTZ'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -2293,7 +2293,7 @@
 
    .. container:: description
 
-      The estimated pure delay for the stage. This value will almost always be positive to indicate a delayed signal. Due to the difficulty in estimating the pure delay of a stage and because dispersion is neglected, this value should be considered nominal. Normally the delay would be corrected by the recording system and the correction applied would be specified in <Correction> below. See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention.
+      The estimated pure delay for the stage. This value will almost always be positive to indicate a delayed signal. Due to the difficulty in estimating the pure delay of a stage and because dispersion is neglected, this value should be considered nominal. Normally the delay would be corrected by the recording system and the correction applied would be specified in <Correction> below. See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention. Representation of floating-point numbers used as measurements.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -2303,9 +2303,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit='SECONDS'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit=\"SECONDS\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -2333,7 +2333,7 @@
 
    .. container:: description
 
-      The time shift, if any, applied to correct for the delay at this stage. The sign convention used is opposite the <Delay> value; a positive sign here indicates that the trace was corrected to an earlier time to cancel the delay caused by the stage and indicated in the <Delay> element. Commonly, the estimated delay and the applied correction are both positive to cancel each other. A value of zero indicates no correction was applied. See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention.
+      The time shift, if any, applied to correct for the delay at this stage. The sign convention used is opposite the <Delay> value; a positive sign here indicates that the trace was corrected to an earlier time to cancel the delay caused by the stage and indicated in the <Delay> element. Commonly, the estimated delay and the applied correction are both positive to cancel each other. A value of zero indicates no correction was applied. See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention. Representation of floating-point numbers used as measurements.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -2343,9 +2343,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit='SECONDS'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit=\"SECONDS\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -2363,7 +2363,7 @@
 
    .. container:: description
 
-      The gain at the stage of the encapsulating response element at a specific frequency. Total channel sensitivity should be specified in the InstrumentSensitivity element.
+      The gain at the stage of the encapsulating response element at a specific frequency. Total channel sensitivity should be specified in the InstrumentSensitivity element. Type used for representing sensitivity at a given frequency. This complex type can be used to represent both total sensitivities and individual stage gains.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2434,7 +2434,7 @@
 
    .. container:: description
 
-      When a response is given in terms of a polynomial expansion of powers of the sensor output signal (e.g., Volts), a Polynomial Stage is required to specify the Maclaurin coefficients of the expansion. In addition, an InstrumentPolynomial element must be present at Response level to represent the whole acquisition process, which contains the same Maclaurin coefficients, but scaled by powers of the overall gain for all stages.
+      When a response is given in terms of a polynomial expansion of powers of the sensor output signal (e.g., Volts), a Polynomial Stage is required to specify the Maclaurin coefficients of the expansion. In addition, an InstrumentPolynomial element must be present at Response level to represent the whole acquisition process, which contains the same Maclaurin coefficients, but scaled by powers of the overall gain for all stages. Response type for a reponse represented as a polynomial expansion, which allows non-linear sensors to be described. Used at either a stage of acquisition response or a complete system.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -2489,7 +2489,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units.
+      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2560,7 +2560,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response.
+      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2678,9 +2678,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='HERTZ'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -2718,9 +2718,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='HERTZ'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -2835,8 +2835,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
       **number**, :ref:`CounterType<type-glossary>`, no, "", "" 
 

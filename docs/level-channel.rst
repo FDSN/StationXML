@@ -25,14 +25,14 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "" 
-      **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Channel ", "code='BHZ'" 
-      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of channel epoch", "endDate=2018-01-27T00:00:00" 
-      **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "" 
-      **locationCode**, :ref:`string<type-glossary>`, :red:`yes`, "The locationCode is typically used to group channels from a common sensor. For example, the channels of the primary sensor at global IDA-IRIS stations have locationCode = '00': 00_BHZ, 00_BHE, 00_BHN, 00_LHZ, ..., etc. Even though it is required, locationCode may be, and often is, an empty string, however, it is recommended that the locationCode not be empty.", "locationCode='30'" 
-      **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of:'open', 'closed', 'partial'", "restrictedStatus='open'" 
-      **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID='http://some/path'" 
-      **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of channel epoch", "startDate=2016-07-01T00:00:00" 
+      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"Z\"" 
+      **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Channel", "code=\"BHZ\"" 
+      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of channel epoch", "endDate=\"2018-01-27T00:00:00\"" 
+      **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "historicalCode=\"bhz\"" 
+      **locationCode**, :ref:`string<type-glossary>`, :red:`yes`, "The locationCode is typically used to group channels from a common sensor. For example, the channels of the primary sensor at global IDA-IRIS stations have locationCode = \"00\": 00_BHZ, 00_BHE, 00_BHN, 00_LHZ, ..., etc. Even though it is required, locationCode may be, and often is, an empty string, however, it is recommended that the locationCode not be empty.", "locationCode=\"30\"" 
+      **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
+      **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
+      **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of channel epoch", "startDate=\"2016-07-01T00:00:00\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -100,7 +100,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **type**, :ref:`string<type-glossary>`, no, "Identifier type", "type='DOI'" 
+      **type**, :ref:`string<type-glossary>`, no, "Identifier type", "type=\"DOI\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -127,8 +127,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **id**, :ref:`CounterType<type-glossary>`, no, "An ID for this comment", "id=12345" 
-      **subject**, :ref:`string<type-glossary>`, no, "A subject for this comment. Multiple comments with the same subject should be considered related.", "subject='Scheduled maintenance'" 
+      **id**, :ref:`CounterType<type-glossary>`, no, "An ID for this comment", "id=\"12345\"" 
+      **subject**, :ref:`string<type-glossary>`, no, "A subject for this comment. Multiple comments with the same subject should be considered related.", "subject=\"Scheduled maintenance\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -238,7 +238,7 @@
 
    .. container:: description
 
-      Author of Comment.
+      Author of Comment. Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -420,7 +420,7 @@
 
    .. container:: example
 
-      **Example**: <AreaCode>408</CountryCode>
+      **Example**: <AreaCode>408</AreaCode>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -468,7 +468,7 @@
 
    .. container:: description
 
-      A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers.
+      A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers. A type for describing data availability.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -495,8 +495,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of extent", "end=1988-12-31T00:00:00" 
-      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of extent", "start=1988-01-01T00:00:00" 
+      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of extent", "end=\"1988-12-31T00:00:00\"" 
+      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of extent", "start=\"1988-01-01T00:00:00\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -523,10 +523,10 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of span", "end=1988-12-31T00:00:00" 
-      **maximumTimeTear**, :ref:`decimal<type-glossary>`, no, "The maximum time tear (gap or overlap) in seconds between time series segments in the specified range.", "maximumTimeTear=0.01" 
-      **numberSegments**, :ref:`integer<type-glossary>`, :red:`yes`, "The number of continuous time series segments contained in the specified time range. A value of 1 indicates that the time series is continuous from start to end.", "numberSegments=2" 
-      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of span", "start=1988-01-01T00:00:00" 
+      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of span", "end=\"1988-12-31T00:00:00\"" 
+      **maximumTimeTear**, :ref:`decimal<type-glossary>`, no, "The maximum time tear (gap or overlap) in seconds between time series segments in the specified range.", "maximumTimeTear=\"0.01\"" 
+      **numberSegments**, :ref:`integer<type-glossary>`, :red:`yes`, "The number of continuous time series segments contained in the specified time range. A value of 1 indicates that the time series is continuous from start to end.", "numberSegments=\"2\"" 
+      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of span", "start=\"1988-01-01T00:00:00\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -543,7 +543,7 @@
 
    .. container:: description
 
-      URI of any type of external report, such as data quality reports.
+      URI of any type of external report, such as data quality reports. This type contains a Uniform Resource Identifier (URI) and and description for external information that users may want to reference.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -624,7 +624,7 @@
 
    .. container:: description
 
-      Latitude of this channel's sensor, by default in degrees. Often the same as the station latitude, but when different the channel latitude is the true location of the sensor.
+      Latitude of this channel's sensor, by default in degrees. Often the same as the station latitude, but when different the channel latitude is the true location of the sensor. Latitude type extending the base type to add datum as an attribute with default.
 
    .. container:: example
 
@@ -638,9 +638,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='DEGREES'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
       **datum**, :ref:`NMTOKEN<type-glossary>`, no, "", "" 
 
@@ -669,7 +669,7 @@
 
    .. container:: description
 
-      Longitude of this channel's sensor, by default in degrees. Often the same as the station longitude, but when different the channel longitude is the true location of the sensor.
+      Longitude of this channel's sensor, by default in degrees. Often the same as the station longitude, but when different the channel longitude is the true location of the sensor. Longitude type extending the base type to add datum as an attribute with default.
 
    .. container:: example
 
@@ -683,9 +683,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='DEGREES'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
       **datum**, :ref:`NMTOKEN<type-glossary>`, no, "", "" 
 
@@ -714,7 +714,7 @@
 
    .. container:: description
 
-      Elevation of the sensor, by default in meters. To find the local ground surface level, add the Depth value to this elevation.
+      Elevation of the sensor, by default in meters. To find the local ground surface level, add the Depth value to this elevation. Extension of FloatType for distances, elevations, and depths.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -724,9 +724,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='m'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"m\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -754,7 +754,7 @@
 
    .. container:: description
 
-      The depth of the sensor relative to the local ground surface level, in meters.
+      The depth of the sensor relative to the local ground surface level, in meters. Extension of FloatType for distances, elevations, and depths.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -764,9 +764,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='m'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"m\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -794,7 +794,7 @@
 
    .. container:: description
 
-      Azimuth of the sensor in degrees clockwise from geographic (true) north.
+      Azimuth of the sensor in degrees clockwise from geographic (true) north. Instrument azimuth, degrees clockwise from North.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -804,9 +804,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='DEGREES'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -834,7 +834,7 @@
 
    .. container:: description
 
-      Dip of the instrument in degrees, positive down from horizontal.
+      Dip of the instrument in degrees, positive down from horizontal Instrument dip in degrees, positive down from horizontal.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -844,9 +844,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='DEGREES'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -874,7 +874,7 @@
 
    .. container:: description
 
-      Elevation of the water surface in meters for underwater sites, where 0 is mean sea level. If you put an OBS on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
+      Elevation of the water surface in meters for underwater sites, where 0 is mean sea level. If you put an OBS on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0. Representation of floating-point numbers used as measurements.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -884,9 +884,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit='m'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit=\"m\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -943,13 +943,9 @@
 
 					type:`double <appendices.html#glossary-double>`_
 
-   .. container:: description
-
-      Sample rate in samples per second. SampleRate is optional unless SampleRateRatio is present, in which case SampleRate is required.
-
    .. container:: example
 
-      **Example**: <SampleRate units='SAMPLES/S'>40.0</SampleRate>
+      **Example**: <SampleRate units="SAMPLES/S">40.0</SampleRate>
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -959,9 +955,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='SAMPLES/S'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"SAMPLES/S\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -977,14 +973,15 @@
 
       Channel :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` SampleRateRatio
 
-   .. container:: description
-
-      Sample rate expressed as number of samples in a number of seconds. If present, then <SampleRate> must also be present. It can be useful for very slow data (e.g., greater than 10 days), since it allows for greater precision in the stored value.
-
    .. container:: example
 
-      **Example**: <SampleRate>3.859999367e-07</SampleRate> <SampleRateRatio><NumberSamples>1</NumberSamples> <NumberSeconds>2590674</NumberSeconds> </SampleRateRatio>
+      **Example**::
 
+        <SampleRate>3.859999367e-07</SampleRate>
+        <SampleRateRatio>
+        	<NumberSamples>1</NumberSamples>
+        	<NumberSeconds>2590674</NumberSeconds>
+        </SampleRateRatio>
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -1074,9 +1071,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of drift value.", "unit='SECONDS/SAMPLE'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of drift value.", "unit=\"SECONDS/SAMPLE\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -1094,12 +1091,16 @@
 
    .. container:: description
 
-      Units of calibration (e.g., V (for Volts) or A (for amps)).
+      Units of calibration (e.g., V (for Volts) or A (for amps)) Use *SI* units when possible A type to document units; use SI whenever possible.
 
    .. container:: example
 
-      **Example**:  <CalibrationUnits><Name>V</Name> <Description>Volts</Description> </CalibrationUnits>
+      **Example**::
 
+        <CalibrationUnits>
+          <Name>V</Name>
+          <Description>Volts</Description>
+        </CalibrationUnits>
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -1169,7 +1170,7 @@
 
    .. container:: description
 
-      Details of the (typically analog) sensor attached to this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment.
+      Details of the (typically analog) sensor attached to this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. A type for equipment related to data acquisition or processing.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1439,7 +1440,7 @@
 
    .. container:: description
 
-      Preamplifier (if any) used by this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment.
+      Preamplifier (if any) used by this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. A type for equipment related to data acquisition or processing.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1709,7 +1710,7 @@
 
    .. container:: description
 
-      Datalogger that recorded this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment.
+      Datalogger that recorded this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. A type for equipment related to data acquisition or processing.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1979,7 +1980,7 @@
 
    .. container:: description
 
-      If the Equipment is entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. If using a preamplifier, sensor, or datalogger, use their appropriate fields instead.
+      If the Equipment is entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. If using a preamplifier, sensor, or datalogger, use their appropriate fields instead. A type for equipment related to data acquisition or processing.
 
 .. tabularcolumns::|l|l|l|1|1| 
 

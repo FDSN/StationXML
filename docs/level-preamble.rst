@@ -25,7 +25,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **schemaVersion**, :ref:`decimal<type-glossary>`, :red:`yes`, "The StationXML schema version of this document.", "schemaVersion='1.1'" 
+      **schemaVersion**, :ref:`decimal<type-glossary>`, :red:`yes`, "The StationXML schema version of this document.", "schemaVersion=\"1.1\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
