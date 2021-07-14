@@ -92,7 +92,6 @@ def write_tree(element, outfile, first_time = True):
     if element.annotation:
         for note in element.annotation:
             old_note=note[:]
-            #note=choiceChooser(note,element)
             note=isRightChoice(note,element)
             if note:
                 if note==old_note:
@@ -171,7 +170,6 @@ def write_tree(element, outfile, first_time = True):
 
         # If the annotation involves multiple options depending on its location
 
-        #description=choiceChooser(description,element)
         description=urlInserter(description)
         description=mathBlock(description,element.level)
 
@@ -197,7 +195,6 @@ def write_tree(element, outfile, first_time = True):
         else:
             exampleStr = example
         exampleStr = exampleStr.strip()
-        #example=choiceChooser(example,element)
         print("   .. container:: example\n", file=outfile)
         if exampleStr.find('\n') != -1:
             # multiline example
@@ -229,7 +226,6 @@ def write_tree(element, outfile, first_time = True):
 
             for note in attrib.annotation:
                 old_note=note[:]
-                #note=choiceChooser(note,element)
                 note=isRightChoice(note,element)
                 if note:
 
@@ -268,27 +264,6 @@ def write_tree(element, outfile, first_time = True):
             write_tree(child, outfile, first_time = False)
 
     return
-
-
-# when given a documentation (Typically Example or Description) and the element, and it starts with default, will
-# return the correct documentation based off where it is in the xsd
-# Default:Default thing
-# Choice:N Documentation for network
-# Choice:S Documentation for station
-def choiceChooser(documentation,theElement):
-    if documentation.find("LevelDefault:")==0:
-        documentationChoices=documentation.split("LevelChoice:")
-        documentation=documentationChoices[0][13:]
-        sectionSymbol=theElement.crumb[0][0].upper()
-
-        for choice in documentationChoices[1:]:
-            if sectionSymbol==choice[0]:
-                documentation=choice[2:]
-    elif documentation.find("ElementDefault:")==0:
-        documentation=elementChoiceChooser(documentation,theElement)
-
-    return documentation
-
 
 def elementChoiceChooser(documentation,theElement):
     documentationChoices=documentation.split("ElementChoice:")
