@@ -83,7 +83,7 @@
 				<xs:annotation>
 					<xs:documentation>Name of the software module that generated this document.
 					</xs:documentation>
-					<xs:documentation>Example:&lt;Module&gt;SeisComp3&lt;/Module&gt;</xs:documentation>
+					<xs:documentation><example><Module>SeisComp3</Module></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ModuleURI" type="xs:anyURI" minOccurs="0">
@@ -117,7 +117,7 @@
 		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation.
 		A Comment element may be included for additional comments.
       		</xs:documentation>
-      		<xs:documentation>Example:&lt;Network code="IU" startDate=2016-01-27T13:00:00&gt;</xs:documentation>
+      		<xs:documentation><example><Network code="IU" startDate="2016-01-27T13:00:00" /></example></xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
@@ -133,7 +133,7 @@
 							<xs:documentation>The total number of stations in this
 								network, including inactive or terminated stations.
 							</xs:documentation>
-              <xs:documentation>Example:&lt;TotalNumberStations&gt;24&lt;/TotalNumberStations&gt;</xs:documentation>
+              <xs:documentation><example><TotalNumberStations>24</TotalNumberStations></example></xs:documentation>
               <xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -142,7 +142,7 @@
 							<xs:documentation>The number of stations selected in the request that resulted
 								in this document.
 							</xs:documentation>
-              <xs:documentation>Example:&lt;SelectedNumberStations&gt;12&lt;/SelectedNumberStations&gt;</xs:documentation>
+              <xs:documentation><example><SelectedNumberStations>12</SelectedNumberStations></example></xs:documentation>
               <xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -166,19 +166,19 @@
 					<xs:element name="Latitude" type="fsx:LatitudeType">
 						<xs:annotation>
 		<xs:documentation>Station latitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location).</xs:documentation>
-		<xs:documentation>Example:&lt;Latitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;34.9459&lt;/Latitude&gt;</xs:documentation>
+		<xs:documentation><example><Latitude unit="DEGREES" datum="WGS84">34.9459</Latitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Longitude" type="fsx:LongitudeType">
 						<xs:annotation>
 		<xs:documentation>Station longitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location).</xs:documentation>
-		<xs:documentation>Example:&lt;Longitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;-106.4572&lt;/Longitude&gt;</xs:documentation>
+		<xs:documentation><example><Longitude unit="DEGREES" datum="WGS84">-106.4572</Longitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
 						<xs:annotation>
 							<xs:documentation>Elevation of local ground surface level at station, by default in meters.</xs:documentation>
-							<xs:documentation>Example:&lt;Elevation unit=&quot;m&quot;&gt;1850.0&lt;/Elevation&gt;</xs:documentation>
+							<xs:documentation><example><Elevation unit="m">1850.0</Elevation></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Site" type="fsx:SiteType">
@@ -193,7 +193,7 @@
 		<xs:documentation>Elevation of the water surface (in meters) for underwater sites, where 0 is mean sea level.
 		If you put an ocean-bottom seismometer (OBS) on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
 		</xs:documentation>
-		<xs:documentation>Example:&lt;WaterLevel&gt;1200&lt;/WaterLevel&gt;</xs:documentation>
+		<xs:documentation><example><WaterLevel>1200</WaterLevel></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Vault" type="xs:string" minOccurs="0">
@@ -283,7 +283,7 @@
 								Often the same as the station latitude, but
 								when different the channel latitude is the true location of the sensor.
 							</xs:documentation>
-							<xs:documentation>Example:&lt;Latitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;34.9459&lt;/Latitude&gt;</xs:documentation>
+							<xs:documentation><example><Latitude unit="DEGREES" datum="WGS84">34.9459</Latitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Longitude" type="fsx:LongitudeType">
@@ -292,7 +292,7 @@
 								Often the same as the station longitude, but
 								when different the channel longitude is the true location of the sensor.
 							</xs:documentation>
-							<xs:documentation>Example:&lt;Longitude unit=&quot;DEGREES&quot; datum=&quot;WGS84&quot;&gt;-106.4572&lt;/Longitude&gt;</xs:documentation>
+							<xs:documentation><example><Longitude unit="DEGREES" datum="WGS84">-106.4572</Longitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
@@ -332,7 +332,7 @@
                 The value between the &lt;Type&gt; tags must be one of:
 								TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG or SYNTHESIZED.
 							</xs:documentation>
-              <xs:documentation>Example:&lt;Type&gt;CONTINUOUS&lt;/Type&gt;</xs:documentation>
+              <xs:documentation><example><Type>CONTINUOUS</Type></example></xs:documentation>
 
 						</xs:annotation>
 						<xs:simpleType>
@@ -378,9 +378,14 @@
 						<xs:annotation>
 							<xs:documentation>Units of calibration (e.g., V (for Volts) or A (for amps))</xs:documentation>
 							<xs:documentation>Use *SI* units when possible</xs:documentation>
-              <xs:documentation>Example: &lt;CalibrationUnits&gt;&lt;Name&gt;V&lt;/Name&gt;
-                                &lt;Description&gt;Volts&lt;/Description&gt;
-                                &lt;/CalibrationUnits&gt;</xs:documentation>
+              <xs:documentation>
+								<example>
+<CalibrationUnits>
+  <Name>V</Name>
+  <Description>Volts</Description>
+</CalibrationUnits>
+								</example>
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Sensor" type="fsx:EquipmentType" minOccurs="0">
@@ -678,13 +683,13 @@
 			<xs:element name="BeginEffectiveTime" type="xs:dateTime" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Start time for when comment applies.</xs:documentation>
-					<xs:documentation>Example:&lt;BeginEffectiveTime&gt;2008-09-15T00:00:00&lt;/BeginEffectiveTime&gt;</xs:documentation>
+					<xs:documentation><example><BeginEffectiveTime>2008-09-15T00:00:00</BeginEffectiveTime></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="EndEffectiveTime" type="xs:dateTime" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>End time for when comment applies.</xs:documentation>
- 					<xs:documentation>Example:&lt;EndEffectiveTime&gt;2008-09-16T12:00:00&lt;/EndEffectiveTime&gt;</xs:documentation>
+ 					<xs:documentation><example><EndEffectiveTime>2008-09-16T12:00:00</EndEffectiveTime></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Author" type="fsx:PersonType" minOccurs="0" maxOccurs="unbounded">
@@ -723,7 +728,7 @@
                 For a digial z-transform (e.g., for an IIR filter), this should be
                 "DIGITAL (Z-TRANSFORM)"
 							</xs:documentation>
-              <xs:documentation>Example: &lt;PzTransferFunctionType&gt;LAPLACE (RADIANS/SECOND)&lt;/PzTransferFunctionType&gt;"
+              <xs:documentation><example><PzTransferFunctionType>LAPLACE (RADIANS/SECOND)</PzTransferFunctionType></example>
 							</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
@@ -1223,7 +1228,7 @@
             Sample rate in samples per second.
             SampleRate is optional unless SampleRateRatio is present, in which case
             SampleRate is required.
-            Example:&lt;SampleRate units='SAMPLES/S'&gt;40.0&lt;/SampleRate&gt;
+            <example><SampleRate units='SAMPLES/S'>40.0</SampleRate></example>
           </xs:documentation>
 		    </xs:annotation>
       </xs:element>
@@ -1234,10 +1239,13 @@
             If present, then &lt;SampleRate&gt; must also be present.
             It can be useful for very slow data (e.g., greater than 10 days),
             since it allows for greater precision in the stored value.
-            Example:&lt;SampleRate&gt;3.859999367e-07&lt;/SampleRate&gt;
-            &lt;SampleRateRatio&gt;&lt;NumberSamples&gt;1&lt;/NumberSamples&gt;
-            &lt;NumberSeconds&gt;2590674&lt;/NumberSeconds&gt;
-            &lt;/SampleRateRatio&gt;
+            <example>
+<SampleRate>3.859999367e-07</SampleRate>
+<SampleRateRatio>
+	<NumberSamples>1</NumberSamples>
+	<NumberSeconds>2590674</NumberSeconds>
+</SampleRateRatio>
+						</example>
           </xs:documentation>
 		    </xs:annotation>
 		  </xs:element>
@@ -1291,7 +1299,7 @@
 		<xs:attribute name="number" type="xs:integer">
 				<xs:annotation>
 					<xs:documentation>The position index of the pole (or zero) in the array of poles[] (or zeros[])</xs:documentation>
-          <xs:documentation>Example:&lt;Pole number=&apos;1&apos;&gt;</xs:documentation>
+          <xs:documentation><example><Pole number="1" /></example></xs:documentation>
 				</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -1316,14 +1324,14 @@
 			<xs:element name="Agency" type="xs:string">
 				<xs:annotation>
 			    		<xs:documentation>An operating agency and associated contact persons.</xs:documentation>
-					<xs:documentation>Example:&lt;Agency&gt;USGS&lt;/Agency&gt;</xs:documentation>
+					<xs:documentation><example><Agency>USGS</Agency></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Contact" type="fsx:PersonType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="WebSite" type="xs:anyURI" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Website of operating agency</xs:documentation>
-					<xs:documentation>Example:&lt;WebSite&gt;http://usgs.gov&lt;/WebSite&gt;</xs:documentation>
+					<xs:documentation><example><WebSite>http://usgs.gov</WebSite></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -1338,19 +1346,19 @@
 			<xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Name of contact or author</xs:documentation>
-					<xs:documentation>Example:&lt;Name&gt;Alfred E. Neuman&lt;/Name&gt;</xs:documentation>
+					<xs:documentation><example><Name>Alfred E. Neuman</Name></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Agency" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Agency of contact or author</xs:documentation>
-					<xs:documentation>Example:&lt;Agency&gt;Mad Magazine, Inc.&lt;/Agency&gt;</xs:documentation>
+					<xs:documentation><example><Agency>Mad Magazine, Inc.</Agency></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Email" type="fsx:EmailType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Email of contact or author</xs:documentation>
-					<xs:documentation>Example:&lt;Email&gt;a.neuman@nosuchsite.com&lt;/Email&gt;</xs:documentation>
+					<xs:documentation><example><Email>a.neuman@nosuchsite.com</Email></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Phone" type="fsx:PhoneNumberType" minOccurs="0" maxOccurs="unbounded">
@@ -1369,38 +1377,38 @@
 			<xs:element name="Name" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Name of the site</xs:documentation>
-					<xs:documentation>Example:&lt;Name&gt;Albuquerque, New Mexico&lt;/Name&gt;</xs:documentation>
+					<xs:documentation><example><Name>Albuquerque, New Mexico</Name></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Description" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>A longer description of the location of this station</xs:documentation>
-					<xs:documentation>Example:&lt;Description&gt;NW corner of Yellowstone National Park&lt;/Description&gt;</xs:documentation>
+					<xs:documentation><example><Description>NW corner of Yellowstone National Park</Description></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Town" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The town or city closest to the station.</xs:documentation>
-					<xs:documentation>Example:&lt;Town&gt;Albuquerque&lt;/Town&gt;</xs:documentation>
+					<xs:documentation><example><Town>Albuquerque</Town></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="County" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The county where the station is located</xs:documentation>
-					<xs:documentation>Example:&lt;County&gt;Bernalillo&lt;/County&gt;</xs:documentation>
+					<xs:documentation><example><County>Bernalillo</County></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 
 			<xs:element name="Region" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The state, province, or region of this site.</xs:documentation>
-					<xs:documentation>Example:&lt;Region&gt;Southwest U.S.&lt;/Region&gt;</xs:documentation>
+					<xs:documentation><example><Region>Southwest U.S.</Region></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Country" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The country of this site.</xs:documentation>
-					<xs:documentation>Example:&lt;Country&gt;U.S.A.&lt;/Country&gt;</xs:documentation>
+					<xs:documentation><example><Country>U.S.A.</Country></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
@@ -1443,19 +1451,19 @@
 			<xs:element name="CountryCode" type="xs:integer" minOccurs="0">
 				<xs:annotation>
  					<xs:documentation>Telephone country code</xs:documentation>
-					<xs:documentation>Example:&lt;CountryCode&gt;64&lt;/CountryCode&gt;</xs:documentation>
+					<xs:documentation><example><CountryCode>64</CountryCode></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="AreaCode" type="xs:integer">
 				<xs:annotation>
 					<xs:documentation>Telephone area code</xs:documentation>
-					<xs:documentation>Example:&lt;AreaCode&gt;408&lt;/CountryCode&gt;</xs:documentation>
+					<xs:documentation><example><AreaCode>408</AreaCode></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PhoneNumber">
 				<xs:annotation>
 					<xs:documentation>Telephone number</xs:documentation>
-					<xs:documentation>Example:&lt;PhoneNumber&gt;5551212&lt;/PhoneNumber&gt;</xs:documentation>
+					<xs:documentation><example><PhoneNumber>5551212</PhoneNumber></example></xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
@@ -1504,7 +1512,7 @@
 				<xs:attribute name="type" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Identifier type</xs:documentation>
-						<xs:documentation>Example:type=&apos;DOI&apos;</xs:documentation>
+						<xs:documentation>Example:type="DOI"</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -1629,7 +1637,7 @@
           <xs:documentation>LevelChoice:N Description of the Network</xs:documentation>
           <xs:documentation>LevelChoice:S Description of the Station</xs:documentation>
           <xs:documentation>LevelChoice:C Description of the Channel</xs:documentation>
-					<xs:documentation>Example:&lt;Description&gt;This is a description&lt;/Description&gt;</xs:documentation>
+					<xs:documentation><example><Description>This is a description</Description></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Identifier" type="fsx:IdentifierType" minOccurs="0" maxOccurs="unbounded"/>
