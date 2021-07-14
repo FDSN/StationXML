@@ -675,9 +675,11 @@
 			<xs:element name="Value" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Comment text.</xs:documentation>
-          <xs:documentation>LevelChoice:N Example:&lt;Value&gt;Temporary network deployment&lt;/Value&gt;</xs:documentation>
-          <xs:documentation>LevelChoice:S Example:&lt;Value&gt;GPS CLock is unlocked&lt;/Value&gt;</xs:documentation>
-          <xs:documentation>LevelChoice:C Example:&lt;Value&gt;Large number of spikes&lt;/Value&gt;</xs:documentation>
+					<xs:documentation>
+	          <example  LevelChoice="N"><Value>Temporary network deployment</Value></example>
+	          <example  LevelChoice="S"><Value>GPS CLock is unlocked</Value></example>
+	          <example  LevelChoice="C"><Value>Large number of spikes</Value></example>
+					</xs:documentation>
 			  </xs:annotation>
       			</xs:element>
 			<xs:element name="BeginEffectiveTime" type="xs:dateTime" minOccurs="0">

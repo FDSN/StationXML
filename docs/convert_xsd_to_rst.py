@@ -187,6 +187,12 @@ def write_tree(element, outfile, first_time = True):
     for example in examples:
         exampleStr = ""
         if isinstance(example, ElementTree.Element):
+            if example.get('LevelChoice') is not None and element.parent is not None:
+                lc = example.get('LevelChoice')
+                level_char = element.crumb[0][0].upper()
+                if lc != level_char:
+                    # skip this example as wrong level
+                    continue
             if example.tag == "example":
                 for ee in example:
                     exampleStr += ElementTree.tostring(ee, encoding='unicode', method='xml')
