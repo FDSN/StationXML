@@ -19,7 +19,7 @@
 
    .. container:: example
 
-      **Example**: <Network code="IU" startDate=2016-01-27T13:00:00>
+      **Example**: <Network code="IU" startDate="2016-01-27T13:00:00" />
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -29,13 +29,13 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode='GSN' " 
-      **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Network ", "code='IU'" 
-      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of network", "endDate=2018-01-27T00:00:00" 
-      **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "historicalCode='II' " 
-      **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of:'open', 'closed', 'partial'", "restrictedStatus='open'" 
-      **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID='http://some/path'" 
-      **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of network", "startDate=2016-07-01T00:00:00" 
+      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"GSN\"" 
+      **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Network", "code=\"IU\"" 
+      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of network", "endDate=\"2018-01-27T00:00:00\"" 
+      **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "historicalCode=\"II\"" 
+      **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
+      **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
+      **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of network", "startDate=\"2016-07-01T00:00:00\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -103,7 +103,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **type**, :ref:`string<type-glossary>`, no, "Identifier type", "type='DOI'" 
+      **type**, :ref:`string<type-glossary>`, no, "Identifier type", "type=\"DOI\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -130,8 +130,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **id**, :ref:`CounterType<type-glossary>`, no, "An ID for this comment", "id=12345" 
-      **subject**, :ref:`string<type-glossary>`, no, "A subject for this comment. Multiple comments with the same subject should be considered related.", "subject='Scheduled maintenance'" 
+      **id**, :ref:`CounterType<type-glossary>`, no, "An ID for this comment", "id=\"12345\"" 
+      **subject**, :ref:`string<type-glossary>`, no, "A subject for this comment. Multiple comments with the same subject should be considered related.", "subject=\"Scheduled maintenance\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -241,7 +241,7 @@
 
    .. container:: description
 
-      Author of Comment.
+      Author of Comment. Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -423,7 +423,7 @@
 
    .. container:: example
 
-      **Example**: <AreaCode>408</CountryCode>
+      **Example**: <AreaCode>408</AreaCode>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -471,7 +471,7 @@
 
    .. container:: description
 
-      A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers.
+      A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers. A type for describing data availability.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -498,8 +498,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of extent", "end=1988-12-31T00:00:00" 
-      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of extent", "start=1988-01-01T00:00:00" 
+      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of extent", "end=\"1988-12-31T00:00:00\"" 
+      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of extent", "start=\"1988-01-01T00:00:00\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -526,10 +526,10 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of span", "end=1988-12-31T00:00:00" 
-      **maximumTimeTear**, :ref:`decimal<type-glossary>`, no, "The maximum time tear (gap or overlap) in seconds between time series segments in the specified range.", "maximumTimeTear=0.01" 
-      **numberSegments**, :ref:`integer<type-glossary>`, :red:`yes`, "The number of continuous time series segments contained in the specified time range. A value of 1 indicates that the time series is continuous from start to end.", "numberSegments=2" 
-      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of span", "start=1988-01-01T00:00:00" 
+      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of span", "end=\"1988-12-31T00:00:00\"" 
+      **maximumTimeTear**, :ref:`decimal<type-glossary>`, no, "The maximum time tear (gap or overlap) in seconds between time series segments in the specified range.", "maximumTimeTear=\"0.01\"" 
+      **numberSegments**, :ref:`integer<type-glossary>`, :red:`yes`, "The number of continuous time series segments contained in the specified time range. A value of 1 indicates that the time series is continuous from start to end.", "numberSegments=\"2\"" 
+      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of span", "start=\"1988-01-01T00:00:00\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -546,7 +546,7 @@
 
    .. container:: description
 
-      Agency and contact persons who manage this network.
+      Agency and contact persons who manage this network. An operating agency and associated contact persons. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact’s optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing element should be include in the Operator tag.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -776,7 +776,7 @@
 
    .. container:: example
 
-      **Example**: <AreaCode>408</CountryCode>
+      **Example**: <AreaCode>408</AreaCode>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
