@@ -82,31 +82,17 @@ def write_tree(element, outfile, first_time = True):
         print("      %s\n" % crumb, file=outfile)
         #print("      crumb:%s\n" % crumb, file=outfile)
 
-    descriptions = []
-
+    description = ""
     stored_description_default=False
+    level_char = element.crumb[0][0].upper()
 
     if element.annotation:
-        for note in element.annotation:
-            old_note=note[:]
-            note=isRightChoice(note,element)
-            if note:
-                if note==old_note:
-                    isDefault=True
-                else:
-                    isDefault=False
-
-                if not isDefault:
-                     if stored_description_default:
-                         descriptions.clear()
-                     descriptions.append(note)
-
-                elif isDefault and len(descriptions)==0:
-                    descriptions.append(note)
-                    stored_description_default=True
-
-                if note.find("Warning:") == 0:
-                    warnings.append(note[8:])
+        ann_has_level_choice = list(filter(lambda a: a.tag == "levelDesc" and a.get("LevelChoice") == level_char , element.annotation))
+        if len(ann_has_level_choice) != 0:
+            ann_list = ann_has_level_choice
+        else:
+            ann_list = list(filter(lambda a: a.tag != "levelDesc" , element.annotation))
+        description = " ".join(map(lambda note: " ".join(note.text.split()) , ann_list))
 
     for warning in element.warning:
         print("   .. admonition:: Warning\n", file=outfile)
@@ -140,9 +126,7 @@ def write_tree(element, outfile, first_time = True):
         print(latex_words, file=outfile)
         print(html_words, file=outfile)
 
-    if len(descriptions) > 0:
-
-        description=descriptions[0]
+    if len(description) > 0:
 
         # If the annotation involves multiple options depending on its location
 
@@ -168,9 +152,7 @@ def write_tree(element, outfile, first_time = True):
                     # skip this example as wrong level
                     continue
             if example.get('LevelChoice') is not None and element.parent is not None:
-                lc = example.get('LevelChoice')
-                level_char = element.crumb[0][0].upper()
-                if lc != level_char:
+                if example.get('LevelChoice') != level_char:
                     # skip this example as wrong level
                     continue
             if example.tag == "example":
@@ -216,23 +198,17 @@ def write_tree(element, outfile, first_time = True):
                 for ex in attrib.example:
                     if ex.get("ElementChoice") is not None and ex.get("ElementChoice") == element.name:
                         example = f"{attrib.name}=\{DQ}{ex.text}\{DQ}"
-            for note in attrib.annotation:
-                old_note=note[:]
-                note=isRightChoice(note,element)
-                if note:
-
-                    if note==old_note:
-                        isDefault=True
+                    if ex.get("LevelChoice") is not None and ex.get("LevelChoice") == level_char:
+                        example = f"{attrib.name}=\{DQ}{ex.text}\{DQ}"
+            if len(attrib.annotation) != 0:
+                    ann_has_level_choice = list(filter(lambda a: a.tag == "levelDesc" and a.get("LevelChoice") == level_char , attrib.annotation))
+                    if len(ann_has_level_choice) != 0:
+                        ann_list = ann_has_level_choice
                     else:
-                        #print(note+" "+old_note, file=sys.stderr)
-                        isDefault=False
+                        ann_list = list(filter(lambda a: a.tag != "levelDesc" , attrib.annotation))
+                    description = " ".join(map(lambda note: " ".join(note.text.split()) , ann_list))
 
-                    if not isDefault:
-                         description = note
-
-                    elif isDefault and len(description)==0:
-                        description = note
-
+            description = " ".join(description.split())
             print("      **%s**, :ref:`%s<type-glossary>`, %s, \"%s\", \"%s\" " % (attrib.name, attrib.type,required, description, example), file=outfile)
 
         print(file=outfile)
@@ -507,18 +483,20 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
         for y in xsd_element.annotation.documentation:
             for ex in y.findall("example"):
                 this_elem.add_example(ex)
-            if y.text != None:
-                text = " ".join(y.text.split())
-                this_elem.add_annotation(text)
+            for ld in y.findall("levelDesc"):
+                this_elem.add_annotation(ld)
+            if len(y) == 0 and y.text != None:
+                this_elem.add_annotation(y)
 
     # May not want these:
     if xsd_element.type.annotation is not None:
         for y in xsd_element.type.annotation.documentation:
             for ex in y.findall("example"):
                 this_elem.add_example(ex)
-            if y.text is not None:
-                text = " ".join(y.text.split())
-                this_elem.add_annotation(text)
+            for ld in y.findall("levelDesc"):
+                this_elem.add_annotation(ld)
+            if len(y) == 0 and y.text is not None:
+                this_elem.add_annotation(y)
                 #print("%s MTH: Add (type) annotation:[%s]" % (space, text), file=sys.stderr)
 
     for k in xsd_element.attributes:
@@ -533,10 +511,11 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
                 for ex in y.findall("example"):
                     attr.add_example(ex)
                 for ex in y.findall("warning"):
-                    subElement.add_warning(ex)
-                if y.text is not None:
-                    text = " ".join(y.text.split())
-                    attr.add_annotation(text)
+                    attr.add_warning(ex)
+                for ld in y.findall("levelDesc"):
+                    attr.add_annotation(ld)
+                if len(y) == 0 and y.text is not None:
+                    attr.add_annotation(y)
                     #print("%s MTH: Add attrib annotation:[%s]" % (space, text), file=sys.stderr)
 
     # xsd_element.type is always some form of XsdComplexType
@@ -567,9 +546,10 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
                                 subElement.add_example(ex)
                             for ex in y.findall("warning"):
                                 subElement.add_warning(ex)
-                            if y.text != None:
-                                text = " ".join(y.text.split())
-                                subElement.add_annotation(text)
+                            for ld in y.findall("levelDesc"):
+                                subElement.add_annotation(ld)
+                            if len(y) == 0 and y.text != None:
+                                subElement.add_annotation(y)
                                 # print("  has annotation=[%s]" % text, file=sys.stderr)
                     for k in e.attributes:
                         attrib = e.attributes[k]
@@ -580,8 +560,10 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
 
                         if attrib.annotation is not None:
                             for y in attrib.annotation.documentation:
-                                text = " ".join(y.text.split())
-                                attr.add_annotation(text)
+                                for ld in y.findall("levelDesc"):
+                                    subElement.add_annotation(ld)
+                                if len(y) == 0 and y.text != None:
+                                    attr.add_annotation(y)
 
                 else:
                     walk_tree(e, stop_element, level=level+1, last_elem=this_elem, context=context)
