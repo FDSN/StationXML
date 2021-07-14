@@ -23,6 +23,7 @@ from xmlschema.validators.attributes import XsdAttributeGroup, XsdAnyAttribute
 from xmlschema.validators.complex_types import XsdComplexType
 from xmlschema.validators.facets import *
 
+from xml.etree import ElementTree
 
 def write_tree(element, outfile, first_time = True):
     """Convert to RST and write element and children to output file.
@@ -130,7 +131,8 @@ def write_tree(element, outfile, first_time = True):
 
                 if note.find("Warning:") == 0:
                     warnings.append(note[8:])
-
+    for example in element.example:
+        examples.append(example)
     for warning in warnings:
         print("   .. admonition:: Warning\n", file=outfile)
         print("      %s\n" % warning, file=outfile)
@@ -185,12 +187,29 @@ def write_tree(element, outfile, first_time = True):
 
     # Add period if needs it
     for example in examples:
+        exampleStr = ""
+        if isinstance(example, ElementTree.Element):
+            if example.tag == "example":
+                for ee in example:
+                    exampleStr += ElementTree.tostring(ee, encoding='unicode', method='xml')
+            else:
+                exampleStr = ElementTree.tostring(example, encoding='unicode', method='xml')
+        else:
+            exampleStr = example
+        exampleStr = exampleStr.strip()
         #example=choiceChooser(example,element)
         print("   .. container:: example\n", file=outfile)
-        if (example[-1]==">" or example[-1]=="."):
-            print("      **Example**: %s\n" % example, file=outfile)
+        if exampleStr.find('\n') != -1:
+            # multiline example
+            print("      **Example**::\n", file=outfile)
+            lines = exampleStr.splitlines()
+            for l in lines:
+                print(f"        {l.rstrip()}", file=outfile)
         else:
-            print("     **Example**: %s.\n" % example, file=outfile)
+            if (exampleStr[-1]==">" or exampleStr[-1]=="."):
+                print("      **Example**: %s\n" % exampleStr, file=outfile)
+            else:
+                print("     **Example**: %s.\n" % exampleStr, file=outfile)
 
     if element.attributes:
         print(".. tabularcolumns::|l|l|l|1|1| \n", file=outfile)
@@ -402,12 +421,14 @@ class Element(object):
         self.local_name = local_name
         self.required = required
         self.annotation = []
+        self.example = []
         self.children = []
         self.attributes = []
         self.crumb = []
         self.level = level
         self.type = type
         self.range_string = range_string
+        self.parent = None
 
         if annotation is not None:
             for note in annotation:
@@ -424,11 +445,15 @@ class Element(object):
     def add_annotation(self, note):
         self.annotation.append(note)
 
+    def add_example(self, element):
+        self.example.append(element)
+
     def add_attribute(self, attribute):
         self.attributes.append(attribute)
 
     def add_child(self, element):
         self.children.append(element)
+        element.parent = self
 
     def add_crumb(self, x):
         self.crumb.append(x)
@@ -515,15 +540,21 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
 
     if xsd_element.annotation is not None:
         for y in xsd_element.annotation.documentation:
-            text = " ".join(y.text.split())
-            this_elem.add_annotation(text)
+            for ex in y.findall("example"):
+                this_elem.add_example(ex)
+            if y.text != None:
+                text = " ".join(y.text.split())
+                this_elem.add_annotation(text)
 
     # May not want these:
     if xsd_element.type.annotation is not None:
         for y in xsd_element.type.annotation.documentation:
-            text = " ".join(y.text.split())
-            this_elem.add_annotation(text)
-            #print("%s MTH: Add (type) annotation:[%s]" % (space, text), file=sys.stderr)
+            for ex in y.findall("example"):
+                this_elem.add_example(ex)
+            if y.text is not None:
+                text = " ".join(y.text.split())
+                this_elem.add_annotation(text)
+                #print("%s MTH: Add (type) annotation:[%s]" % (space, text), file=sys.stderr)
 
     for k in xsd_element.attributes:
         attrib = xsd_element.attributes[k]
@@ -562,10 +593,13 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
 
                     if e.annotation is not None:
                         for y in e.annotation.documentation:
-                            text = " ".join(y.text.split())
-                            subElement.add_annotation(text)
-                            # print("  has annotation=[%s]" % text, file=sys.stderr)
-
+                            for ex in y.findall("example"):
+                                print(f"590 found example: {ex[0].tag}")
+                                subElement.add_example(ex)
+                            if y.text != None:
+                                text = " ".join(y.text.split())
+                                subElement.add_annotation(text)
+                                # print("  has annotation=[%s]" % text, file=sys.stderr)
                     for k in e.attributes:
                         attrib = e.attributes[k]
                         if not isinstance(attrib, XsdAnyAttribute):
