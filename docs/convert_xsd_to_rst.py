@@ -163,6 +163,10 @@ def write_tree(element, outfile, first_time = True):
     for example in element.example:
         exampleStr = ""
         if isinstance(example, ElementTree.Element):
+            if example.get('ElementChoice') is not None and element.parent is not None:
+                if example.get('ElementChoice') != element.parent.name:
+                    # skip this example as wrong level
+                    continue
             if example.get('LevelChoice') is not None and element.parent is not None:
                 lc = example.get('LevelChoice')
                 level_char = element.crumb[0][0].upper()
@@ -206,8 +210,12 @@ def write_tree(element, outfile, first_time = True):
             description = ""
             example = ""
             if len(attrib.example) != 0:
+                # use first example unless ElementChoice is attribute of example
                 DQ='"'
                 example = f"{attrib.name}=\{DQ}{attrib.example[0].text}\{DQ}"
+                for ex in attrib.example:
+                    if ex.get("ElementChoice") is not None and ex.get("ElementChoice") == element.name:
+                        example = f"{attrib.name}=\{DQ}{ex.text}\{DQ}"
             for note in attrib.annotation:
                 old_note=note[:]
                 note=isRightChoice(note,element)

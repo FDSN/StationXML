@@ -1019,8 +1019,8 @@
             <xs:documentation>The unit of measurement. Use *SI* unit names and symbols whenever possible
               (e.g., 'm' instead of 'METERS').</xs:documentation>
             <xs:documentation><example>SECONDS</example></xs:documentation>
-            <xs:documentation><example ElementChoice="WATERLEVEL">m</example></xs:documentation>
-            <xs:documentation><example ElementChoice="AMPLITUDE">m</example></xs:documentation>
+            <xs:documentation><example ElementChoice="WaterLevel">m</example></xs:documentation>
+            <xs:documentation><example ElementChoice="Amplitude">m</example></xs:documentation>
 				  </xs:annotation>
 				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
