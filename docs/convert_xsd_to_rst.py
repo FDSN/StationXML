@@ -87,7 +87,6 @@ def write_tree(element, outfile, first_time = True):
     descriptions = []
 
     stored_description_default=False
-    stored_example_default=False
 
     if element.annotation:
         for note in element.annotation:
@@ -99,34 +98,14 @@ def write_tree(element, outfile, first_time = True):
                 else:
                     isDefault=False
 
-                example_location=note.find("Example:")
-                if example_location != -1:
-                    if not isDefault:
-                         if stored_example_default:
-                             examples.clear()
-                         examples.append(note[example_location+8:])
+                if not isDefault:
+                     if stored_description_default:
+                         descriptions.clear()
+                     descriptions.append(note)
 
-
-                    elif isDefault and len(examples)==0:
-                        examples.append(note[example_location+8:])
-                        stored_example_default=True
-
-                if example_location!=0:
-                    #If we have one that isn't default, and there are ones that are default, replace.
-                    #If we have one that isn't default, and there aren't, just add.
-                    if example_location!=-1:
-                        toAdd=note[:example_location]
-                    else:
-                        toAdd=note
-
-                    if not isDefault:
-                         if stored_description_default:
-                             descriptions.clear()
-                         descriptions.append(toAdd)
-
-                    elif isDefault and len(descriptions)==0:
-                        descriptions.append(toAdd)
-                        stored_description_default=True
+                elif isDefault and len(descriptions)==0:
+                    descriptions.append(note)
+                    stored_description_default=True
 
                 if note.find("Warning:") == 0:
                     warnings.append(note[8:])
@@ -243,25 +222,11 @@ def write_tree(element, outfile, first_time = True):
                         #print(note+" "+old_note, file=sys.stderr)
                         isDefault=False
 
-                    example_location=note.find("Example:")
-                    if example_location != -1:
-                        if not isDefault:
-                             example = note[example_location+8:]
+                    if not isDefault:
+                         description = note
 
-                        elif isDefault and len(example)==0:
-                            example = note[example_location+8:]
-
-                    if example_location != 0:
-                        if example_location!=-1:
-                            toAdd= note[:example_location]
-                        else:
-                            toAdd= note
-
-                        if not isDefault:
-                             description = toAdd
-
-                        elif isDefault and len(description)==0:
-                            description = toAdd
+                    elif isDefault and len(description)==0:
+                        description = note
 
             print("      **%s**, :ref:`%s<type-glossary>`, %s, \"%s\", \"%s\" " % (attrib.name, attrib.type,required, description, example), file=outfile)
 
