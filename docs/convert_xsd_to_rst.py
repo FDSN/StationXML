@@ -229,7 +229,9 @@ def write_tree(element, outfile, first_time = True):
 
             description = ""
             example = ""
-
+            if len(attrib.example) != 0:
+                DQ='"'
+                example = f"{attrib.name}=\{DQ}{attrib.example[0].text}\{DQ}"
             for note in attrib.annotation:
                 old_note=note[:]
                 note=isRightChoice(note,element)
@@ -369,6 +371,7 @@ class Attribute(object):
         self.local_name = local_name
         self.required = required
         self.annotation = []
+        self.example = []
         self.type = type
 
         if annotation is not None:
@@ -377,6 +380,9 @@ class Attribute(object):
 
     def add_annotation(self, note):
         self.annotation.append(note)
+
+    def add_example(self, ex):
+        self.example.append(ex)
 
     def __repr__(self):
 
@@ -546,9 +552,12 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
 
         if attrib.annotation is not None:
             for y in attrib.annotation.documentation:
-                text = " ".join(y.text.split())
-                attr.add_annotation(text)
-                #print("%s MTH: Add attrib annotation:[%s]" % (space, text), file=sys.stderr)
+                for ex in y.findall("example"):
+                    attr.add_example(ex)
+                if y.text is not None:
+                    text = " ".join(y.text.split())
+                    attr.add_annotation(text)
+                    #print("%s MTH: Add attrib annotation:[%s]" % (space, text), file=sys.stderr)
 
     # xsd_element.type is always some form of XsdComplexType
     # xsd_element.type.content_type is either XsdGroup, XsdAtomicBuiltin or XsdAtomicRestriction
@@ -575,7 +584,6 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
                     if e.annotation is not None:
                         for y in e.annotation.documentation:
                             for ex in y.findall("example"):
-                                print(f"590 found example: {ex[0].tag}")
                                 subElement.add_example(ex)
                             if y.text != None:
                                 text = " ".join(y.text.split())

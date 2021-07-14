@@ -105,7 +105,7 @@
 		<xs:attribute name="schemaVersion" type="xs:decimal" use="required">
 			<xs:annotation>
 				<xs:documentation>The StationXML schema version of this document.</xs:documentation>
-				<xs:documentation>Example:schemaVersion=&apos;1.1&apos;</xs:documentation>
+				<xs:documentation><example>1.1</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -366,7 +366,7 @@
 											<xs:annotation>
 												<xs:documentation>The unit of drift value.
 												</xs:documentation>
-												<xs:documentation>Example:unit='SECONDS/SAMPLE'
+												<xs:documentation><example>SECONDS/SAMPLE</example>
 												</xs:documentation>
 											</xs:annotation>
 										</xs:attribute>
@@ -425,11 +425,11 @@
 	<xs:documentation>
 		The locationCode is typically used to group channels from a common sensor.
 		For example, the channels of the primary sensor at global IDA-IRIS
-		stations have locationCode = &apos;00&apos;: 00_BHZ, 00_BHE, 00_BHN, 00_LHZ, ..., etc.
+		stations have locationCode = \"00\": 00_BHZ, 00_BHE, 00_BHN, 00_LHZ, ..., etc.
     Even though it is required, locationCode may be, and often is, an empty string,
     however, it is recommended that the locationCode not be empty.
 	</xs:documentation>
-	<xs:documentation>Example:locationCode=&apos;30&apos;</xs:documentation>
+	<xs:documentation><example>30</example></xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -703,7 +703,7 @@
 		<xs:attribute name="id" type="fsx:CounterType" use="optional">
 			<xs:annotation>
 				<xs:documentation>An ID for this comment</xs:documentation>
-				<xs:documentation>Example:id=12345</xs:documentation>
+				<xs:documentation><example>12345</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 
@@ -712,7 +712,7 @@
 				<xs:documentation>A subject for this comment.  Multiple comments with the same
 					subject should be considered related.
 				</xs:documentation>
-				<xs:documentation>Example:subject=&apos;Scheduled maintenance&apos;</xs:documentation>
+				<xs:documentation><example>Scheduled maintenance</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -985,13 +985,13 @@
 		<xs:attribute name="plusError" type="xs:double" use="optional">
 			<xs:annotation>
 				<xs:documentation>plus uncertainty or error in measured value.</xs:documentation>
-				<xs:documentation>Example:plusError=0.1</xs:documentation>
+				<xs:documentation><example>0.1</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="minusError" type="xs:double" use="optional">
 			<xs:annotation>
 				<xs:documentation>minus uncertainty or error in measured value.</xs:documentation>
-				<xs:documentation>Example:minusError=0.1</xs:documentation>
+				<xs:documentation><example>0.1</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="measurementMethod" type="xs:string" use="optional"/>
@@ -1018,9 +1018,9 @@
 				  <xs:annotation>
             <xs:documentation>The unit of measurement. Use *SI* unit names and symbols whenever possible
               (e.g., 'm' instead of 'METERS').</xs:documentation>
-            <xs:documentation>Example:unit='SECONDS'</xs:documentation>
-            <xs:documentation>ElementChoice:WATERLEVEL Example:unit=&apos;m&apos;</xs:documentation>
-            <xs:documentation>ElementChoice:AMPLITUDE Example:unit=&apos;m&apos;</xs:documentation>
+            <xs:documentation><example>SECONDS</example></xs:documentation>
+            <xs:documentation><example ElementChoice="WATERLEVEL">m</example></xs:documentation>
+            <xs:documentation><example ElementChoice="AMPLITUDE">m</example></xs:documentation>
 				  </xs:annotation>
 				</xs:attribute>
 				<xs:attributeGroup ref="fsx:uncertaintyDouble"/>
@@ -1038,7 +1038,7 @@
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
 							</xs:documentation>
-							<xs:documentation>Example:unit='SECONDS'
+							<xs:documentation><example>SECONDS</example>
 							</xs:documentation>
 						</xs:annotation>
 					</xs:attribute>
@@ -1053,7 +1053,7 @@
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
 							</xs:documentation>
-							<xs:documentation>Example:unit='VOLTS'
+							<xs:documentation><example>VOLTS</example>
 							</xs:documentation>
 						</xs:annotation>
 					</xs:attribute>
@@ -1070,7 +1070,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example:unit='DEGREES'
+						<xs:documentation><example>DEGREES</example>
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1090,7 +1090,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example:unit='DEGREES'
+						<xs:documentation><example>DEGREES</example>
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1121,7 +1121,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example:unit='DEGREES'
+						<xs:documentation><example>DEGREES</example>
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1153,7 +1153,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example:unit='DEGREES'
+						<xs:documentation><example>DEGREES</example>
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1174,7 +1174,7 @@
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
 							</xs:documentation>
-							<xs:documentation>Example:unit='DEGREES'
+							<xs:documentation><example>DEGREES</example>
 							</xs:documentation>
 						</xs:annotation>
 				</xs:attribute>
@@ -1193,7 +1193,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example:unit='m'
+						<xs:documentation><example>m</example>
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1208,7 +1208,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example:unit='HERTZ'
+						<xs:documentation><example>HERTZ</example>
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1260,7 +1260,7 @@
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
-						<xs:documentation>Example:unit='SAMPLES/S'
+						<xs:documentation><example>SAMPLES/S</example>
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1514,7 +1514,7 @@
 				<xs:attribute name="type" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Identifier type</xs:documentation>
-						<xs:documentation>Example:type="DOI"</xs:documentation>
+						<xs:documentation><example>DOI</example></xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -1660,10 +1660,12 @@
 		</xs:sequence>
 		<xs:attribute name="code" type="xs:string" use="required">
 			<xs:annotation>
-        <xs:documentation>Example:code='IU' or code='ANMO'</xs:documentation>
-        <xs:documentation>LevelChoice:N Name of Network Example:code='IU'</xs:documentation>
-        <xs:documentation>LevelChoice:S Name of Station Example:code='ANMO'</xs:documentation>
-        <xs:documentation>LevelChoice:C Name of Channel Example:code='BHZ'</xs:documentation>
+        <xs:documentation>LevelChoice:N Name of Network</xs:documentation>
+        <xs:documentation>LevelChoice:S Name of Station</xs:documentation>
+        <xs:documentation>LevelChoice:C Name of Channel</xs:documentation>
+        <xs:documentation><example LevelChoice="N">IU</example></xs:documentation>
+        <xs:documentation><example LevelChoice="S">ANMO</example></xs:documentation>
+        <xs:documentation><example LevelChoice="C">BHZ</example></xs:documentation>
       </xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="startDate" type="xs:dateTime">
@@ -1672,7 +1674,7 @@
         <xs:documentation>LevelChoice:N Start date of network</xs:documentation>
         <xs:documentation>LevelChoice:S Start date of station epoch</xs:documentation>
         <xs:documentation>LevelChoice:C Start date of channel epoch</xs:documentation>
-        <xs:documentation>Example:startDate=2016-07-01T00:00:00</xs:documentation>
+        <xs:documentation><example>2016-07-01T00:00:00</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="endDate" type="xs:dateTime">
@@ -1681,29 +1683,28 @@
         <xs:documentation>LevelChoice:N End date of network</xs:documentation>
         <xs:documentation>LevelChoice:S End date of station epoch</xs:documentation>
         <xs:documentation>LevelChoice:C End date of channel epoch</xs:documentation>
-        <xs:documentation>Example:endDate=2018-01-27T00:00:00</xs:documentation>
+        <xs:documentation><example>2018-01-27T00:00:00</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="sourceID" type="xs:anyURI">
 			<xs:annotation>
 				<xs:documentation>A data source identifier in URI form</xs:documentation>
-				<xs:documentation>Example:sourceID=&apos;http://some/path&apos;</xs:documentation>
+				<xs:documentation><example>http://some/path</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="restrictedStatus" type="fsx:RestrictedStatusType" use="optional">
 			<xs:annotation>
-				<xs:documentation>One of:&apos;open&apos;, &apos;closed&apos;, &apos;partial&apos;</xs:documentation>
-				<xs:documentation>Example:restrictedStatus=&apos;open&apos;</xs:documentation>
+				<xs:documentation>One of: \"open\", \"closed\", \"partial\"</xs:documentation>
+				<xs:documentation><example>open</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="alternateCode" type="xs:string" use="optional">
 			<xs:annotation>
         <xs:documentation>A code use for display or association</xs:documentation>
         <xs:documentation>
-          LevelDefault: A code use for display or association
-          LevelChoice:N Example:alternateCode='GSN'
-          LevelChoice:S Example:alternateCode='ALQ'
-          LevelChoice:C Example:alternateCode='Z'
+          <example LevelChoice="N">GSN</example>
+          <example LevelChoice="S">ALQ</example>
+          <example LevelChoice="C">Z</example>
         </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
@@ -1711,10 +1712,9 @@
 			<xs:annotation>
         <xs:documentation>LevelDefault:A previously used code if different from the current code</xs:documentation>
         <xs:documentation>
-          LevelDefault: A previously used code if different from the current code
-          LevelChoice:N Example:historicalCode='II'
-          LevelChoice:S Example:historicalCode='albq'
-          LevelChoice:C Example:historicalCode='bhz'
+          <example LevelChoice="N">II</example>
+          <example LevelChoice="S">albq</example>
+          <example LevelChoice="C">bhz</example>
         </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
@@ -1730,13 +1730,13 @@
 		<xs:attribute name="start" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>start date of extent</xs:documentation>
-				<xs:documentation>Example:start=1988-01-01T00:00:00</xs:documentation>
+				<xs:documentation><example>1988-01-01T00:00:00</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="end" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>end date of extent</xs:documentation>
-				<xs:documentation>Example:end=1988-12-31T00:00:00</xs:documentation>
+				<xs:documentation><example>1988-12-31T00:00:00</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -1753,13 +1753,13 @@
 		<xs:attribute name="start" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>start date of span</xs:documentation>
-				<xs:documentation>Example:start=1988-01-01T00:00:00</xs:documentation>
+				<xs:documentation><example>1988-01-01T00:00:00</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="end" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>end date of span</xs:documentation>
-				<xs:documentation>Example:end=1988-12-31T00:00:00</xs:documentation>
+				<xs:documentation><example>1988-12-31T00:00:00</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="numberSegments" type="xs:integer" use="required">
@@ -1768,7 +1768,7 @@
 					specified time range. A value of 1 indicates that the time series is continuous
 					from start to end.
 				</xs:documentation>
-			  <xs:documentation>Example:numberSegments=2</xs:documentation>
+			  <xs:documentation><example>2</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="maximumTimeTear" type="xs:decimal" use="optional">
@@ -1776,7 +1776,7 @@
 				<xs:documentation> The maximum time tear (gap or overlap) in seconds between time
 					series segments in the specified range.
 				</xs:documentation>
-				<xs:documentation>Example:maximumTimeTear=0.01</xs:documentation>
+				<xs:documentation><example>0.01</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
