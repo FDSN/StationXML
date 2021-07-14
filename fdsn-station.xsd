@@ -134,7 +134,7 @@
 								network, including inactive or terminated stations.
 							</xs:documentation>
               <xs:documentation><example><TotalNumberStations>24</TotalNumberStations></example></xs:documentation>
-              <xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML</xs:documentation>
+              <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="SelectedNumberStations" type="fsx:CounterType" minOccurs="0">
@@ -143,7 +143,7 @@
 								in this document.
 							</xs:documentation>
               <xs:documentation><example><SelectedNumberStations>12</SelectedNumberStations></example></xs:documentation>
-              <xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML</xs:documentation>
+              <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Station" type="fsx:StationType" minOccurs="0"
@@ -224,7 +224,7 @@
 					<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
               <xs:documentation>Date and time (UTC) when the station was first installed.</xs:documentation>
-              <xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML</xs:documentation>
+              <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="TerminationDate" type="xs:dateTime" minOccurs="0">
@@ -232,19 +232,19 @@
 							<xs:documentation>Date and time (UTC) when the station was terminated or
 								will be terminated. Do not include this field if a termination date is not available or is not relevant.
 							</xs:documentation>
-              <xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML</xs:documentation>
+              <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="TotalNumberChannels" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Total number of channels recorded at this station.</xs:documentation>
-							<xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML.</xs:documentation>
+							<xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML.</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="SelectedNumberChannels" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>The number of channels selected in the request that resulted in this document.</xs:documentation>
-							<xs:documentation>Warning:This field is likely to be deprecated in future versions of StationXML.</xs:documentation>
+							<xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML.</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="ExternalReference" type="fsx:ExternalReferenceType"

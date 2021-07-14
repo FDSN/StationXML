@@ -82,8 +82,6 @@ def write_tree(element, outfile, first_time = True):
         print("      %s\n" % crumb, file=outfile)
         #print("      crumb:%s\n" % crumb, file=outfile)
 
-    examples = []
-    warnings = []
     descriptions = []
 
     stored_description_default=False
@@ -109,11 +107,10 @@ def write_tree(element, outfile, first_time = True):
 
                 if note.find("Warning:") == 0:
                     warnings.append(note[8:])
-    for example in element.example:
-        examples.append(example)
-    for warning in warnings:
+
+    for warning in element.warning:
         print("   .. admonition:: Warning\n", file=outfile)
-        print("      %s\n" % warning, file=outfile)
+        print("      %s\n" % warning.text, file=outfile)
 
     if element.type:
         print("   .. container:: type\n", file=outfile)
@@ -163,7 +160,7 @@ def write_tree(element, outfile, first_time = True):
             print("      %s.\n" % description, file=outfile)
 
     # Add period if needs it
-    for example in examples:
+    for example in element.example:
         exampleStr = ""
         if isinstance(example, ElementTree.Element):
             if example.get('LevelChoice') is not None and element.parent is not None:
@@ -337,6 +334,7 @@ class Attribute(object):
         self.required = required
         self.annotation = []
         self.example = []
+        self.warning = []
         self.type = type
 
         if annotation is not None:
@@ -348,6 +346,9 @@ class Attribute(object):
 
     def add_example(self, ex):
         self.example.append(ex)
+
+    def add_warning(self, element):
+        self.warning.append(element)
 
     def __repr__(self):
 
@@ -374,6 +375,7 @@ class Element(object):
         self.required = required
         self.annotation = []
         self.example = []
+        self.warning = []
         self.children = []
         self.attributes = []
         self.crumb = []
@@ -399,6 +401,9 @@ class Element(object):
 
     def add_example(self, element):
         self.example.append(element)
+
+    def add_warning(self, element):
+        self.warning.append(element)
 
     def add_attribute(self, attribute):
         self.attributes.append(attribute)
@@ -519,6 +524,8 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
             for y in attrib.annotation.documentation:
                 for ex in y.findall("example"):
                     attr.add_example(ex)
+                for ex in y.findall("warning"):
+                    subElement.add_warning(ex)
                 if y.text is not None:
                     text = " ".join(y.text.split())
                     attr.add_annotation(text)
@@ -550,6 +557,8 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
                         for y in e.annotation.documentation:
                             for ex in y.findall("example"):
                                 subElement.add_example(ex)
+                            for ex in y.findall("warning"):
+                                subElement.add_warning(ex)
                             if y.text != None:
                                 text = " ".join(y.text.split())
                                 subElement.add_annotation(text)
