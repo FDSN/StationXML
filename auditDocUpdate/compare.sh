@@ -21,7 +21,11 @@ python3 ./transform.py ../fdsn-station.xsd nodocs.xslt ${LOCALXSD}.nodocs
 tidy -xml -iq -o ${LOCALXSD}.nodocs.tidy ${LOCALXSD}.nodocs
 /bin/rm -f ${LOCALXSD}.nodocs
 
-echo diff ${LOCALXSD} to ${XSD}
-echo '<' is local version, ${LOCALXSD}
-echo '>' is fdsn version, ${XSD}
+echo diff from ${LOCALXSD} to ${XSD}
+echo '<' is local tidy version, ${LOCALXSD}
+echo '>' is fdsn tidy version, ${XSD}
+echo Note line numbers are in nodocs.tidy,
+echo which will be different from original xsd files.
+echo
+
 diff -b ${LOCALXSD}.nodocs.tidy ${XSD}.nodocs.tidy
