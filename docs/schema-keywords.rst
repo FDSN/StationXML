@@ -43,6 +43,18 @@ These serve the following roles:
 
       Example: <Network code=”IU” startDate=”2016-01-27T13:00:00” />
 
+   Note that for an example attribute, the <example> element should contain just
+   the textual value, not the key or quotes. So within the `code` attribute on
+   Network, the example would be just:
+
+   .. code-block:: XML
+
+    <xs:documentation><example>IU</example></xs:documentation>
+
+   which would produce::
+
+      code=”IU”
+
 * <warning> - This is used to wrap the text that follows it in an ReStructuredText admonition wrapper.
 
    It is used, for example, to present a caution that a particular element may be deprecated
