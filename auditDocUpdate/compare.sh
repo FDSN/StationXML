@@ -4,7 +4,7 @@
 set -e
 
 XSD=fdsn-station-1.1.xsd
-echo $XSD
+echo Using: $XSD
 
 if [[ ! -f "$XSD" ]]; then
   wget http://www.fdsn.org/xml/station/${XSD}
