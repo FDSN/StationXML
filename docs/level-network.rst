@@ -272,7 +272,7 @@
 
    .. container:: example
 
-      **Example**: <Name>Alfred E. Neuman</Name>
+      **Example**: <Name>Dr. Jane Doe</Name>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -303,7 +303,7 @@
 
    .. container:: example
 
-      **Example**: <Agency>Mad Magazine, Inc.</Agency>
+      **Example**: <Agency>USGS</Agency>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -334,7 +334,7 @@
 
    .. container:: example
 
-      **Example**: <Email>a.neuman@nosuchsite.com</Email>
+      **Example**: <Email>jane_doe@example.com</Email>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -625,7 +625,7 @@
 
    .. container:: example
 
-      **Example**: <Name>Alfred E. Neuman</Name>
+      **Example**: <Name>Dr. Jane Doe</Name>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -656,7 +656,7 @@
 
    .. container:: example
 
-      **Example**: <Agency>Mad Magazine, Inc.</Agency>
+      **Example**: <Agency>USGS</Agency>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -687,7 +687,7 @@
 
    .. container:: example
 
-      **Example**: <Email>a.neuman@nosuchsite.com</Email>
+      **Example**: <Email>jane_doe@example.com</Email>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
