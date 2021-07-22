@@ -25,13 +25,13 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "" 
-      **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Station ", "code='ANMO'" 
-      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of station epoch", "endDate=2018-01-27T00:00:00" 
-      **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "" 
-      **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of:'open', 'closed', 'partial'", "restrictedStatus='open'" 
-      **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID='http://some/path'" 
-      **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of station epoch", "startDate=2016-07-01T00:00:00" 
+      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"ALQ\"" 
+      **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Station", "code=\"ANMO\"" 
+      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of station epoch", "endDate=\"2018-01-27T00:00:00\"" 
+      **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "historicalCode=\"albq\"" 
+      **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
+      **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
+      **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of station epoch", "startDate=\"2016-07-01T00:00:00\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -99,7 +99,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **type**, :ref:`string<type-glossary>`, no, "Identifier type", "type='DOI'" 
+      **type**, :ref:`string<type-glossary>`, no, "Identifier type", "type=\"DOI\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -126,8 +126,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **id**, :ref:`CounterType<type-glossary>`, no, "An ID for this comment", "id=12345" 
-      **subject**, :ref:`string<type-glossary>`, no, "A subject for this comment. Multiple comments with the same subject should be considered related.", "subject='Scheduled maintenance'" 
+      **id**, :ref:`CounterType<type-glossary>`, no, "An ID for this comment", "id=\"12345\"" 
+      **subject**, :ref:`string<type-glossary>`, no, "A subject for this comment. Multiple comments with the same subject should be considered related.", "subject=\"Scheduled maintenance\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -237,7 +237,7 @@
 
    .. container:: description
 
-      Author of Comment.
+      Author of Comment. Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -419,7 +419,7 @@
 
    .. container:: example
 
-      **Example**: <AreaCode>408</CountryCode>
+      **Example**: <AreaCode>408</AreaCode>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -467,7 +467,7 @@
 
    .. container:: description
 
-      A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers.
+      A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers. A type for describing data availability.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -494,8 +494,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of extent", "end=1988-12-31T00:00:00" 
-      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of extent", "start=1988-01-01T00:00:00" 
+      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of extent", "end=\"1988-12-31T00:00:00\"" 
+      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of extent", "start=\"1988-01-01T00:00:00\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -522,10 +522,10 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of span", "end=1988-12-31T00:00:00" 
-      **maximumTimeTear**, :ref:`decimal<type-glossary>`, no, "The maximum time tear (gap or overlap) in seconds between time series segments in the specified range.", "maximumTimeTear=0.01" 
-      **numberSegments**, :ref:`integer<type-glossary>`, :red:`yes`, "The number of continuous time series segments contained in the specified time range. A value of 1 indicates that the time series is continuous from start to end.", "numberSegments=2" 
-      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of span", "start=1988-01-01T00:00:00" 
+      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of span", "end=\"1988-12-31T00:00:00\"" 
+      **maximumTimeTear**, :ref:`decimal<type-glossary>`, no, "The maximum time tear (gap or overlap) in seconds between time series segments in the specified range.", "maximumTimeTear=\"0.01\"" 
+      **numberSegments**, :ref:`integer<type-glossary>`, :red:`yes`, "The number of continuous time series segments contained in the specified time range. A value of 1 indicates that the time series is continuous from start to end.", "numberSegments=\"2\"" 
+      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of span", "start=\"1988-01-01T00:00:00\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -552,7 +552,7 @@
 
    .. container:: description
 
-      Station latitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location).
+      Station latitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location). Latitude type extending the base type to add datum as an attribute with default.
 
    .. container:: example
 
@@ -566,9 +566,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='DEGREES'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
       **datum**, :ref:`NMTOKEN<type-glossary>`, no, "", "" 
 
@@ -597,7 +597,7 @@
 
    .. container:: description
 
-      Station longitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location).
+      Station longitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location). Longitude type extending the base type to add datum as an attribute with default.
 
    .. container:: example
 
@@ -611,9 +611,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='DEGREES'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
       **datum**, :ref:`NMTOKEN<type-glossary>`, no, "", "" 
 
@@ -642,7 +642,7 @@
 
    .. container:: description
 
-      Elevation of local ground surface level at station, by default in meters.
+      Elevation of local ground surface level at station, by default in meters. Extension of FloatType for distances, elevations, and depths.
 
    .. container:: example
 
@@ -656,9 +656,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit='m'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"m\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -676,7 +676,7 @@
 
    .. container:: description
 
-      Description of the location of the station using geopolitical entities (country, city, etc.).
+      Description of the location of the station using geopolitical entities (country, city, etc.). Description of a site location using name and optional geopolitical boundaries (country, city, etc.).
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -889,7 +889,7 @@
 
    .. container:: description
 
-      Elevation of the water surface (in meters) for underwater sites, where 0 is mean sea level. If you put an ocean-bottom seismometer (OBS) on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
+      Elevation of the water surface (in meters) for underwater sites, where 0 is mean sea level. If you put an ocean-bottom seismometer (OBS) on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0. Representation of floating-point numbers used as measurements.
 
    .. container:: example
 
@@ -903,9 +903,9 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit='m'" 
-      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=0.1" 
-      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=0.1" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of measurement. Use *SI* unit names and symbols whenever possible (e.g., 'm' instead of 'METERS').", "unit=\"m\"" 
+      **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
+      **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
 
 
@@ -977,7 +977,7 @@
 
    .. container:: description
 
-      Equipment used by all channels at a station.
+      Equipment used by all channels at a station. A type for equipment related to data acquisition or processing.
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1247,7 +1247,7 @@
 
    .. container:: description
 
-      Operator and associated contact persons.
+      Operator and associated contact persons An operating agency and associated contact persons. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact’s optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing element should be include in the Operator tag.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1477,7 +1477,7 @@
 
    .. container:: example
 
-      **Example**: <AreaCode>408</CountryCode>
+      **Example**: <AreaCode>408</AreaCode>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1680,7 +1680,7 @@
 
    .. container:: description
 
-      URI of any type of external report.
+      URI of any type of external report This type contains a Uniform Resource Identifier (URI) and and description for external information that users may want to reference.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
