@@ -587,7 +587,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be HERTZ, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -627,7 +627,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be HERTZ, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -1067,7 +1067,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be HERTZ, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -1827,7 +1827,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be HERTZ, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -1903,7 +1903,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be DEGREES, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -2209,7 +2209,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be HERTZ, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -2678,7 +2678,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be HERTZ, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -2718,7 +2718,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"HERTZ\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be HERTZ, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
