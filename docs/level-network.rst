@@ -15,7 +15,7 @@
 
    .. container:: description
 
-      The Network container. All station metadata for this network is contained within this element. A Description element may be included with the official network name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation. A Comment element may be included for additional comments.
+      The Network container. All station metadata for this network is contained within this element. A Description element may be included with the official network name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation. A Comment element may be included for additional comments. An active Network should not use the endDate attribute. Unlike SEED, do not use an endDate in the distant future to mean active.
 
    .. container:: example
 
@@ -31,7 +31,7 @@
 
       **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"GSN\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Network", "code=\"IU\"" 
-      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of network", "endDate=\"2018-01-27T00:00:00\"" 
+      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of network. Do not use if still active, endDate should not be in the future.", "endDate=\"2018-01-27T00:00:00\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "historicalCode=\"II\"" 
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
       **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
