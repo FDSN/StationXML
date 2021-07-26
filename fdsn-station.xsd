@@ -120,7 +120,7 @@
 		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation.
 		A Comment element may be included for additional comments.
       		</xs:documentation>
-      		<xs:documentation><example><Network code="IU" startDate="2016-01-27T13:00:00" /></example></xs:documentation>
+      		<xs:documentation><example><Network code="IU" startDate="2016-01-27T13:00:00Z" /></example></xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
@@ -688,13 +688,13 @@
 			<xs:element name="BeginEffectiveTime" type="xs:dateTime" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Start time for when comment applies.</xs:documentation>
-					<xs:documentation><example><BeginEffectiveTime>2008-09-15T00:00:00</BeginEffectiveTime></example></xs:documentation>
+					<xs:documentation><example><BeginEffectiveTime>2008-09-15T00:00:00Z</BeginEffectiveTime></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="EndEffectiveTime" type="xs:dateTime" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>End time for when comment applies.</xs:documentation>
- 					<xs:documentation><example><EndEffectiveTime>2008-09-16T12:00:00</EndEffectiveTime></example></xs:documentation>
+ 					<xs:documentation><example><EndEffectiveTime>2008-09-16T12:00:00Z</EndEffectiveTime></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Author" type="fsx:PersonType" minOccurs="0" maxOccurs="unbounded">
@@ -1677,7 +1677,7 @@
         <xs:documentation><levelDesc LevelChoice="N">Start date of network</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="S">Start date of station epoch</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="C">Start date of channel epoch</levelDesc></xs:documentation>
-        <xs:documentation><example>2016-07-01T00:00:00</example></xs:documentation>
+        <xs:documentation><example>2016-07-01T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="endDate" type="xs:dateTime">
@@ -1686,7 +1686,7 @@
         <xs:documentation><levelDesc LevelChoice="N">End date of network</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="S">End date of station epoch</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="C">End date of channel epoch</levelDesc></xs:documentation>
-        <xs:documentation><example>2018-01-27T00:00:00</example></xs:documentation>
+        <xs:documentation><example>2018-01-27T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="sourceID" type="xs:anyURI">
@@ -1733,13 +1733,13 @@
 		<xs:attribute name="start" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>start date of extent</xs:documentation>
-				<xs:documentation><example>1988-01-01T00:00:00</example></xs:documentation>
+				<xs:documentation><example>1988-01-01T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="end" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>end date of extent</xs:documentation>
-				<xs:documentation><example>1988-12-31T00:00:00</example></xs:documentation>
+				<xs:documentation><example>1988-12-31T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -1756,13 +1756,13 @@
 		<xs:attribute name="start" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>start date of span</xs:documentation>
-				<xs:documentation><example>1988-01-01T00:00:00</example></xs:documentation>
+				<xs:documentation><example>1988-01-01T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="end" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>end date of span</xs:documentation>
-				<xs:documentation><example>1988-12-31T00:00:00</example></xs:documentation>
+				<xs:documentation><example>1988-12-31T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="numberSegments" type="xs:integer" use="required">

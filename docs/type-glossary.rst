@@ -40,8 +40,10 @@
              :name: glossary-datetime
 
              dateTime
-     - Integer values used to represent the year, day, hours, minutes. Decimals represent seconds, a boolean represents the timezone.
-     -
+     - ISO 8601 represention of a date or time. A "Z" should always be appended to a time represent the timezone as UTC.
+     - * 2021-07-26Z
+       * 2021-07-26T12:49:55Z
+       * 2021-07-26T12:49:55.123Z
 
    * .. _type-glossary-decimal:
 
