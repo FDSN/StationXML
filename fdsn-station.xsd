@@ -1182,7 +1182,7 @@
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:restriction base="fsx:FloatType">
-				<xs:attribute name="unit" type="xs:string" use="optional" default="m">
+				<xs:attribute name="unit" type="xs:string" use="optional" default="METERS">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
 						</xs:documentation>
