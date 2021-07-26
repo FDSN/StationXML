@@ -987,7 +987,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information or be derived from the same base instruments.", "" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
