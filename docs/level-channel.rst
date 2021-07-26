@@ -28,7 +28,7 @@
       **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"Z\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Channel", "code=\"BHZ\"" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of channel epoch", "endDate=\"2018-01-27T00:00:00\"" 
-      **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "historicalCode=\"bhz\"" 
+      **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"bhz\"" 
       **locationCode**, :ref:`string<type-glossary>`, :red:`yes`, "The locationCode is typically used to group channels from a common sensor. For example, the channels of the primary sensor at global IDA-IRIS stations have locationCode = \"00\": 00_BHZ, 00_BHE, 00_BHN, 00_LHZ, ..., etc. Even though it is required, locationCode may be, and often is, an empty string, however, it is recommended that the locationCode not be empty.", "locationCode=\"30\"" 
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
       **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
