@@ -889,7 +889,7 @@
 
    .. container:: description
 
-      Elevation of the water surface (in meters) for underwater sites, where 0 is mean sea level. If you put an ocean-bottom seismometer (OBS) on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0. Representation of floating-point numbers used as measurements.
+      Elevation of the water surface in meters for underwater sites, where 0 is mean sea level. If you put an OBS on a lake bottom, where the lake surface is at elevation=1200 meters, then you should set WaterLevel=1200. An OBS in the ocean would have WaterLevel=0. Representation of floating-point numbers used as measurements.
 
    .. container:: example
 
