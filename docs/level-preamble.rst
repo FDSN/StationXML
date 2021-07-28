@@ -17,15 +17,42 @@
 
       Root-level for StationXML documents.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <FDSNStationXML>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
       **schemaVersion**, :ref:`decimal<type-glossary>`, :red:`yes`, "The StationXML schema version of this document.", "schemaVersion=\"1.1\"" 
+
+
+
+
+   **Sub Elements of <FDSNStationXML>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Source\><FDSNStationXML-Source>`, string, ":red:`required`" 
+      :ref:`\<Sender\><FDSNStationXML-Sender>`, string, "optional" 
+      :ref:`\<Module\><FDSNStationXML-Module>`, string, "optional" 
+      :ref:`\<ModuleURI\><FDSNStationXML-ModuleURI>`, anyURI, "optional" 
+      :ref:`\<Created\><FDSNStationXML-Created>`, dateTime, ":red:`required`" 
+      :ref:`\<Network\><Network>`, , ":red:`required, many`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`

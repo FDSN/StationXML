@@ -17,9 +17,14 @@
 
       The Station container. All channel metadata for this station is contained within this element. A Description element may be included with the official station name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference. A Comment element may be included for additional comments.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Station>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -32,6 +37,41 @@
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
       **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
       **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of station epoch", "startDate=\"2016-07-01T00:00:00\"" 
+
+
+
+
+   **Sub Elements of <Station>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Description\><Station-Description>`, string, "optional" 
+      :ref:`\<Identifier\><Station-Identifier>`, string, "optional, many" 
+      :ref:`\<Comment\><Station-Comment>`, , "optional, many" 
+      :ref:`\<DataAvailability\><Station-DataAvailability>`, , "optional" 
+      :ref:`\<Latitude\><Station-Latitude>`, double, ":red:`required`" 
+      :ref:`\<Longitude\><Station-Longitude>`, double, ":red:`required`" 
+      :ref:`\<Elevation\><Station-Elevation>`, double, ":red:`required`" 
+      :ref:`\<Site\><Station-Site>`, , ":red:`required`" 
+      :ref:`\<WaterLevel\><Station-WaterLevel>`, double, "optional" 
+      :ref:`\<Vault\><Station-Vault>`, string, "optional" 
+      :ref:`\<Geology\><Station-Geology>`, string, "optional" 
+      :ref:`\<Equipment\><Station-Equipment>`, , "optional, many" 
+      :ref:`\<Operator\><Station-Operator>`, , "optional, many" 
+      :ref:`\<CreationDate\><Station-CreationDate>`, dateTime, "optional" 
+      :ref:`\<TerminationDate\><Station-TerminationDate>`, dateTime, "optional" 
+      :ref:`\<TotalNumberChannels\><Station-TotalNumberChannels>`, decimal, "optional" 
+      :ref:`\<SelectedNumberChannels\><Station-SelectedNumberChannels>`, decimal, "optional" 
+      :ref:`\<ExternalReference\><Station-ExternalReference>`, , "optional, many" 
+      :ref:`\<Channel\><Channel>`, , "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -91,9 +131,14 @@
 
       A type to document persistent identifiers. Identifier values should be specified without a URI scheme (prefix), instead the identifier type is documented as an attribute.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Identifier>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -118,9 +163,14 @@
 
       Container for a comment or log entry.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Comment>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -128,6 +178,26 @@
 
       **id**, :ref:`CounterType<type-glossary>`, no, "An ID for this comment", "id=\"12345\"" 
       **subject**, :ref:`string<type-glossary>`, no, "A subject for this comment. Multiple comments with the same subject should be considered related.", "subject=\"Scheduled maintenance\"" 
+
+
+
+
+   **Sub Elements of <Comment>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Value\><Station-Comment-Value>`, string, ":red:`required`" 
+      :ref:`\<BeginEffectiveTime\><Station-Comment-BeginEffectiveTime>`, dateTime, "optional" 
+      :ref:`\<EndEffectiveTime\><Station-Comment-EndEffectiveTime>`, dateTime, "optional" 
+      :ref:`\<Author\><Station-Comment-Author>`, , "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -240,6 +310,26 @@
       Author of Comment. Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
 
 
+
+
+   **Sub Elements of <Author>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Station-Comment-Author-Name>`, string, "optional, many" 
+      :ref:`\<Agency\><Station-Comment-Author-Agency>`, string, "optional, many" 
+      :ref:`\<Email\><Station-Comment-Author-Email>`, string, "optional, many" 
+      :ref:`\<Phone\><Station-Comment-Author-Phone>`, , "optional, many" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _station-comment-author-name:
@@ -349,15 +439,39 @@
 
       Phone of contact or author.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Phone>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
       **description**, :ref:`string<type-glossary>`, no, "", "" 
+
+
+
+
+   **Sub Elements of <Phone>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<CountryCode\><Station-Comment-Author-Phone-CountryCode>`, integer, "optional" 
+      :ref:`\<AreaCode\><Station-Comment-Author-Phone-AreaCode>`, integer, ":red:`required`" 
+      :ref:`\<PhoneNumber\><Station-Comment-Author-Phone-PhoneNumber>`, string, ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -470,6 +584,24 @@
       A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers. A type for describing data availability.
 
 
+
+
+   **Sub Elements of <DataAvailability>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Extent\><Station-DataAvailability-Extent>`, , "optional" 
+      :ref:`\<Span\><Station-DataAvailability-Span>`, , "optional, many" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _station-dataavailability-extent:
@@ -486,9 +618,14 @@
 
       Data availability extents, the earliest and latest data available. No information about the continuity of the data is included or implied.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Extent>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -514,9 +651,14 @@
 
       A type for describing data availability spans, with variable continuity. The time range described may be based on the request parameters that generated the document and not necessarily relate to continuity outside of the range. It may also be a smaller time window than the request depending on the data characteristics.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Span>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -558,9 +700,14 @@
 
       **Example**: <Latitude unit="DEGREES" datum="WGS84">34.9459</Latitude>
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Latitude>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -603,9 +750,14 @@
 
       **Example**: <Longitude unit="DEGREES" datum="WGS84">-106.4572</Longitude>
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Longitude>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -648,9 +800,14 @@
 
       **Example**: <Elevation unit="m">1850.0</Elevation>
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Elevation>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -677,6 +834,28 @@
    .. container:: description
 
       Description of the location of the station using geopolitical entities (country, city, etc.). Description of a site location using name and optional geopolitical boundaries (country, city, etc.).
+
+
+
+
+   **Sub Elements of <Site>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Station-Site-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Station-Site-Description>`, string, "optional" 
+      :ref:`\<Town\><Station-Site-Town>`, string, "optional" 
+      :ref:`\<County\><Station-Site-County>`, string, "optional" 
+      :ref:`\<Region\><Station-Site-Region>`, string, "optional" 
+      :ref:`\<Country\><Station-Site-Country>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -895,9 +1074,14 @@
 
       **Example**: <WaterLevel>1200</WaterLevel>
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <WaterLevel>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -979,15 +1163,45 @@
 
       Equipment used by all channels at a station. A type for equipment related to data acquisition or processing.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Equipment>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
       **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <Equipment>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Type\><Station-Equipment-Type>`, string, "optional" 
+      :ref:`\<Description\><Station-Equipment-Description>`, string, "optional" 
+      :ref:`\<Manufacturer\><Station-Equipment-Manufacturer>`, string, "optional" 
+      :ref:`\<Vendor\><Station-Equipment-Vendor>`, string, "optional" 
+      :ref:`\<Model\><Station-Equipment-Model>`, string, "optional" 
+      :ref:`\<SerialNumber\><Station-Equipment-SerialNumber>`, string, "optional" 
+      :ref:`\<InstallationDate\><Station-Equipment-InstallationDate>`, dateTime, "optional" 
+      :ref:`\<RemovalDate\><Station-Equipment-RemovalDate>`, dateTime, "optional" 
+      :ref:`\<CalibrationDate\><Station-Equipment-CalibrationDate>`, dateTime, "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1250,6 +1464,25 @@
       Operator and associated contact persons An operating agency and associated contact persons. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact’s optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing element should be include in the Operator tag.
 
 
+
+
+   **Sub Elements of <Operator>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Agency\><Station-Operator-Agency>`, string, ":red:`required`" 
+      :ref:`\<Contact\><Station-Operator-Contact>`, , "optional, many" 
+      :ref:`\<WebSite\><Station-Operator-WebSite>`, anyURI, "optional" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _station-operator-agency:
@@ -1296,6 +1529,26 @@
    .. container:: description
 
       Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
+
+
+
+
+   **Sub Elements of <Contact>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Station-Operator-Contact-Name>`, string, "optional, many" 
+      :ref:`\<Agency\><Station-Operator-Contact-Agency>`, string, "optional, many" 
+      :ref:`\<Email\><Station-Operator-Contact-Email>`, string, "optional, many" 
+      :ref:`\<Phone\><Station-Operator-Contact-Phone>`, , "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1407,15 +1660,39 @@
 
       Phone of contact or author.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Phone>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
       **description**, :ref:`string<type-glossary>`, no, "", "" 
+
+
+
+
+   **Sub Elements of <Phone>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<CountryCode\><Station-Operator-Contact-Phone-CountryCode>`, integer, "optional" 
+      :ref:`\<AreaCode\><Station-Operator-Contact-Phone-AreaCode>`, integer, ":red:`required`" 
+      :ref:`\<PhoneNumber\><Station-Operator-Contact-Phone-PhoneNumber>`, string, ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1681,6 +1958,24 @@
    .. container:: description
 
       URI of any type of external report This type contains a Uniform Resource Identifier (URI) and and description for external information that users may want to reference.
+
+
+
+
+   **Sub Elements of <ExternalReference>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<URI\><Station-ExternalReference-URI>`, anyURI, ":red:`required`" 
+      :ref:`\<Description\><Station-ExternalReference-Description>`, string, ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
