@@ -11,8 +11,13 @@ valid for input pressure between 600-1100 mbar.
 
    Pressure(V)=\sum_{n=0}^{1} a_n V^{n}
 
-where :math:`a_0=600` and :math:`a_1=100`
+where :math:`a_0=600` and :math:`a_1=100`,
+e.g., over this voltage range (0-5V), the input (mbar of pressure) is a
+linear function of the output (Volts).
 
+Bound Values for polynomial:
+Lower 600 mbar
+Upper 1100 mbar
 
 .. csv-table::
    :class: rows
@@ -26,12 +31,6 @@ where :math:`a_0=600` and :math:`a_1=100`
    4.0, 1000
    5.0, 1100
 
-e.g., over this voltage range (0-5V), the input (mbar of pressure) is a
-linear function of the output (Volts).
-
-Bound Values for polynomial:
-Lower 600 mbar
-Upper 1100 mbar
 
 Assume we use an 8 bit digitizer where 0 counts = 0 volts and 255 counts = 5 volts.
 This translates to a digitizer gain of 51 Counts/volt.
