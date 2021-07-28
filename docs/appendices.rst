@@ -67,7 +67,6 @@ Identifiers and codes
 For information on Network, Station, Location, and Channel codes, in addition to
 their combination into Source Identifiers, used in StationXML see:
 
-(as of this writing, this documentation is in progress)
 http://docs.fdsn.org/projects/source-identifiers
 
 Unit Naming Rules
