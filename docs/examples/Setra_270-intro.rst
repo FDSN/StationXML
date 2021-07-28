@@ -1,0 +1,56 @@
+
+
+This example was lifted from [62] Response [Polynomial] Blockette section (p.85)
+of the SEED manual (v.2.4).
+
+The Setra Model 270 Pressure Transducer response is
+given as a polynomial response with 2 coefficients,
+valid for input pressure between 600-1100 mbar.
+
+.. math::
+
+   Pressure(V)=\sum_{n=0}^{1} a_n V^{n}
+
+where :math:`a_0=600` and :math:`a_1=100`
+
+
+.. csv-table::
+   :class: rows
+   :header: "Volts", "mbar"
+   :widths: auto
+
+   0.0, 600
+   1.0, 700
+   2.0, 800
+   3.0, 900
+   4.0, 1000
+   5.0, 1100
+
+e.g., over this voltage range (0-5V), the input (mbar of pressure) is a
+linear function of the output (Volts).
+
+Bound Values for polynomial:
+Lower 600 mbar
+Upper 1100 mbar
+
+Assume we use an 8 bit digitizer where 0 counts = 0 volts and 255 counts = 5 volts.
+This translates to a digitizer gain of 51 Counts/volt.
+
+This provides the following conversion from counts to pressure:
+
+
+.. csv-table::
+  :class: rows
+  :header: "Counts", "Volts (V) = gain*counts", "Pressure (mbar) = pn(volts)"
+  :widths: auto
+
+  0, 0.0, 600
+  51, 1.0, 700
+  102, 2.0, 800
+  153, 3.0, 900
+  204, 4.0, 1000
+  255, 5.0, 1100
+
+
+A complete StationXML Response element is shown below for the Setra 270 sensor
+attached to a generic 51 count per volt datalogger sampling at 1Hz.
