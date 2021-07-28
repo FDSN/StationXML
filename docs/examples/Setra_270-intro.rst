@@ -32,6 +32,9 @@ Upper 1100 mbar
    5.0, 1100
 
 
+How the InstrumentPolynomial was calculated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Assume we use an 8 bit digitizer where 0 counts = 0 volts and 255 counts = 5 volts.
 This translates to a digitizer gain of 51 Counts/volt.
 
@@ -49,6 +52,26 @@ This provides the following conversion from counts to pressure:
   153, 3.0, 900
   204, 4.0, 1000
   255, 5.0, 1100
+
+
+Just as in the previous example for the YSI 44031,
+the InstrumentPolynomial stage looks a lot like the Polynomial stage
+except that the overall system gain has been incorporated into the
+polynomial coefficients. In this case, because it is linear, only the
+:math:`a_1` term is affected.
+
+
+.. math::
+
+   a^{\prime}_n=\frac{a_n}{(g0)^{n}}
+
+where :math:`g_0 = 51` is the overall gain, giving coefficients for the
+InstrumentPolynomial of :math:`a_0=600` and :math:`a_1=1.96`.
+This yields an overall InstrumentPolynomial, where pressure is a function
+of the recorded counts, of:
+
+.. math::
+  Pressure(c) = 600 + 1.96*c
 
 
 A complete StationXML Response element is shown below for the Setra 270 sensor

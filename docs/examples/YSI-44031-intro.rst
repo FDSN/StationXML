@@ -51,13 +51,15 @@ The InstrumentPolynomial stage looks a lot like the Polynomial stage
 except that the overall system gain has been incorporated into the
 polynomial coefficients.
 
-The overall system gain is just the product of the individual stage gains:
+The overall system gain is just the product of the individual stage gains
+for the remaining stages:
 
 .. math::
 
-   g0=\Pi_{n=0}^{N} gain_n
+   g0=\Pi_{n=1}^{N} gain_n
 
-where :math:`g0` is the system gain.
+where :math:`g0` is the system gain. Note that the Polynomial stage cannot
+have a StageGain element, and so the gain for that stage is unity.
 
 Then the :math:`n^{th}` coefficient of the MacLaurin series is scaled by the inverse
 :math:`n^{th}` power of the system gain:
