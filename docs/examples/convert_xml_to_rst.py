@@ -37,7 +37,7 @@ for xmlfile in all_xml:
 
     with open(rstfile, 'w') as out:
         if os.path.exists(introfile):
-            out.write(f".. include:: {introfile}\n")
+            out.write(f"\n.. include:: examples/{introfile}\n\n")
 
         out.write("%s\n" % ".. toggle-header::")
         out.write("\t%s\n\n" % ":header: StationXML **Show/Hide**")
@@ -46,7 +46,8 @@ for xmlfile in all_xml:
         for line in lines:
             out.write("\t\t%s\n" % line.rstrip())
 
-        out.write("\n.. image:: examples/%s\n\n" % pngfile)
+        if os.path.exists(pngfile):
+            out.write("\n.. image:: examples/%s\n\n" % pngfile)
 
     if do_validate:
         validate_cmd = f"java -jar {iris_validator} --input {xmlfile}"
