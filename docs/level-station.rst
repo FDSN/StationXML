@@ -1247,7 +1247,7 @@
 
    .. container:: description
 
-      Operator and associated contact persons An operating agency and associated contact persons. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact’s optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing element should be include in the Operator tag.
+      Agency and contact persons who manage this station. Only use if this differs from the Operator of the Network. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact’s optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing element should be include in the Operator tag.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
