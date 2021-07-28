@@ -1,5 +1,6 @@
 
 Changes from version 1.0 to 1.1 (2019-5-3)
+------------------------------------------
 (Edited 2019-12-18 for small clarifications)
 
 - Add (persistent) <Identifier> element to all base nodes (Network, Station, Channel)
@@ -30,3 +31,8 @@ Changes from version 1.0 to 1.1 (2019-5-3)
 
 - Add "subject" attribute to <Comment> to allow relating comments, make "id" attribute optional.
 
+Potential Future Changes
+----------------------------------
+
+
+.. include:: warnings.rst
