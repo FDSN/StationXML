@@ -781,6 +781,14 @@
 			<xs:extension base="fsx:BaseFilterType">
 				<xs:sequence>
 					<xs:element name="Symmetry">
+        		<xs:annotation>
+        			<xs:documentation>
+                The symmetry code. Designates how the factors will be specified.
+                NONE: No Symmetry - all Coefficients are specified, corresponds to A in SEED.
+                ODD: Odd number Coefficients with symmetry, B in SEED.
+                EVEN: Even number Coefficients with symmetry. C in SEED.
+              </xs:documentation>
+        		</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:NMTOKEN">
 								<xs:enumeration value="NONE"/>

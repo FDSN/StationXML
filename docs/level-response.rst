@@ -2128,6 +2128,10 @@
 
 					type:`string <appendices.html#glossary-string>`_
 
+   .. container:: description
+
+      The symmetry code. Designates how the factors will be specified. NONE: No Symmetry - all Coefficients are specified, corresponds to A in SEED. ODD: Odd number Coefficients with symmetry, B in SEED. EVEN: Even number Coefficients with symmetry. C in SEED.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
