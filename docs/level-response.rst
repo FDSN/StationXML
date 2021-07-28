@@ -398,7 +398,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -469,7 +469,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -847,7 +847,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -918,7 +918,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1352,7 +1352,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1423,7 +1423,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1656,7 +1656,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1727,7 +1727,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1978,7 +1978,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2049,7 +2049,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2489,7 +2489,7 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2560,7 +2560,7 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
