@@ -72,17 +72,20 @@ http://docs.fdsn.org/projects/source-identifiers
 
 Unit Naming Rules
 ===========================================
-The FDSN stronly recommends the use of SI unit names whenever possible.
+The FDSN strongly recommends the use of SI unit names whenever possible. For
+details see the SI brochure at:
 
-* Use SI units, base or derivative, and their standard abbreviations whenever possible. Spell out and avoid abbreviations of non-SI units.
+   `<https://www.bipm.org/en/publications/si-brochure>`_
+
+* Use SI units, base or derivative, and their standard symbols whenever possible. Spell out and avoid abbreviations of non-SI units.
 
 * Exponents for powers are specified with `**`, e.g. `s**2`.
 
-* Multiplication is specified using `*` while division is specified with / E.g. `hit/(cm**2*hour)`.
+* Multiplication is specified using `*` while division is specified with `/`. For example `hit/(cm**2*hour)`.
 
 * Use parentheses sparingly, only when FORTRAN-like precedence would not be correct.
 
-* Unit definitions are singular, not plural.
+* Unit definitions are singular, not plural, e.g. use `second` not `seconds`.
 
 * Unit names should not mix symbols and full names, use one or the other, e.g. use `m/s` or `meter/second` but not `meter/s` or `m/second`.
 
