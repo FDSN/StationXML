@@ -75,6 +75,8 @@ Unit Naming Rules
 The FDSN stronly recommends the use of SI unit names whenever possible, which are
 defined case sensitively.
 
+* SI symbols are preferred over names to avoid language differences, for example `m/s` is preferred over `meter/second` or `metre/second`
+
 In the SEED format all unit names are recommended to be uppercase and
 SI when possible.  For this reason, some unit documentation and
 required declarations in StationXML are in "uppercase SI" and these
