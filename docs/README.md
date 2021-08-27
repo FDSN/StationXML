@@ -15,21 +15,36 @@ or running sphinx-build manually
 
 This will update the html files in _build/html
 
+## Install sphinx
+
+    >conda create -n sphinx python=3.9
+    >conda activate sphinx
+    >conda install sphinx
+    >conda install -c conda-forge conda install sphinxcontrib-contentui
+    >pip install git+http://github.com/return42/linuxdoc.git
+    >conda install sphinx_rtd_theme
+    >conda install xmlschema
+
 ## To update ReStructuredText documentation generated from the StationXML schema file
 
-    >python3 convert_xsd_to_rst.py ../fdsn-station.xsd .
+    >python3 convert_xsd_to_rst.py ../fdsn-station.xsd . && make html
+
+    or
+
+    >conda run -n sphinx python3 convert_xsd_to_rst.py ../fdsn-station.xsd . && make html
 
 This will re-generate the following files from the XSD schema document:
+ - level-preamble.rst
  - level-network.rst
  - level-station.rst
  - level-channel.rst
  - level-response.rst
 
 ## To modify the look and feel of the auto-generated level docs
- 
+
  The following css divs are described in:
  _static/css/custom.css
- 
+
   - hatnote - describes the gray box of each element
   - crumb - the navigation trails
   - description - contains the element description
@@ -57,5 +72,5 @@ Example rst
 Hint: If you change the css without changing any .rst files, you must first do:
 
     >make clean   // deletes all the files in _build/
-    
+
 before doing the sphinx-build or it won't take.
