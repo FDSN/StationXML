@@ -51,11 +51,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -82,11 +82,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -147,11 +147,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -178,11 +178,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -209,11 +209,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -257,11 +257,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -288,11 +288,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -319,11 +319,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -377,11 +377,11 @@
 
 			.. only:: latex
 
-					type: :ref:`integer<type-glossary>`
+					content type: :ref:`integer<type-glossary>`
 
 			.. only:: html
 
-					type:`integer <appendices.html#glossary-integer>`_
+					content type: `integer <appendices.html#glossary-integer>`_
 
    .. container:: description
 
@@ -408,11 +408,11 @@
 
 			.. only:: latex
 
-					type: :ref:`integer<type-glossary>`
+					content type: :ref:`integer<type-glossary>`
 
 			.. only:: html
 
-					type:`integer <appendices.html#glossary-integer>`_
+					content type: `integer <appendices.html#glossary-integer>`_
 
    .. container:: description
 
@@ -439,11 +439,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -562,11 +562,11 @@
 
 			.. only:: latex
 
-					type: :ref:`anyURI<type-glossary>`
+					content type: :ref:`anyURI<type-glossary>`
 
 			.. only:: html
 
-					type:`anyURI <appendices.html#glossary-anyuri>`_
+					content type: `anyURI <appendices.html#glossary-anyuri>`_
 
    .. container:: description
 
@@ -589,11 +589,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -616,11 +616,15 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>` range:-90.0 :math:`\le` Latitude :math:`\lt` 90.0
+					content type: :ref:`double<type-glossary>`
+
+					range: -90.0 :math:`\le` Latitude :math:`\lt` 90.0
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_ range:-90.0 :math:`\le` Latitude :math:`\lt` 90.0
+					content type: `double <appendices.html#glossary-double>`_
+
+					range: -90.0 :math:`\le` Latitude :math:`\lt` 90.0
 
    .. container:: description
 
@@ -661,11 +665,15 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>` range:-180.0 :math:`\le` Longitude :math:`\le` 180.0
+					content type: :ref:`double<type-glossary>`
+
+					range: -180.0 :math:`\le` Longitude :math:`\le` 180.0
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_ range:-180.0 :math:`\le` Longitude :math:`\le` 180.0
+					content type: `double <appendices.html#glossary-double>`_
+
+					range: -180.0 :math:`\le` Longitude :math:`\le` 180.0
 
    .. container:: description
 
@@ -706,11 +714,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -746,11 +754,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -786,11 +794,15 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>` range:0.0 :math:`\le` Azimuth :math:`\lt` 360.0
+					content type: :ref:`double<type-glossary>`
+
+					range: 0.0 :math:`\le` Azimuth :math:`\lt` 360.0
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_ range:0.0 :math:`\le` Azimuth :math:`\lt` 360.0
+					content type: `double <appendices.html#glossary-double>`_
+
+					range: 0.0 :math:`\le` Azimuth :math:`\lt` 360.0
 
    .. container:: description
 
@@ -826,11 +838,15 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>` range:-90.0 :math:`\le` Dip :math:`\le` 90.0
+					content type: :ref:`double<type-glossary>`
+
+					range: -90.0 :math:`\le` Dip :math:`\le` 90.0
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_ range:-90.0 :math:`\le` Dip :math:`\le` 90.0
+					content type: `double <appendices.html#glossary-double>`_
+
+					range: -90.0 :math:`\le` Dip :math:`\le` 90.0
 
    .. container:: description
 
@@ -866,11 +882,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -906,11 +922,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -937,11 +953,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: example
 
@@ -999,11 +1015,11 @@
 
 			.. only:: latex
 
-					type: :ref:`integer<type-glossary>`
+					content type: :ref:`integer<type-glossary>`
 
 			.. only:: html
 
-					type:`integer <appendices.html#glossary-integer>`_
+					content type: `integer <appendices.html#glossary-integer>`_
 
    .. container:: description
 
@@ -1026,11 +1042,11 @@
 
 			.. only:: latex
 
-					type: :ref:`integer<type-glossary>`
+					content type: :ref:`integer<type-glossary>`
 
 			.. only:: html
 
-					type:`integer <appendices.html#glossary-integer>`_
+					content type: `integer <appendices.html#glossary-integer>`_
 
    .. container:: description
 
@@ -1053,11 +1069,15 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>` range:ClockDrift :math:`\ge` 0.0
+					content type: :ref:`double<type-glossary>`
+
+					range: ClockDrift :math:`\ge` 0.0
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_ range:ClockDrift :math:`\ge` 0.0
+					content type: `double <appendices.html#glossary-double>`_
+
+					range: ClockDrift :math:`\ge` 0.0
 
    .. container:: description
 
@@ -1118,11 +1138,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1145,11 +1165,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1199,11 +1219,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1226,11 +1246,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1253,11 +1273,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1280,11 +1300,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1307,11 +1327,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1334,11 +1354,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1361,11 +1381,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -1388,11 +1408,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -1415,11 +1435,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -1469,11 +1489,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1496,11 +1516,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1523,11 +1543,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1550,11 +1570,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1577,11 +1597,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1604,11 +1624,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1631,11 +1651,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -1658,11 +1678,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -1685,11 +1705,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -1739,11 +1759,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1766,11 +1786,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1793,11 +1813,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1820,11 +1840,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1847,11 +1867,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1874,11 +1894,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1901,11 +1921,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -1928,11 +1948,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -1955,11 +1975,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -2009,11 +2029,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2036,11 +2056,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2063,11 +2083,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2090,11 +2110,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2117,11 +2137,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2144,11 +2164,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2171,11 +2191,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -2198,11 +2218,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
@@ -2225,11 +2245,11 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 

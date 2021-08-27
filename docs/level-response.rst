@@ -61,11 +61,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -88,11 +88,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -132,11 +132,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -159,11 +159,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -203,11 +203,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -230,11 +230,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -257,11 +257,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -284,11 +284,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -311,11 +311,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -373,11 +373,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -417,11 +417,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -444,11 +444,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -488,11 +488,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -515,11 +515,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -542,11 +542,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -569,11 +569,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -609,11 +609,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -649,11 +649,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -676,11 +676,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -703,11 +703,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -730,11 +730,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -822,11 +822,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -866,11 +866,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -893,11 +893,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -937,11 +937,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -964,11 +964,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -991,11 +991,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1022,11 +1022,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -1049,11 +1049,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -1116,11 +1116,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -1155,11 +1155,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -1221,11 +1221,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -1260,11 +1260,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -1327,11 +1327,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1371,11 +1371,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1398,11 +1398,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1442,11 +1442,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1469,11 +1469,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1496,11 +1496,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1523,11 +1523,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -1563,11 +1563,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -1631,11 +1631,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1675,11 +1675,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1702,11 +1702,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1746,11 +1746,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1773,11 +1773,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1813,11 +1813,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1849,11 +1849,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -1889,11 +1889,15 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>` range:-360.0 :math:`\le` Phase :math:`\le` 360.0
+					content type: :ref:`double<type-glossary>`
+
+					range: -360.0 :math:`\le` Phase :math:`\le` 360.0
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_ range:-360.0 :math:`\le` Phase :math:`\le` 360.0
+					content type: `double <appendices.html#glossary-double>`_
+
+					range: -360.0 :math:`\le` Phase :math:`\le` 360.0
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -1953,11 +1957,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -1997,11 +2001,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2024,11 +2028,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2068,11 +2072,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2095,11 +2099,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2122,11 +2126,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2145,11 +2149,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -2195,11 +2199,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
 .. tabularcolumns::|l|l|l|1|1| 
 
@@ -2231,11 +2235,11 @@
 
 			.. only:: latex
 
-					type: :ref:`integer<type-glossary>`
+					content type: :ref:`integer<type-glossary>`
 
 			.. only:: html
 
-					type:`integer <appendices.html#glossary-integer>`_
+					content type: `integer <appendices.html#glossary-integer>`_
 
    .. container:: description
 
@@ -2258,11 +2262,11 @@
 
 			.. only:: latex
 
-					type: :ref:`integer<type-glossary>`
+					content type: :ref:`integer<type-glossary>`
 
 			.. only:: html
 
-					type:`integer <appendices.html#glossary-integer>`_
+					content type: `integer <appendices.html#glossary-integer>`_
 
    .. container:: description
 
@@ -2285,11 +2289,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -2325,11 +2329,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -2382,11 +2386,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -2409,11 +2413,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -2464,11 +2468,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2508,11 +2512,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2535,11 +2539,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2579,11 +2583,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2606,11 +2610,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2633,11 +2637,11 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
@@ -2660,11 +2664,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -2700,11 +2704,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -2740,11 +2744,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -2767,11 +2771,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -2794,11 +2798,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
    .. container:: description
 
@@ -2821,11 +2825,11 @@
 
 			.. only:: latex
 
-					type: :ref:`double<type-glossary>`
+					content type: :ref:`double<type-glossary>`
 
 			.. only:: html
 
-					type:`double <appendices.html#glossary-double>`_
+					content type: `double <appendices.html#glossary-double>`_
 
 .. tabularcolumns::|l|l|l|1|1| 
 
