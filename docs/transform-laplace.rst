@@ -147,7 +147,7 @@ where the possible values for PzTransferfunctionType are:
   #. "LAPLACE (HERTZ)"
   #. "DIGITAL (Z-TRANSFORM)"  (Discussed in next section)
 
-Note also the <NormalizationFactor> with unit "HERTZ".
+Note also the <NormalizationFrequency> with unit "HERTZ".
 These units are distinct from those used to identify :math:`s` above.
 The <NormalizationFrequency> specifies
 the frequency (in Hz) at which the polezero transfer function is normalized.
