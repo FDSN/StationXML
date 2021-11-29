@@ -3,35 +3,47 @@ StationXML Documentation
 
 ## To generate the html/pdf documents
 
-    >make html
+```
+make html
+```
 
 and/or
 
-    >make latexpdf
+```
+make latexpdf
+```
 
 or running sphinx-build manually
 
-    >sphinx-build -b html . _build/html
+```
+sphinx-build -b html . _build/html
+```
 
 This will update the html files in _build/html
 
 ## Install sphinx
 
-    >conda create -n sphinx python=3.9
-    >conda activate sphinx
-    >conda install sphinx
-    >conda install -c conda-forge conda install sphinxcontrib-contentui
-    >pip install git+http://github.com/return42/linuxdoc.git
-    >conda install sphinx_rtd_theme
-    >conda install xmlschema
+```
+conda create -n sphinx python=3.9
+conda activate sphinx
+conda install sphinx
+conda install -c conda-forge sphinxcontrib-contentui
+pip install git+http://github.com/return42/linuxdoc.git
+conda install sphinx_rtd_theme
+conda install xmlschema
+```
 
 ## To update ReStructuredText documentation generated from the StationXML schema file
 
-    >python3 convert_xsd_to_rst.py ../fdsn-station.xsd . && make html
+```
+python3 convert_xsd_to_rst.py ../fdsn-station.xsd . && make html
+```
 
     or
 
-    >conda run -n sphinx python3 convert_xsd_to_rst.py ../fdsn-station.xsd . && make html
+```
+conda run -n sphinx python3 convert_xsd_to_rst.py ../fdsn-station.xsd . && make html
+```
 
 This will re-generate the following files from the XSD schema document:
  - level-preamble.rst
@@ -71,6 +83,8 @@ Example rst
 
 Hint: If you change the css without changing any .rst files, you must first do:
 
-    >make clean   // deletes all the files in _build/
+```
+make clean   // deletes all the files in _build/
+```
 
 before doing the sphinx-build or it won't take.
