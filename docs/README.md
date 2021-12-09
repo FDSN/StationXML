@@ -31,6 +31,7 @@ conda install -c conda-forge sphinxcontrib-contentui
 pip install git+http://github.com/return42/linuxdoc.git
 conda install sphinx_rtd_theme
 conda install xmlschema
+conda install elementpath
 ```
 
 ## To update ReStructuredText documentation generated from the StationXML schema file
