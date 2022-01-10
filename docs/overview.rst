@@ -63,11 +63,15 @@ The FDSN and StationXML schema
 StationXML was developed through the International Federation of Digital Seismograph Networks
 (`FDSN <https://www.fdsn.org/>`_) to provide a standardized format for geophysical metadata.
 
-Notice that the example StationXML excerpt above contains the following line::
+Notice that the example StationXML excerpt above contains the following lines::
+   <?xml version='1.0' encoding='UTF-8'?>
 
    <FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
 
-This specifies the location and version of the schema
+The first line, the xml prolog, specifies the xml version and the character encoding.
+
+The second line begins the StationXML document and
+specifies the location and version of the schema
 to which the StationXML example must conform.
 
 
@@ -80,6 +84,16 @@ located at:
 
    `<https://www.fdsn.org/xml/station/fdsn-station-1.1.xsd>`_
 
+
+Character Encoding
+----------------------------------
+UTF-8 is the default encoding for XML, specified in the prolog,
+allowing non-ascii characters to be used within StationXML. This
+is common within names of people and places and in comments and descriptions.
+However, authors should use ASCII when possible for maximum portability.
+
+In particular, text that will likely be used by software, as opposed to simply
+displayed, such as ids and units, should only use ASCII.
 
 Documentation Organization
 =========================================
