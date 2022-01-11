@@ -215,7 +215,8 @@
 					<xs:element name="Equipment" type="fsx:EquipmentType" minOccurs="0"
 						maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>Equipment used by all channels at a station.</xs:documentation>
+							<xs:documentation>Equipment used by all channels at a station,
+							Equipment that contributes to or affects the response of a channel should be documented on the channel.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Operator" type="fsx:OperatorType" minOccurs="0"
@@ -415,6 +416,10 @@
 					</xs:element>
 					<xs:element name="Equipment" type="fsx:EquipmentType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
+							<xs:documentation>Any equipment that does not have type-specific fields.
+							Equipment such as sensor, data logger and preamplifier that has type-specific fields should be documented in those structures.
+							If the Equipment is entered at the Station level, it is not necessary to include it for each Channel, unless you have differences in equipment.
+							</xs:documentation>
 							<xs:documentation>If the Equipment is entered at the Station level,
 								it is not necessary to do it for each Channel, unless you have differences in equipment.
 								If using a preamplifier, sensor, or datalogger, use their appropriate fields instead.
