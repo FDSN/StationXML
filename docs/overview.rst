@@ -154,6 +154,7 @@ Documentation Changes
 Changes to this documentation.
 
 Version 2022-01-19:
+
 - Resolved issues with documentation by FDSN WG evaluation team.
 
 Version 2020-09-02:
