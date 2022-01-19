@@ -120,7 +120,7 @@
 		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation.
 		A Comment element may be included for additional comments.
       		</xs:documentation>
-      		<xs:documentation><example><Network code="IU" startDate="2016-01-27T13:00:00" /></example></xs:documentation>
+      		<xs:documentation><example><Network code="XX" startDate="2016-01-27T13:00:00" /></example></xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
@@ -1659,8 +1659,8 @@
         <xs:documentation><levelDesc LevelChoice="N">Name of Network</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="S">Name of Station</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="C">Name of Channel</levelDesc></xs:documentation>
-        <xs:documentation><example LevelChoice="N">IU</example></xs:documentation>
-        <xs:documentation><example LevelChoice="S">ANMO</example></xs:documentation>
+        <xs:documentation><example LevelChoice="N">XX</example></xs:documentation>
+        <xs:documentation><example LevelChoice="S">ABCD</example></xs:documentation>
         <xs:documentation><example LevelChoice="C">BHZ</example></xs:documentation>
       </xs:annotation>
 		</xs:attribute>
@@ -1708,7 +1708,7 @@
 			<xs:annotation>
         <xs:documentation>A previously used code if different from the current code</xs:documentation>
         <xs:documentation>
-          <example LevelChoice="N">II</example>
+          <example LevelChoice="N">XX</example>
           <example LevelChoice="S">albq</example>
           <example LevelChoice="C">bhz</example>
         </xs:documentation>

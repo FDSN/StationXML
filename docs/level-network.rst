@@ -19,7 +19,7 @@
 
    .. container:: example
 
-      **Example**: <Network code="IU" startDate="2016-01-27T13:00:00" />
+      **Example**: <Network code="XX" startDate="2016-01-27T13:00:00" />
 
 
 
@@ -35,9 +35,9 @@
       :widths: auto
 
       **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"GSN\"" 
-      **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Network", "code=\"IU\"" 
+      **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Network", "code=\"XX\"" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of network", "endDate=\"2018-01-27T00:00:00\"" 
-      **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"II\"" 
+      **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"XX\"" 
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
       **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
       **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of network", "startDate=\"2016-07-01T00:00:00\"" 

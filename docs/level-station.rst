@@ -31,7 +31,7 @@
       :widths: auto
 
       **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"ALQ\"" 
-      **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Station", "code=\"ANMO\"" 
+      **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Station", "code=\"ABCD\"" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of station epoch", "endDate=\"2018-01-27T00:00:00\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"albq\"" 
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
