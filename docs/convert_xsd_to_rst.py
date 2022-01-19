@@ -77,8 +77,10 @@ def write_tree(element, stop_element, outfile, first_time = True):
     print(".. container:: hatnote hatnote-gray\n", file=outfile)
 
     crumb = element.crumb[0]
+    simplecrumb = f" <{crumb}>"
     for c in element.crumb[1:]:
         crumb = crumb + " :raw-html:`&rarr;`:raw-latex:`$\\rightarrow$` " + c
+        simplecrumb += f" <{c}>"
 
     if not first_time:
         print("   .. container:: crumb\n", file=outfile)
@@ -97,9 +99,17 @@ def write_tree(element, stop_element, outfile, first_time = True):
             ann_list = list(filter(lambda a: a.tag != "levelDesc" , element.annotation))
         description = " ".join(map(lambda note: " ".join(note.text.split()) , ann_list))
 
-    for warning in element.warning:
-        print("   .. admonition:: Warning\n", file=outfile)
-        print("      %s\n" % warning.text, file=outfile)
+    if len(element.warning) > 0:
+        with open("warnings.rst", "a") as warnfile:
+            for warning in element.warning:
+                print("   .. admonition:: Warning\n", file=outfile)
+                print("      %s\n" % warning.text, file=outfile)
+
+                print(f"\n\n", file=warnfile)
+                print(f"  -    {simplecrumb} : \n", file=warnfile)
+                print("     .. admonition:: Warning\n", file=warnfile)
+                print(f"       {warning.text}\n", file=warnfile)
+
 
     if element.type:
         print("   .. container:: type\n", file=outfile)
@@ -649,6 +659,12 @@ def main():
     print (f'Reading schema file {args.schemafile} and writing RST to directory {args.outdir}')
 
     schema = xmlschema.XMLSchema(args.schemafile)
+
+    # create warning.rst file for deprectaion warnings
+    with open("warnings.rst", "w") as warnfile:
+        print("\n", file=warnfile)
+        print("The following are potential future changes, as tagged in the schema with <warning> elements in the documentation. They may result in modifications or deletions in future versions of StationXML.\n", file=warnfile)
+        print("\n\n", file=warnfile)
 
     level_xpaths = ['fsx:FDSNStationXML',
                     'fsx:FDSNStationXML/fsx:Network',
