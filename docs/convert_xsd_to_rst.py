@@ -58,6 +58,12 @@ def write_tree(element, stop_element, outfile, first_time = True):
 
     print(".. _%s:\n" % href, file=outfile)
 
+    # MTH: Hack to fix: SampleRate is not required *unless* SampleRateRatio is present:
+    # Polynomial not required in Stage as in choice
+    elements_in_groups = ['SampleRate', 'SampleRateRatio', 'FrequencyStart', 'FrequencyEnd',
+                          'FrequencyDBVariation', 'Polynomial']
+    if element.name in elements_in_groups:
+        element.required = False
 
     if element.isRequired():
         print("<%s>     :red:`required`" % (element.name), file=outfile)

@@ -3042,7 +3042,7 @@
 
 .. _response-stage-polynomial:
 
-<Polynomial>     :red:`required`
+<Polynomial>
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. container:: hatnote hatnote-gray
 
