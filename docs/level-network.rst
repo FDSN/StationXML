@@ -21,9 +21,14 @@
 
       **Example**: <Network code="XX" startDate="2016-01-27T13:00:00" />
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Network>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -32,10 +37,34 @@
       **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"GSN\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Network", "code=\"XX\"" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of network", "endDate=\"2018-01-27T00:00:00\"" 
-      **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "historicalCode=\"XX\"" 
+      **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"XX\"" 
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
       **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
       **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of network", "startDate=\"2016-07-01T00:00:00\"" 
+
+
+
+
+   **Sub Elements of <Network>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Description\><Network-Description>`, string, "optional" 
+      :ref:`\<Identifier\><Network-Identifier>`, string, "optional, many" 
+      :ref:`\<Comment\><Network-Comment>`, , "optional, many" 
+      :ref:`\<DataAvailability\><Network-DataAvailability>`, , "optional" 
+      :ref:`\<Operator\><Network-Operator>`, , "optional, many" 
+      :ref:`\<TotalNumberStations\><Network-TotalNumberStations>`, decimal, "optional" 
+      :ref:`\<SelectedNumberStations\><Network-SelectedNumberStations>`, decimal, "optional" 
+      :ref:`\<Station\><Station>`, , "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -95,9 +124,14 @@
 
       A type to document persistent identifiers. Identifier values should be specified without a URI scheme (prefix), instead the identifier type is documented as an attribute.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Identifier>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -122,9 +156,14 @@
 
       Container for a comment or log entry.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Comment>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -132,6 +171,26 @@
 
       **id**, :ref:`CounterType<type-glossary>`, no, "An ID for this comment", "id=\"12345\"" 
       **subject**, :ref:`string<type-glossary>`, no, "A subject for this comment. Multiple comments with the same subject should be considered related.", "subject=\"Scheduled maintenance\"" 
+
+
+
+
+   **Sub Elements of <Comment>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Value\><Network-Comment-Value>`, string, ":red:`required`" 
+      :ref:`\<BeginEffectiveTime\><Network-Comment-BeginEffectiveTime>`, dateTime, "optional" 
+      :ref:`\<EndEffectiveTime\><Network-Comment-EndEffectiveTime>`, dateTime, "optional" 
+      :ref:`\<Author\><Network-Comment-Author>`, , "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -244,6 +303,26 @@
       Author of Comment. Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
 
 
+
+
+   **Sub Elements of <Author>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Network-Comment-Author-Name>`, string, "optional, many" 
+      :ref:`\<Agency\><Network-Comment-Author-Agency>`, string, "optional, many" 
+      :ref:`\<Email\><Network-Comment-Author-Email>`, string, "optional, many" 
+      :ref:`\<Phone\><Network-Comment-Author-Phone>`, , "optional, many" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _network-comment-author-name:
@@ -353,15 +432,39 @@
 
       Phone of contact or author.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Phone>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
       **description**, :ref:`string<type-glossary>`, no, "", "" 
+
+
+
+
+   **Sub Elements of <Phone>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<CountryCode\><Network-Comment-Author-Phone-CountryCode>`, integer, "optional" 
+      :ref:`\<AreaCode\><Network-Comment-Author-Phone-AreaCode>`, integer, ":red:`required`" 
+      :ref:`\<PhoneNumber\><Network-Comment-Author-Phone-PhoneNumber>`, string, ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -474,6 +577,24 @@
       A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers. A type for describing data availability.
 
 
+
+
+   **Sub Elements of <DataAvailability>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Extent\><Network-DataAvailability-Extent>`, , "optional" 
+      :ref:`\<Span\><Network-DataAvailability-Span>`, , "optional, many" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _network-dataavailability-extent:
@@ -490,9 +611,14 @@
 
       Data availability extents, the earliest and latest data available. No information about the continuity of the data is included or implied.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Extent>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -518,9 +644,14 @@
 
       A type for describing data availability spans, with variable continuity. The time range described may be based on the request parameters that generated the document and not necessarily relate to continuity outside of the range. It may also be a smaller time window than the request depending on the data characteristics.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Span>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -547,6 +678,25 @@
    .. container:: description
 
       Agency and contact persons who manage this network. An operating agency and associated contact persons. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact’s optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing element should be include in the Operator tag.
+
+
+
+
+   **Sub Elements of <Operator>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Agency\><Network-Operator-Agency>`, string, ":red:`required`" 
+      :ref:`\<Contact\><Network-Operator-Contact>`, , "optional, many" 
+      :ref:`\<WebSite\><Network-Operator-WebSite>`, anyURI, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -595,6 +745,26 @@
    .. container:: description
 
       Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
+
+
+
+
+   **Sub Elements of <Contact>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Network-Operator-Contact-Name>`, string, "optional, many" 
+      :ref:`\<Agency\><Network-Operator-Contact-Agency>`, string, "optional, many" 
+      :ref:`\<Email\><Network-Operator-Contact-Email>`, string, "optional, many" 
+      :ref:`\<Phone\><Network-Operator-Contact-Phone>`, , "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -706,15 +876,39 @@
 
       Phone of contact or author.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Phone>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
       **description**, :ref:`string<type-glossary>`, no, "", "" 
+
+
+
+
+   **Sub Elements of <Phone>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<CountryCode\><Network-Operator-Contact-Phone-CountryCode>`, integer, "optional" 
+      :ref:`\<AreaCode\><Network-Operator-Contact-Phone-AreaCode>`, integer, ":red:`required`" 
+      :ref:`\<PhoneNumber\><Network-Operator-Contact-Phone-PhoneNumber>`, string, ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
