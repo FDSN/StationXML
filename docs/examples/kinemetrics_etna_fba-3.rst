@@ -5,28 +5,43 @@
 
 		<?xml version='1.0' encoding='UTF-8'?>
 		<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
-		  <Network code=..>
-		    <Station code=..>
-		      <Channel code=.. locationCode=..>
-                        ...
+		  <Source>isti</Source>
+		  <Created>2020-06-05T21:54:34.921819Z</Created>
+		  <Network code="XX">
+		    <Station code="ABCD">
+		      <Latitude>0.0</Latitude>
+		      <Longitude>0.0</Longitude>
+		      <Elevation>10.0</Elevation>
+		      <Site>
+		        <Name>Nowhere</Name>
+		      </Site>
+		      <Channel code="BHZ" locationCode="10">
+		        <Latitude>0.0</Latitude>
+		        <Longitude>0.0</Longitude>
+		        <Elevation>10.0</Elevation>
+		        <Depth>0.0</Depth>
+		        <Azimuth>0.0</Azimuth>
+		        <Dip>-90.0</Dip>
 		        <SampleRate>200.0</SampleRate>
+		        <Sensor><Description>Kinemetrics FBA-3</Description></Sensor>
+		        <DataLogger><Description>Kinemetrics Etna</Description></DataLogger>
 		        <Response>
 		          <InstrumentSensitivity>
 		            <Value>213920.152837</Value>
 		            <Frequency>0.15</Frequency>
 		            <InputUnits>
-		              <Name>M/S**2</Name>
+		              <Name>m/s**2</Name>
 		              <Description>Acceleration in Meters Per Second Per Second</Description>
 		            </InputUnits>
 		            <OutputUnits>
-		              <Name>COUNTS</Name>
+		              <Name>count</Name>
 		              <Description>Digital Counts</Description>
 		            </OutputUnits>
 		          </InstrumentSensitivity>
 		          <Stage number="1">
 		            <PolesZeros>
 		              <InputUnits>
-		                <Name>M/S**2</Name>
+		                <Name>m/s**2</Name>
 		                <Description>Acceleration in Meters Per Second Per Second</Description>
 		              </InputUnits>
 		              <OutputUnits>
@@ -67,7 +82,7 @@
 		                <Description>Volts</Description>
 		              </InputUnits>
 		              <OutputUnits>
-		                <Name>COUNTS</Name>
+		                <Name>count</Name>
 		                <Description>Digital Counts</Description>
 		              </OutputUnits>
 		              <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -88,11 +103,11 @@
 		          <Stage number="4">
 		            <Coefficients>
 		              <InputUnits>
-		                <Name>COUNTS</Name>
+		                <Name>count</Name>
 		                <Description>Digital Counts</Description>
 		              </InputUnits>
 		              <OutputUnits>
-		                <Name>COUNTS</Name>
+		                <Name>count</Name>
 		                <Description>Digital Counts</Description>
 		              </OutputUnits>
 		              <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -169,11 +184,11 @@
 		          <Stage number="5">
 		            <Coefficients>
 		              <InputUnits>
-		                <Name>COUNTS</Name>
+		                <Name>count</Name>
 		                <Description>Digital Counts</Description>
 		              </InputUnits>
 		              <OutputUnits>
-		                <Name>COUNTS</Name>
+		                <Name>count</Name>
 		                <Description>Digital Counts</Description>
 		              </OutputUnits>
 		              <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>

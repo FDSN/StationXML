@@ -25,7 +25,7 @@ from xmlschema.validators.facets import *
 
 from xml.etree import ElementTree
 
-def write_tree(element, outfile, first_time = True):
+def write_tree(element, stop_element, outfile, first_time = True):
     """Convert to RST and write element and children to output file.
 
     Starting at `element` recursively operate on all child elements,
@@ -59,16 +59,19 @@ def write_tree(element, outfile, first_time = True):
     print(".. _%s:\n" % href, file=outfile)
 
     # MTH: Hack to fix: SampleRate is not required *unless* SampleRateRatio is present:
+    # Polynomial not required in Stage as in choice
     elements_in_groups = ['SampleRate', 'SampleRateRatio', 'FrequencyStart', 'FrequencyEnd',
-                          'FrequencyDBVariation']
+                          'FrequencyDBVariation', 'Polynomial']
     if element.name in elements_in_groups:
         element.required = False
 
-    if element.required:
+    if element.isRequired():
         print("<%s>     :red:`required`" % (element.name), file=outfile)
     else:
         print("<%s>" % element.name, file=outfile)
 
+    if element.level > len(headings):
+        print(f"level > headings: {element.level} {len(headings)}  {element.name}  {href}")
     print(headings[element.level - 1]*60, file=outfile)
 
     print(".. container:: hatnote hatnote-gray\n", file=outfile)
@@ -177,8 +180,10 @@ def write_tree(element, outfile, first_time = True):
                 print("     **Example**: %s.\n" % exampleStr, file=outfile)
 
     if element.attributes:
-        print(".. tabularcolumns::|l|l|l|1|1| \n", file=outfile)
-        print(".. csv-table::", file=outfile)
+        print("\n\n", file=outfile)
+        print(f"   **Attributes of <{element.name}>**: \n", file=outfile)
+        print("   .. tabularcolumns::|l|l|l|1|1| \n", file=outfile)
+        print("   .. csv-table::", file=outfile)
         print("      :class: rows", file=outfile)
         print("      :escape: \ ", file=outfile)
         print('      :header: "attribute", "type", "required", "description", "example"', file=outfile)
@@ -214,8 +219,51 @@ def write_tree(element, outfile, first_time = True):
         print(file=outfile)
 
     if element.children:
+        print("\n\n", file=outfile)
+        print(f"   **Sub Elements of <{element.name}>**: \n", file=outfile)
+        print("   .. tabularcolumns::|l|l|l|l| \n", file=outfile)
+        print("   .. csv-table::", file=outfile)
+        print("      :class: rows", file=outfile)
+        print("      :escape: \ ", file=outfile)
+        print('      :header: "element", "type", "number"', file=outfile)
+        print("      :widths: auto\n", file=outfile)
         for child in element.children:
-            write_tree(child, outfile, first_time = False)
+            parentRef = ""
+            if child.name != stop_element:
+                for c in element.crumb:
+                    parentRef += c+"-"
+            required = ""
+            if child.isRequired():
+                required = ":red:`required`"
+                if child.max_occurs == "unbounded" or child.max_occurs is None:
+                    required = ":red:`required, many`"
+            else:
+                if child.min_occurs == 0:
+                    if child.max_occurs == "unbounded" or child.max_occurs is None:
+                        required = "optional, many"
+                    else:
+                        required = "optional"
+                elif child.max_occurs == 1:
+                    required = "optional"
+                elif child.max_occurs == "unbounded" or child.max_occurs is None:
+                    required = "many"
+                else:
+                    required = f"{child.min_occurs}/{child.max_occurs}"
+
+            range = ""
+            if child.range_string is not None:
+                range = child.range_string
+            type = ""
+            if child.type is not None:
+                type = child.type
+
+            #print(f"      **{child.local_name}**, :ref:`{child.local_name}`, {child.type}, \"{child.required}\", \"{child.range_string}\" ", file=outfile)
+            print(f"      :ref:`\<{child.name}\><{parentRef}{child.name}>`, {type}, \"{required}\" ", file=outfile)
+        print("\n\n", file=outfile)
+
+        for child in element.children:
+            if child.name != stop_element:
+                write_tree(child, stop_element, outfile, first_time = False)
 
     return
 
@@ -367,6 +415,8 @@ class Element(object):
         self.type = type
         self.range_string = range_string
         self.parent = None
+        self.min_occurs = 1
+        self.max_occurs = 1
 
         if annotation is not None:
             for note in annotation:
@@ -398,6 +448,15 @@ class Element(object):
 
     def add_crumb(self, x):
         self.crumb.append(x)
+    def isRequired(self):
+        # MTH: Hack to fix: SampleRate is not required *unless* SampleRateRatio is present:
+        elements_in_groups = ['SampleRate', 'SampleRateRatio', 'FrequencyStart', 'FrequencyEnd',
+                              'FrequencyDBVariation']
+        if self.name in elements_in_groups:
+            return False
+        else:
+            return self.required
+
 
 
 def get_type(x, field_name):
@@ -445,8 +504,8 @@ def get_type(x, field_name):
     return keep_type, range_string
 
 
-def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
-    """Recursively walk the schema element tree until stop_element is encountered"""
+def walk_tree(xsd_element, level=1, last_elem=None, context=None):
+    """Recursively walk the schema element tree """
 
     level_elem = None
     space = (level - 1) * 8 + 6
@@ -457,17 +516,15 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
         context = []
 
     if args.verbose > 1:
-        print (f'Working on xsd_element: {xsd_element}, level: {level}, stop_element: {stop_element}')
-
-    # Recursion is complete if the stop element is reached
-    if stop_element and xsd_element.local_name == stop_element:
-        return level_elem
+        print (f'Working on xsd_element: {xsd_element}, level: {level}')
 
     # Store the context for breadcrumbs
     context.append(xsd_element.local_name)
 
     keep_type, range_string = get_type(xsd_element.type.content_type, xsd_element.local_name)
     this_elem = Element(name=xsd_element.local_name, level=level, type=keep_type, range_string=range_string, crumb=context)
+    this_elem.min_occurs = xsd_element.min_occurs
+    this_elem.max_occurs = xsd_element.max_occurs
 
     if xsd_element.min_occurs == 1:
         this_elem.required = True
@@ -538,6 +595,8 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
                     # Store subelement, while adding name to context
                     subElement = Element(name=e.local_name, required=required, type=keep_type, level=level+1,
                                          range_string=range_string, crumb=context + [e.local_name])
+                    subElement.min_occurs = e.min_occurs
+                    subElement.max_occurs = e.max_occurs
                     this_elem.add_child(subElement)
 
                     if e.annotation is not None:
@@ -566,7 +625,7 @@ def walk_tree(xsd_element, stop_element, level=1, last_elem=None, context=None):
                                     attr.add_annotation(y)
 
                 else:
-                    walk_tree(e, stop_element, level=level+1, last_elem=this_elem, context=context)
+                    walk_tree(e, level=level+1, last_elem=this_elem, context=context)
                     context.pop()
 
     else:
@@ -605,7 +664,7 @@ def main():
         if i < 4:
             stop_element = os.path.basename(level_xpaths[i+1]).split(':')[1]
 
-        level_elem = walk_tree(xsd_element, stop_element)
+        level_elem = walk_tree(xsd_element)
 
         # Use Preamble instead of root element name
         if this_element=="FDSNStationXML":
@@ -618,7 +677,7 @@ def main():
             print (f'Writing to {rst_file}')
 
         with open(rst_file, 'w') as outfile:
-            write_tree(level_elem, outfile = outfile)
+            write_tree(level_elem, stop_element, outfile = outfile)
 
 
 if __name__ == "__main__":

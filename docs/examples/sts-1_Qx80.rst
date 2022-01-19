@@ -6,41 +6,42 @@
 		<?xml version='1.0' encoding='UTF-8'?>
 		<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
 		  <Source>isti</Source>
-		  <Module>ObsPy 1.2.0rc8.post0+9.gfdab3d4f94.dirty.obspy.master</Module>
-		  <ModuleURI>https://www.obspy.org</ModuleURI>
 		  <Created>2020-06-06T01:19:15.736834Z</Created>
-		  <Network code="BK">
-		    <Station code="ANMO">
-		      <Latitude unit="DEGREES">34.945911</Latitude>
-		      <Longitude unit="DEGREES">-106.457199</Longitude>
-		      <Elevation unit="METERS">1820.0</Elevation>
+		  <Network code="XX">
+		    <Station code="ABCD">
+		      <Latitude>0.0</Latitude>
+		      <Longitude>0.0</Longitude>
+		      <Elevation>10.0</Elevation>
 		      <Site>
-		        <Name>Albuquerque, New Mexico, USA</Name>
+		        <Name>Nowhere</Name>
 		      </Site>
-		      <CreationDate>1970-01-01T00:00:00.000000Z</CreationDate>
 		      <Channel code="BHZ" locationCode="10">
-		        <Latitude unit="DEGREES">34.945911</Latitude>
-		        <Longitude unit="DEGREES">-106.457199</Longitude>
-		        <Elevation unit="METERS">1820.0</Elevation>
-		        <Depth unit="METERS">0.0</Depth>
+		        <Latitude>0.0</Latitude>
+		        <Longitude>0.0</Longitude>
+		        <Elevation>10.0</Elevation>
+		        <Depth>0.0</Depth>
+		        <Azimuth>0.0</Azimuth>
+		        <Dip>-90.0</Dip>
 		        <SampleRate>80.0</SampleRate>
+		        <Sensor><Description>Streckeisen STS-1</Description></Sensor>
+		        <DataLogger><Description>Quanterra Qx80</Description></DataLogger>
 		        <Response>
 		          <InstrumentSensitivity>
 		            <Value>966938797.852</Value>
 		            <Frequency>0.02</Frequency>
 		            <InputUnits>
-		              <Name>M/S</Name>
+		              <Name>m/s</Name>
 		              <Description>Velocity in Meters per Second</Description>
 		            </InputUnits>
 		            <OutputUnits>
-		              <Name>COUNTS</Name>
+		              <Name>count</Name>
 		              <Description>Digital Counts</Description>
 		            </OutputUnits>
 		          </InstrumentSensitivity>
 		          <Stage number="1">
 		            <PolesZeros>
 		              <InputUnits>
-		                <Name>M/S</Name>
+		                <Name>m/s</Name>
 		                <Description>Velocity in Meters per Second</Description>
 		              </InputUnits>
 		              <OutputUnits>
@@ -93,7 +94,7 @@
 		                <Description>Volts</Description>
 		              </InputUnits>
 		              <OutputUnits>
-		                <Name>COUNTS</Name>
+		                <Name>count</Name>
 		                <Description>Digital Counts</Description>
 		              </OutputUnits>
 		              <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -114,11 +115,11 @@
 		          <Stage number="4">
 		            <Coefficients>
 		              <InputUnits>
-		                <Name>COUNTS</Name>
+		                <Name>count</Name>
 		                <Description>Digital Counts</Description>
 		              </InputUnits>
 		              <OutputUnits>
-		                <Name>COUNTS</Name>
+		                <Name>count</Name>
 		                <Description>Digital Counts</Description>
 		              </OutputUnits>
 		              <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -202,11 +203,11 @@
 		          <Stage number="5">
 		            <Coefficients>
 		              <InputUnits>
-		                <Name>COUNTS</Name>
+		                <Name>count</Name>
 		                <Description>Digital Counts</Description>
 		              </InputUnits>
 		              <OutputUnits>
-		                <Name>COUNTS</Name>
+		                <Name>count</Name>
 		                <Description>Digital Counts</Description>
 		              </OutputUnits>
 		              <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>

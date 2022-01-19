@@ -17,9 +17,14 @@
 
       The Channel container. A Description element may be included with other information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference. A Comment element may be included for arbitrary comments.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Channel>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -28,11 +33,49 @@
       **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"Z\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Channel", "code=\"BHZ\"" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of channel epoch", "endDate=\"2018-01-27T00:00:00Z\"" 
-      **historicalCode**, :ref:`string<type-glossary>`, no, "LevelDefault:A previously used code if different from the current code", "historicalCode=\"bhz\"" 
+      **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"bhz\"" 
       **locationCode**, :ref:`string<type-glossary>`, :red:`yes`, "The locationCode is typically used to group channels from a common sensor. For example, the channels of the primary sensor at global IDA-IRIS stations have locationCode = \"00\": 00_BHZ, 00_BHE, 00_BHN, 00_LHZ, ..., etc. Even though it is required, locationCode may be, and often is, an empty string, however, it is recommended that the locationCode not be empty.", "locationCode=\"30\"" 
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
       **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
       **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of channel epoch", "startDate=\"2016-07-01T00:00:00Z\"" 
+
+
+
+
+   **Sub Elements of <Channel>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Description\><Channel-Description>`, string, "optional" 
+      :ref:`\<Identifier\><Channel-Identifier>`, string, "optional, many" 
+      :ref:`\<Comment\><Channel-Comment>`, , "optional, many" 
+      :ref:`\<DataAvailability\><Channel-DataAvailability>`, , "optional" 
+      :ref:`\<ExternalReference\><Channel-ExternalReference>`, , "optional, many" 
+      :ref:`\<Latitude\><Channel-Latitude>`, double, ":red:`required`" 
+      :ref:`\<Longitude\><Channel-Longitude>`, double, ":red:`required`" 
+      :ref:`\<Elevation\><Channel-Elevation>`, double, ":red:`required`" 
+      :ref:`\<Depth\><Channel-Depth>`, double, ":red:`required`" 
+      :ref:`\<Azimuth\><Channel-Azimuth>`, double, "optional" 
+      :ref:`\<Dip\><Channel-Dip>`, double, "optional" 
+      :ref:`\<WaterLevel\><Channel-WaterLevel>`, double, "optional" 
+      :ref:`\<Type\><Channel-Type>`, string, "optional, many" 
+      :ref:`\<SampleRate\><Channel-SampleRate>`, double, "optional" 
+      :ref:`\<SampleRateRatio\><Channel-SampleRateRatio>`, , "optional" 
+      :ref:`\<ClockDrift\><Channel-ClockDrift>`, double, "optional" 
+      :ref:`\<CalibrationUnits\><Channel-CalibrationUnits>`, , "optional" 
+      :ref:`\<Sensor\><Channel-Sensor>`, , "optional" 
+      :ref:`\<PreAmplifier\><Channel-PreAmplifier>`, , "optional" 
+      :ref:`\<DataLogger\><Channel-DataLogger>`, , "optional" 
+      :ref:`\<Equipment\><Channel-Equipment>`, , "optional, many" 
+      :ref:`\<Response\><Response>`, , "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -92,9 +135,14 @@
 
       A type to document persistent identifiers. Identifier values should be specified without a URI scheme (prefix), instead the identifier type is documented as an attribute.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Identifier>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -119,9 +167,14 @@
 
       Container for a comment or log entry.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Comment>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -129,6 +182,26 @@
 
       **id**, :ref:`CounterType<type-glossary>`, no, "An ID for this comment", "id=\"12345\"" 
       **subject**, :ref:`string<type-glossary>`, no, "A subject for this comment. Multiple comments with the same subject should be considered related.", "subject=\"Scheduled maintenance\"" 
+
+
+
+
+   **Sub Elements of <Comment>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Value\><Channel-Comment-Value>`, string, ":red:`required`" 
+      :ref:`\<BeginEffectiveTime\><Channel-Comment-BeginEffectiveTime>`, dateTime, "optional" 
+      :ref:`\<EndEffectiveTime\><Channel-Comment-EndEffectiveTime>`, dateTime, "optional" 
+      :ref:`\<Author\><Channel-Comment-Author>`, , "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -241,6 +314,26 @@
       Author of Comment. Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
 
 
+
+
+   **Sub Elements of <Author>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Channel-Comment-Author-Name>`, string, "optional, many" 
+      :ref:`\<Agency\><Channel-Comment-Author-Agency>`, string, "optional, many" 
+      :ref:`\<Email\><Channel-Comment-Author-Email>`, string, "optional, many" 
+      :ref:`\<Phone\><Channel-Comment-Author-Phone>`, , "optional, many" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _channel-comment-author-name:
@@ -350,15 +443,39 @@
 
       Phone of contact or author.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Phone>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
       **description**, :ref:`string<type-glossary>`, no, "", "" 
+
+
+
+
+   **Sub Elements of <Phone>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<CountryCode\><Channel-Comment-Author-Phone-CountryCode>`, integer, "optional" 
+      :ref:`\<AreaCode\><Channel-Comment-Author-Phone-AreaCode>`, integer, ":red:`required`" 
+      :ref:`\<PhoneNumber\><Channel-Comment-Author-Phone-PhoneNumber>`, string, ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -471,6 +588,24 @@
       A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers. A type for describing data availability.
 
 
+
+
+   **Sub Elements of <DataAvailability>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Extent\><Channel-DataAvailability-Extent>`, , "optional" 
+      :ref:`\<Span\><Channel-DataAvailability-Span>`, , "optional, many" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _channel-dataavailability-extent:
@@ -487,9 +622,14 @@
 
       Data availability extents, the earliest and latest data available. No information about the continuity of the data is included or implied.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Extent>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -515,9 +655,14 @@
 
       A type for describing data availability spans, with variable continuity. The time range described may be based on the request parameters that generated the document and not necessarily relate to continuity outside of the range. It may also be a smaller time window than the request depending on the data characteristics.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Span>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -544,6 +689,24 @@
    .. container:: description
 
       URI of any type of external report, such as data quality reports. This type contains a Uniform Resource Identifier (URI) and and description for external information that users may want to reference.
+
+
+
+
+   **Sub Elements of <ExternalReference>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<URI\><Channel-ExternalReference-URI>`, anyURI, ":red:`required`" 
+      :ref:`\<Description\><Channel-ExternalReference-Description>`, string, ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -624,21 +787,26 @@
 
    .. container:: description
 
-      Latitude of this channel's sensor, by default in degrees. Often the same as the station latitude, but when different the channel latitude is the true location of the sensor. Latitude type extending the base type to add datum as an attribute with default.
+      Latitude of this channel's sensor, in degrees. Often the same as the station latitude, but when different the channel latitude is the true location of the sensor. Latitude type extending the base type to add datum as an attribute with default.
 
    .. container:: example
 
-      **Example**: <Latitude unit="DEGREES" datum="WGS84">34.9459</Latitude>
+      **Example**: <Latitude>34.9459</Latitude>
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Latitude>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be DEGREES, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -669,21 +837,26 @@
 
    .. container:: description
 
-      Longitude of this channel's sensor, by default in degrees. Often the same as the station longitude, but when different the channel longitude is the true location of the sensor. Longitude type extending the base type to add datum as an attribute with default.
+      Longitude of this channel's sensor, in degrees. Often the same as the station longitude, but when different the channel longitude is the true location of the sensor. Longitude type extending the base type to add datum as an attribute with default.
 
    .. container:: example
 
-      **Example**: <Longitude unit="DEGREES" datum="WGS84">-106.4572</Longitude>
+      **Example**: <Longitude>-106.4572</Longitude>
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Longitude>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be DEGREES, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -714,17 +887,22 @@
 
    .. container:: description
 
-      Elevation of the sensor, by default in meters. To find the local ground surface level, add the Depth value to this elevation. Extension of FloatType for distances, elevations, and depths.
+      Elevation of the sensor, in meters. To find the local ground surface level, add the Depth value to this elevation. Extension of FloatType for distances, elevations, and depths.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Elevation>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"m\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be METERS, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -756,15 +934,20 @@
 
       The depth of the sensor relative to the local ground surface level, in meters. Extension of FloatType for distances, elevations, and depths.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Depth>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"m\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be METERS, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -796,15 +979,20 @@
 
       Azimuth of the sensor in degrees clockwise from geographic (true) north. Instrument azimuth, degrees clockwise from North.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Azimuth>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be DEGREES, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -836,15 +1024,20 @@
 
       Dip of the instrument in degrees, positive down from horizontal Instrument dip in degrees, positive down from horizontal.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Dip>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be DEGREES, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -874,11 +1067,16 @@
 
    .. container:: description
 
-      Elevation of the water surface in meters for underwater sites, where 0 is mean sea level. If you put an OBS on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0. Representation of floating-point numbers used as measurements.
+      Elevation of the water surface in meters for underwater sites, where 0 is mean sea level. If you put an OBS on a lake bottom, where the lake surface is at elevation=1200 meters, then you should set WaterLevel=1200. An OBS in the ocean would have WaterLevel=0. Representation of floating-point numbers used as measurements.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <WaterLevel>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -945,17 +1143,22 @@
 
    .. container:: example
 
-      **Example**: <SampleRate units="SAMPLES/S">40.0</SampleRate>
+      **Example**: <SampleRate>40.0</SampleRate>
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <SampleRate>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"SAMPLES/S\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be SAMPLES/S, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -982,6 +1185,24 @@
         	<NumberSamples>1</NumberSamples>
         	<NumberSeconds>2590674</NumberSeconds>
         </SampleRateRatio>
+
+
+
+   **Sub Elements of <SampleRateRatio>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<NumberSamples\><Channel-SampleRateRatio-NumberSamples>`, integer, ":red:`required`" 
+      :ref:`\<NumberSeconds\><Channel-SampleRateRatio-NumberSeconds>`, integer, ":red:`required`" 
+
+
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -1063,15 +1284,20 @@
 
       Tolerance value, measured in seconds per sample, used as a threshold for time error detection in data from the channel.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <ClockDrift>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The unit of drift value.", "unit=\"SECONDS/SAMPLE\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The unit of drift value. This value is fixed to be SECONDS/SAMPLE, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -1101,6 +1327,24 @@
           <Name>V</Name>
           <Description>Volts</Description>
         </CalibrationUnits>
+
+
+
+   **Sub Elements of <CalibrationUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Channel-CalibrationUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Channel-CalibrationUnits-Description>`, string, "optional" 
+
+
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -1172,15 +1416,45 @@
 
       Details of the (typically analog) sensor attached to this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. A type for equipment related to data acquisition or processing.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Sensor>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information or be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <Sensor>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Type\><Channel-Sensor-Type>`, string, "optional" 
+      :ref:`\<Description\><Channel-Sensor-Description>`, string, "optional" 
+      :ref:`\<Manufacturer\><Channel-Sensor-Manufacturer>`, string, "optional" 
+      :ref:`\<Vendor\><Channel-Sensor-Vendor>`, string, "optional" 
+      :ref:`\<Model\><Channel-Sensor-Model>`, string, "optional" 
+      :ref:`\<SerialNumber\><Channel-Sensor-SerialNumber>`, string, "optional" 
+      :ref:`\<InstallationDate\><Channel-Sensor-InstallationDate>`, dateTime, "optional" 
+      :ref:`\<RemovalDate\><Channel-Sensor-RemovalDate>`, dateTime, "optional" 
+      :ref:`\<CalibrationDate\><Channel-Sensor-CalibrationDate>`, dateTime, "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1442,15 +1716,45 @@
 
       Preamplifier (if any) used by this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. A type for equipment related to data acquisition or processing.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <PreAmplifier>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information or be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <PreAmplifier>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Type\><Channel-PreAmplifier-Type>`, string, "optional" 
+      :ref:`\<Description\><Channel-PreAmplifier-Description>`, string, "optional" 
+      :ref:`\<Manufacturer\><Channel-PreAmplifier-Manufacturer>`, string, "optional" 
+      :ref:`\<Vendor\><Channel-PreAmplifier-Vendor>`, string, "optional" 
+      :ref:`\<Model\><Channel-PreAmplifier-Model>`, string, "optional" 
+      :ref:`\<SerialNumber\><Channel-PreAmplifier-SerialNumber>`, string, "optional" 
+      :ref:`\<InstallationDate\><Channel-PreAmplifier-InstallationDate>`, dateTime, "optional" 
+      :ref:`\<RemovalDate\><Channel-PreAmplifier-RemovalDate>`, dateTime, "optional" 
+      :ref:`\<CalibrationDate\><Channel-PreAmplifier-CalibrationDate>`, dateTime, "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1712,15 +2016,45 @@
 
       Datalogger that recorded this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. A type for equipment related to data acquisition or processing.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <DataLogger>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information or be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <DataLogger>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Type\><Channel-DataLogger-Type>`, string, "optional" 
+      :ref:`\<Description\><Channel-DataLogger-Description>`, string, "optional" 
+      :ref:`\<Manufacturer\><Channel-DataLogger-Manufacturer>`, string, "optional" 
+      :ref:`\<Vendor\><Channel-DataLogger-Vendor>`, string, "optional" 
+      :ref:`\<Model\><Channel-DataLogger-Model>`, string, "optional" 
+      :ref:`\<SerialNumber\><Channel-DataLogger-SerialNumber>`, string, "optional" 
+      :ref:`\<InstallationDate\><Channel-DataLogger-InstallationDate>`, dateTime, "optional" 
+      :ref:`\<RemovalDate\><Channel-DataLogger-RemovalDate>`, dateTime, "optional" 
+      :ref:`\<CalibrationDate\><Channel-DataLogger-CalibrationDate>`, dateTime, "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1982,15 +2316,45 @@
 
       If the Equipment is entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. If using a preamplifier, sensor, or datalogger, use their appropriate fields instead. A type for equipment related to data acquisition or processing.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Equipment>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information or be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <Equipment>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Type\><Channel-Equipment-Type>`, string, "optional" 
+      :ref:`\<Description\><Channel-Equipment-Description>`, string, "optional" 
+      :ref:`\<Manufacturer\><Channel-Equipment-Manufacturer>`, string, "optional" 
+      :ref:`\<Vendor\><Channel-Equipment-Vendor>`, string, "optional" 
+      :ref:`\<Model\><Channel-Equipment-Model>`, string, "optional" 
+      :ref:`\<SerialNumber\><Channel-Equipment-SerialNumber>`, string, "optional" 
+      :ref:`\<InstallationDate\><Channel-Equipment-InstallationDate>`, dateTime, "optional" 
+      :ref:`\<RemovalDate\><Channel-Equipment-RemovalDate>`, dateTime, "optional" 
+      :ref:`\<CalibrationDate\><Channel-Equipment-CalibrationDate>`, dateTime, "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
