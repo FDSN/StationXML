@@ -30,7 +30,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that elements with the same ID should indicate the same information.", "" 
 
 
 
@@ -442,7 +442,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that elements with the same resourceId should indicate the same information.", "" 
 
 
 
@@ -945,7 +945,7 @@
       :widths: auto
 
       **number**, :ref:`CounterType<type-glossary>`, :red:`yes`, "Stage sequence number. This is used in all the response blockettes. Start from name='1' and iterate sequentially.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to uniquely identify this response stage. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to uniquely identify this response stage. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information.", "" 
 
 
 
@@ -1001,7 +1001,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that elements with the same resourceId should indicate the same information.", "" 
 
 
 
@@ -1642,7 +1642,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that elements with the same resourceId should indicate the same information.", "" 
 
 
 
@@ -2019,7 +2019,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that elements with the same resourceId should indicate the same information.", "" 
 
 
 
@@ -2436,7 +2436,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that elements with the same resourceId should indicate the same information.", "" 
 
 
 
@@ -3068,7 +3068,7 @@
       :widths: auto
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
-      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+      **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that elements with the same resourceId should indicate the same information.", "" 
 
 
 

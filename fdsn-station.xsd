@@ -591,7 +591,7 @@
 				<xs:documentation> An identifier that serves to uniquely identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
-					It should be expected that equipment with the same ID should indicate the same information/be
+					It should be expected that equipment with the same ID should indicate the same information or be
 					derived from the same base instruments.
 				</xs:documentation>
 			</xs:annotation>
@@ -666,8 +666,7 @@
 				<xs:documentation>A resource identifier that serves to uniquely identify this response stage.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
-					It should be expected that equipment with the same ID should indicate the same information/be
-					derived from the same base instruments.
+					It should be expected that equipment with the same ID should indicate the same information.
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
@@ -1559,8 +1558,7 @@
 				<xs:documentation>A resource identifier that serves to unique identify this filter or response.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
-					It should be expected that equipment with the same ID should indicate the same information/be
-					derived from the same base instruments.
+					It should be expected that elements with the same resourceId should indicate the same information.
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
@@ -1626,8 +1624,7 @@
 				<xs:documentation> An identifier that serves to uniquely identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
-					It should be expected that equipment with the same ID should indicate the same information/be
-					derived from the same base instruments.
+					It should be expected that elements with the same ID should indicate the same information.
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
