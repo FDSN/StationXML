@@ -17,15 +17,39 @@
 
       The complete instrument response for this channel that expresses the effect of the geophysical instrumentation used to record the input ground motion. The information can be used to convert raw data to Earth unit measurement at a specified frequency or within a range of frequencies. It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Response>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
       **resourceId**, :ref:`string<type-glossary>`, no, "An identifier that serves to uniquely identify this resource. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <Response>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<InstrumentSensitivity\><Response-InstrumentSensitivity>`, , "optional" 
+      :ref:`\<InstrumentPolynomial\><Response-InstrumentPolynomial>`, , "optional" 
+      :ref:`\<Stage\><Response-Stage>`, , "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -43,6 +67,29 @@
    .. container:: description
 
       The total sensitivity for a channel, representing the complete acquisition system expressed as a scalar. All instrument responses except polynomial response should have an InstrumentSensitivity. Type for sensitivity, input/output units and relevant frequency range.
+
+
+
+
+   **Sub Elements of <InstrumentSensitivity>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Value\><Response-InstrumentSensitivity-Value>`, double, ":red:`required`" 
+      :ref:`\<Frequency\><Response-InstrumentSensitivity-Frequency>`, double, ":red:`required`" 
+      :ref:`\<InputUnits\><Response-InstrumentSensitivity-InputUnits>`, , ":red:`required`" 
+      :ref:`\<OutputUnits\><Response-InstrumentSensitivity-OutputUnits>`, , ":red:`required`" 
+      :ref:`\<FrequencyStart\><Response-InstrumentSensitivity-FrequencyStart>`, double, "optional" 
+      :ref:`\<FrequencyEnd\><Response-InstrumentSensitivity-FrequencyEnd>`, double, "optional" 
+      :ref:`\<FrequencyDBVariation\><Response-InstrumentSensitivity-FrequencyDBVariation>`, double, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -116,6 +163,24 @@
       The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
 
 
+
+
+   **Sub Elements of <InputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-InstrumentSensitivity-InputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-InstrumentSensitivity-InputUnits-Description>`, string, "optional" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _response-instrumentsensitivity-inputunits-name:
@@ -185,6 +250,24 @@
    .. container:: description
 
       The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <OutputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-InstrumentSensitivity-OutputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-InstrumentSensitivity-OutputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -345,9 +428,14 @@
 
 		For such responses, two StationXML components are required to specify the response: 1. A Polynomial stage, which contains the values of the Maclaurin coefficients, :math:`a_k`, and 2. An InstrumentPolynomial element that contains the same coefficients, but scaled by powers of the overall gain representing the combined effect of all the stages in the complete acquisition system. Response type for a reponse represented as a polynomial expansion, which allows non-linear sensors to be described. Used at either a stage of acquisition response or a complete system.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <InstrumentPolynomial>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -355,6 +443,32 @@
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
       **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <InstrumentPolynomial>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Description\><Response-InstrumentPolynomial-Description>`, string, "optional" 
+      :ref:`\<InputUnits\><Response-InstrumentPolynomial-InputUnits>`, , ":red:`required`" 
+      :ref:`\<OutputUnits\><Response-InstrumentPolynomial-OutputUnits>`, , ":red:`required`" 
+      :ref:`\<ApproximationType\><Response-InstrumentPolynomial-ApproximationType>`, string, ":red:`required`" 
+      :ref:`\<FrequencyLowerBound\><Response-InstrumentPolynomial-FrequencyLowerBound>`, double, ":red:`required`" 
+      :ref:`\<FrequencyUpperBound\><Response-InstrumentPolynomial-FrequencyUpperBound>`, double, ":red:`required`" 
+      :ref:`\<ApproximationLowerBound\><Response-InstrumentPolynomial-ApproximationLowerBound>`, double, ":red:`required`" 
+      :ref:`\<ApproximationUpperBound\><Response-InstrumentPolynomial-ApproximationUpperBound>`, double, ":red:`required`" 
+      :ref:`\<MaximumError\><Response-InstrumentPolynomial-MaximumError>`, double, ":red:`required`" 
+      :ref:`\<Coefficient\><Response-InstrumentPolynomial-Coefficient>`, double, ":red:`required, many`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -399,6 +513,24 @@
    .. container:: description
 
       The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <InputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-InstrumentPolynomial-InputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-InstrumentPolynomial-InputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -470,6 +602,24 @@
    .. container:: description
 
       The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <OutputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-InstrumentPolynomial-OutputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-InstrumentPolynomial-OutputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -579,9 +729,14 @@
 
       The lower bound of the frequency range.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <FrequencyLowerBound>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -619,9 +774,14 @@
 
       The upper bound of the frequency range.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <FrequencyUpperBound>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -736,9 +896,14 @@
 
 					type:`double <appendices.html#glossary-double>`_
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Coefficient>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -766,9 +931,14 @@
 
       Type for channel response entry or stage. A full response is represented as an ordered sequence of these stages.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Stage>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -776,6 +946,29 @@
 
       **number**, :ref:`CounterType<type-glossary>`, :red:`yes`, "Stage sequence number. This is used in all the response blockettes. Start from name='1' and iterate sequentially.", "" 
       **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to uniquely identify this response stage. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <Stage>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<PolesZeros\><Response-Stage-PolesZeros>`, , "optional" 
+      :ref:`\<Coefficients\><Response-Stage-Coefficients>`, , "optional" 
+      :ref:`\<ResponseList\><Response-Stage-ResponseList>`, , "optional" 
+      :ref:`\<FIR\><Response-Stage-FIR>`, , "optional" 
+      :ref:`\<Decimation\><Response-Stage-Decimation>`, , "optional" 
+      :ref:`\<StageGain\><Response-Stage-StageGain>`, , ":red:`required`" 
+      :ref:`\<Polynomial\><Response-Stage-Polynomial>`, , ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -794,9 +987,14 @@
 
       Response stage described by the complex poles and zeros of the Laplace Transform (or z-transform) of the transfer function for this stage.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <PolesZeros>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -804,6 +1002,30 @@
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
       **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <PolesZeros>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Description\><Response-Stage-PolesZeros-Description>`, string, "optional" 
+      :ref:`\<InputUnits\><Response-Stage-PolesZeros-InputUnits>`, , ":red:`required`" 
+      :ref:`\<OutputUnits\><Response-Stage-PolesZeros-OutputUnits>`, , ":red:`required`" 
+      :ref:`\<PzTransferFunctionType\><Response-Stage-PolesZeros-PzTransferFunctionType>`, string, ":red:`required`" 
+      :ref:`\<NormalizationFactor\><Response-Stage-PolesZeros-NormalizationFactor>`, double, ":red:`required`" 
+      :ref:`\<NormalizationFrequency\><Response-Stage-PolesZeros-NormalizationFrequency>`, double, ":red:`required`" 
+      :ref:`\<Zero\><Response-Stage-PolesZeros-Zero>`, , "optional, many" 
+      :ref:`\<Pole\><Response-Stage-PolesZeros-Pole>`, , "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -848,6 +1070,24 @@
    .. container:: description
 
       The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <InputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-Stage-PolesZeros-InputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-Stage-PolesZeros-InputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -919,6 +1159,24 @@
    .. container:: description
 
       The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <OutputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-Stage-PolesZeros-OutputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-Stage-PolesZeros-OutputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1059,9 +1317,14 @@
 
       Frequency at which the NormalizationFactor is valid. This should be the same for all stages and within the passband, if any.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <NormalizationFrequency>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1089,15 +1352,38 @@
 
       Complex zero of the polezero stage.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Zero>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
       **number**, :ref:`integer<type-glossary>`, no, "The position index of the pole (or zero) in the array of poles[] (or zeros[])", "number=\"None\"" 
+
+
+
+
+   **Sub Elements of <Zero>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Real\><Response-Stage-PolesZeros-Zero-Real>`, double, ":red:`required`" 
+      :ref:`\<Imaginary\><Response-Stage-PolesZeros-Zero-Imaginary>`, double, ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1126,9 +1412,14 @@
 
       Real part of the pole or zero. Representation of floating-point numbers without unit.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Real>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1165,9 +1456,14 @@
 
       Imaginary part of the pole or zero. Representation of floating-point numbers without unit.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Imaginary>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1194,15 +1490,38 @@
 
       Complex pole of the polezero stage.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Pole>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
       **number**, :ref:`integer<type-glossary>`, no, "The position index of the pole (or zero) in the array of poles[] (or zeros[])", "number=\"None\"" 
+
+
+
+
+   **Sub Elements of <Pole>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Real\><Response-Stage-PolesZeros-Pole-Real>`, double, ":red:`required`" 
+      :ref:`\<Imaginary\><Response-Stage-PolesZeros-Pole-Imaginary>`, double, ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1231,9 +1550,14 @@
 
       Real part of the pole or zero. Representation of floating-point numbers without unit.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Real>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1270,9 +1594,14 @@
 
       Imaginary part of the pole or zero. Representation of floating-point numbers without unit.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Imaginary>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1299,9 +1628,14 @@
 
       Response type for FIR coefficients. Laplace transforms or IIR filters can both be expressed using type as well but the PolesAndZerosType should be used instead.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Coefficients>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1309,6 +1643,28 @@
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
       **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <Coefficients>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Description\><Response-Stage-Coefficients-Description>`, string, "optional" 
+      :ref:`\<InputUnits\><Response-Stage-Coefficients-InputUnits>`, , ":red:`required`" 
+      :ref:`\<OutputUnits\><Response-Stage-Coefficients-OutputUnits>`, , ":red:`required`" 
+      :ref:`\<CfTransferFunctionType\><Response-Stage-Coefficients-CfTransferFunctionType>`, string, ":red:`required`" 
+      :ref:`\<Numerator\><Response-Stage-Coefficients-Numerator>`, double, "optional, many" 
+      :ref:`\<Denominator\><Response-Stage-Coefficients-Denominator>`, double, "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1353,6 +1709,24 @@
    .. container:: description
 
       The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <InputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-Stage-Coefficients-InputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-Stage-Coefficients-InputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1424,6 +1798,24 @@
    .. container:: description
 
       The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <OutputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-Stage-Coefficients-OutputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-Stage-Coefficients-OutputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1533,9 +1925,14 @@
 
       Numerator for the coefficient.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Numerator>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1573,9 +1970,14 @@
 
       Denominator for the coefficient.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Denominator>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1603,9 +2005,14 @@
 
       Response type for a list of frequency, amplitude, and phase values.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <ResponseList>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1613,6 +2020,26 @@
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
       **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <ResponseList>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Description\><Response-Stage-ResponseList-Description>`, string, "optional" 
+      :ref:`\<InputUnits\><Response-Stage-ResponseList-InputUnits>`, , ":red:`required`" 
+      :ref:`\<OutputUnits\><Response-Stage-ResponseList-OutputUnits>`, , ":red:`required`" 
+      :ref:`\<ResponseListElement\><Response-Stage-ResponseList-ResponseListElement>`, , "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1657,6 +2084,24 @@
    .. container:: description
 
       The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <InputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-Stage-ResponseList-InputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-Stage-ResponseList-InputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1730,6 +2175,24 @@
       The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
 
 
+
+
+   **Sub Elements of <OutputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-Stage-ResponseList-OutputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-Stage-ResponseList-OutputUnits-Description>`, string, "optional" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _response-stage-responselist-outputunits-name:
@@ -1797,6 +2260,25 @@
       Response :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Stage :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` ResponseList :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` ResponseListElement
 
 
+
+
+   **Sub Elements of <ResponseListElement>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Frequency\><Response-Stage-ResponseList-ResponseListElement-Frequency>`, double, ":red:`required`" 
+      :ref:`\<Amplitude\><Response-Stage-ResponseList-ResponseListElement-Amplitude>`, double, ":red:`required`" 
+      :ref:`\<Phase\><Response-Stage-ResponseList-ResponseListElement-Phase>`, double, ":red:`required`" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _response-stage-responselist-responselistelement-frequency:
@@ -1819,9 +2301,14 @@
 
 					type:`double <appendices.html#glossary-double>`_
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Frequency>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1859,9 +2346,14 @@
 
       Representation of floating-point numbers used as measurements.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Amplitude>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1895,9 +2387,14 @@
 
 					type:`double <appendices.html#glossary-double>`_ range:-360.0 :math:`\le` Phase :math:`\le` 360.0
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Phase>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1925,9 +2422,14 @@
 
       Response type for FIR filter. FIR filters are also commonly documented using the Coefficients element, with this newer type allowing representation of symmetric FIR coefficients without repeating them.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <FIR>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -1935,6 +2437,27 @@
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
       **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <FIR>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Description\><Response-Stage-FIR-Description>`, string, "optional" 
+      :ref:`\<InputUnits\><Response-Stage-FIR-InputUnits>`, , ":red:`required`" 
+      :ref:`\<OutputUnits\><Response-Stage-FIR-OutputUnits>`, , ":red:`required`" 
+      :ref:`\<Symmetry\><Response-Stage-FIR-Symmetry>`, string, ":red:`required`" 
+      :ref:`\<NumeratorCoefficient\><Response-Stage-FIR-NumeratorCoefficient>`, double, "optional, many" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1979,6 +2502,24 @@
    .. container:: description
 
       The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <InputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-Stage-FIR-InputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-Stage-FIR-InputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2050,6 +2591,24 @@
    .. container:: description
 
       The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <OutputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-Stage-FIR-OutputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-Stage-FIR-OutputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2151,9 +2710,14 @@
 
 					type:`double <appendices.html#glossary-double>`_
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <NumeratorCoefficient>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -2179,6 +2743,27 @@
       Representation of decimation stage.
 
 
+
+
+   **Sub Elements of <Decimation>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<InputSampleRate\><Response-Stage-Decimation-InputSampleRate>`, double, ":red:`required`" 
+      :ref:`\<Factor\><Response-Stage-Decimation-Factor>`, integer, ":red:`required`" 
+      :ref:`\<Offset\><Response-Stage-Decimation-Offset>`, integer, ":red:`required`" 
+      :ref:`\<Delay\><Response-Stage-Decimation-Delay>`, double, ":red:`required`" 
+      :ref:`\<Correction\><Response-Stage-Decimation-Correction>`, double, ":red:`required`" 
+
+
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _response-stage-decimation-inputsamplerate:
@@ -2201,9 +2786,14 @@
 
 					type:`double <appendices.html#glossary-double>`_
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <InputSampleRate>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -2295,9 +2885,14 @@
 
       The estimated pure delay for the stage. This value will almost always be positive to indicate a delayed signal. Due to the difficulty in estimating the pure delay of a stage and because dispersion is neglected, this value should be considered nominal. Normally the delay would be corrected by the recording system and the correction applied would be specified in <Correction> below. See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention. Representation of floating-point numbers used as measurements.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Delay>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -2335,9 +2930,14 @@
 
       The time shift, if any, applied to correct for the delay at this stage. The sign convention used is opposite the <Delay> value; a positive sign here indicates that the trace was corrected to an earlier time to cancel the delay caused by the stage and indicated in the <Delay> element. Commonly, the estimated delay and the applied correction are both positive to cancel each other. A value of zero indicates no correction was applied. See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention. Representation of floating-point numbers used as measurements.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Correction>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -2364,6 +2964,24 @@
    .. container:: description
 
       The gain at the stage of the encapsulating response element at a specific frequency. Total channel sensitivity should be specified in the InstrumentSensitivity element. Type used for representing sensitivity at a given frequency. This complex type can be used to represent both total sensitivities and individual stage gains.
+
+
+
+
+   **Sub Elements of <StageGain>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Value\><Response-Stage-StageGain-Value>`, double, ":red:`required`" 
+      :ref:`\<Frequency\><Response-Stage-StageGain-Frequency>`, double, ":red:`required`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2436,9 +3054,14 @@
 
       When a response is given in terms of a polynomial expansion of powers of the sensor output signal (e.g., Volts), a Polynomial Stage is required to specify the Maclaurin coefficients of the expansion. In addition, an InstrumentPolynomial element must be present at Response level to represent the whole acquisition process, which contains the same Maclaurin coefficients, but scaled by powers of the overall gain for all stages. Response type for a reponse represented as a polynomial expansion, which allows non-linear sensors to be described. Used at either a stage of acquisition response or a complete system.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Polynomial>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -2446,6 +3069,32 @@
 
       **name**, :ref:`string<type-glossary>`, no, "A name given to this filter.", "" 
       **resourceId**, :ref:`string<type-glossary>`, no, "A resource identifier that serves to unique identify this filter or response. This identifier can be interpreted differently depending on the datacenter/software that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID. It should be expected that equipment with the same ID should indicate the same information/be derived from the same base instruments.", "" 
+
+
+
+
+   **Sub Elements of <Polynomial>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Description\><Response-Stage-Polynomial-Description>`, string, "optional" 
+      :ref:`\<InputUnits\><Response-Stage-Polynomial-InputUnits>`, , ":red:`required`" 
+      :ref:`\<OutputUnits\><Response-Stage-Polynomial-OutputUnits>`, , ":red:`required`" 
+      :ref:`\<ApproximationType\><Response-Stage-Polynomial-ApproximationType>`, string, ":red:`required`" 
+      :ref:`\<FrequencyLowerBound\><Response-Stage-Polynomial-FrequencyLowerBound>`, double, ":red:`required`" 
+      :ref:`\<FrequencyUpperBound\><Response-Stage-Polynomial-FrequencyUpperBound>`, double, ":red:`required`" 
+      :ref:`\<ApproximationLowerBound\><Response-Stage-Polynomial-ApproximationLowerBound>`, double, ":red:`required`" 
+      :ref:`\<ApproximationUpperBound\><Response-Stage-Polynomial-ApproximationUpperBound>`, double, ":red:`required`" 
+      :ref:`\<MaximumError\><Response-Stage-Polynomial-MaximumError>`, double, ":red:`required`" 
+      :ref:`\<Coefficient\><Response-Stage-Polynomial-Coefficient>`, double, ":red:`required, many`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2490,6 +3139,24 @@
    .. container:: description
 
       The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <InputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-Stage-Polynomial-InputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-Stage-Polynomial-InputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2561,6 +3228,24 @@
    .. container:: description
 
       The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+
+
+
+
+   **Sub Elements of <OutputUnits>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Name\><Response-Stage-Polynomial-OutputUnits-Name>`, string, ":red:`required`" 
+      :ref:`\<Description\><Response-Stage-Polynomial-OutputUnits-Description>`, string, "optional" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2670,9 +3355,14 @@
 
       The lower bound of the frequency range.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <FrequencyLowerBound>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -2710,9 +3400,14 @@
 
       The upper bound of the frequency range.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <FrequencyUpperBound>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
@@ -2827,9 +3522,14 @@
 
 					type:`double <appendices.html#glossary-double>`_
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+   **Attributes of <Coefficient>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
