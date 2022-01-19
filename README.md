@@ -36,7 +36,7 @@ described above, must be followed for any changes to the schema.
 Changes and issues should only be grouped together when logically
 related in order to streamline review and acceptance.
 
-## Translating StationXML 1.0 to 1.1
+## Translating StationXML 1.0 to 1.1 and later releases
 
 The vast majority of the StationXML 1.0 schema exists in the 1.1 schema, making most 1.0 documents compatible
 with the 1.1 schema.  There are a few small exceptions where 1.0 elements were removed from 1.1, in one
