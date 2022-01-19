@@ -28,7 +28,7 @@ Notice that on the unit circle, where :math:`|z|\equiv |r|=1` and :math:`z=e^{j\
 The z-transform measures the similarity between the input signal :math:`x[n]`
 and the signal :math:`z^{-n}`.
 
-:math:`z^{-n}` represents exponentially increasing (for r < 0) or decreasing (r > 0)
+:math:`z^{-n}` represents exponentially increasing (for r < 1) or decreasing (r > 1)
 sinusoids. e.g., :math:`e^{-j\omega n}` is a sinusoid with angular frequency
 :math:`\omega` [radians/sample] that expands with sample number n.
 
