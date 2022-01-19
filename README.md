@@ -35,3 +35,14 @@ described above, must be followed for any changes to the schema.
 
 Changes and issues should only be grouped together when logically
 related in order to streamline review and acceptance.
+
+## Translating StationXML 1.0 to 1.1 and later releases
+
+The vast majority of the StationXML 1.0 schema exists in the 1.1 schema, making most 1.0 documents compatible
+with the 1.1 schema.  There are a few small exceptions where 1.0 elements were removed from 1.1, in one
+important case to avoid the specification of incorrect metadata.
+
+An [XSLT definition for StationXML 1.0 to 1.1 conversion](StationXML-1.0to1.1.xslt) exists to assist
+with the systematic conversion of version 1.0 documents to the version 1.1 schema.  This is done by removing the
+elements no longer allowed in 1.1.
+
