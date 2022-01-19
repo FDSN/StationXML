@@ -15,7 +15,7 @@
 
    .. container:: description
 
-      The Station container. All channel metadata for this station is contained within this element. A Description element may be included with the official station name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference. A Comment element may be included for additional comments.
+      The Station container. All channel metadata for this station is contained within this element. A Description element may be included with the official station name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference. A Comment element may be included for additional comments. An active Station should not use the endDate attribute. Unlike SEED, do not use an endDate in the distant future to mean active.
 
 
 
@@ -32,7 +32,7 @@
 
       **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"ALQ\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Station", "code=\"ABCD\"" 
-      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of station epoch", "endDate=\"2018-01-27T00:00:00Z\"" 
+      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of station epoch. Do not use if still active, endDate should not be in the future.", "endDate=\"2018-01-27T00:00:00Z\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"albq\"" 
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
       **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 

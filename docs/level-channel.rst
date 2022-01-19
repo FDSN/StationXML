@@ -15,7 +15,7 @@
 
    .. container:: description
 
-      The Channel container. A Description element may be included with other information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference. A Comment element may be included for arbitrary comments.
+      The Channel container. A Description element may be included with other information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference. A Comment element may be included for arbitrary comments. An active Channel should not use the endDate attribute. Unlike SEED, do not use an endDate in the distant future to mean active.
 
 
 
@@ -32,7 +32,7 @@
 
       **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"Z\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Channel", "code=\"BHZ\"" 
-      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of channel epoch", "endDate=\"2018-01-27T00:00:00Z\"" 
+      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of channel epoch. Do not use if still active, endDate should not be in the future.", "endDate=\"2018-01-27T00:00:00Z\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"bhz\"" 
       **locationCode**, :ref:`string<type-glossary>`, :red:`yes`, "The locationCode is typically used to group channels from a common sensor. For example, the channels of the primary sensor at global IDA-IRIS stations have locationCode = \"00\": 00_BHZ, 00_BHE, 00_BHN, 00_LHZ, ..., etc. Even though it is required, locationCode may be, and often is, an empty string, however, it is recommended that the locationCode not be empty.", "locationCode=\"30\"" 
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 

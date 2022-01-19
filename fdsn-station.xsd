@@ -119,8 +119,12 @@
 		A Description element may be included with the official network name and other descriptive information.
 		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation.
 		A Comment element may be included for additional comments.
-      		</xs:documentation>
-      		<xs:documentation><example><Network code="XX" startDate="2016-01-27T13:00:00Z" /></example></xs:documentation>
+    </xs:documentation>
+      <xs:documentation>
+        An active Network should not use the endDate attribute.
+        Unlike SEED, do not use an endDate in the distant future to mean active.
+      </xs:documentation>
+      <xs:documentation><example><Network code="XX" startDate="2016-01-27T13:00:00Z" /></example></xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
@@ -161,7 +165,11 @@
 		A Description element may be included with the official station name and other descriptive information.
 		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference.
 		A Comment element may be included for additional comments.
-		</xs:documentation>
+    </xs:documentation>
+      <xs:documentation>
+        An active Station should not use the endDate attribute.
+        Unlike SEED, do not use an endDate in the distant future to mean active.
+      </xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
@@ -275,7 +283,11 @@
 		A Description element may be included with other information.
 		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference.
 		A Comment element may be included for arbitrary comments.
-		</xs:documentation>
+    </xs:documentation>
+      <xs:documentation>
+        An active Channel should not use the endDate attribute.
+        Unlike SEED, do not use an endDate in the distant future to mean active.
+      </xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
@@ -1676,9 +1688,9 @@
 		<xs:attribute name="endDate" type="xs:dateTime">
 			<xs:annotation>
         <xs:documentation>End date of network/station/channel epoch</xs:documentation>
-        <xs:documentation><levelDesc LevelChoice="N">End date of network</levelDesc></xs:documentation>
-        <xs:documentation><levelDesc LevelChoice="S">End date of station epoch</levelDesc></xs:documentation>
-        <xs:documentation><levelDesc LevelChoice="C">End date of channel epoch</levelDesc></xs:documentation>
+        <xs:documentation><levelDesc LevelChoice="N">End date of network. Do not use if still active, endDate should not be in the future.</levelDesc></xs:documentation>
+        <xs:documentation><levelDesc LevelChoice="S">End date of station epoch. Do not use if still active, endDate should not be in the future.</levelDesc></xs:documentation>
+        <xs:documentation><levelDesc LevelChoice="C">End date of channel epoch. Do not use if still active, endDate should not be in the future.</levelDesc></xs:documentation>
         <xs:documentation><example>2018-01-27T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
