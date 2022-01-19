@@ -116,8 +116,8 @@ def write_tree(element, stop_element, outfile, first_time = True):
         latex_words="\t\t\t.. only:: latex\n\n"
         html_words="\t\t\t.. only:: html\n\n"
 
-        latex_words+="\t\t\t\t\ttype: :ref:`%s<type-glossary>`" % (element.type)
-        html_words+="\t\t\t\t\ttype:`%s <appendices.html#glossary-%s>`_" % (element.type,element.type.lower())
+        latex_words+="\t\t\t\t\tcontent type: :ref:`%s<type-glossary>`" % (element.type)
+        html_words+="\t\t\t\t\tcontent type: `%s <appendices.html#glossary-%s>`_" % (element.type,element.type.lower())
         if element.range_string:
             splitElements=element.range_string.split(" ")
 
@@ -129,8 +129,8 @@ def write_tree(element, stop_element, outfile, first_time = True):
                     result.append(":math:`%s`" % el)
             result=" ".join(result)
 
-            latex_words+=" range:"+result+"\n"
-            html_words+=" range:"+result+"\n"
+            latex_words+="\n\n\t\t\t\t\trange: "+result+"\n"
+            html_words+="\n\n\t\t\t\t\trange: "+result+"\n"
 
         else:
             latex_words+="\n"
