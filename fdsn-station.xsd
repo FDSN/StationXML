@@ -119,8 +119,12 @@
 		A Description element may be included with the official network name and other descriptive information.
 		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation.
 		A Comment element may be included for additional comments.
-      		</xs:documentation>
-      		<xs:documentation><example><Network code="IU" startDate="2016-01-27T13:00:00" /></example></xs:documentation>
+    </xs:documentation>
+      <xs:documentation>
+        An active Network should not use the endDate attribute.
+        Unlike SEED, do not use an endDate in the distant future to mean active.
+      </xs:documentation>
+      <xs:documentation><example><Network code="XX" startDate="2016-01-27T13:00:00Z" /></example></xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
@@ -161,27 +165,35 @@
 		A Description element may be included with the official station name and other descriptive information.
 		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference.
 		A Comment element may be included for additional comments.
-		</xs:documentation>
+    </xs:documentation>
+      <xs:documentation>
+        An active Station should not use the endDate attribute.
+        Unlike SEED, do not use an endDate in the distant future to mean active.
+      </xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
 				<xs:sequence>
 					<xs:element name="Latitude" type="fsx:LatitudeType">
 						<xs:annotation>
-		<xs:documentation>Station latitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location).</xs:documentation>
-		<xs:documentation><example><Latitude unit="DEGREES" datum="WGS84">34.9459</Latitude></example></xs:documentation>
+		<xs:documentation>Station latitude, in degrees. Where the bulk of the equipment is located (or another appropriate site location).
+      The unit is fixed to be degrees, and datum defaults to WGS84.
+    </xs:documentation>
+		<xs:documentation><example><Latitude>34.9459</Latitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Longitude" type="fsx:LongitudeType">
 						<xs:annotation>
-		<xs:documentation>Station longitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location).</xs:documentation>
-		<xs:documentation><example><Longitude unit="DEGREES" datum="WGS84">-106.4572</Longitude></example></xs:documentation>
+		<xs:documentation>Station longitude, in degrees. Where the bulk of the equipment is located (or another appropriate site location).
+      The unit is fixed to be degrees, and datum defaults to WGS84.
+    </xs:documentation>
+		<xs:documentation><example><Longitude>-106.4572</Longitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
 						<xs:annotation>
-							<xs:documentation>Elevation of local ground surface level at station, by default in meters.</xs:documentation>
-							<xs:documentation><example><Elevation unit="m">1850.0</Elevation></example></xs:documentation>
+							<xs:documentation>Elevation of local ground surface level at station, in meters.</xs:documentation>
+							<xs:documentation><example><Elevation>1850.0</Elevation></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Site" type="fsx:SiteType">
@@ -193,8 +205,10 @@
 					</xs:element>
 					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
 						<xs:annotation>
-		<xs:documentation>Elevation of the water surface (in meters) for underwater sites, where 0 is mean sea level.
-		If you put an ocean-bottom seismometer (OBS) on a lake bottom, where the lake surface is at elevation=0, then you should set WaterLevel=0.
+		<xs:documentation>Elevation of the water surface in meters for underwater sites, where 0 is mean sea level.
+      If you put an OBS on a lake bottom, where the lake surface is at elevation=1200 meters,
+      then you should set WaterLevel=1200. An OBS in the ocean would
+      have WaterLevel=0.
 		</xs:documentation>
 		<xs:documentation><example><WaterLevel>1200</WaterLevel></example></xs:documentation>
 						</xs:annotation>
@@ -269,7 +283,11 @@
 		A Description element may be included with other information.
 		An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference.
 		A Comment element may be included for arbitrary comments.
-		</xs:documentation>
+    </xs:documentation>
+      <xs:documentation>
+        An active Channel should not use the endDate attribute.
+        Unlike SEED, do not use an endDate in the distant future to mean active.
+      </xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
@@ -282,25 +300,25 @@
 					</xs:element>
 					<xs:element name="Latitude" type="fsx:LatitudeType">
 						<xs:annotation>
-							<xs:documentation>Latitude of this channel's sensor, by default in degrees.
+							<xs:documentation>Latitude of this channel's sensor, in degrees.
 								Often the same as the station latitude, but
 								when different the channel latitude is the true location of the sensor.
 							</xs:documentation>
-							<xs:documentation><example><Latitude unit="DEGREES" datum="WGS84">34.9459</Latitude></example></xs:documentation>
+							<xs:documentation><example><Latitude>34.9459</Latitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Longitude" type="fsx:LongitudeType">
 						<xs:annotation>
-							<xs:documentation>Longitude of this channel's sensor, by default in degrees.
+							<xs:documentation>Longitude of this channel's sensor, in degrees.
 								Often the same as the station longitude, but
 								when different the channel longitude is the true location of the sensor.
 							</xs:documentation>
-							<xs:documentation><example><Longitude unit="DEGREES" datum="WGS84">-106.4572</Longitude></example></xs:documentation>
+							<xs:documentation><example><Longitude>-106.4572</Longitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
 						<xs:annotation>
-						  <xs:documentation>Elevation of the sensor, by default in meters.  To find the local ground surface level,
+						  <xs:documentation>Elevation of the sensor, in meters.  To find the local ground surface level,
                                                   add the Depth value to this elevation. </xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -323,8 +341,9 @@
 					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Elevation of the water surface in meters for underwater sites, where 0 is mean sea level.
-								If you put an OBS on a lake bottom, where the lake surface is at elevation=0,
-								then you should set WaterLevel=0.
+								If you put an OBS on a lake bottom, where the lake surface is at elevation=1200 meters,
+								then you should set WaterLevel=1200. An OBS in the ocean would
+                have WaterLevel=0.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -368,8 +387,7 @@
 									<xs:attribute name="unit" type="xs:string" use="optional" fixed="SECONDS/SAMPLE">
 											<xs:annotation>
 												<xs:documentation>The unit of drift value.
-												</xs:documentation>
-												<xs:documentation><example>SECONDS/SAMPLE</example>
+                          This value is fixed to be SECONDS/SAMPLE, setting it is redundant.
 												</xs:documentation>
 											</xs:annotation>
 										</xs:attribute>
@@ -588,7 +606,7 @@
 				<xs:documentation> An identifier that serves to uniquely identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
-					It should be expected that equipment with the same ID should indicate the same information/be
+					It should be expected that equipment with the same ID should indicate the same information or be
 					derived from the same base instruments.
 				</xs:documentation>
 			</xs:annotation>
@@ -639,7 +657,7 @@
 					<xs:annotation>
            					<xs:documentation>
 						When a response is given in terms of a polynomial expansion of
-						powers of the sensor output signal (e.g., Volts), a Polynomial Stage is
+						powers of the sensor output signal (e.g., Volts), a Polynomial stage is
 						required to specify the Maclaurin coefficients of the expansion.
 
 						In addition, an InstrumentPolynomial element must be present at Response level
@@ -663,8 +681,7 @@
 				<xs:documentation>A resource identifier that serves to uniquely identify this response stage.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
-					It should be expected that equipment with the same ID should indicate the same information/be
-					derived from the same base instruments.
+					It should be expected that equipment with the same ID should indicate the same information.
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
@@ -688,13 +705,13 @@
 			<xs:element name="BeginEffectiveTime" type="xs:dateTime" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Start time for when comment applies.</xs:documentation>
-					<xs:documentation><example><BeginEffectiveTime>2008-09-15T00:00:00</BeginEffectiveTime></example></xs:documentation>
+					<xs:documentation><example><BeginEffectiveTime>2008-09-15T00:00:00Z</BeginEffectiveTime></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="EndEffectiveTime" type="xs:dateTime" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>End time for when comment applies.</xs:documentation>
- 					<xs:documentation><example><EndEffectiveTime>2008-09-16T12:00:00</EndEffectiveTime></example></xs:documentation>
+ 					<xs:documentation><example><EndEffectiveTime>2008-09-16T12:00:00Z</EndEffectiveTime></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Author" type="fsx:PersonType" minOccurs="0" maxOccurs="unbounded">
@@ -1021,7 +1038,7 @@
 				  <xs:annotation>
             <xs:documentation>The unit of measurement. Use *SI* unit names and symbols whenever possible
               (e.g., 'm' instead of 'METERS').</xs:documentation>
-            <xs:documentation><example>SECONDS</example></xs:documentation>
+            <xs:documentation><example>s</example></xs:documentation>
             <xs:documentation><example ElementChoice="WaterLevel">m</example></xs:documentation>
             <xs:documentation><example ElementChoice="Amplitude">m</example></xs:documentation>
 				  </xs:annotation>
@@ -1040,8 +1057,7 @@
 				<xs:attribute name="unit" type="xs:string" fixed="SECONDS">
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
-							</xs:documentation>
-							<xs:documentation><example>SECONDS</example>
+                This value is fixed to be SECONDS, setting it is redundant.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:attribute>
@@ -1055,8 +1071,7 @@
 				<xs:attribute name="unit" type="xs:string" fixed="VOLTS">
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
-							</xs:documentation>
-							<xs:documentation><example>VOLTS</example>
+                This value is fixed to be VOLTS, setting it is redundant.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:attribute>
@@ -1072,8 +1087,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>DEGREES</example>
+              This value is fixed to be DEGREES, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1092,8 +1106,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>DEGREES</example>
+              This value is fixed to be DEGREES, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1123,8 +1136,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>DEGREES</example>
+              This value is fixed to be DEGREES, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1155,8 +1167,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>DEGREES</example>
+              This value is fixed to be DEGREES, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1176,8 +1187,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
-							</xs:documentation>
-							<xs:documentation><example>DEGREES</example>
+                This value is fixed to be DEGREES, setting it is redundant.
 							</xs:documentation>
 						</xs:annotation>
 				</xs:attribute>
@@ -1195,8 +1205,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" default="METERS">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>m</example>
+              This value is fixed to be METERS, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1210,8 +1219,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="HERTZ">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>HERTZ</example>
+              This value is fixed to be HERTZ, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1233,7 +1241,7 @@
             Sample rate in samples per second.
             SampleRate is optional unless SampleRateRatio is present, in which case
             SampleRate is required.
-            <example><SampleRate units='SAMPLES/S'>40.0</SampleRate></example>
+            <example><SampleRate>40.0</SampleRate></example>
           </xs:documentation>
 		    </xs:annotation>
       </xs:element>
@@ -1262,8 +1270,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="SAMPLES/S">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>SAMPLES/S</example>
+              This value is fixed to be SAMPLES/S, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1556,8 +1563,7 @@
 				<xs:documentation>A resource identifier that serves to unique identify this filter or response.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
-					It should be expected that equipment with the same ID should indicate the same information/be
-					derived from the same base instruments.
+					It should be expected that elements with the same resourceId should indicate the same information.
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
@@ -1623,8 +1629,7 @@
 				<xs:documentation> An identifier that serves to uniquely identify this resource.
 					This identifier can be interpreted differently depending on the datacenter/software
 					that generated the document. Also, we recommend using a prefix, e.g., GENERATOR:Meaningful ID.
-					It should be expected that equipment with the same ID should indicate the same information/be
-					derived from the same base instruments.
+					It should be expected that elements with the same ID should indicate the same information.
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
@@ -1666,8 +1671,8 @@
         <xs:documentation><levelDesc LevelChoice="N">Name of Network</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="S">Name of Station</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="C">Name of Channel</levelDesc></xs:documentation>
-        <xs:documentation><example LevelChoice="N">IU</example></xs:documentation>
-        <xs:documentation><example LevelChoice="S">ANMO</example></xs:documentation>
+        <xs:documentation><example LevelChoice="N">XX</example></xs:documentation>
+        <xs:documentation><example LevelChoice="S">ABCD</example></xs:documentation>
         <xs:documentation><example LevelChoice="C">BHZ</example></xs:documentation>
       </xs:annotation>
 		</xs:attribute>
@@ -1677,16 +1682,16 @@
         <xs:documentation><levelDesc LevelChoice="N">Start date of network</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="S">Start date of station epoch</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="C">Start date of channel epoch</levelDesc></xs:documentation>
-        <xs:documentation><example>2016-07-01T00:00:00</example></xs:documentation>
+        <xs:documentation><example>2016-07-01T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="endDate" type="xs:dateTime">
 			<xs:annotation>
         <xs:documentation>End date of network/station/channel epoch</xs:documentation>
-        <xs:documentation><levelDesc LevelChoice="N">End date of network</levelDesc></xs:documentation>
-        <xs:documentation><levelDesc LevelChoice="S">End date of station epoch</levelDesc></xs:documentation>
-        <xs:documentation><levelDesc LevelChoice="C">End date of channel epoch</levelDesc></xs:documentation>
-        <xs:documentation><example>2018-01-27T00:00:00</example></xs:documentation>
+        <xs:documentation><levelDesc LevelChoice="N">End date of network. Do not use if still active, endDate should not be in the future.</levelDesc></xs:documentation>
+        <xs:documentation><levelDesc LevelChoice="S">End date of station epoch. Do not use if still active, endDate should not be in the future.</levelDesc></xs:documentation>
+        <xs:documentation><levelDesc LevelChoice="C">End date of channel epoch. Do not use if still active, endDate should not be in the future.</levelDesc></xs:documentation>
+        <xs:documentation><example>2018-01-27T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="sourceID" type="xs:anyURI">
@@ -1721,9 +1726,9 @@
 		</xs:attribute>
 		<xs:attribute name="historicalCode" type="xs:string" use="optional">
 			<xs:annotation>
-        <xs:documentation>LevelDefault:A previously used code if different from the current code</xs:documentation>
+        <xs:documentation>A previously used code if different from the current code</xs:documentation>
         <xs:documentation>
-          <example LevelChoice="N">II</example>
+          <example LevelChoice="N">XX</example>
           <example LevelChoice="S">albq</example>
           <example LevelChoice="C">bhz</example>
         </xs:documentation>
@@ -1741,13 +1746,13 @@
 		<xs:attribute name="start" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>start date of extent</xs:documentation>
-				<xs:documentation><example>1988-01-01T00:00:00</example></xs:documentation>
+				<xs:documentation><example>1988-01-01T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="end" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>end date of extent</xs:documentation>
-				<xs:documentation><example>1988-12-31T00:00:00</example></xs:documentation>
+				<xs:documentation><example>1988-12-31T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -1764,13 +1769,13 @@
 		<xs:attribute name="start" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>start date of span</xs:documentation>
-				<xs:documentation><example>1988-01-01T00:00:00</example></xs:documentation>
+				<xs:documentation><example>1988-01-01T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="end" type="xs:dateTime" use="required">
 			<xs:annotation>
 				<xs:documentation>end date of span</xs:documentation>
-				<xs:documentation><example>1988-12-31T00:00:00</example></xs:documentation>
+				<xs:documentation><example>1988-12-31T00:00:00Z</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="numberSegments" type="xs:integer" use="required">
