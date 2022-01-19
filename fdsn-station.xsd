@@ -1696,8 +1696,16 @@
 		</xs:attribute>
 		<xs:attribute name="sourceID" type="xs:anyURI">
 			<xs:annotation>
-				<xs:documentation>A data source identifier in URI form</xs:documentation>
-				<xs:documentation><example>http://some/path</example></xs:documentation>
+				<xs:documentation>
+          A data source identifier in URI form.
+          It is recommended that this follow the FDSN Source Identifiers
+          specification, http://docs.fdsn.org/projects/source-identifiers
+        </xs:documentation>
+        <xs:documentation>
+          <example LevelChoice="N">FDSN:XX</example>
+          <example LevelChoice="S">FDSN:XX_ABCD</example>
+          <example LevelChoice="C">FDSN:XX_ABCD_00_B_H_Z</example>
+        </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="restrictedStatus" type="fsx:RestrictedStatusType" use="optional">

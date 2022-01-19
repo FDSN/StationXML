@@ -35,7 +35,7 @@
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of station epoch. Do not use if still active, endDate should not be in the future.", "endDate=\"2018-01-27T00:00:00Z\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"albq\"" 
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
-      **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
+      **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form. It is recommended that this follow the FDSN Source Identifiers specification, http://docs.fdsn.org/projects/source-identifiers", "sourceID=\"FDSN:XX_ABCD\"" 
       **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of station epoch", "startDate=\"2016-07-01T00:00:00Z\"" 
 
 
