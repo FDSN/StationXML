@@ -31,6 +31,14 @@ Changes from version 1.0 to 1.1 (2019-5-3)
 
 - Add "subject" attribute to <Comment> to allow relating comments, make "id" attribute optional.
 
+The vast majority of the StationXML 1.0 schema exists in the 1.1 schema, making most 1.0 documents compatible
+with the 1.1 schema.  There are a few small exceptions where 1.0 elements were removed from 1.1, in one
+important case to avoid the specification of incorrect metadata.
+
+An `XSLT definition for StationXML 1.0 to 1.1 conversion <https://github.com/FDSN/StationXML/blob/doc_issues/StationXML-1.0to1.1.xslt>`_ exists to assist
+with the systematic conversion of version 1.0 documents to the version 1.1 schema.  This is done by removing the
+elements no longer allowed in 1.1.
+
 Potential Future Changes
 ----------------------------------
 
