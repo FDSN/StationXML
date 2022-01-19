@@ -3060,7 +3060,7 @@
 
    .. container:: description
 
-      When a response is given in terms of a polynomial expansion of powers of the sensor output signal (e.g., Volts), a Polynomial Stage is required to specify the Maclaurin coefficients of the expansion. In addition, an InstrumentPolynomial element must be present at Response level to represent the whole acquisition process, which contains the same Maclaurin coefficients, but scaled by powers of the overall gain for all stages. Response type for a reponse represented as a polynomial expansion, which allows non-linear sensors to be described. Used at either a stage of acquisition response or a complete system.
+      When a response is given in terms of a polynomial expansion of powers of the sensor output signal (e.g., Volts), a Polynomial stage is required to specify the Maclaurin coefficients of the expansion. In addition, an InstrumentPolynomial element must be present at Response level to represent the whole acquisition process, which contains the same Maclaurin coefficients, but scaled by powers of the overall gain for all stages. Response type for a reponse represented as a polynomial expansion, which allows non-linear sensors to be described. Used at either a stage of acquisition response or a complete system.
 
 
 
