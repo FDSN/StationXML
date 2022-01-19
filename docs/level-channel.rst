@@ -32,12 +32,12 @@
 
       **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"Z\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Channel", "code=\"BHZ\"" 
-      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of channel epoch", "endDate=\"2018-01-27T00:00:00\"" 
+      **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of channel epoch", "endDate=\"2018-01-27T00:00:00Z\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"bhz\"" 
       **locationCode**, :ref:`string<type-glossary>`, :red:`yes`, "The locationCode is typically used to group channels from a common sensor. For example, the channels of the primary sensor at global IDA-IRIS stations have locationCode = \"00\": 00_BHZ, 00_BHE, 00_BHN, 00_LHZ, ..., etc. Even though it is required, locationCode may be, and often is, an empty string, however, it is recommended that the locationCode not be empty.", "locationCode=\"30\"" 
       **restrictedStatus**, :ref:`RestrictedStatusType<type-glossary>`, no, "One of: \"open\", \"closed\", \"partial\"", "restrictedStatus=\"open\"" 
       **sourceID**, :ref:`anyURI<type-glossary>`, no, "A data source identifier in URI form", "sourceID=\"http://some/path\"" 
-      **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of channel epoch", "startDate=\"2016-07-01T00:00:00\"" 
+      **startDate**, :ref:`dateTime<type-glossary>`, no, "Start date of channel epoch", "startDate=\"2016-07-01T00:00:00Z\"" 
 
 
 
@@ -263,7 +263,7 @@
 
    .. container:: example
 
-      **Example**: <BeginEffectiveTime>2008-09-15T00:00:00</BeginEffectiveTime>
+      **Example**: <BeginEffectiveTime>2008-09-15T00:00:00Z</BeginEffectiveTime>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -294,7 +294,7 @@
 
    .. container:: example
 
-      **Example**: <EndEffectiveTime>2008-09-16T12:00:00</EndEffectiveTime>
+      **Example**: <EndEffectiveTime>2008-09-16T12:00:00Z</EndEffectiveTime>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -635,8 +635,8 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of extent", "end=\"1988-12-31T00:00:00\"" 
-      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of extent", "start=\"1988-01-01T00:00:00\"" 
+      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of extent", "end=\"1988-12-31T00:00:00Z\"" 
+      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of extent", "start=\"1988-01-01T00:00:00Z\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -668,10 +668,10 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of span", "end=\"1988-12-31T00:00:00\"" 
+      **end**, :ref:`dateTime<type-glossary>`, :red:`yes`, "end date of span", "end=\"1988-12-31T00:00:00Z\"" 
       **maximumTimeTear**, :ref:`decimal<type-glossary>`, no, "The maximum time tear (gap or overlap) in seconds between time series segments in the specified range.", "maximumTimeTear=\"0.01\"" 
       **numberSegments**, :ref:`integer<type-glossary>`, :red:`yes`, "The number of continuous time series segments contained in the specified time range. A value of 1 indicates that the time series is continuous from start to end.", "numberSegments=\"2\"" 
-      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of span", "start=\"1988-01-01T00:00:00\"" 
+      **start**, :ref:`dateTime<type-glossary>`, :red:`yes`, "start date of span", "start=\"1988-01-01T00:00:00Z\"" 
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
