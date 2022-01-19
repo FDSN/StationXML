@@ -168,20 +168,24 @@
 				<xs:sequence>
 					<xs:element name="Latitude" type="fsx:LatitudeType">
 						<xs:annotation>
-		<xs:documentation>Station latitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location).</xs:documentation>
-		<xs:documentation><example><Latitude unit="DEGREES" datum="WGS84">34.9459</Latitude></example></xs:documentation>
+		<xs:documentation>Station latitude, in degrees. Where the bulk of the equipment is located (or another appropriate site location).
+      The unit is fixed to be degrees, and datum defaults to WGS84.
+    </xs:documentation>
+		<xs:documentation><example><Latitude>34.9459</Latitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Longitude" type="fsx:LongitudeType">
 						<xs:annotation>
-		<xs:documentation>Station longitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location).</xs:documentation>
-		<xs:documentation><example><Longitude unit="DEGREES" datum="WGS84">-106.4572</Longitude></example></xs:documentation>
+		<xs:documentation>Station longitude, in degrees. Where the bulk of the equipment is located (or another appropriate site location).
+      The unit is fixed to be degrees, and datum defaults to WGS84.
+    </xs:documentation>
+		<xs:documentation><example><Longitude>-106.4572</Longitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
 						<xs:annotation>
-							<xs:documentation>Elevation of local ground surface level at station, by default in meters.</xs:documentation>
-							<xs:documentation><example><Elevation unit="m">1850.0</Elevation></example></xs:documentation>
+							<xs:documentation>Elevation of local ground surface level at station, in meters.</xs:documentation>
+							<xs:documentation><example><Elevation>1850.0</Elevation></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Site" type="fsx:SiteType">
@@ -284,25 +288,25 @@
 					</xs:element>
 					<xs:element name="Latitude" type="fsx:LatitudeType">
 						<xs:annotation>
-							<xs:documentation>Latitude of this channel's sensor, by default in degrees.
+							<xs:documentation>Latitude of this channel's sensor, in degrees.
 								Often the same as the station latitude, but
 								when different the channel latitude is the true location of the sensor.
 							</xs:documentation>
-							<xs:documentation><example><Latitude unit="DEGREES" datum="WGS84">34.9459</Latitude></example></xs:documentation>
+							<xs:documentation><example><Latitude>34.9459</Latitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Longitude" type="fsx:LongitudeType">
 						<xs:annotation>
-							<xs:documentation>Longitude of this channel's sensor, by default in degrees.
+							<xs:documentation>Longitude of this channel's sensor, in degrees.
 								Often the same as the station longitude, but
 								when different the channel longitude is the true location of the sensor.
 							</xs:documentation>
-							<xs:documentation><example><Longitude unit="DEGREES" datum="WGS84">-106.4572</Longitude></example></xs:documentation>
+							<xs:documentation><example><Longitude>-106.4572</Longitude></example></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Elevation" type="fsx:DistanceType">
 						<xs:annotation>
-						  <xs:documentation>Elevation of the sensor, by default in meters.  To find the local ground surface level,
+						  <xs:documentation>Elevation of the sensor, in meters.  To find the local ground surface level,
                                                   add the Depth value to this elevation. </xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -371,8 +375,7 @@
 									<xs:attribute name="unit" type="xs:string" use="optional" fixed="SECONDS/SAMPLE">
 											<xs:annotation>
 												<xs:documentation>The unit of drift value.
-												</xs:documentation>
-												<xs:documentation><example>SECONDS/SAMPLE</example>
+                          This value is fixed to be SECONDS/SAMPLE, setting it is redundant.
 												</xs:documentation>
 											</xs:annotation>
 										</xs:attribute>
@@ -1042,8 +1045,7 @@
 				<xs:attribute name="unit" type="xs:string" fixed="SECONDS">
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
-							</xs:documentation>
-							<xs:documentation><example>SECONDS</example>
+                This value is fixed to be SECONDS, setting it is redundant.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:attribute>
@@ -1057,8 +1059,7 @@
 				<xs:attribute name="unit" type="xs:string" fixed="VOLTS">
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
-							</xs:documentation>
-							<xs:documentation><example>VOLTS</example>
+                This value is fixed to be VOLTS, setting it is redundant.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:attribute>
@@ -1074,8 +1075,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>DEGREES</example>
+              This value is fixed to be DEGREES, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1094,8 +1094,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>DEGREES</example>
+              This value is fixed to be DEGREES, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1125,8 +1124,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>DEGREES</example>
+              This value is fixed to be DEGREES, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1157,8 +1155,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>DEGREES</example>
+              This value is fixed to be DEGREES, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1178,8 +1175,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="DEGREES">
 						<xs:annotation>
 							<xs:documentation>The type of unit being used.
-							</xs:documentation>
-							<xs:documentation><example>DEGREES</example>
+                This value is fixed to be DEGREES, setting it is redundant.
 							</xs:documentation>
 						</xs:annotation>
 				</xs:attribute>
@@ -1197,8 +1193,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" default="METERS">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>m</example>
+              This value is fixed to be METERS, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1212,8 +1207,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="HERTZ">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>HERTZ</example>
+              This value is fixed to be HERTZ, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
@@ -1235,7 +1229,7 @@
             Sample rate in samples per second.
             SampleRate is optional unless SampleRateRatio is present, in which case
             SampleRate is required.
-            <example><SampleRate units='SAMPLES/S'>40.0</SampleRate></example>
+            <example><SampleRate>40.0</SampleRate></example>
           </xs:documentation>
 		    </xs:annotation>
       </xs:element>
@@ -1264,8 +1258,7 @@
 				<xs:attribute name="unit" type="xs:string" use="optional" fixed="SAMPLES/S">
 					<xs:annotation>
 						<xs:documentation>The type of unit being used.
-						</xs:documentation>
-						<xs:documentation><example>SAMPLES/S</example>
+              This value is fixed to be SAMPLES/S, setting it is redundant.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>

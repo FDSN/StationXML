@@ -694,11 +694,11 @@
 
    .. container:: description
 
-      Station latitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location). Latitude type extending the base type to add datum as an attribute with default.
+      Station latitude, in degrees. Where the bulk of the equipment is located (or another appropriate site location). The unit is fixed to be degrees, and datum defaults to WGS84. Latitude type extending the base type to add datum as an attribute with default.
 
    .. container:: example
 
-      **Example**: <Latitude unit="DEGREES" datum="WGS84">34.9459</Latitude>
+      **Example**: <Latitude>34.9459</Latitude>
 
 
 
@@ -713,7 +713,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be DEGREES, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -744,11 +744,11 @@
 
    .. container:: description
 
-      Station longitude, by default in degrees. Where the bulk of the equipment is located (or another appropriate site location). Longitude type extending the base type to add datum as an attribute with default.
+      Station longitude, in degrees. Where the bulk of the equipment is located (or another appropriate site location). The unit is fixed to be degrees, and datum defaults to WGS84. Longitude type extending the base type to add datum as an attribute with default.
 
    .. container:: example
 
-      **Example**: <Longitude unit="DEGREES" datum="WGS84">-106.4572</Longitude>
+      **Example**: <Longitude>-106.4572</Longitude>
 
 
 
@@ -763,7 +763,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"DEGREES\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be DEGREES, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
@@ -794,11 +794,11 @@
 
    .. container:: description
 
-      Elevation of local ground surface level at station, by default in meters. Extension of FloatType for distances, elevations, and depths.
+      Elevation of local ground surface level at station, in meters. Extension of FloatType for distances, elevations, and depths.
 
    .. container:: example
 
-      **Example**: <Elevation unit="m">1850.0</Elevation>
+      **Example**: <Elevation>1850.0</Elevation>
 
 
 
@@ -813,7 +813,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used.", "unit=\"m\"" 
+      **unit**, :ref:`string<type-glossary>`, no, "The type of unit being used. This value is fixed to be METERS, setting it is redundant.", "" 
       **plusError**, :ref:`double<type-glossary>`, no, "plus uncertainty or error in measured value.", "plusError=\"0.1\"" 
       **minusError**, :ref:`double<type-glossary>`, no, "minus uncertainty or error in measured value.", "minusError=\"0.1\"" 
       **measurementMethod**, :ref:`string<type-glossary>`, no, "", "" 
