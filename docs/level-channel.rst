@@ -2334,7 +2334,7 @@
 
    .. container:: description
 
-      If the Equipment is entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. If using a preamplifier, sensor, or datalogger, use their appropriate fields instead. A type for equipment related to data acquisition or processing.
+      Any equipment that does not have type-specific fields. Equipment such as sensor, data logger and preamplifier that has type-specific fields should be documented in those structures. If the same Equipment is entered at the Station level, it is not necessary to include it for each Channel. If using a preamplifier, sensor, or datalogger, use their appropriate fields instead. A type for equipment related to data acquisition or processing.
 
 
 

@@ -1169,7 +1169,7 @@
 
    .. container:: description
 
-      Equipment used by all channels at a station. A type for equipment related to data acquisition or processing.
+      Equipment used by all channels at a station, Equipment that contributes to or affects the response of a channel should be documented on the channel. A type for equipment related to data acquisition or processing.
 
 
 
@@ -1469,7 +1469,7 @@
 
    .. container:: description
 
-      Agency and contact persons who manage this station. Only use if this differs from the Operator of the Network. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact’s optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing element should be include in the Operator tag.
+      Agency and contact persons who manage this station. Only use if this differs from the Operator of the Network. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact's optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing element should be include in the Operator tag.
 
 
 
