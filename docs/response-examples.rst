@@ -39,7 +39,7 @@ Kinemetrics FBA-3 + Kinemetrics Etna
 YSI 44031 thermistor
 --------------------------
 
-.. include:: examples/YS-44301-thermistor.rst
+.. include:: examples/YSI-44031.rst
 
 Setra 270
 --------------------------
@@ -47,4 +47,3 @@ Setra 270
 Setra 270 Pressure Transducer
 
 .. include:: examples/Setra_270.rst
-

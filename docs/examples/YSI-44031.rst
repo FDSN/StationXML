@@ -1,3 +1,6 @@
+
+.. include:: examples/YSI-44031-intro.rst
+
 .. toggle-header::
 	:header: StationXML **Show/Hide**
 
@@ -6,7 +9,7 @@
 		<?xml version='1.0' encoding='UTF-8'?>
 		<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
 		  <Source>isti</Source>
-		  <Created>2020-06-05T21:58:37.500208Z</Created>
+		  <Created>2020-06-10T13:25:01.910728Z</Created>
 		  <Network code="XX">
 		    <Station code="ABCD">
 		      <Latitude>0.0</Latitude>
@@ -15,7 +18,7 @@
 		      <Site>
 		        <Name>Nowhere</Name>
 		      </Site>
-		      <Channel code="BHZ" locationCode="10">
+		      <Channel code="BKD" locationCode="10">
 		        <Latitude>0.0</Latitude>
 		        <Longitude>0.0</Longitude>
 		        <Elevation>10.0</Elevation>
@@ -23,116 +26,74 @@
 		        <Azimuth>0.0</Azimuth>
 		        <Dip>-90.0</Dip>
 		        <SampleRate>40.0</SampleRate>
-		        <Sensor><Description>STS-2</Description></Sensor>
+		        <Sensor><Description>YSI 44301 temperature</Description></Sensor>
 		        <DataLogger><Description>Reftek RT130</Description></DataLogger>
 		        <Response>
-		          <InstrumentSensitivity>
-		            <Value>941864732.693</Value>
-		            <Frequency>1.0</Frequency>
+		          <InstrumentPolynomial name="InstrumentPolynomial">
+		            <Description>None</Description>
 		            <InputUnits>
-		              <Name>m/s</Name>
-		              <Description>Velocity in Meters per Second</Description>
+		              <Name>degC</Name>
+		              <Description>TEMPERATURE in Celsius</Description>
 		            </InputUnits>
 		            <OutputUnits>
 		              <Name>count</Name>
 		              <Description>Digital Counts</Description>
 		            </OutputUnits>
-		          </InstrumentSensitivity>
+		            <ApproximationType>MACLAURIN</ApproximationType>
+		            <FrequencyLowerBound unit="HERTZ">0.0</FrequencyLowerBound>
+		            <FrequencyUpperBound unit="HERTZ">0.01</FrequencyUpperBound>
+		            <ApproximationLowerBound>-5.02</ApproximationLowerBound>
+		            <ApproximationUpperBound>68.59</ApproximationUpperBound>
+		            <MaximumError>0.072</MaximumError>
+		            <Coefficient>12.505</Coefficient>
+		            <Coefficient>1.64794921875e-05</Coefficient>
+		            <Coefficient>5.83199266657175e-12</Coefficient>
+		            <Coefficient>2.1907660147785217e-18</Coefficient>
+		            <Coefficient>3.784714809535227e-24</Coefficient>
+		            <Coefficient>4.1527864425849766e-30</Coefficient>
+		            <Coefficient>-1.7512168159552436e-36</Coefficient>
+		            <Coefficient>-3.605880325679582e-42</Coefficient>
+		            <Coefficient>5.699037789738209e-49</Coefficient>
+		            <Coefficient>1.8990406231916714e-54</Coefficient>
+		            <Coefficient>5.525847819332687e-61</Coefficient>
+		          </InstrumentPolynomial>
 		          <Stage number="1">
-		            <PolesZeros>
+		            <Polynomial name=" SENSOR RESPONSE   ">
 		              <InputUnits>
-		                <Name>m/s</Name>
-		                <Description>Velocity in Meters per Second</Description>
+		                <Name>degC</Name>
+		                <Description>TEMPERATURE in Celsius</Description>
 		              </InputUnits>
 		              <OutputUnits>
 		                <Name>V</Name>
 		                <Description>Volts</Description>
 		              </OutputUnits>
-		              <PzTransferFunctionType>LAPLACE (RADIANS/SECOND)</PzTransferFunctionType>
-		              <NormalizationFactor>3.4684e+17</NormalizationFactor>
-		              <NormalizationFrequency unit="HERTZ">1.0</NormalizationFrequency>
-		              <Zero number="0">
-		                <Real>0.0</Real>
-		                <Imaginary>0.0</Imaginary>
-		              </Zero>
-		              <Zero number="1">
-		                <Real>0.0</Real>
-		                <Imaginary>0.0</Imaginary>
-		              </Zero>
-		              <Zero number="2">
-		                <Real>-15.15</Real>
-		                <Imaginary>0.0</Imaginary>
-		              </Zero>
-		              <Zero number="3">
-		                <Real>-176.6</Real>
-		                <Imaginary>0.0</Imaginary>
-		              </Zero>
-		              <Zero number="4">
-		                <Real>-463.1</Real>
-		                <Imaginary>-430.5</Imaginary>
-		              </Zero>
-		              <Zero number="5">
-		                <Real>-463.1</Real>
-		                <Imaginary>430.5</Imaginary>
-		              </Zero>
-		              <Pole number="0">
-		                <Real>-0.037</Real>
-		                <Imaginary>-0.037</Imaginary>
-		              </Pole>
-		              <Pole number="1">
-		                <Real>-0.037</Real>
-		                <Imaginary>0.037</Imaginary>
-		              </Pole>
-		              <Pole number="2">
-		                <Real>-15.64</Real>
-		                <Imaginary>0.0</Imaginary>
-		              </Pole>
-		              <Pole number="3">
-		                <Real>-97.34</Real>
-		                <Imaginary>-400.7</Imaginary>
-		              </Pole>
-		              <Pole number="4">
-		                <Real>-97.34</Real>
-		                <Imaginary>400.7</Imaginary>
-		              </Pole>
-		              <Pole number="5">
-		                <Real>-374.8</Real>
-		                <Imaginary>0.0</Imaginary>
-		              </Pole>
-		              <Pole number="6">
-		                <Real>-520.3</Real>
-		                <Imaginary>0.0</Imaginary>
-		              </Pole>
-		              <Pole number="7">
-		                <Real>-10530.0</Real>
-		                <Imaginary>-10050.0</Imaginary>
-		              </Pole>
-		              <Pole number="8">
-		                <Real>-10530.0</Real>
-		                <Imaginary>10050.0</Imaginary>
-		              </Pole>
-		              <Pole number="9">
-		                <Real>-13300.0</Real>
-		                <Imaginary>0.0</Imaginary>
-		              </Pole>
-		              <Pole number="10">
-		                <Real>-255.097</Real>
-		                <Imaginary>0.0</Imaginary>
-		              </Pole>
-		            </PolesZeros>
-		            <StageGain>
-		              <Value>1500.0</Value>
-		              <Frequency>1.0</Frequency>
-		            </StageGain>
+		              <ApproximationType>MACLAURIN</ApproximationType>
+		              <FrequencyLowerBound unit="HERTZ">0.0</FrequencyLowerBound>
+		              <FrequencyUpperBound unit="HERTZ">0.01</FrequencyUpperBound>
+		              <ApproximationLowerBound>-5.02</ApproximationLowerBound>
+		              <ApproximationUpperBound>68.59</ApproximationUpperBound>
+		              <MaximumError>0.072</MaximumError>
+		              <Coefficient>12.505</Coefficient>
+		              <Coefficient>13.824</Coefficient>
+		              <Coefficient>4.1039</Coefficient>
+		              <Coefficient>1.2932</Coefficient>
+		              <Coefficient>1.8741</Coefficient>
+		              <Coefficient>1.725</Coefficient>
+		              <Coefficient>-0.61021</Coefficient>
+		              <Coefficient>-1.054</Coefficient>
+		              <Coefficient>0.13974</Coefficient>
+		              <Coefficient>0.39061</Coefficient>
+		              <Coefficient>0.095345</Coefficient>
+		            </Polynomial>
 		          </Stage>
 		          <Stage number="2">
 		            <StageGain>
 		              <Value>1.0</Value>
-		              <Frequency>0.05</Frequency>
+		              <Frequency>0.0</Frequency>
 		            </StageGain>
 		          </Stage>
 		          <Stage number="3">
-		            <Coefficients>
+		            <Coefficients name=" DIGITIZER">
 		              <InputUnits>
 		                <Name>V</Name>
 		                <Description>Volts</Description>
@@ -152,15 +113,15 @@
 		              <Correction>0.0</Correction>
 		            </Decimation>
 		            <StageGain>
-		              <Value>629129.0</Value>
-		              <Frequency>0.05</Frequency>
+		              <Value>838860.8</Value>
+		              <Frequency>0.0</Frequency>
 		            </StageGain>
 		          </Stage>
 		          <Stage number="4">
-		            <Coefficients>
+		            <Coefficients name=" DECIMATION">
 		              <InputUnits>
 		                <Name>count</Name>
-		                <Description>Digital Counts</Description>
+		                <Description>Volts</Description>
 		              </InputUnits>
 		              <OutputUnits>
 		                <Name>count</Name>
@@ -201,19 +162,19 @@
 		              <InputSampleRate unit="HERTZ">102400.0</InputSampleRate>
 		              <Factor>8</Factor>
 		              <Offset>0</Offset>
-		              <Delay>0.00013672</Delay>
-		              <Correction>0.00013672</Correction>
+		              <Delay>0.0</Delay>
+		              <Correction>0.0</Correction>
 		            </Decimation>
 		            <StageGain>
 		              <Value>1.0</Value>
-		              <Frequency>0.05</Frequency>
+		              <Frequency>0.0</Frequency>
 		            </StageGain>
 		          </Stage>
 		          <Stage number="5">
-		            <Coefficients>
+		            <Coefficients name=" DECIMATION">
 		              <InputUnits>
 		                <Name>count</Name>
-		                <Description>Digital Counts</Description>
+		                <Description>Volts</Description>
 		              </InputUnits>
 		              <OutputUnits>
 		                <Name>count</Name>
@@ -238,19 +199,19 @@
 		              <InputSampleRate unit="HERTZ">12800.0</InputSampleRate>
 		              <Factor>2</Factor>
 		              <Offset>0</Offset>
-		              <Delay>0.00046875</Delay>
-		              <Correction>0.00046875</Correction>
+		              <Delay>0.0</Delay>
+		              <Correction>0.0</Correction>
 		            </Decimation>
 		            <StageGain>
 		              <Value>1.0</Value>
-		              <Frequency>0.05</Frequency>
+		              <Frequency>0.0</Frequency>
 		            </StageGain>
 		          </Stage>
 		          <Stage number="6">
-		            <Coefficients>
+		            <Coefficients name=" DECIMATION">
 		              <InputUnits>
 		                <Name>count</Name>
-		                <Description>Digital Counts</Description>
+		                <Description>Volts</Description>
 		              </InputUnits>
 		              <OutputUnits>
 		                <Name>count</Name>
@@ -275,19 +236,19 @@
 		              <InputSampleRate unit="HERTZ">6400.0</InputSampleRate>
 		              <Factor>2</Factor>
 		              <Offset>0</Offset>
-		              <Delay>0.0009375</Delay>
-		              <Correction>0.0009375</Correction>
+		              <Delay>0.0</Delay>
+		              <Correction>0.0</Correction>
 		            </Decimation>
 		            <StageGain>
 		              <Value>1.0</Value>
-		              <Frequency>0.05</Frequency>
+		              <Frequency>0.0</Frequency>
 		            </StageGain>
 		          </Stage>
 		          <Stage number="7">
-		            <Coefficients>
+		            <Coefficients name=" DECIMATION">
 		              <InputUnits>
 		                <Name>count</Name>
-		                <Description>Digital Counts</Description>
+		                <Description>Volts</Description>
 		              </InputUnits>
 		              <OutputUnits>
 		                <Name>count</Name>
@@ -312,19 +273,19 @@
 		              <InputSampleRate unit="HERTZ">3200.0</InputSampleRate>
 		              <Factor>2</Factor>
 		              <Offset>0</Offset>
-		              <Delay>0.001875</Delay>
-		              <Correction>0.001875</Correction>
+		              <Delay>0.0</Delay>
+		              <Correction>0.0</Correction>
 		            </Decimation>
 		            <StageGain>
 		              <Value>1.0</Value>
-		              <Frequency>0.05</Frequency>
+		              <Frequency>0.0</Frequency>
 		            </StageGain>
 		          </Stage>
 		          <Stage number="8">
-		            <Coefficients>
+		            <Coefficients name=" DECIMATION">
 		              <InputUnits>
 		                <Name>count</Name>
-		                <Description>Digital Counts</Description>
+		                <Description>Volts</Description>
 		              </InputUnits>
 		              <OutputUnits>
 		                <Name>count</Name>
@@ -349,19 +310,19 @@
 		              <InputSampleRate unit="HERTZ">1600.0</InputSampleRate>
 		              <Factor>2</Factor>
 		              <Offset>0</Offset>
-		              <Delay>0.00375</Delay>
-		              <Correction>0.00375</Correction>
+		              <Delay>0.0</Delay>
+		              <Correction>0.0</Correction>
 		            </Decimation>
 		            <StageGain>
 		              <Value>1.0</Value>
-		              <Frequency>0.05</Frequency>
+		              <Frequency>0.0</Frequency>
 		            </StageGain>
 		          </Stage>
 		          <Stage number="9">
-		            <Coefficients>
+		            <Coefficients name=" DECIMATION">
 		              <InputUnits>
 		                <Name>count</Name>
-		                <Description>Digital Counts</Description>
+		                <Description>Volts</Description>
 		              </InputUnits>
 		              <OutputUnits>
 		                <Name>count</Name>
@@ -386,19 +347,19 @@
 		              <InputSampleRate unit="HERTZ">800.0</InputSampleRate>
 		              <Factor>2</Factor>
 		              <Offset>0</Offset>
-		              <Delay>0.0075</Delay>
-		              <Correction>0.0075</Correction>
+		              <Delay>0.0</Delay>
+		              <Correction>0.0</Correction>
 		            </Decimation>
 		            <StageGain>
 		              <Value>1.0</Value>
-		              <Frequency>0.05</Frequency>
+		              <Frequency>0.0</Frequency>
 		            </StageGain>
 		          </Stage>
 		          <Stage number="10">
-		            <Coefficients>
+		            <Coefficients name=" DECIMATION">
 		              <InputUnits>
 		                <Name>count</Name>
-		                <Description>Digital Counts</Description>
+		                <Description>Volts</Description>
 		              </InputUnits>
 		              <OutputUnits>
 		                <Name>count</Name>
@@ -511,19 +472,19 @@
 		              <InputSampleRate unit="HERTZ">400.0</InputSampleRate>
 		              <Factor>2</Factor>
 		              <Offset>0</Offset>
-		              <Delay>0.125</Delay>
-		              <Correction>0.125</Correction>
+		              <Delay>0.0</Delay>
+		              <Correction>0.0</Correction>
 		            </Decimation>
 		            <StageGain>
 		              <Value>1.0</Value>
-		              <Frequency>0.05</Frequency>
+		              <Frequency>0.0</Frequency>
 		            </StageGain>
 		          </Stage>
 		          <Stage number="11">
-		            <Coefficients>
+		            <Coefficients name=" DECIMATION">
 		              <InputUnits>
 		                <Name>count</Name>
-		                <Description>Digital Counts</Description>
+		                <Description>Volts</Description>
 		              </InputUnits>
 		              <OutputUnits>
 		                <Name>count</Name>
@@ -770,12 +731,12 @@
 		              <InputSampleRate unit="HERTZ">200.0</InputSampleRate>
 		              <Factor>5</Factor>
 		              <Offset>0</Offset>
-		              <Delay>0.585</Delay>
-		              <Correction>0.585</Correction>
+		              <Delay>0.0</Delay>
+		              <Correction>0.0</Correction>
 		            </Decimation>
 		            <StageGain>
 		              <Value>1.0</Value>
-		              <Frequency>0.05</Frequency>
+		              <Frequency>0.0</Frequency>
 		            </StageGain>
 		          </Stage>
 		        </Response>
@@ -784,5 +745,5 @@
 		  </Network>
 		</FDSNStationXML>
 
-.. image:: examples/sts-2_rt130.png
+.. image:: examples/YSI-44031.png
 
