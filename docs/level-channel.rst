@@ -15,7 +15,15 @@
 
    .. container:: description
 
-      The Channel container. A Description element may be included with other information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference. A Comment element may be included for arbitrary comments. An active Channel should not use the endDate attribute. Unlike SEED, do not use an endDate in the distant future to mean active.
+      The Channel container.
+      A Description element may be included with other information.
+      An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference.
+      A Comment element may be included for arbitrary comments.
+
+      An active Channel should not use the endDate attribute.
+      Unlike SEED, do not use an endDate in the distant future to mean active.
+
+.
 
 
 
@@ -102,7 +110,9 @@
 
    .. container:: description
 
-      Description of the Channel.
+      Description of the Channel
+
+.
 
    .. container:: example
 
@@ -133,7 +143,11 @@
 
    .. container:: description
 
-      A type to document persistent identifiers. Identifier values should be specified without a URI scheme (prefix), instead the identifier type is documented as an attribute.
+      A type to document persistent identifiers.
+      Identifier values should be specified without a URI scheme (prefix),
+      instead the identifier type is documented as an attribute.
+
+.
 
 
 
@@ -166,6 +180,8 @@
    .. container:: description
 
       Container for a comment or log entry.
+
+.
 
 
 
@@ -230,6 +246,8 @@
 
       Comment text.
 
+.
+
    .. container:: example
 
       **Example**: <Value>Large number of spikes</Value>
@@ -260,6 +278,8 @@
    .. container:: description
 
       Start time for when comment applies.
+
+.
 
    .. container:: example
 
@@ -292,6 +312,8 @@
 
       End time for when comment applies.
 
+.
+
    .. container:: example
 
       **Example**: <EndEffectiveTime>2008-09-16T12:00:00Z</EndEffectiveTime>
@@ -311,7 +333,12 @@
 
    .. container:: description
 
-      Author of Comment. Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
+      Author of Comment.
+
+      Person's contact information. A person can belong
+      to multiple agencies and have multiple email addresses and phone numbers.
+
+.
 
 
 
@@ -358,7 +385,9 @@
 
    .. container:: description
 
-      Name of contact or author.
+      Name of contact or author
+
+.
 
    .. container:: example
 
@@ -389,7 +418,9 @@
 
    .. container:: description
 
-      Agency of contact or author.
+      Agency of contact or author
+
+.
 
    .. container:: example
 
@@ -420,7 +451,9 @@
 
    .. container:: description
 
-      Email of contact or author.
+      Email of contact or author
+
+.
 
    .. container:: example
 
@@ -441,7 +474,9 @@
 
    .. container:: description
 
-      Phone of contact or author.
+      Phone of contact or author
+
+.
 
 
 
@@ -502,7 +537,9 @@
 
    .. container:: description
 
-      Telephone country code.
+      Telephone country code
+
+.
 
    .. container:: example
 
@@ -533,7 +570,9 @@
 
    .. container:: description
 
-      Telephone area code.
+      Telephone area code
+
+.
 
    .. container:: example
 
@@ -564,7 +603,9 @@
 
    .. container:: description
 
-      Telephone number.
+      Telephone number
+
+.
 
    .. container:: example
 
@@ -585,7 +626,17 @@
 
    .. container:: description
 
-      A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers. A type for describing data availability.
+      A description of time series data availability. This
+      information should be considered transient and is primarily useful as a
+      guide for generating time series data requests. The information for a
+      DataAvailability:Span may be specific to the time range used in a request
+      that resulted in the document or limited to the availability of data within
+      the request range. These details may or may not be retained when
+      synchronizing metadata between data centers.
+
+      A type for describing data availability.
+
+.
 
 
 
@@ -620,7 +671,11 @@
 
    .. container:: description
 
-      Data availability extents, the earliest and latest data available. No information about the continuity of the data is included or implied.
+      Data availability extents, the earliest and
+      latest data available. No information about the continuity of the data
+      is included or implied.
+
+.
 
 
 
@@ -653,7 +708,13 @@
 
    .. container:: description
 
-      A type for describing data availability spans, with variable continuity. The time range described may be based on the request parameters that generated the document and not necessarily relate to continuity outside of the range. It may also be a smaller time window than the request depending on the data characteristics.
+      A type for describing data availability spans, with variable
+      continuity. The time range described may be based on the request parameters that
+      generated the document and not necessarily relate to continuity outside of the
+      range. It may also be a smaller time window than the request depending on the data
+      characteristics.
+
+.
 
 
 
@@ -688,7 +749,12 @@
 
    .. container:: description
 
-      URI of any type of external report, such as data quality reports. This type contains a Uniform Resource Identifier (URI) and and description for external information that users may want to reference.
+      URI of any type of external report, such as data quality reports.
+
+      This type contains a Uniform Resource Identifier (URI) and and description
+      for external information that users may want to reference.
+
+.
 
 
 
@@ -735,6 +801,8 @@
 
       URI of the external reference.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -761,6 +829,8 @@
    .. container:: description
 
       Description of the external reference.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -791,7 +861,13 @@
 
    .. container:: description
 
-      Latitude of this channel's sensor, in degrees. Often the same as the station latitude, but when different the channel latitude is the true location of the sensor. Latitude type extending the base type to add datum as an attribute with default.
+      Latitude of this channel's sensor, in degrees.
+      Often the same as the station latitude, but
+      when different the channel latitude is the true location of the sensor.
+
+      Latitude type extending the base type to add datum as an attribute with default.
+
+.
 
    .. container:: example
 
@@ -845,7 +921,13 @@
 
    .. container:: description
 
-      Longitude of this channel's sensor, in degrees. Often the same as the station longitude, but when different the channel longitude is the true location of the sensor. Longitude type extending the base type to add datum as an attribute with default.
+      Longitude of this channel's sensor, in degrees.
+      Often the same as the station longitude, but
+      when different the channel longitude is the true location of the sensor.
+
+      Longitude type extending the base type to add datum as an attribute with default.
+
+.
 
    .. container:: example
 
@@ -895,7 +977,12 @@
 
    .. container:: description
 
-      Elevation of the sensor, in meters. To find the local ground surface level, add the Depth value to this elevation. Extension of FloatType for distances, elevations, and depths.
+      Elevation of the sensor, in meters.  To find the local ground surface level,
+      add the Depth value to this elevation.
+
+      Extension of FloatType for distances, elevations, and depths.
+
+.
 
 
 
@@ -940,7 +1027,11 @@
 
    .. container:: description
 
-      The depth of the sensor relative to the local ground surface level, in meters. Extension of FloatType for distances, elevations, and depths.
+      The depth of the sensor relative to the local ground surface level, in meters.
+
+      Extension of FloatType for distances, elevations, and depths.
+
+.
 
 
 
@@ -989,7 +1080,11 @@
 
    .. container:: description
 
-      Azimuth of the sensor in degrees clockwise from geographic (true) north. Instrument azimuth, degrees clockwise from North.
+      Azimuth of the sensor in degrees clockwise from geographic (true) north.
+
+      Instrument azimuth, degrees clockwise from North.
+
+.
 
 
 
@@ -1038,7 +1133,11 @@
 
    .. container:: description
 
-      Dip of the instrument in degrees, positive down from horizontal Instrument dip in degrees, positive down from horizontal.
+      Dip of the instrument in degrees, positive down from horizontal
+
+      Instrument dip in degrees, positive down from horizontal.
+
+.
 
 
 
@@ -1083,7 +1182,14 @@
 
    .. container:: description
 
-      Elevation of the water surface in meters for underwater sites, where 0 is mean sea level. If you put an OBS on a lake bottom, where the lake surface is at elevation=1200 meters, then you should set WaterLevel=1200. An OBS in the ocean would have WaterLevel=0. Representation of floating-point numbers used as measurements.
+      Elevation of the water surface in meters for underwater sites, where 0 is mean sea level.
+      If you put an OBS on a lake bottom, where the lake surface is at elevation=1200 meters,
+      then you should set WaterLevel=1200. An OBS in the ocean would
+      have WaterLevel=0.
+
+      Representation of floating-point numbers used as measurements.
+
+.
 
 
 
@@ -1128,7 +1234,12 @@
 
    .. container:: description
 
-      Data type for this channel. One or more <Type> tags can be used to specify the nature of the data this channel collects. The value between the <Type> tags must be one of: TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG or SYNTHESIZED.
+      Data type for this channel. One or more <Type> tags
+      can be used to specify the nature of the data this channel collects.
+      The value between the <Type> tags must be one of:
+      TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG or SYNTHESIZED.
+
+.
 
    .. container:: example
 
@@ -1246,6 +1357,8 @@
 
       Integer number of samples that span a number of seconds.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -1272,6 +1385,8 @@
    .. container:: description
 
       Integer number of seconds that span a number of samples.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1302,7 +1417,10 @@
 
    .. container:: description
 
-      Tolerance value, measured in seconds per sample, used as a threshold for time error detection in data from the channel.
+      Tolerance value, measured in seconds per sample,
+      used as a threshold for time error detection in data from the channel.
+
+.
 
 
 
@@ -1337,7 +1455,13 @@
 
    .. container:: description
 
-      Units of calibration (e.g., V (for Volts) or A (for amps)) Use *SI* units when possible A type to document units; use SI whenever possible.
+      Units of calibration (e.g., V (for Volts) or A (for amps))
+
+      Use *SI* units when possible
+
+      A type to document units; use SI whenever possible.
+
+.
 
    .. container:: example
 
@@ -1390,7 +1514,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1417,7 +1545,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1434,7 +1565,13 @@
 
    .. container:: description
 
-      Details of the (typically analog) sensor attached to this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. A type for equipment related to data acquisition or processing.
+      Details of the (typically analog) sensor attached to this channel.
+      If this was entered at the Station level, it is not necessary to do it for each Channel,
+      unless you have differences in equipment.
+
+      A type for equipment related to data acquisition or processing.
+
+.
 
 
 
@@ -1501,7 +1638,9 @@
 
    .. container:: description
 
-      Type of equipment.
+      Type of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1528,7 +1667,9 @@
 
    .. container:: description
 
-      Description of equipment.
+      Description of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1555,7 +1696,9 @@
 
    .. container:: description
 
-      Manufacturer of equipment.
+      Manufacturer of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1582,7 +1725,9 @@
 
    .. container:: description
 
-      Vendor of equipment.
+      Vendor of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1609,7 +1754,9 @@
 
    .. container:: description
 
-      Model of equipment.
+      Model of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1636,7 +1783,9 @@
 
    .. container:: description
 
-      Serial number of equipment.
+      Serial number of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1663,7 +1812,9 @@
 
    .. container:: description
 
-      Date this equipment was installed.
+      Date this equipment was installed
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1690,7 +1841,9 @@
 
    .. container:: description
 
-      Date this equipment was removed.
+      Date this equipment was removed
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1717,7 +1870,9 @@
 
    .. container:: description
 
-      Date this equipment was calibrated.
+      Date this equipment was calibrated
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1734,7 +1889,12 @@
 
    .. container:: description
 
-      Preamplifier (if any) used by this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. A type for equipment related to data acquisition or processing.
+      Preamplifier (if any) used by this channel. If this was entered at the Station level,
+      it is not necessary to do it for each Channel, unless you have differences in equipment.
+
+      A type for equipment related to data acquisition or processing.
+
+.
 
 
 
@@ -1801,7 +1961,9 @@
 
    .. container:: description
 
-      Type of equipment.
+      Type of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1828,7 +1990,9 @@
 
    .. container:: description
 
-      Description of equipment.
+      Description of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1855,7 +2019,9 @@
 
    .. container:: description
 
-      Manufacturer of equipment.
+      Manufacturer of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1882,7 +2048,9 @@
 
    .. container:: description
 
-      Vendor of equipment.
+      Vendor of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1909,7 +2077,9 @@
 
    .. container:: description
 
-      Model of equipment.
+      Model of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1936,7 +2106,9 @@
 
    .. container:: description
 
-      Serial number of equipment.
+      Serial number of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1963,7 +2135,9 @@
 
    .. container:: description
 
-      Date this equipment was installed.
+      Date this equipment was installed
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1990,7 +2164,9 @@
 
    .. container:: description
 
-      Date this equipment was removed.
+      Date this equipment was removed
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2017,7 +2193,9 @@
 
    .. container:: description
 
-      Date this equipment was calibrated.
+      Date this equipment was calibrated
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2034,7 +2212,12 @@
 
    .. container:: description
 
-      Datalogger that recorded this channel. If this was entered at the Station level, it is not necessary to do it for each Channel, unless you have differences in equipment. A type for equipment related to data acquisition or processing.
+      Datalogger that recorded this channel. If this was entered at the Station level,
+      it is not necessary to do it for each Channel, unless you have differences in equipment.
+
+      A type for equipment related to data acquisition or processing.
+
+.
 
 
 
@@ -2101,7 +2284,9 @@
 
    .. container:: description
 
-      Type of equipment.
+      Type of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2128,7 +2313,9 @@
 
    .. container:: description
 
-      Description of equipment.
+      Description of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2155,7 +2342,9 @@
 
    .. container:: description
 
-      Manufacturer of equipment.
+      Manufacturer of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2182,7 +2371,9 @@
 
    .. container:: description
 
-      Vendor of equipment.
+      Vendor of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2209,7 +2400,9 @@
 
    .. container:: description
 
-      Model of equipment.
+      Model of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2236,7 +2429,9 @@
 
    .. container:: description
 
-      Serial number of equipment.
+      Serial number of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2263,7 +2458,9 @@
 
    .. container:: description
 
-      Date this equipment was installed.
+      Date this equipment was installed
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2290,7 +2487,9 @@
 
    .. container:: description
 
-      Date this equipment was removed.
+      Date this equipment was removed
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2317,7 +2516,9 @@
 
    .. container:: description
 
-      Date this equipment was calibrated.
+      Date this equipment was calibrated
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2334,7 +2535,14 @@
 
    .. container:: description
 
-      Any equipment that does not have type-specific fields. Equipment such as sensor, data logger and preamplifier that has type-specific fields should be documented in those structures. If the same Equipment is entered at the Station level, it is not necessary to include it for each Channel. If using a preamplifier, sensor, or datalogger, use their appropriate fields instead. A type for equipment related to data acquisition or processing.
+      Any equipment that does not have type-specific fields.
+      Equipment such as sensor, data logger and preamplifier that has type-specific fields should be documented in those structures.
+      If the same Equipment is entered at the Station level, it is not necessary to include it for each Channel.
+      If using a preamplifier, sensor, or datalogger, use their appropriate fields instead.
+
+      A type for equipment related to data acquisition or processing.
+
+.
 
 
 
@@ -2401,7 +2609,9 @@
 
    .. container:: description
 
-      Type of equipment.
+      Type of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2428,7 +2638,9 @@
 
    .. container:: description
 
-      Description of equipment.
+      Description of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2455,7 +2667,9 @@
 
    .. container:: description
 
-      Manufacturer of equipment.
+      Manufacturer of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2482,7 +2696,9 @@
 
    .. container:: description
 
-      Vendor of equipment.
+      Vendor of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2509,7 +2725,9 @@
 
    .. container:: description
 
-      Model of equipment.
+      Model of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2536,7 +2754,9 @@
 
    .. container:: description
 
-      Serial number of equipment.
+      Serial number of equipment
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2563,7 +2783,9 @@
 
    .. container:: description
 
-      Date this equipment was installed.
+      Date this equipment was installed
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2590,7 +2812,9 @@
 
    .. container:: description
 
-      Date this equipment was removed.
+      Date this equipment was removed
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2617,5 +2841,7 @@
 
    .. container:: description
 
-      Date this equipment was calibrated.
+      Date this equipment was calibrated
+
+.
 
