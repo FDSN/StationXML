@@ -15,7 +15,7 @@
 
    .. container:: description
 
-      The complete instrument response for this channel that expresses the effect of the geophysical instrumentation used to record the input ground motion. The information can be used to convert raw data to Earth unit measurement at a specified frequency or within a range of frequencies. It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present.
+      The complete instrument response for this channel that expresses the effect of the geophysical instrumentation used to record the input ground motion. The information can be used to convert raw data to Earth unit measurement at a specified frequency or within a range of frequencies. It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present. In cases where the response is unknown, for example really old channels, or where a response is not applicable, like textual log channels, it is preferred that an empty response element be used, <response></response>, to positively indicate that no response exists.
 
 
 
