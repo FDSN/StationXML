@@ -24,11 +24,11 @@ copyright = '2022, International FDSN'
 author = 'International FDSN'
 
 # The full version, including alpha/beta/rc tags
-version = '1.1.0'
+version = '1.1.1-alpha'
 
 # Documentation version, schema + date
-# ALSO UPDATE the release documentation version in introduction.rst
-doc_version = version + ' (2022-01-19)'
+# ALSO UPDATE the release documentation version in overview.rst
+doc_version = version + ' (2022-01-21)'
 
 # Allow |doc_version| to be used in RST
 rst_epilog = '.. |doc_version| replace:: %s' % doc_version
@@ -120,4 +120,3 @@ html_css_files = [
 html_js_files = [
   'js/sidebar_context.js'
 ]
-
