@@ -1390,7 +1390,7 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`

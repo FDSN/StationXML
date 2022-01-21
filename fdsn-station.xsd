@@ -1512,7 +1512,9 @@
 		<xs:sequence>
 			<xs:element name="Name" type="xs:string">
 				<xs:annotation>
-					<xs:documentation>Symbol or name of units, e.g. "m/s", "V", "Pa", "C".  Use SI whenever possible.</xs:documentation>
+					<xs:documentation>Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+            Use SI whenever possible, along with singular lowercase
+            "count" for digital counts.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Description" type="xs:string" minOccurs="0">
