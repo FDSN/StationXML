@@ -15,7 +15,13 @@
 
    .. container:: description
 
-      The complete instrument response for this channel that expresses the effect of the geophysical instrumentation used to record the input ground motion. The information can be used to convert raw data to Earth unit measurement at a specified frequency or within a range of frequencies. It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present.
+      The complete instrument response for this channel that expresses the effect of the
+      geophysical instrumentation used to record the input ground motion.
+      The information can be used to convert raw data to Earth unit measurement at a specified
+      frequency or within a range of frequencies.
+      It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present.
+
+.
 
 
 
@@ -66,7 +72,14 @@
 
    .. container:: description
 
-      The total sensitivity for a channel, representing the complete acquisition system expressed as a scalar. All instrument responses except polynomial response should have an InstrumentSensitivity. Type for sensitivity, input/output units and relevant frequency range.
+      The total sensitivity for a channel, representing the
+      complete acquisition system expressed as a scalar.
+      All instrument responses except polynomial response should have
+      an InstrumentSensitivity.
+
+      Type for sensitivity, input/output units and relevant frequency range.
+
+.
 
 
 
@@ -116,7 +129,10 @@
 
    .. container:: description
 
-      A scalar value representing the amount of amplification or diminuition, if any, the current stage applies to the input signal.
+      A scalar value representing the amount of amplification or diminuition, if any,
+      the current stage applies to the input signal.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -145,6 +161,8 @@
 
       The frequency (in Hertz) at which the Value is valid.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -160,7 +178,13 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective of data acquisition. After correcting data for this response, these would be the resulting units. A type to document units; use SI whenever possible.
+      The units of the data as input from the perspective
+      of data acquisition. After correcting data for this response, these
+      would be the resulting units.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -205,7 +229,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -232,7 +260,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -249,7 +280,13 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective of data acquisition. These would be the units of the data prior to correcting for this response. A type to document units; use SI whenever possible.
+      The units of the data as output from the perspective
+      of data acquisition. These would be the units of the data prior to
+      correcting for this response.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -294,7 +331,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -321,7 +362,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -348,7 +392,11 @@
 
    .. container:: description
 
-      The lowest frequency for which the InstrumentSensitivity is valid. <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not required, however, if one of these is present, then all must be present.
+      The lowest frequency for which the InstrumentSensitivity is valid.
+      <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not
+      required, however, if one of these is present, then all must be present.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -375,7 +423,11 @@
 
    .. container:: description
 
-      The highest frequency for which the InstrumentSensitivity is valid. <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not required, however, if one of these is present, then all must be present.
+      The highest frequency for which the InstrumentSensitivity is valid.
+      <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not
+      required, however, if one of these is present, then all must be present.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -402,7 +454,11 @@
 
    .. container:: description
 
-      Variation in decibels within the specified frequency range. <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not required, however, if one of these is present, then all must be present.
+      Variation in decibels within the specified frequency range.
+      <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not
+      required, however, if one of these is present, then all must be present.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -419,14 +475,24 @@
 
    .. container:: description
 
-      For non-linear sensors (e.g., :math:`N\ge 2`), such as some thermistors, pressure transducers, extensometers, etc.), it is required to express the sensor input (e.g., Temp) as a Maclaurin series expansion of powers of the *output* units (e.g., Volts): 
+      For non-linear sensors (e.g., :math:`N\ge 2`), such as some thermistors,
+      pressure transducers, extensometers, etc.), it is required to
+      express the sensor input (e.g., Temp) as a Maclaurin series expansion of powers of the
+      *output* units (e.g., Volts):
+      .. math::
+      [Temp(V)=\sum_{k=0}^{N} a_k V^{k}]endEQ
+      
+      For such responses, two StationXML components are required to specify the response:
+      1. A Polynomial stage, which contains the values of the Maclaurin coefficients,
+      :math:`a_k`, and 2. An InstrumentPolynomial element that contains the
+      same coefficients, but scaled by powers of the overall gain representing the
+      combined effect of all the stages in the complete acquisition system.
 
-		.. math::
-			:nowrap:
+      Response type for a reponse represented as a polynomial expansion,
+      which allows non-linear sensors to be described. Used at either a stage of
+      acquisition response or a complete system.
 
-			\begin{eqnarray}Temp(V)=\sum_{k=0}^{N} a_k V^{k}\end{eqnarray}
-
-		For such responses, two StationXML components are required to specify the response: 1. A Polynomial stage, which contains the values of the Maclaurin coefficients, :math:`a_k`, and 2. An InstrumentPolynomial element that contains the same coefficients, but scaled by powers of the overall gain representing the combined effect of all the stages in the complete acquisition system. Response type for a reponse represented as a polynomial expansion, which allows non-linear sensors to be described. Used at either a stage of acquisition response or a complete system.
+.
 
 
 
@@ -495,7 +561,9 @@
 
    .. container:: description
 
-      The description of the filter/stage/response.
+      The description of the filter/stage/response
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -512,7 +580,13 @@
 
    .. container:: description
 
-      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example
+      if stage 1 represented a seismometer, InputUnits would be 'm/s'
+      and OutputUnits would be 'V'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -557,7 +631,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -584,7 +662,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -601,7 +682,14 @@
 
    .. container:: description
 
-      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example
+      if stage 2 represented the AtoD stage of a data logger,
+      InputUnits would be 'V'
+      and OutputUnits would be 'count'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -646,7 +734,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -673,7 +765,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -700,7 +795,9 @@
 
    .. container:: description
 
-      The series type for the polynomial approximation.
+      The series type for the polynomial approximation
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -728,6 +825,8 @@
    .. container:: description
 
       The lower bound of the frequency range.
+
+.
 
 
 
@@ -774,6 +873,8 @@
 
       The upper bound of the frequency range.
 
+.
+
 
 
 
@@ -819,6 +920,8 @@
 
       The lower bound of the approximation range.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -846,6 +949,8 @@
 
       The upper bound of the approximation range.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -872,6 +977,8 @@
    .. container:: description
 
       The maximum error of the approximation.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -929,7 +1036,10 @@
 
    .. container:: description
 
-      Type for channel response entry or stage. A full response is represented as an ordered sequence of these stages.
+      Type for channel response entry or stage.  A full response is
+      represented as an ordered sequence of these stages.
+
+.
 
 
 
@@ -985,7 +1095,10 @@
 
    .. container:: description
 
-      Response stage described by the complex poles and zeros of the Laplace Transform (or z-transform) of the transfer function for this stage.
+      Response stage described by the complex poles and zeros of the Laplace Transform (or z-transform)
+      of the transfer function for this stage.
+
+.
 
 
 
@@ -1052,7 +1165,9 @@
 
    .. container:: description
 
-      The description of the filter/stage/response.
+      The description of the filter/stage/response
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1069,7 +1184,13 @@
 
    .. container:: description
 
-      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example
+      if stage 1 represented a seismometer, InputUnits would be 'm/s'
+      and OutputUnits would be 'V'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -1114,7 +1235,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1141,7 +1266,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1158,7 +1286,14 @@
 
    .. container:: description
 
-      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example
+      if stage 2 represented the AtoD stage of a data logger,
+      InputUnits would be 'V'
+      and OutputUnits would be 'count'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -1203,7 +1338,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1230,7 +1369,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1257,7 +1399,14 @@
 
    .. container:: description
 
-      Allowable values are:"LAPLACE (RADIANS/SECOND)", "LAPLACE (HERTZ)", "DIGITAL (Z-TRANSFORM)". For an analog stage this should be the units of the poles and zeros of the Laplace Transform, either: "LAPLACE (RADIANS/SECOND)" or "LAPLACE (HERTZ)". For a digial z-transform (e.g., for an IIR filter), this should be "DIGITAL (Z-TRANSFORM)".
+      Allowable values are:"LAPLACE (RADIANS/SECOND)", "LAPLACE (HERTZ)", "DIGITAL (Z-TRANSFORM)".
+      For an analog stage this should be the units of the poles and zeros of
+      the Laplace Transform, either:
+      "LAPLACE (RADIANS/SECOND)" or "LAPLACE (HERTZ)".
+      For a digial z-transform (e.g., for an IIR filter), this should be
+      "DIGITAL (Z-TRANSFORM)"
+
+.
 
    .. container:: example
 
@@ -1288,7 +1437,9 @@
 
    .. container:: description
 
-      Normalization scale factor.
+      Normalization scale factor
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1315,7 +1466,10 @@
 
    .. container:: description
 
-      Frequency at which the NormalizationFactor is valid. This should be the same for all stages and within the passband, if any.
+      Frequency at which the NormalizationFactor is valid.
+      This should be the same for all stages and within the passband, if any.
+
+.
 
 
 
@@ -1351,6 +1505,8 @@
    .. container:: description
 
       Complex zero of the polezero stage.
+
+.
 
 
 
@@ -1410,7 +1566,11 @@
 
    .. container:: description
 
-      Real part of the pole or zero. Representation of floating-point numbers without unit.
+      Real part of the pole or zero.
+
+      Representation of floating-point numbers without unit.
+
+.
 
 
 
@@ -1454,7 +1614,11 @@
 
    .. container:: description
 
-      Imaginary part of the pole or zero. Representation of floating-point numbers without unit.
+      Imaginary part of the pole or zero.
+
+      Representation of floating-point numbers without unit.
+
+.
 
 
 
@@ -1489,6 +1653,8 @@
    .. container:: description
 
       Complex pole of the polezero stage.
+
+.
 
 
 
@@ -1548,7 +1714,11 @@
 
    .. container:: description
 
-      Real part of the pole or zero. Representation of floating-point numbers without unit.
+      Real part of the pole or zero.
+
+      Representation of floating-point numbers without unit.
+
+.
 
 
 
@@ -1592,7 +1762,11 @@
 
    .. container:: description
 
-      Imaginary part of the pole or zero. Representation of floating-point numbers without unit.
+      Imaginary part of the pole or zero.
+
+      Representation of floating-point numbers without unit.
+
+.
 
 
 
@@ -1626,7 +1800,11 @@
 
    .. container:: description
 
-      Response type for FIR coefficients. Laplace transforms or IIR filters can both be expressed using type as well but the PolesAndZerosType should be used instead.
+      Response type for FIR coefficients. Laplace transforms or IIR
+      filters can both be expressed using type as well but the PolesAndZerosType should be used
+      instead.
+
+.
 
 
 
@@ -1691,7 +1869,9 @@
 
    .. container:: description
 
-      The description of the filter/stage/response.
+      The description of the filter/stage/response
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1708,7 +1888,13 @@
 
    .. container:: description
 
-      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example
+      if stage 1 represented a seismometer, InputUnits would be 'm/s'
+      and OutputUnits would be 'V'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -1753,7 +1939,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1780,7 +1970,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1797,7 +1990,14 @@
 
    .. container:: description
 
-      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example
+      if stage 2 represented the AtoD stage of a data logger,
+      InputUnits would be 'V'
+      and OutputUnits would be 'count'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -1842,7 +2042,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1869,7 +2073,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1896,7 +2103,10 @@
 
    .. container:: description
 
-      Almost always a digital response, but can be an analog response in rad/sec or Hertz.
+      Almost always a digital response, but can be an
+      analog response in rad/sec or Hertz.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1923,7 +2133,9 @@
 
    .. container:: description
 
-      Numerator for the coefficient.
+      Numerator for the coefficient
+
+.
 
 
 
@@ -1968,7 +2180,9 @@
 
    .. container:: description
 
-      Denominator for the coefficient.
+      Denominator for the coefficient
+
+.
 
 
 
@@ -2004,6 +2218,8 @@
    .. container:: description
 
       Response type for a list of frequency, amplitude, and phase values.
+
+.
 
 
 
@@ -2066,7 +2282,9 @@
 
    .. container:: description
 
-      The description of the filter/stage/response.
+      The description of the filter/stage/response
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2083,7 +2301,13 @@
 
    .. container:: description
 
-      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example
+      if stage 1 represented a seismometer, InputUnits would be 'm/s'
+      and OutputUnits would be 'V'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -2128,7 +2352,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2155,7 +2383,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2172,7 +2403,14 @@
 
    .. container:: description
 
-      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example
+      if stage 2 represented the AtoD stage of a data logger,
+      InputUnits would be 'V'
+      and OutputUnits would be 'count'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -2217,7 +2455,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2244,7 +2486,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2346,6 +2591,8 @@
 
       Representation of floating-point numbers used as measurements.
 
+.
+
 
 
 
@@ -2424,7 +2671,11 @@
 
    .. container:: description
 
-      Response type for FIR filter. FIR filters are also commonly documented using the Coefficients element, with this newer type allowing representation of symmetric FIR coefficients without repeating them.
+      Response type for FIR filter.  FIR filters
+      are also commonly documented using the Coefficients element, with this newer type
+      allowing representation of symmetric FIR coefficients without repeating them.
+
+.
 
 
 
@@ -2488,7 +2739,9 @@
 
    .. container:: description
 
-      The description of the filter/stage/response.
+      The description of the filter/stage/response
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2505,7 +2758,13 @@
 
    .. container:: description
 
-      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example
+      if stage 1 represented a seismometer, InputUnits would be 'm/s'
+      and OutputUnits would be 'V'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -2550,7 +2809,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2577,7 +2840,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2594,7 +2860,14 @@
 
    .. container:: description
 
-      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example
+      if stage 2 represented the AtoD stage of a data logger,
+      InputUnits would be 'V'
+      and OutputUnits would be 'count'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -2639,7 +2912,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2666,7 +2943,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2693,7 +2973,12 @@
 
    .. container:: description
 
-      The symmetry code. Designates how the factors will be specified. NONE: No Symmetry - all Coefficients are specified, corresponds to A in SEED. ODD: Odd number Coefficients with symmetry, B in SEED. EVEN: Even number Coefficients with symmetry. C in SEED.
+      The symmetry code. Designates how the factors will be specified.
+      NONE: No Symmetry - all Coefficients are specified, corresponds to A in SEED.
+      ODD: Odd number Coefficients with symmetry, B in SEED.
+      EVEN: Even number Coefficients with symmetry. C in SEED.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2748,7 +3033,9 @@
 
    .. container:: description
 
-      Representation of decimation stage.
+      Representation of decimation stage
+
+.
 
 
 
@@ -2839,6 +3126,8 @@
 
       The factor of the input sample rate by which the rate is reduced.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -2864,7 +3153,11 @@
 
    .. container:: description
 
-      Sample offset chosen for use. The value should be greater than or equal to zero, but less than the decimation factor. If the first sample is used, set this field to zero. If the second sample, set it to 1, and so forth.
+      Sample offset chosen for use. The value should be greater than or equal to zero,
+      but less than the decimation factor. If the first sample is used, set this field to zero.
+      If the second sample, set it to 1, and so forth.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2891,7 +3184,16 @@
 
    .. container:: description
 
-      The estimated pure delay for the stage. This value will almost always be positive to indicate a delayed signal. Due to the difficulty in estimating the pure delay of a stage and because dispersion is neglected, this value should be considered nominal. Normally the delay would be corrected by the recording system and the correction applied would be specified in <Correction> below. See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention. Representation of floating-point numbers used as measurements.
+      The estimated pure delay for the stage. This value will almost always be positive
+      to indicate a delayed signal. Due to the difficulty in estimating the pure delay
+      of a stage and because dispersion is neglected, this value should be
+      considered nominal.  Normally the delay would be corrected by the
+      recording system and the correction applied would be specified in <Correction> below.
+      See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention.
+
+      Representation of floating-point numbers used as measurements.
+
+.
 
 
 
@@ -2936,7 +3238,17 @@
 
    .. container:: description
 
-      The time shift, if any, applied to correct for the delay at this stage. The sign convention used is opposite the <Delay> value; a positive sign here indicates that the trace was corrected to an earlier time to cancel the delay caused by the stage and indicated in the <Delay> element. Commonly, the estimated delay and the applied correction are both positive to cancel each other. A value of zero indicates no correction was applied. See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention. Representation of floating-point numbers used as measurements.
+      The time shift, if any, applied to correct for the delay at this stage.
+      The sign convention used is opposite the <Delay> value; a positive sign here
+      indicates that the trace was corrected to an earlier time to cancel the
+      delay caused by the stage and indicated in the <Delay> element.
+      Commonly, the estimated delay and the applied correction are both positive to cancel
+      each other.  A value of zero indicates no correction was applied.
+      See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention.
+
+      Representation of floating-point numbers used as measurements.
+
+.
 
 
 
@@ -2971,7 +3283,15 @@
 
    .. container:: description
 
-      The gain at the stage of the encapsulating response element at a specific frequency. Total channel sensitivity should be specified in the InstrumentSensitivity element. Type used for representing sensitivity at a given frequency. This complex type can be used to represent both total sensitivities and individual stage gains.
+      The gain at the stage of the encapsulating
+      response element at a specific frequency.
+      Total channel sensitivity should be specified in the InstrumentSensitivity
+      element.
+
+      Type used for representing sensitivity at a given frequency. This complex type
+      can be used to represent both total sensitivities and individual stage gains.
+
+.
 
 
 
@@ -3016,7 +3336,10 @@
 
    .. container:: description
 
-      A scalar value representing the amount of amplification or diminuition, if any, the current stage applies to the input signal.
+      A scalar value representing the amount of amplification or diminuition, if any,
+      the current stage applies to the input signal.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3045,6 +3368,8 @@
 
       The frequency (in Hertz) at which the Value is valid.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -3060,7 +3385,19 @@
 
    .. container:: description
 
-      When a response is given in terms of a polynomial expansion of powers of the sensor output signal (e.g., Volts), a Polynomial stage is required to specify the Maclaurin coefficients of the expansion. In addition, an InstrumentPolynomial element must be present at Response level to represent the whole acquisition process, which contains the same Maclaurin coefficients, but scaled by powers of the overall gain for all stages. Response type for a reponse represented as a polynomial expansion, which allows non-linear sensors to be described. Used at either a stage of acquisition response or a complete system.
+      When a response is given in terms of a polynomial expansion of
+      powers of the sensor output signal (e.g., Volts), a Polynomial stage is
+      required to specify the Maclaurin coefficients of the expansion.
+      
+      In addition, an InstrumentPolynomial element must be present at Response level
+      to represent the whole acquisition process, which contains the same Maclaurin
+      coefficients, but scaled by powers of the overall gain for all stages.
+
+      Response type for a reponse represented as a polynomial expansion,
+      which allows non-linear sensors to be described. Used at either a stage of
+      acquisition response or a complete system.
+
+.
 
 
 
@@ -3129,7 +3466,9 @@
 
    .. container:: description
 
-      The description of the filter/stage/response.
+      The description of the filter/stage/response
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3146,7 +3485,13 @@
 
    .. container:: description
 
-      The units of the data as input from the previous stage. For example if stage 1 represented a seismometer, InputUnits would be 'm/s' and OutputUnits would be 'V'. A type to document units; use SI whenever possible.
+      The units of the data as input from the previous stage. For example
+      if stage 1 represented a seismometer, InputUnits would be 'm/s'
+      and OutputUnits would be 'V'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -3191,7 +3536,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3218,7 +3567,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3235,7 +3587,14 @@
 
    .. container:: description
 
-      The units of the data as output to the following stage. For example if stage 2 represented the AtoD stage of a data logger, InputUnits would be 'V' and OutputUnits would be 'count'. A type to document units; use SI whenever possible.
+      The units of the data as output to the following stage. For example
+      if stage 2 represented the AtoD stage of a data logger,
+      InputUnits would be 'V'
+      and OutputUnits would be 'count'.
+
+      A type to document units; use SI whenever possible.
+
+.
 
 
 
@@ -3280,7 +3639,11 @@
 
    .. container:: description
 
-      Symbol or name of units, e.g. "m/s", "V", "Pa", "C". Use SI whenever possible, along with singular lowercase "count" for digital counts.
+      Symbol or name of units, e.g. "m/s", "V", "Pa", "C".
+      Use SI whenever possible, along with singular lowercase
+      "count" for digital counts.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3307,7 +3670,10 @@
 
    .. container:: description
 
-      Description of units, e.g. "Velocity in meters per second", "Volts", "Pascals", "Degrees Celsius".
+      Description of units, e.g. "Velocity in meters per second",
+      "Volts", "Pascals", "Degrees Celsius".
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3334,7 +3700,9 @@
 
    .. container:: description
 
-      The series type for the polynomial approximation.
+      The series type for the polynomial approximation
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3362,6 +3730,8 @@
    .. container:: description
 
       The lower bound of the frequency range.
+
+.
 
 
 
@@ -3408,6 +3778,8 @@
 
       The upper bound of the frequency range.
 
+.
+
 
 
 
@@ -3453,6 +3825,8 @@
 
       The lower bound of the approximation range.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -3480,6 +3854,8 @@
 
       The upper bound of the approximation range.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -3506,6 +3882,8 @@
    .. container:: description
 
       The maximum error of the approximation.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`

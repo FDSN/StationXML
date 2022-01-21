@@ -17,6 +17,8 @@
 
       Root-level for StationXML documents.
 
+.
+
 
 
 
@@ -30,7 +32,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **schemaVersion**, :ref:`decimal<type-glossary>`, :red:`yes`, "The StationXML schema version of this document.", "schemaVersion=\"1.1\"" 
+      **schemaVersion**, :ref:`decimal<type-glossary>`, :red:`yes`, "The StationXML schema version of this document.", "schemaVersion=\"1.1.1-alpha\"" 
 
 
 
@@ -81,6 +83,8 @@
 
       Originator of the information contained in the document.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -108,6 +112,8 @@
 
       Name of the institution sending this document.
 
+.
+
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
@@ -134,6 +140,8 @@
    .. container:: description
 
       Name of the software module that generated this document.
+
+.
 
    .. container:: example
 
@@ -164,7 +172,10 @@
 
    .. container:: description
 
-      Resource identifier of the query that generated the document, or, if applicable, the resource identifier of the software that generated this document.
+      Resource identifier of the query that generated the document,
+      or, if applicable, the resource identifier of the software that generated this document.
+
+.
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -192,4 +203,6 @@
    .. container:: description
 
       Date that this document was generated.
+
+.
 
