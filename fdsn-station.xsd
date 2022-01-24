@@ -622,6 +622,19 @@
 			<xs:documentation>Type for channel response entry or stage.  A full response is
 				represented as an ordered sequence of these stages.
 			</xs:documentation>
+      <xs:documentation>
+				A filter, (PolesZeros, Coefficients, FIR, etc) is not required, but is
+        recommended to provide a place to store the input and output units
+        even in the case of "gain-only" stages.
+
+        For an analog gain-only stage, use a PolesZeros filter with no poles
+        or zeros, PzTransferFunctionType=LAPLACE (RADIANS/SECOND)",
+        NormalizationFactor=1 and NormalizationFrequency=0.
+
+        For a digital gain-only stage, use a FIR filter with one
+        numerator with value 1.0, and symmetry=NONE. While a digital Coefficients
+        filter can serve the same purpose and is common, the FIR filter is more concise.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:choice>
