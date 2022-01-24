@@ -1521,6 +1521,9 @@
 				<xs:annotation>
 					<xs:documentation>Description of units, e.g. "Velocity in meters per second",
 						"Volts", "Pascals", "Degrees Celsius".
+            Description is only needed when the unit name is not a well know
+            SI unit or there is need for clarification. Prefer not to use a
+            Description for common units like `m/s`, `m/s**2`, `count`, etc.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>

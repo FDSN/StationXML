@@ -94,6 +94,10 @@ details see the SI brochure at:
 
 * Singular lowercase `count` is preferred for digital counts, do not use `counts` or `COUNT`
 
+* Description is only needed when the unit name is not a well know
+  SI unit or there is need for clarification. Prefer not to use a
+  Description for common units like `m/s`, `m/s**2`, `count`, etc.
+
 In the SEED format all unit names are recommended to be uppercase and
 SI when possible.  For this reason, some unit documentation and
 required declarations in StationXML are in "uppercase SI" and these
