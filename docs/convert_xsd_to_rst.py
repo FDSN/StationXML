@@ -171,14 +171,9 @@ def write_tree(element, stop_element, outfile, first_time = True):
         description=urlInserter(description)
         description=mathBlock(description,element.level)
 
-        # Add period if needs it
         print("   .. container:: description\n", file=outfile)
-        if description[-1]==".":
-            print("%s\n" % description, file=outfile)
-        else:
-            print("%s.\n" % description, file=outfile)
+        print("%s\n" % description, file=outfile)
 
-    # Add period if needs it
     for example in element.example:
         exampleStr = ""
         if isinstance(example, ElementTree.Element):
