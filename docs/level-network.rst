@@ -23,7 +23,7 @@
       An active Network should not use the endDate attribute.
       Unlike SEED, do not use an endDate in the distant future to mean active.
 
-.
+
 
    .. container:: example
 
@@ -101,7 +101,7 @@
 
       Description of the Network
 
-.
+
 
    .. container:: example
 
@@ -136,7 +136,7 @@
       Identifier values should be specified without a URI scheme (prefix),
       instead the identifier type is documented as an attribute.
 
-.
+
 
 
 
@@ -170,7 +170,7 @@
 
       Container for a comment or log entry.
 
-.
+
 
 
 
@@ -235,7 +235,7 @@
 
       Comment text.
 
-.
+
 
    .. container:: example
 
@@ -268,7 +268,7 @@
 
       Start time for when comment applies.
 
-.
+
 
    .. container:: example
 
@@ -301,7 +301,7 @@
 
       End time for when comment applies.
 
-.
+
 
    .. container:: example
 
@@ -327,7 +327,7 @@
       Person's contact information. A person can belong
       to multiple agencies and have multiple email addresses and phone numbers.
 
-.
+
 
 
 
@@ -376,7 +376,7 @@
 
       Name of contact or author
 
-.
+
 
    .. container:: example
 
@@ -409,7 +409,7 @@
 
       Agency of contact or author
 
-.
+
 
    .. container:: example
 
@@ -442,7 +442,7 @@
 
       Email of contact or author
 
-.
+
 
    .. container:: example
 
@@ -465,7 +465,7 @@
 
       Phone of contact or author
 
-.
+
 
 
 
@@ -528,7 +528,7 @@
 
       Telephone country code
 
-.
+
 
    .. container:: example
 
@@ -561,7 +561,7 @@
 
       Telephone area code
 
-.
+
 
    .. container:: example
 
@@ -594,7 +594,7 @@
 
       Telephone number
 
-.
+
 
    .. container:: example
 
@@ -625,7 +625,7 @@
 
       A type for describing data availability.
 
-.
+
 
 
 
@@ -664,7 +664,7 @@
       latest data available. No information about the continuity of the data
       is included or implied.
 
-.
+
 
 
 
@@ -703,7 +703,7 @@
       range. It may also be a smaller time window than the request depending on the data
       characteristics.
 
-.
+
 
 
 
@@ -745,7 +745,7 @@
       It is expected that typically the contact's optional Agency tag will match the Operator Agency.
       Only contacts appropriate for the enclosing element should be include in the Operator tag.
 
-.
+
 
 
 
@@ -793,7 +793,7 @@
 
       An operating agency and associated contact persons.
 
-.
+
 
    .. container:: example
 
@@ -817,7 +817,7 @@
       Person's contact information. A person can belong
       to multiple agencies and have multiple email addresses and phone numbers.
 
-.
+
 
 
 
@@ -866,7 +866,7 @@
 
       Name of contact or author
 
-.
+
 
    .. container:: example
 
@@ -899,7 +899,7 @@
 
       Agency of contact or author
 
-.
+
 
    .. container:: example
 
@@ -932,7 +932,7 @@
 
       Email of contact or author
 
-.
+
 
    .. container:: example
 
@@ -955,7 +955,7 @@
 
       Phone of contact or author
 
-.
+
 
 
 
@@ -1018,7 +1018,7 @@
 
       Telephone country code
 
-.
+
 
    .. container:: example
 
@@ -1051,7 +1051,7 @@
 
       Telephone area code
 
-.
+
 
    .. container:: example
 
@@ -1084,7 +1084,7 @@
 
       Telephone number
 
-.
+
 
    .. container:: example
 
@@ -1117,7 +1117,7 @@
 
       Website of operating agency
 
-.
+
 
    .. container:: example
 
@@ -1159,7 +1159,7 @@
       The total number of stations in this
       network, including inactive or terminated stations.
 
-.
+
 
    .. container:: example
 
@@ -1201,7 +1201,7 @@
       The number of stations selected in the request that resulted
       in this document.
 
-.
+
 
    .. container:: example
 

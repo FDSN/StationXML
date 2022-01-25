@@ -21,7 +21,7 @@
       frequency or within a range of frequencies.
       It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present.
 
-.
+
 
 
 
@@ -79,7 +79,7 @@
 
       Type for sensitivity, input/output units and relevant frequency range.
 
-.
+
 
 
 
@@ -132,7 +132,7 @@
       A scalar value representing the amount of amplification or diminuition, if any,
       the current stage applies to the input signal.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -161,7 +161,7 @@
 
       The frequency (in Hertz) at which the Value is valid.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -184,7 +184,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -233,7 +233,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -263,7 +263,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -286,7 +286,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -335,7 +335,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -365,7 +365,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -396,7 +396,7 @@
       <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not
       required, however, if one of these is present, then all must be present.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -427,7 +427,7 @@
       <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not
       required, however, if one of these is present, then all must be present.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -458,7 +458,7 @@
       <FrequencyStart>, <FrequencyEnd> and <FrequencyDBVariation> are not
       required, however, if one of these is present, then all must be present.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -492,7 +492,7 @@
       which allows non-linear sensors to be described. Used at either a stage of
       acquisition response or a complete system.
 
-.
+
 
 
 
@@ -563,7 +563,7 @@
 
       The description of the filter/stage/response
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -586,7 +586,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -635,7 +635,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -665,7 +665,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -689,7 +689,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -738,7 +738,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -768,7 +768,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -797,7 +797,7 @@
 
       The series type for the polynomial approximation
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -826,7 +826,7 @@
 
       The lower bound of the frequency range.
 
-.
+
 
 
 
@@ -873,7 +873,7 @@
 
       The upper bound of the frequency range.
 
-.
+
 
 
 
@@ -920,7 +920,7 @@
 
       The lower bound of the approximation range.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -949,7 +949,7 @@
 
       The upper bound of the approximation range.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -978,7 +978,7 @@
 
       The maximum error of the approximation.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1039,7 +1039,7 @@
       Type for channel response entry or stage.  A full response is
       represented as an ordered sequence of these stages.
 
-.
+
 
 
 
@@ -1098,7 +1098,7 @@
       Response stage described by the complex poles and zeros of the Laplace Transform (or z-transform)
       of the transfer function for this stage.
 
-.
+
 
 
 
@@ -1167,7 +1167,7 @@
 
       The description of the filter/stage/response
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1190,7 +1190,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -1239,7 +1239,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1269,7 +1269,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1293,7 +1293,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -1342,7 +1342,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1372,7 +1372,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1406,7 +1406,7 @@
       For a digial z-transform (e.g., for an IIR filter), this should be
       "DIGITAL (Z-TRANSFORM)"
 
-.
+
 
    .. container:: example
 
@@ -1439,7 +1439,7 @@
 
       Normalization scale factor
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1469,7 +1469,7 @@
       Frequency at which the NormalizationFactor is valid.
       This should be the same for all stages and within the passband, if any.
 
-.
+
 
 
 
@@ -1506,7 +1506,7 @@
 
       Complex zero of the polezero stage.
 
-.
+
 
 
 
@@ -1570,7 +1570,7 @@
 
       Representation of floating-point numbers without unit.
 
-.
+
 
 
 
@@ -1618,7 +1618,7 @@
 
       Representation of floating-point numbers without unit.
 
-.
+
 
 
 
@@ -1654,7 +1654,7 @@
 
       Complex pole of the polezero stage.
 
-.
+
 
 
 
@@ -1718,7 +1718,7 @@
 
       Representation of floating-point numbers without unit.
 
-.
+
 
 
 
@@ -1766,7 +1766,7 @@
 
       Representation of floating-point numbers without unit.
 
-.
+
 
 
 
@@ -1804,7 +1804,7 @@
       filters can both be expressed using type as well but the PolesAndZerosType should be used
       instead.
 
-.
+
 
 
 
@@ -1871,7 +1871,7 @@
 
       The description of the filter/stage/response
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1894,7 +1894,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -1943,7 +1943,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1973,7 +1973,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1997,7 +1997,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -2046,7 +2046,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2076,7 +2076,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2106,7 +2106,7 @@
       Almost always a digital response, but can be an
       analog response in rad/sec or Hertz.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2135,7 +2135,7 @@
 
       Numerator for the coefficient
 
-.
+
 
 
 
@@ -2182,7 +2182,7 @@
 
       Denominator for the coefficient
 
-.
+
 
 
 
@@ -2219,7 +2219,7 @@
 
       Response type for a list of frequency, amplitude, and phase values.
 
-.
+
 
 
 
@@ -2284,7 +2284,7 @@
 
       The description of the filter/stage/response
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2307,7 +2307,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -2356,7 +2356,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2386,7 +2386,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2410,7 +2410,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -2459,7 +2459,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2489,7 +2489,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2591,7 +2591,7 @@
 
       Representation of floating-point numbers used as measurements.
 
-.
+
 
 
 
@@ -2675,7 +2675,7 @@
       are also commonly documented using the Coefficients element, with this newer type
       allowing representation of symmetric FIR coefficients without repeating them.
 
-.
+
 
 
 
@@ -2741,7 +2741,7 @@
 
       The description of the filter/stage/response
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2764,7 +2764,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -2813,7 +2813,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2843,7 +2843,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2867,7 +2867,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -2916,7 +2916,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2946,7 +2946,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2978,7 +2978,7 @@
       ODD: Odd number Coefficients with symmetry, B in SEED.
       EVEN: Even number Coefficients with symmetry. C in SEED.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3035,7 +3035,7 @@
 
       Representation of decimation stage
 
-.
+
 
 
 
@@ -3126,7 +3126,7 @@
 
       The factor of the input sample rate by which the rate is reduced.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3157,7 +3157,7 @@
       but less than the decimation factor. If the first sample is used, set this field to zero.
       If the second sample, set it to 1, and so forth.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3193,7 +3193,7 @@
 
       Representation of floating-point numbers used as measurements.
 
-.
+
 
 
 
@@ -3248,7 +3248,7 @@
 
       Representation of floating-point numbers used as measurements.
 
-.
+
 
 
 
@@ -3291,7 +3291,7 @@
       Type used for representing sensitivity at a given frequency. This complex type
       can be used to represent both total sensitivities and individual stage gains.
 
-.
+
 
 
 
@@ -3339,7 +3339,7 @@
       A scalar value representing the amount of amplification or diminuition, if any,
       the current stage applies to the input signal.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3368,7 +3368,7 @@
 
       The frequency (in Hertz) at which the Value is valid.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3397,7 +3397,7 @@
       which allows non-linear sensors to be described. Used at either a stage of
       acquisition response or a complete system.
 
-.
+
 
 
 
@@ -3468,7 +3468,7 @@
 
       The description of the filter/stage/response
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3491,7 +3491,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -3540,7 +3540,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3570,7 +3570,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3594,7 +3594,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
 
 
@@ -3643,7 +3643,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3673,7 +3673,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3702,7 +3702,7 @@
 
       The series type for the polynomial approximation
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3731,7 +3731,7 @@
 
       The lower bound of the frequency range.
 
-.
+
 
 
 
@@ -3778,7 +3778,7 @@
 
       The upper bound of the frequency range.
 
-.
+
 
 
 
@@ -3825,7 +3825,7 @@
 
       The lower bound of the approximation range.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3854,7 +3854,7 @@
 
       The upper bound of the approximation range.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -3883,7 +3883,7 @@
 
       The maximum error of the approximation.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`

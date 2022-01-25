@@ -23,7 +23,7 @@
       An active Channel should not use the endDate attribute.
       Unlike SEED, do not use an endDate in the distant future to mean active.
 
-.
+
 
 
 
@@ -112,7 +112,7 @@
 
       Description of the Channel
 
-.
+
 
    .. container:: example
 
@@ -147,7 +147,7 @@
       Identifier values should be specified without a URI scheme (prefix),
       instead the identifier type is documented as an attribute.
 
-.
+
 
 
 
@@ -181,7 +181,7 @@
 
       Container for a comment or log entry.
 
-.
+
 
 
 
@@ -246,7 +246,7 @@
 
       Comment text.
 
-.
+
 
    .. container:: example
 
@@ -279,7 +279,7 @@
 
       Start time for when comment applies.
 
-.
+
 
    .. container:: example
 
@@ -312,7 +312,7 @@
 
       End time for when comment applies.
 
-.
+
 
    .. container:: example
 
@@ -338,7 +338,7 @@
       Person's contact information. A person can belong
       to multiple agencies and have multiple email addresses and phone numbers.
 
-.
+
 
 
 
@@ -387,7 +387,7 @@
 
       Name of contact or author
 
-.
+
 
    .. container:: example
 
@@ -420,7 +420,7 @@
 
       Agency of contact or author
 
-.
+
 
    .. container:: example
 
@@ -453,7 +453,7 @@
 
       Email of contact or author
 
-.
+
 
    .. container:: example
 
@@ -476,7 +476,7 @@
 
       Phone of contact or author
 
-.
+
 
 
 
@@ -539,7 +539,7 @@
 
       Telephone country code
 
-.
+
 
    .. container:: example
 
@@ -572,7 +572,7 @@
 
       Telephone area code
 
-.
+
 
    .. container:: example
 
@@ -605,7 +605,7 @@
 
       Telephone number
 
-.
+
 
    .. container:: example
 
@@ -636,7 +636,7 @@
 
       A type for describing data availability.
 
-.
+
 
 
 
@@ -675,7 +675,7 @@
       latest data available. No information about the continuity of the data
       is included or implied.
 
-.
+
 
 
 
@@ -714,7 +714,7 @@
       range. It may also be a smaller time window than the request depending on the data
       characteristics.
 
-.
+
 
 
 
@@ -754,7 +754,7 @@
       This type contains a Uniform Resource Identifier (URI) and and description
       for external information that users may want to reference.
 
-.
+
 
 
 
@@ -801,7 +801,7 @@
 
       URI of the external reference.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -830,7 +830,7 @@
 
       Description of the external reference.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -867,7 +867,7 @@
 
       Latitude type extending the base type to add datum as an attribute with default.
 
-.
+
 
    .. container:: example
 
@@ -927,7 +927,7 @@
 
       Longitude type extending the base type to add datum as an attribute with default.
 
-.
+
 
    .. container:: example
 
@@ -982,7 +982,7 @@
 
       Extension of FloatType for distances, elevations, and depths.
 
-.
+
 
 
 
@@ -1031,7 +1031,7 @@
 
       Extension of FloatType for distances, elevations, and depths.
 
-.
+
 
 
 
@@ -1084,7 +1084,7 @@
 
       Instrument azimuth, degrees clockwise from North.
 
-.
+
 
 
 
@@ -1137,7 +1137,7 @@
 
       Instrument dip in degrees, positive down from horizontal.
 
-.
+
 
 
 
@@ -1189,7 +1189,7 @@
 
       Representation of floating-point numbers used as measurements.
 
-.
+
 
 
 
@@ -1239,7 +1239,7 @@
       The value between the <Type> tags must be one of:
       TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG or SYNTHESIZED.
 
-.
+
 
    .. container:: example
 
@@ -1357,7 +1357,7 @@
 
       Integer number of samples that span a number of seconds.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1386,7 +1386,7 @@
 
       Integer number of seconds that span a number of samples.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1420,7 +1420,7 @@
       Tolerance value, measured in seconds per sample,
       used as a threshold for time error detection in data from the channel.
 
-.
+
 
 
 
@@ -1461,7 +1461,7 @@
 
       A type to document units; use SI whenever possible.
 
-.
+
 
    .. container:: example
 
@@ -1518,7 +1518,7 @@
       Use SI whenever possible, along with singular lowercase
       "count" for digital counts.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1548,7 +1548,7 @@
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1571,7 +1571,7 @@
 
       A type for equipment related to data acquisition or processing.
 
-.
+
 
 
 
@@ -1640,7 +1640,7 @@
 
       Type of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1669,7 +1669,7 @@
 
       Description of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1698,7 +1698,7 @@
 
       Manufacturer of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1727,7 +1727,7 @@
 
       Vendor of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1756,7 +1756,7 @@
 
       Model of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1785,7 +1785,7 @@
 
       Serial number of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1814,7 +1814,7 @@
 
       Date this equipment was installed
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1843,7 +1843,7 @@
 
       Date this equipment was removed
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1872,7 +1872,7 @@
 
       Date this equipment was calibrated
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1894,7 +1894,7 @@
 
       A type for equipment related to data acquisition or processing.
 
-.
+
 
 
 
@@ -1963,7 +1963,7 @@
 
       Type of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1992,7 +1992,7 @@
 
       Description of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2021,7 +2021,7 @@
 
       Manufacturer of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2050,7 +2050,7 @@
 
       Vendor of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2079,7 +2079,7 @@
 
       Model of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2108,7 +2108,7 @@
 
       Serial number of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2137,7 +2137,7 @@
 
       Date this equipment was installed
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2166,7 +2166,7 @@
 
       Date this equipment was removed
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2195,7 +2195,7 @@
 
       Date this equipment was calibrated
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2217,7 +2217,7 @@
 
       A type for equipment related to data acquisition or processing.
 
-.
+
 
 
 
@@ -2286,7 +2286,7 @@
 
       Type of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2315,7 +2315,7 @@
 
       Description of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2344,7 +2344,7 @@
 
       Manufacturer of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2373,7 +2373,7 @@
 
       Vendor of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2402,7 +2402,7 @@
 
       Model of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2431,7 +2431,7 @@
 
       Serial number of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2460,7 +2460,7 @@
 
       Date this equipment was installed
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2489,7 +2489,7 @@
 
       Date this equipment was removed
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2518,7 +2518,7 @@
 
       Date this equipment was calibrated
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2542,7 +2542,7 @@
 
       A type for equipment related to data acquisition or processing.
 
-.
+
 
 
 
@@ -2611,7 +2611,7 @@
 
       Type of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2640,7 +2640,7 @@
 
       Description of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2669,7 +2669,7 @@
 
       Manufacturer of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2698,7 +2698,7 @@
 
       Vendor of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2727,7 +2727,7 @@
 
       Model of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2756,7 +2756,7 @@
 
       Serial number of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2785,7 +2785,7 @@
 
       Date this equipment was installed
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2814,7 +2814,7 @@
 
       Date this equipment was removed
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2843,5 +2843,5 @@
 
       Date this equipment was calibrated
 
-.
+
 

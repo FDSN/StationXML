@@ -17,7 +17,7 @@
 
       Root-level for StationXML documents.
 
-.
+
 
 
 
@@ -83,7 +83,7 @@
 
       Originator of the information contained in the document.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -112,7 +112,7 @@
 
       Name of the institution sending this document.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -141,7 +141,7 @@
 
       Name of the software module that generated this document.
 
-.
+
 
    .. container:: example
 
@@ -175,7 +175,7 @@
       Resource identifier of the query that generated the document,
       or, if applicable, the resource identifier of the software that generated this document.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -204,5 +204,5 @@
 
       Date that this document was generated.
 
-.
+
 

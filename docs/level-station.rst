@@ -23,7 +23,7 @@
       An active Station should not use the endDate attribute.
       Unlike SEED, do not use an endDate in the distant future to mean active.
 
-.
+
 
 
 
@@ -108,7 +108,7 @@
 
       Description of the Station
 
-.
+
 
    .. container:: example
 
@@ -143,7 +143,7 @@
       Identifier values should be specified without a URI scheme (prefix),
       instead the identifier type is documented as an attribute.
 
-.
+
 
 
 
@@ -177,7 +177,7 @@
 
       Container for a comment or log entry.
 
-.
+
 
 
 
@@ -242,7 +242,7 @@
 
       Comment text.
 
-.
+
 
    .. container:: example
 
@@ -275,7 +275,7 @@
 
       Start time for when comment applies.
 
-.
+
 
    .. container:: example
 
@@ -308,7 +308,7 @@
 
       End time for when comment applies.
 
-.
+
 
    .. container:: example
 
@@ -334,7 +334,7 @@
       Person's contact information. A person can belong
       to multiple agencies and have multiple email addresses and phone numbers.
 
-.
+
 
 
 
@@ -383,7 +383,7 @@
 
       Name of contact or author
 
-.
+
 
    .. container:: example
 
@@ -416,7 +416,7 @@
 
       Agency of contact or author
 
-.
+
 
    .. container:: example
 
@@ -449,7 +449,7 @@
 
       Email of contact or author
 
-.
+
 
    .. container:: example
 
@@ -472,7 +472,7 @@
 
       Phone of contact or author
 
-.
+
 
 
 
@@ -535,7 +535,7 @@
 
       Telephone country code
 
-.
+
 
    .. container:: example
 
@@ -568,7 +568,7 @@
 
       Telephone area code
 
-.
+
 
    .. container:: example
 
@@ -601,7 +601,7 @@
 
       Telephone number
 
-.
+
 
    .. container:: example
 
@@ -632,7 +632,7 @@
 
       A type for describing data availability.
 
-.
+
 
 
 
@@ -671,7 +671,7 @@
       latest data available. No information about the continuity of the data
       is included or implied.
 
-.
+
 
 
 
@@ -710,7 +710,7 @@
       range. It may also be a smaller time window than the request depending on the data
       characteristics.
 
-.
+
 
 
 
@@ -764,7 +764,7 @@
 
       Latitude type extending the base type to add datum as an attribute with default.
 
-.
+
 
    .. container:: example
 
@@ -823,7 +823,7 @@
 
       Longitude type extending the base type to add datum as an attribute with default.
 
-.
+
 
    .. container:: example
 
@@ -877,7 +877,7 @@
 
       Extension of FloatType for distances, elevations, and depths.
 
-.
+
 
    .. container:: example
 
@@ -921,7 +921,7 @@
 
       Description of a site location using name and optional geopolitical boundaries (country, city, etc.).
 
-.
+
 
 
 
@@ -972,7 +972,7 @@
 
       Name of the site
 
-.
+
 
    .. container:: example
 
@@ -1005,7 +1005,7 @@
 
       A longer description of the location of this station
 
-.
+
 
    .. container:: example
 
@@ -1038,7 +1038,7 @@
 
       The town or city closest to the station.
 
-.
+
 
    .. container:: example
 
@@ -1071,7 +1071,7 @@
 
       The county where the station is located
 
-.
+
 
    .. container:: example
 
@@ -1104,7 +1104,7 @@
 
       The state, province, or region of this site.
 
-.
+
 
    .. container:: example
 
@@ -1137,7 +1137,7 @@
 
       The country of this site.
 
-.
+
 
    .. container:: example
 
@@ -1175,7 +1175,7 @@
 
       Representation of floating-point numbers used as measurements.
 
-.
+
 
    .. container:: example
 
@@ -1227,7 +1227,7 @@
       Type of vault, e.g. World-Wide Standardized Seismograph Network (WWSSN), tunnel,
       USArray Transportable Array Generation 2, etc.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1256,7 +1256,7 @@
 
       Type of rock and/or geologic formation at the station.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1278,7 +1278,7 @@
 
       A type for equipment related to data acquisition or processing.
 
-.
+
 
 
 
@@ -1347,7 +1347,7 @@
 
       Type of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1376,7 +1376,7 @@
 
       Description of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1405,7 +1405,7 @@
 
       Manufacturer of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1434,7 +1434,7 @@
 
       Vendor of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1463,7 +1463,7 @@
 
       Model of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1492,7 +1492,7 @@
 
       Serial number of equipment
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1521,7 +1521,7 @@
 
       Date this equipment was installed
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1550,7 +1550,7 @@
 
       Date this equipment was removed
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1579,7 +1579,7 @@
 
       Date this equipment was calibrated
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1604,7 +1604,7 @@
       It is expected that typically the contact's optional Agency tag will match the Operator Agency.
       Only contacts appropriate for the enclosing element should be include in the Operator tag.
 
-.
+
 
 
 
@@ -1652,7 +1652,7 @@
 
       An operating agency and associated contact persons.
 
-.
+
 
    .. container:: example
 
@@ -1676,7 +1676,7 @@
       Person's contact information. A person can belong
       to multiple agencies and have multiple email addresses and phone numbers.
 
-.
+
 
 
 
@@ -1725,7 +1725,7 @@
 
       Name of contact or author
 
-.
+
 
    .. container:: example
 
@@ -1758,7 +1758,7 @@
 
       Agency of contact or author
 
-.
+
 
    .. container:: example
 
@@ -1791,7 +1791,7 @@
 
       Email of contact or author
 
-.
+
 
    .. container:: example
 
@@ -1814,7 +1814,7 @@
 
       Phone of contact or author
 
-.
+
 
 
 
@@ -1877,7 +1877,7 @@
 
       Telephone country code
 
-.
+
 
    .. container:: example
 
@@ -1910,7 +1910,7 @@
 
       Telephone area code
 
-.
+
 
    .. container:: example
 
@@ -1943,7 +1943,7 @@
 
       Telephone number
 
-.
+
 
    .. container:: example
 
@@ -1976,7 +1976,7 @@
 
       Website of operating agency
 
-.
+
 
    .. container:: example
 
@@ -2013,7 +2013,7 @@
 
       Date and time (UTC) when the station was first installed.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2047,7 +2047,7 @@
       Date and time (UTC) when the station was terminated or
       will be terminated. Do not include this field if a termination date is not available or is not relevant.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2084,7 +2084,7 @@
 
       Total number of channels recorded at this station.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2121,7 +2121,7 @@
 
       The number of channels selected in the request that resulted in this document.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2143,7 +2143,7 @@
       This type contains a Uniform Resource Identifier (URI) and and description
       for external information that users may want to reference.
 
-.
+
 
 
 
@@ -2190,7 +2190,7 @@
 
       URI of the external reference.
 
-.
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -2219,5 +2219,5 @@
 
       Description of the external reference.
 
-.
+
 
