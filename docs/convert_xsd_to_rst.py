@@ -572,6 +572,8 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
         for y in xsd_element.annotation.documentation:
             for ex in y.findall("example"):
                 this_elem.add_example(ex)
+            for ex in y.findall("warning"):
+                this_elem.add_warning(ex)
             for ld in y.findall("levelDesc"):
                 this_elem.add_annotation(ld)
             if len(y) == 0 and y.text != None:
@@ -582,6 +584,8 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
         for y in xsd_element.type.annotation.documentation:
             for ex in y.findall("example"):
                 this_elem.add_example(ex)
+            for ex in y.findall("warning"):
+                this_elem.add_warning(ex)
             for ld in y.findall("levelDesc"):
                 this_elem.add_annotation(ld)
             if len(y) == 0 and y.text is not None:
@@ -651,6 +655,10 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
 
                         if attrib.annotation is not None:
                             for y in attrib.annotation.documentation:
+                                for ex in y.findall("example"):
+                                    attr.add_example(ex)
+                                for ex in y.findall("warning"):
+                                    attr.add_warning(ex)
                                 for ld in y.findall("levelDesc"):
                                     subElement.add_annotation(ld)
                                 if len(y) == 0 and y.text != None:
