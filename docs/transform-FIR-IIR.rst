@@ -318,9 +318,82 @@ Thus, we normally use FIR filters of type I or II for anti-alias filtering.
 Because of their symmetry, only half the coefficients need to be stored
 in the metadata.
 
-In StationXML, a symmetric filter can be represented using
-a `FIR <reference.html#response-stage-fir>`_ response stage,
-with sub-element indicating the symmetry (odd/even).
+In StationXML, a FIR filter can be represented using a FIR response stage, with
+sub-element indicating the symmetry (ODD/EVEN/NONE). Note that here, both ODD
+and EVEN symmetry refer to a symmetric FIR filter (there is no flag to indicate
+an asymmetric filter), with the ODD symmetry indicating the total number of FIR
+coefficients, M, is odd (so that the point of symmetry corresponds to index
+(M-1)/2 in the coefficient array. This is also referred to as a "Type I" FIR
+filter in dsp literature and is often used in seismic datalogger desampling
+sequences. In contrast, a symmetric FIR filter with EVEN symmetry has a total
+number of FIR coefficients, M, that is even. As a result, there is no actual
+index at the point of symmetry. This is also referred to as a "Type II" FIR
+filter.
+
+The purpose of the Symmetry element is to obviate the need to enter the entire M
+FIR coefficients when the filter is symmetric (ODD or EVEN). In the case of EVEN
+symmetry, only the unique M/2 coefficients need to be supplied, while in the
+case of ODD symmetry, the number of unique coefficients is M/2 + 1. In the case
+of EVEN symmetry (an even total number of coefficients), there will be an even
+number of unique coefficients.
+However, importantly, in the case of ODD symmetry (an odd total number of
+coefficients), the number of unique coefficients specified in the StationXML may
+be either odd or even.
+
+This simple exemple illustrate when to use ODD or EVEN :
+
+  .. xml::
+    <FIR>
+        <Symmetry>ODD</Symmetry>
+        <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
+        <NumeratorCoefficient i="2">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="3">0.5</NumeratorCoefficient>
+    </FIR>
+
+
+
+which expands to be equivalent to:
+
+  .. xml::
+    <FIR>
+        <Symmetry>NONE</Symmetry>
+        <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
+        <NumeratorCoefficient i="2">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="3">0.5</NumeratorCoefficient>
+        <NumeratorCoefficient i="4">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="5">0.1</NumeratorCoefficient>
+    </FIR>
+
+and also
+
+  .. xml::
+    <FIR>
+        <Symmetry>EVEN</Symmetry>
+        <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
+        <NumeratorCoefficient i="2">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="3">0.5</NumeratorCoefficient>
+    </FIR>
+
+which expands to be equivalent to:
+
+  .. xml::
+    <FIR>
+        <Symmetry>NONE</Symmetry>
+        <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
+        <NumeratorCoefficient i="2">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="3">0.5</NumeratorCoefficient>
+        <NumeratorCoefficient i="4">0.5</NumeratorCoefficient>
+        <NumeratorCoefficient i="5">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="6">0.1</NumeratorCoefficient>
+    </FIR>
+
+
+Note that one cannot tell the "symmetry" (ODD/EVEN/NONE) just by looking at
+the (possibly reduced) number of coefficients in the StationXML FIR element.
+
+When in doubt, simply enter all of the FIR coefficients with Symmetry = None, so
+that no assumptions will be made when calculating the frequency response of the
+filter.
 
 In contrast, a non-symmetrical FIR can only be stored in a more general
 `Coefficients <reference.html#response-stage-coefficients>`_ response stage,
@@ -331,6 +404,7 @@ stored in a `Coefficients <reference.html#response-stage-coefficients>`_ respons
 
 This is how the FIR response is calculated in ObsPy, which uses the
 venerable evalresp C code underneath the hood.
+
 Note that in evalresp, this type of filter is
 termed *FIR_ASYM*, meaning it can handle both symmetric (about the mid-point)
 and non-symmetric FIR coefficients.
