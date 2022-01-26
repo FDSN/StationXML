@@ -340,46 +340,55 @@ However, importantly, in the case of ODD symmetry (an odd total number of
 coefficients), the number of unique coefficients specified in the StationXML may
 be either odd or even.
 
-For example, the first decimation stage of the CENTAUR datalogger uses a FIR
-filter with M=173 total coefficients:
+This simple exemple illustrate when to use ODD or EVEN :
 
   .. xml::
-          <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
-          <Numerator number="0">-4.36251e-10</Numerator>
-          <Numerator number="1">-1.80638e-09</Numerator>
-          ...
-          <Numerator number="85">5.85357e-02</Numerator>
-          <Numerator number="86">5.89281e-02</Numerator>
-          <Numerator number="87">5.85357e-02</Numerator>
-          ...
-          <Numerator number="171">-1.80638e-09</Numerator>
-          <Numerator number="172">-4.36251e-10</Numerator>
-
-
-This filter has odd symmetry about coefficient number 86 (the 87th coefficient
-when counting from 1).
-Hence, to represent this as a FIR filter with ODD symmetry we would use:
-
-  .. xml::
-    <FIR name="CENTAUR_1_200_OFF_LP_4">
-      <Symmetry>ODD</Symmetry>
-      <NumeratorCoefficient i="1">-4.362506e-10</NumeratorCoefficient>
-      <NumeratorCoefficient i="2">-1.806376e-09</NumeratorCoefficient>
-      ...
-      <NumeratorCoefficient i="85">0.05736941</NumeratorCoefficient>
-      <NumeratorCoefficient i="86">0.05853568</NumeratorCoefficient>
-      <NumeratorCoefficient i="87">0.05892815</NumeratorCoefficient>
+    <FIR>
+        <Symmetry>ODD</Symmetry>
+        <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
+        <NumeratorCoefficient i="2">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="3">0.5</NumeratorCoefficient>
     </FIR>
 
 
-So the reduced number of symmetric coefficients is: :math:`(M-1)/2 + 1 =
-(173-1)/2 + 1 = 87`, which is odd.
 
-The next stage in the CENTAUR decimation sequence has M=95 coefficients and also
-has ODD symmetry, however, the number of symmetric coefficients is:
-:math:`(95-1)/2 + 1 = 48`, which is even.
+which expands to be equivalent to:
 
-The point is, one cannot tell the "symmetry" (ODD/EVEN/NONE) just by looking at
+  .. xml::
+    <FIR>
+        <Symmetry>NONE</Symmetry>
+        <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
+        <NumeratorCoefficient i="2">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="3">0.5</NumeratorCoefficient>
+        <NumeratorCoefficient i="4">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="5">0.1</NumeratorCoefficient>
+    </FIR>
+
+and also
+
+  .. xml::
+    <FIR>
+        <Symmetry>EVEN</Symmetry>
+        <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
+        <NumeratorCoefficient i="2">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="3">0.5</NumeratorCoefficient>
+    </FIR>
+
+which expands to be equivalent to:
+
+  .. xml::
+    <FIR>
+        <Symmetry>NONE</Symmetry>
+        <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
+        <NumeratorCoefficient i="2">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="3">0.5</NumeratorCoefficient>
+        <NumeratorCoefficient i="4">0.5</NumeratorCoefficient>
+        <NumeratorCoefficient i="5">0.4</NumeratorCoefficient>
+        <NumeratorCoefficient i="6">0.1</NumeratorCoefficient>
+    </FIR>
+
+
+Note that one cannot tell the "symmetry" (ODD/EVEN/NONE) just by looking at
 the (possibly reduced) number of coefficients in the StationXML FIR element.
 
 When in doubt, simply enter all of the FIR coefficients with Symmetry = None, so
@@ -395,6 +404,7 @@ stored in a `Coefficients <reference.html#response-stage-coefficients>`_ respons
 
 This is how the FIR response is calculated in ObsPy, which uses the
 venerable evalresp C code underneath the hood.
+
 Note that in evalresp, this type of filter is
 termed *FIR_ASYM*, meaning it can handle both symmetric (about the mid-point)
 and non-symmetric FIR coefficients.
