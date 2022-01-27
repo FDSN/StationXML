@@ -342,7 +342,8 @@ be either odd or even.
 
 This simple exemple illustrate when to use ODD or EVEN :
 
-  .. xml::
+  .. code-block:: XML
+
     <FIR>
         <Symmetry>ODD</Symmetry>
         <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
@@ -354,7 +355,8 @@ This simple exemple illustrate when to use ODD or EVEN :
 
 which expands to be equivalent to:
 
-  .. xml::
+  .. code-block:: XML
+
     <FIR>
         <Symmetry>NONE</Symmetry>
         <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
@@ -366,7 +368,8 @@ which expands to be equivalent to:
 
 and also
 
-  .. xml::
+  .. code-block:: XML
+  
     <FIR>
         <Symmetry>EVEN</Symmetry>
         <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
@@ -376,7 +379,8 @@ and also
 
 which expands to be equivalent to:
 
-  .. xml::
+  .. code-block:: XML
+
     <FIR>
         <Symmetry>NONE</Symmetry>
         <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
