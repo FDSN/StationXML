@@ -178,9 +178,9 @@
 
    .. container:: description
 
-      The units of the data as input from the perspective
-      of data acquisition. After correcting data for this response, these
-      would be the resulting units.
+      The units of the data as input to the sensor. For example
+      if stage 1 represented a seismometer, InputUnits would be 'm/s'
+      and OutputUnits would be 'V'.
 
       A type to document units; use SI whenever possible.
 
@@ -280,9 +280,9 @@
 
    .. container:: description
 
-      The units of the data as output from the perspective
-      of data acquisition. These would be the units of the data prior to
-      correcting for this response.
+      The units of the data as output from data
+      acquisition system. For most channels recorded by
+      systems that use an AtoD, the OutputUnits will be 'count'.
 
       A type to document units; use SI whenever possible.
 
@@ -1566,7 +1566,7 @@
 
    .. container:: description
 
-      Real part of the pole or zero.
+      Real part of the complex number.
 
       Representation of floating-point numbers without unit.
 
@@ -1614,7 +1614,7 @@
 
    .. container:: description
 
-      Imaginary part of the pole or zero.
+      Imaginary part of the complex number.
 
       Representation of floating-point numbers without unit.
 
@@ -1714,7 +1714,7 @@
 
    .. container:: description
 
-      Real part of the pole or zero.
+      Real part of the complex number.
 
       Representation of floating-point numbers without unit.
 
@@ -1762,7 +1762,7 @@
 
    .. container:: description
 
-      Imaginary part of the pole or zero.
+      Imaginary part of the complex number.
 
       Representation of floating-point numbers without unit.
 
@@ -2587,12 +2587,6 @@
 
 					content type: `double <appendices.html#glossary-double>`_
 
-   .. container:: description
-
-      Representation of floating-point numbers used as measurements.
-
-
-
 
 
 
@@ -3191,8 +3185,6 @@
       recording system and the correction applied would be specified in <Correction> below.
       See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention.
 
-      Representation of floating-point numbers used as measurements.
-
 
 
 
@@ -3245,8 +3237,6 @@
       Commonly, the estimated delay and the applied correction are both positive to cancel
       each other.  A value of zero indicates no correction was applied.
       See the Decimation Section in the StationXML documentation for a schematic description of delay sign convention.
-
-      Representation of floating-point numbers used as measurements.
 
 
 

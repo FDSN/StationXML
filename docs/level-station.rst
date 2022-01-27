@@ -38,7 +38,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"ALQ\"" 
+      **alternateCode**, :ref:`string<type-glossary>`, no, "A code used for display or association", "alternateCode=\"ALQ\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Station", "code=\"ABCD\"" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of station epoch. Do not use if still active, endDate should not be in the future.", "endDate=\"2018-01-27T00:00:00Z\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"albq\"" 
@@ -246,7 +246,7 @@
 
    .. container:: example
 
-      **Example**: <Value>GPS CLock is unlocked</Value>
+      **Example**: <Value>GPS Clock is unlocked</Value>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -875,8 +875,6 @@
 
       Elevation of local ground surface level at station, in meters.
 
-      Extension of FloatType for distances, elevations, and depths.
-
 
 
    .. container:: example
@@ -916,10 +914,7 @@
 
    .. container:: description
 
-      Description of the location of the station
-      using geopolitical entities (country, city, etc.).
-
-      Description of a site location using name and optional geopolitical boundaries (country, city, etc.).
+      Description of a location using name and optional geopolitical boundaries (country, city, etc.).
 
 
 
@@ -1172,8 +1167,6 @@
       If you put an OBS on a lake bottom, where the lake surface is at elevation=1200 meters,
       then you should set WaterLevel=1200. An OBS in the ocean would
       have WaterLevel=0.
-
-      Representation of floating-point numbers used as measurements.
 
 
 
@@ -1596,13 +1589,13 @@
 
    .. container:: description
 
-      Agency and contact persons who manage this station.
+      Agency who manage this station.
       Only use if this differs from the Operator of the Network.
 
       Since the Contact element is a generic type that represents any contact
       person, it also has its own optional Agency element.
       It is expected that typically the contact's optional Agency tag will match the Operator Agency.
-      Only contacts appropriate for the enclosing element should be include in the Operator tag.
+      Only contacts appropriate for the enclosing element should be included in the Operator tag.
 
 
 
@@ -1650,7 +1643,7 @@
 
    .. container:: description
 
-      An operating agency and associated contact persons.
+      The operating agency.
 
 
 
@@ -2140,7 +2133,7 @@
 
       URI of any type of external report
 
-      This type contains a Uniform Resource Identifier (URI) and and description
+      This type contains a Uniform Resource Identifier (URI) and description
       for external information that users may want to reference.
 
 

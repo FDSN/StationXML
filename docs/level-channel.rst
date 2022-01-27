@@ -38,7 +38,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"Z\"" 
+      **alternateCode**, :ref:`string<type-glossary>`, no, "A code used for display or association", "alternateCode=\"Z\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Channel", "code=\"BHZ\"" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of channel epoch. Do not use if still active, endDate should not be in the future.", "endDate=\"2018-01-27T00:00:00Z\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"bhz\"" 
@@ -751,7 +751,7 @@
 
       URI of any type of external report, such as data quality reports.
 
-      This type contains a Uniform Resource Identifier (URI) and and description
+      This type contains a Uniform Resource Identifier (URI) and description
       for external information that users may want to reference.
 
 
@@ -980,8 +980,6 @@
       Elevation of the sensor, in meters.  To find the local ground surface level,
       add the Depth value to this elevation.
 
-      Extension of FloatType for distances, elevations, and depths.
-
 
 
 
@@ -1028,8 +1026,6 @@
    .. container:: description
 
       The depth of the sensor relative to the local ground surface level, in meters.
-
-      Extension of FloatType for distances, elevations, and depths.
 
 
 
@@ -1080,9 +1076,7 @@
 
    .. container:: description
 
-      Azimuth of the sensor in degrees clockwise from geographic (true) north.
-
-      Instrument azimuth, degrees clockwise from North.
+      Azimuth of the component in degrees clockwise from geographic (true) north.
 
 
 
@@ -1133,9 +1127,9 @@
 
    .. container:: description
 
-      Dip of the instrument in degrees, positive down from horizontal
-
-      Instrument dip in degrees, positive down from horizontal.
+      Dip of the component in degrees, positive is down from horizontal.
+      For horizontal dip=0, for vertical upwards
+      dip=-90 and for vertical downwards dip=+90.
 
 
 
@@ -1186,8 +1180,6 @@
       If you put an OBS on a lake bottom, where the lake surface is at elevation=1200 meters,
       then you should set WaterLevel=1200. An OBS in the ocean would
       have WaterLevel=0.
-
-      Representation of floating-point numbers used as measurements.
 
 
 

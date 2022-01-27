@@ -197,11 +197,6 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Site" type="fsx:SiteType">
-						<xs:annotation>
-							<xs:documentation>Description of the location of the station
-								using geopolitical entities (country, city, etc.).
-							</xs:documentation>
-						</xs:annotation>
 					</xs:element>
 					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
 						<xs:annotation>
@@ -236,7 +231,7 @@
 					<xs:element name="Operator" type="fsx:OperatorType" minOccurs="0"
 						maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>Agency and contact persons who manage this station.
+							<xs:documentation>Agency who manage this station.
                 Only use if this differs from the Operator of the Network.
               </xs:documentation>
 						</xs:annotation>
@@ -332,14 +327,8 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Azimuth" type="fsx:AzimuthType" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Azimuth of the sensor in degrees clockwise from geographic (true) north.</xs:documentation>
-						</xs:annotation>
 					</xs:element>
 					<xs:element name="Dip" type="fsx:DipType" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Dip of the instrument in degrees, positive down from horizontal</xs:documentation>
-						</xs:annotation>
 					</xs:element>
 					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
 						<xs:annotation>
@@ -527,17 +516,18 @@
 				<xs:sequence>
 					<xs:element name="InputUnits" type="fsx:UnitsType">
 						<xs:annotation>
-							<xs:documentation> The units of the data as input from the perspective
-								of data acquisition. After correcting data for this response, these
-								would be the resulting units.
-							</xs:documentation>
+              <xs:documentation>
+                The units of the data as input to the sensor. For example
+                if stage 1 represented a seismometer, InputUnits would be 'm/s'
+                and OutputUnits would be 'V'.
+    					</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="OutputUnits" type="fsx:UnitsType">
 						<xs:annotation>
-							<xs:documentation> The units of the data as output from the perspective
-								of data acquisition. These would be the units of the data prior to
-								correcting for this response.
+							<xs:documentation> The units of the data as output from data
+                acquisition system. For most channels recorded by
+                systems that use an AtoD, the OutputUnits will be 'count'.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -701,7 +691,7 @@
 					<xs:documentation>Comment text.</xs:documentation>
 					<xs:documentation>
 	          <example  LevelChoice="N"><Value>Temporary network deployment</Value></example>
-	          <example  LevelChoice="S"><Value>GPS CLock is unlocked</Value></example>
+	          <example  LevelChoice="S"><Value>GPS Clock is unlocked</Value></example>
 	          <example  LevelChoice="C"><Value>Large number of spikes</Value></example>
 					</xs:documentation>
 			  </xs:annotation>
@@ -1040,10 +1030,6 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="FloatType">
-		<xs:annotation>
-			<xs:documentation>Representation of floating-point numbers used as measurements.
-			</xs:documentation>
-		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
 				<xs:attribute name="unit" type="xs:string" use="optional">
@@ -1169,7 +1155,7 @@
 	</xs:complexType>
 	<xs:complexType name="AzimuthType">
 		<xs:annotation>
-			<xs:documentation>Instrument azimuth, degrees clockwise from North.
+      <xs:documentation>Azimuth of the component in degrees clockwise from geographic (true) north.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
@@ -1189,7 +1175,9 @@
 	</xs:complexType>
 	<xs:complexType name="DipType">
 		<xs:annotation>
-			<xs:documentation>Instrument dip in degrees, positive down from horizontal.
+      <xs:documentation>Dip of the component in degrees, positive is down from horizontal.
+        For horizontal dip=0, for vertical upwards
+        dip=-90 and for vertical downwards dip=+90.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
@@ -1208,10 +1196,6 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="DistanceType">
-		<xs:annotation>
-			<xs:documentation>Extension of FloatType for distances, elevations, and depths.
-			</xs:documentation>
-		</xs:annotation>
 		<xs:simpleContent>
 			<xs:restriction base="fsx:FloatType">
 				<xs:attribute name="unit" type="xs:string" use="optional" default="METERS">
@@ -1311,12 +1295,12 @@
 		<xs:sequence>
 			<xs:element name="Real" type="fsx:FloatNoUnitType">
 				<xs:annotation>
-					<xs:documentation>Real part of the pole or zero.</xs:documentation>
+					<xs:documentation>Real part of the complex number.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Imaginary" type="fsx:FloatNoUnitType">
 				<xs:annotation>
-					<xs:documentation>Imaginary part of the pole or zero.</xs:documentation>
+					<xs:documentation>Imaginary part of the complex number.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -1341,13 +1325,13 @@
         Since the Contact element is a generic type that represents any contact
 				person, it also has its own optional Agency element.
 				It is expected that typically the contact's optional Agency tag will match the Operator Agency.
-				Only contacts appropriate for the enclosing element should be include in the Operator tag.
+				Only contacts appropriate for the enclosing element should be included in the Operator tag.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Agency" type="xs:string">
 				<xs:annotation>
-			    		<xs:documentation>An operating agency and associated contact persons.</xs:documentation>
+			    		<xs:documentation>The operating agency.</xs:documentation>
 					<xs:documentation><example><Agency>USGS</Agency></example></xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -1394,7 +1378,7 @@
 	</xs:complexType>
 	<xs:complexType name="SiteType">
 		<xs:annotation>
-			<xs:documentation> Description of a site location using name and optional geopolitical boundaries (country, city, etc.).
+			<xs:documentation> Description of a location using name and optional geopolitical boundaries (country, city, etc.).
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
@@ -1441,7 +1425,7 @@
 	</xs:complexType>
 	<xs:complexType name="ExternalReferenceType">
 		<xs:annotation>
-		  <xs:documentation>This type contains a Uniform Resource Identifier (URI) and and description
+		  <xs:documentation>This type contains a Uniform Resource Identifier (URI) and description
                   for external information that users may want to reference.
 		  </xs:documentation>
 		</xs:annotation>
@@ -1733,7 +1717,7 @@
 		</xs:attribute>
 		<xs:attribute name="alternateCode" type="xs:string" use="optional">
 			<xs:annotation>
-        <xs:documentation>A code use for display or association</xs:documentation>
+        <xs:documentation>A code used for display or association</xs:documentation>
         <xs:documentation>
           <example LevelChoice="N">GSN</example>
           <example LevelChoice="S">ALQ</example>

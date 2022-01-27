@@ -42,7 +42,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"GSN\"" 
+      **alternateCode**, :ref:`string<type-glossary>`, no, "A code used for display or association", "alternateCode=\"GSN\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Network", "code=\"XX\"" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of network. Do not use if still active, endDate should not be in the future.", "endDate=\"2018-01-27T00:00:00Z\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"XX\"" 
@@ -743,7 +743,7 @@
       Since the Contact element is a generic type that represents any contact
       person, it also has its own optional Agency element.
       It is expected that typically the contact's optional Agency tag will match the Operator Agency.
-      Only contacts appropriate for the enclosing element should be include in the Operator tag.
+      Only contacts appropriate for the enclosing element should be included in the Operator tag.
 
 
 
@@ -791,7 +791,7 @@
 
    .. container:: description
 
-      An operating agency and associated contact persons.
+      The operating agency.
 
 
 

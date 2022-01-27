@@ -340,7 +340,7 @@ However, importantly, in the case of ODD symmetry (an odd total number of
 coefficients), the number of unique coefficients specified in the StationXML may
 be either odd or even.
 
-This simple exemple illustrate when to use ODD or EVEN :
+This simple example illustrate when to use ODD or EVEN :
 
   .. code-block:: XML
 
@@ -369,7 +369,7 @@ which expands to be equivalent to:
 and also
 
   .. code-block:: XML
-  
+
     <FIR>
         <Symmetry>EVEN</Symmetry>
         <NumeratorCoefficient i="1">0.1</NumeratorCoefficient>
