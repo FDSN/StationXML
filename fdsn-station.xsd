@@ -472,6 +472,16 @@
 			<xs:element name="Frequency" type="xs:double">
 				<xs:annotation>
 					<xs:documentation>The frequency (in Hertz) at which the Value is valid.
+
+            While any frequency in the passband is acceptable, it is preferred that:
+
+            #. For low pass FIR filters, use gain at zero frequency (sum of coefficients)
+            #. If given, use manufacturer frequency/gain without recomputing
+            #. For anything else, frequency should be in the "good" part of the passband
+            #. All stage frequencies should be below the final nyquist, as long as 2,3 are satisfied
+            #. All stages, except lowpass FIR filters, should use the same frequencies, as long as 2,3 are satisfied
+            #. Overall gain should also use the same frequency as 5, as long as it is below the final nyquist and in the good part of the final passband
+
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
