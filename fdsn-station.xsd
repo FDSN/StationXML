@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 	
+<!--
 	FDSN StationXML (www.fdsn.org/xml/station)
 
 	The purpose of this schema is to define an XML representation of the most important
@@ -9,10 +9,10 @@
 	little transformation or loss of information as possible while at the same time simplifying
 	station metadata representation when possible.  Also, content and clarification has been added
 	where lacking in the SEED standard.
-	
+
 	When definitions and usage are underdefined the SEED manual should be referred to for
 	clarification.  SEED specifiation: http://www.fdsn.org/publications.htm
-	
+
 	Another goal is to create a base schema that can be extended to represent similar data types.
 
 
@@ -20,7 +20,7 @@
 
 	The 'version' attribute of the schema definition identifies the version of the schema.  This
 	version is not enforced when validating documents.
-	
+
 	The required 'schemaVersion' attribute of the root element identifies the version of the schema
 	that the document is compatible with.  Validation only requires that a value is present but
 	not that it matches the schema used for validation.
@@ -39,7 +39,7 @@
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fsx="http://www.fdsn.org/xml/station/1"
 	targetNamespace="http://www.fdsn.org/xml/station/1" elementFormDefault="qualified"
-	attributeFormDefault="unqualified" version="1.0">
+	attributeFormDefault="unqualified" version="1.1">
 	<xs:annotation>
 		<xs:documentation> FDSN StationXML schema. Designed as an XML representation of SEED
 			metadata, the schema maps to the most important and commonly used structures of SEED
@@ -51,9 +51,9 @@
 	<!-- Type definitions -->
 	<xs:complexType name="RootType">
 		<xs:annotation>
-			<xs:documentation>Top-level type for Station XML. Required field are Source (network ID
-				of the institution sending the message) and one or more Network containers or one or
-				more Station containers. </xs:documentation>
+			<xs:documentation>Top-level type for Station XML. Required fields are Source (network ID
+				of the institution sending the message), Created (creation time of the document)
+				and one or more Network containers. </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Source" type="xs:string">
@@ -103,6 +103,12 @@
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseNodeType">
 				<xs:sequence>
+					<xs:element name="Operator" type="fsx:OperatorType" minOccurs="0"
+						maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>An operator and associated contanct persons</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="TotalNumberStations" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation> The total number of stations contained in this
@@ -144,6 +150,12 @@
 								etc.).</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Elevation of the water surface in meters for underwater sites,
+								where 0 is sea level.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="Vault" type="xs:string" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Type of vault, e.g. WWSSN, tunnel, transportable
@@ -163,24 +175,13 @@
 								station.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Operator" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="Operator" type="fsx:OperatorType" minOccurs="0"
+						maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>An operating agency and associated contact persons. If
-								there multiple operators, each one should be encapsulated within an
-								Operator tag. Since the Contact element is a generic type that
-								represents any contact person, it also has its own optional Agency
-								element.</xs:documentation>
+							<xs:documentation>An operator and associated contanct persons</xs:documentation>
 						</xs:annotation>
-						<xs:complexType>
-							<xs:sequence>
-								<xs:element name="Agency" type="xs:string" maxOccurs="unbounded"/>
-								<xs:element name="Contact" type="fsx:PersonType" minOccurs="0"
-									maxOccurs="unbounded"/>
-								<xs:element name="WebSite" type="xs:anyURI" minOccurs="0"/>
-							</xs:sequence>
-						</xs:complexType>
 					</xs:element>
-					<xs:element name="CreationDate" type="xs:dateTime">
+					<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date and time (UTC) when the station was first
 								installed.</xs:documentation>
@@ -273,6 +274,12 @@
 								horizontal</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="WaterLevel" type="fsx:FloatType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Elevation of the water surface in meters for underwater sites,
+								where 0 is sea level.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="Type" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>The type of data this channel collects. Corresponds to
@@ -297,12 +304,6 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:group ref="fsx:SampleRateGroup" minOccurs="0"/>
-					<xs:element name="StorageFormat" type="xs:string" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>The storage format of the recorded data (e.g.
-								SEED).</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="ClockDrift" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>A tolerance value, measured in seconds per sample,
@@ -323,7 +324,7 @@
 					<xs:element name="Sensor" type="fsx:EquipmentType" minOccurs="0"/>
 					<xs:element name="PreAmplifier" type="fsx:EquipmentType" minOccurs="0"/>
 					<xs:element name="DataLogger" type="fsx:EquipmentType" minOccurs="0"/>
-					<xs:element name="Equipment" type="fsx:EquipmentType" minOccurs="0"/>
+					<xs:element name="Equipment" type="fsx:EquipmentType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="Response" type="fsx:ResponseType" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="locationCode" type="xs:string" use="required"/>
@@ -434,26 +435,30 @@
 		<xs:sequence>
 			<xs:choice>
 				<xs:annotation>
-					<xs:documentation>A choice of response types. There should be one response per
-						stage.</xs:documentation>
+					<xs:documentation>A choice of polynomial versus all other response types.
+						There should be one response per stage.</xs:documentation>
 				</xs:annotation>
-				<xs:element name="PolesZeros" type="fsx:PolesZerosType" minOccurs="0"/>
-				<xs:element name="Coefficients" type="fsx:CoefficientsType" minOccurs="0"/>
-				<xs:element name="ResponseList" type="fsx:ResponseListType" minOccurs="0"/>
-				<xs:element name="FIR" type="fsx:FIRType" minOccurs="0"/>
-				<xs:element name="Polynomial" type="fsx:PolynomialType" minOccurs="0"/>
+				<xs:sequence>
+					<xs:choice>
+						<xs:element name="PolesZeros" type="fsx:PolesZerosType" minOccurs="0"/>
+						<xs:element name="Coefficients" type="fsx:CoefficientsType" minOccurs="0"/>
+						<xs:element name="ResponseList" type="fsx:ResponseListType" minOccurs="0"/>
+						<xs:element name="FIR" type="fsx:FIRType" minOccurs="0"/>
+					</xs:choice>
+					<xs:element name="Decimation" type="fsx:DecimationType" minOccurs="0"/>
+					<xs:element name="StageGain" type="fsx:GainType">
+						<xs:annotation>
+							<xs:documentation>The gain at the stage of the encapsulating
+								response element at a specific frequencey and corresponds to SEED blockette 58.
+								In the SEED convention, stage 0 gain represents the overall sensitivity of the channel.
+								In this schema, stage 0 gains are allowed but are considered deprecated.
+								Overall sensitivity should be specified in the InstrumentSensitivity
+								element.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:element name="Polynomial" type="fsx:PolynomialType"/>
 			</xs:choice>
-			<xs:element name="Decimation" type="fsx:DecimationType" minOccurs="0"/>
-			<xs:element name="StageGain" type="fsx:GainType">
-				<xs:annotation>
-					<xs:documentation>StageSensitivity is the gain at the stage of the encapsulating
-						response element and corresponds to SEED blockette 58. In the SEED
-						convention, stage 0 gain represents the overall sensitivity of the channel.
-						In this schema, stage 0 gains are allowed but are considered deprecated.
-						Overall sensitivity should be specified in the InstrumentSensitivity
-						element.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="number" type="fsx:CounterType" use="required">
@@ -469,14 +474,6 @@
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
-	<xs:complexType name="LogType">
-		<xs:annotation>
-			<xs:documentation>Container for log entries.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Entry" type="fsx:CommentType" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="CommentType">
 		<xs:annotation>
 			<xs:documentation>Container for a comment or log entry. Corresponds to SEED blockettes
@@ -488,7 +485,14 @@
 			<xs:element name="EndEffectiveTime" type="xs:dateTime" minOccurs="0"/>
 			<xs:element name="Author" type="fsx:PersonType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-		<xs:attribute name="id" type="fsx:CounterType"/>
+		<xs:attribute name="id" type="fsx:CounterType" use="optional"/>
+		<xs:attribute name="subject" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>A subject for this comment.  Multiple comments with the same
+					subject should be considered related.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="PolesZerosType">
 		<xs:annotation>
@@ -626,9 +630,9 @@
 					</xs:element>
 					<xs:element name="FrequencyLowerBound" type="fsx:FrequencyType"/>
 					<xs:element name="FrequencyUpperBound" type="fsx:FrequencyType"/>
-					<xs:element name="ApproximationLowerBound" type="xs:decimal"/>
-					<xs:element name="ApproximationUpperBound" type="xs:decimal"/>
-					<xs:element name="MaximumError" type="xs:decimal"/>
+					<xs:element name="ApproximationLowerBound" type="xs:double"/>
+					<xs:element name="ApproximationUpperBound" type="xs:double"/>
+					<xs:element name="MaximumError" type="xs:double"/>
 					<xs:element name="Coefficient" maxOccurs="unbounded">
 						<xs:complexType>
 							<xs:simpleContent>
@@ -663,6 +667,7 @@
 		</xs:annotation>
 		<xs:attribute name="plusError" type="xs:double" use="optional"/>
 		<xs:attribute name="minusError" type="xs:double" use="optional"/>
+		<xs:attribute name="measurementMethod" type="xs:string" use="optional"/>
 	</xs:attributeGroup>
 	<xs:complexType name="FloatNoUnitType">
 		<xs:simpleContent>
@@ -857,6 +862,21 @@
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="OperatorType">
+		<xs:annotation>
+			<xs:documentation>An operating agency and associated contact persons.
+				Since the Contact element is a generic type that represents any contact
+				person, it also has its own optional Agency element.
+				It is expected that typically the contact’s optional Agency tag will match the Operator Agency.
+				Only contacts appropriate for the enclosing element should be include in the Operator tag.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Agency" type="xs:string"/>
+			<xs:element name="Contact" type="fsx:PersonType" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<xs:element name="WebSite" type="xs:anyURI" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="PersonType">
 		<xs:annotation>
 			<xs:documentation>Representation of a person's contact information. A person can belong
@@ -969,6 +989,19 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="IdentifierType">
+		<xs:annotation>
+			<xs:documentation>A type to document persistent identifiers.
+				Identifier values should be specified without a URI scheme (prefix),
+				instead the identifer type is documented as an attribute.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="xs:string"> </xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:complexType name="BaseFilterType">
 		<xs:annotation>
 			<xs:documentation> The BaseFilterType is derived by all filters. </xs:documentation>
@@ -1046,12 +1079,29 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Identifier" type="fsx:IdentifierType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="Comment" type="fsx:CommentType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DataAvailability" type="fsx:DataAvailabilityType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A description of time series data availability. This
+						information should be considered transient and is primarily useful as a
+						guide for generating time series data requests. The information for a
+						DataAvailability:Span may be specific to the time range used in a request
+						that resulted in the document or limited to the availability of data withing
+						the request range. These details may or may not be retained when
+						synchronizing metadata between data centers. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="code" type="xs:string" use="required"/>
 		<xs:attribute name="startDate" type="xs:dateTime"/>
 		<xs:attribute name="endDate" type="xs:dateTime"/>
+		<xs:attribute name="sourceID" type="xs:anyURI">
+			<xs:annotation>
+				<xs:documentation>A data source identifier in URI form</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 		<xs:attribute name="restrictedStatus" type="fsx:RestrictedStatusType" use="optional"/>
 		<xs:attribute name="alternateCode" type="xs:string" use="optional">
 			<xs:annotation>
@@ -1065,6 +1115,52 @@
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="DataAvailabilityExtentType">
+		<xs:annotation>
+			<xs:documentation> A type for describing data availability extents, the earliest and
+				latest data available. No information is included about the continuity of the data
+				is included or implied. </xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="start" type="xs:dateTime" use="required"/>
+		<xs:attribute name="end" type="xs:dateTime" use="required"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="DataAvailabilitySpanType">
+		<xs:annotation>
+			<xs:documentation> A type for describing data availability spans, with variable
+				continuity. The time range described may be based on the request parameters that
+				generated the document and not necessarily relate to continuity outside of the
+				range. It may also be a smaller time window than the request depending on the data
+				characteristics. </xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="start" type="xs:dateTime" use="required"/>
+		<xs:attribute name="end" type="xs:dateTime" use="required"/>
+		<xs:attribute name="numberSegments" type="xs:integer" use="required">
+			<xs:annotation>
+				<xs:documentation> The number of continuous time series segments contained in the
+					specified time range. A value of 1 indicates that the time series is continuous
+					from start to end. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="maximumTimeTear" type="xs:decimal" use="optional">
+			<xs:annotation>
+				<xs:documentation> The maximum time tear (gap or overlap) in seconds between time
+					series segments in the specified range. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="DataAvailabilityType">
+		<xs:annotation>
+			<xs:documentation>An type for describing data availability.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Extent" type="fsx:DataAvailabilityExtentType" minOccurs="0"/>
+			<xs:element name="Span" type="fsx:DataAvailabilitySpanType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
 </xs:schema>
