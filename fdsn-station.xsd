@@ -1583,6 +1583,13 @@
 				frequency or within a range of frequencies.
 				It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present.
 			</xs:documentation>
+      <xs:documentation>
+        In cases where the response is unknown, for example really old channels,
+        or where a response is not applicable, like textual log channels,
+        it is preferred that an empty
+        response element be used, &lt;response&gt;&lt;/response&gt;,
+        to positively indicate that no response exists. 
+      </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:choice minOccurs="0">
