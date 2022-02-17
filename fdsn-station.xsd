@@ -347,7 +347,11 @@
 								TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG or SYNTHESIZED.
 							</xs:documentation>
               <xs:documentation><example><Type>CONTINUOUS</Type></example></xs:documentation>
-
+  							<xs:documentation>
+                  This element existed primarily to hold the corresponding
+                  value from SEED, but should not be used for new stationXML.
+							</xs:documentation>
+              <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:NMTOKEN">
