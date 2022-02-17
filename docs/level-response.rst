@@ -15,14 +15,18 @@
 
    .. container:: description
 
-      The complete instrument response for this channel that expresses the effect of the 
-      geophysical instrumentation used to record the input ground motion. 
-      The information can be used to convert raw data to Earth unit measurement at a specified 
-      frequency or within a range of frequencies. 
-      It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present. 
-      In cases where the response is unknown, for example really old channels, or where a response is 
-      not applicable, like textual log channels, it is preferred that an empty response element be used, 
-      <response></response>, to positively indicate that no response exists.
+      The complete instrument response for this channel that expresses the effect of the
+      geophysical instrumentation used to record the input ground motion.
+      The information can be used to convert raw data to Earth unit measurement at a specified
+      frequency or within a range of frequencies.
+      It is strongly suggested that either InstrumentSensitivity or InstrumentPolynomial should be present.
+
+      In cases where the response is unknown, for example really old channels,
+      or where a response is not applicable, like textual log channels,
+      it is preferred that an empty
+      response element be used, <response></response>,
+      to positively indicate that no response exists.
+
 
 
 
@@ -162,6 +166,15 @@
    .. container:: description
 
       The frequency (in Hertz) at which the Value is valid.
+      
+      While any frequency in the passband is acceptable, it is preferred that:
+      
+      #. For low pass FIR filters, use gain at zero frequency (sum of coefficients)
+      #. If given, use manufacturer frequency/gain without recomputing
+      #. For anything else, frequency should be in the "good" part of the passband
+      #. All stage frequencies should be below the final nyquist, as long as 2,3 are satisfied
+      #. All stages, except lowpass FIR filters, should use the same frequencies, as long as 2,3 are satisfied
+      #. Overall gain should also use the same frequency as 5, as long as it is below the final nyquist and in the good part of the final passband
 
 
 
@@ -264,6 +277,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -366,6 +382,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -666,6 +685,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -769,6 +791,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -1041,6 +1066,18 @@
       Type for channel response entry or stage.  A full response is
       represented as an ordered sequence of these stages.
 
+      A filter, (PolesZeros, Coefficients, FIR, etc) is not required, but is
+      recommended to provide a place to store the input and output units
+      even in the case of "gain-only" stages.
+      
+      For an analog gain-only stage, use a PolesZeros filter with no poles
+      or zeros, PzTransferFunctionType=LAPLACE (RADIANS/SECOND)",
+      NormalizationFactor=1 and NormalizationFrequency=0.
+      
+      For a digital gain-only stage, use a FIR filter with one
+      numerator with value 1.0, and symmetry=NONE. While a digital Coefficients
+      filter can serve the same purpose and is common, the FIR filter is more concise.
+
 
 
 
@@ -1270,6 +1307,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -1373,6 +1413,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -1974,6 +2017,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -2077,6 +2123,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -2387,6 +2436,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -2490,6 +2542,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -2838,6 +2893,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -2941,6 +2999,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -3359,6 +3420,15 @@
    .. container:: description
 
       The frequency (in Hertz) at which the Value is valid.
+      
+      While any frequency in the passband is acceptable, it is preferred that:
+      
+      #. For low pass FIR filters, use gain at zero frequency (sum of coefficients)
+      #. If given, use manufacturer frequency/gain without recomputing
+      #. For anything else, frequency should be in the "good" part of the passband
+      #. All stage frequencies should be below the final nyquist, as long as 2,3 are satisfied
+      #. All stages, except lowpass FIR filters, should use the same frequencies, as long as 2,3 are satisfied
+      #. Overall gain should also use the same frequency as 5, as long as it is below the final nyquist and in the good part of the final passband
 
 
 
@@ -3561,6 +3631,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 
@@ -3664,6 +3737,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 

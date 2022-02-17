@@ -138,6 +138,10 @@
 
 
 
+   .. container:: example
+
+      **Example**: <identifier type="DOI">10.7914/SN/XX</identifier>
+
 
 
 

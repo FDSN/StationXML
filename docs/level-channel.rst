@@ -149,6 +149,10 @@
 
 
 
+   .. container:: example
+
+      **Example**: <identifier type="DOI">10.7914/SN/XX</identifier>
+
 
 
 
@@ -1214,6 +1218,10 @@
 
       Channel :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Type
 
+   .. admonition:: Warning
+
+      This field is likely to be deprecated in future versions of StationXML
+
    .. container:: type
 
 			.. only:: latex
@@ -1230,6 +1238,9 @@
       can be used to specify the nature of the data this channel collects.
       The value between the <Type> tags must be one of:
       TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG or SYNTHESIZED.
+
+      This element existed primarily to hold the corresponding
+      value from SEED, but should not be used for new stationXML.
 
 
 
@@ -1259,6 +1270,14 @@
 			.. only:: html
 
 					content type: `double <appendices.html#glossary-double>`_
+
+   .. container:: description
+
+      Sample rate in samples per second.
+      SampleRate is optional unless SampleRateRatio is present, in which case
+      SampleRate is required.
+
+
 
    .. container:: example
 
@@ -1295,15 +1314,24 @@
 
       Channel :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` SampleRateRatio
 
+   .. container:: description
+
+      Sample rate expressed as number of samples in a number of seconds.
+      If present, then <SampleRate> must also be present.
+      It can be useful for very slow data (e.g., less than a few samples per day),
+      since it allows for greater precision in the stored value.
+
+
+
    .. container:: example
 
       **Example**::
 
-        <SampleRate>3.859999367e-07</SampleRate>
-        <SampleRateRatio>
-        	<NumberSamples>1</NumberSamples>
-        	<NumberSeconds>2590674</NumberSeconds>
-        </SampleRateRatio>
+        <SampleRate>0.000023148</SampleRate>
+                      <SampleRateRatio>
+                        <NumberSamples>2</NumberSamples>
+                        <NumberSeconds>86400</NumberSeconds>
+                      </SampleRateRatio>
 
 
 
@@ -1539,6 +1567,9 @@
 
       Description of units, e.g. "Velocity in meters per second",
       "Volts", "Pascals", "Degrees Celsius".
+      Description is only needed when the unit name is not a well know
+      SI unit or there is need for clarification. Prefer not to use a
+      Description for common units like `m/s`, `m/s**2`, `count`, etc.
 
 
 

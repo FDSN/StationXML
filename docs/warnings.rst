@@ -8,6 +8,24 @@ The following are potential future changes, as tagged in the schema with <warnin
 
 
 
+  -     <FDSNStationXML> <Source> : 
+
+     .. admonition:: Warning
+
+       This field is likely to be a choice with Sender in future versions of StationXML
+
+
+
+
+  -     <FDSNStationXML> <Sender> : 
+
+     .. admonition:: Warning
+
+       This field is likely to be a choice with Source in future versions of StationXML
+
+
+
+
   -     <Network> <TotalNumberStations> : 
 
      .. admonition:: Warning
@@ -58,4 +76,13 @@ The following are potential future changes, as tagged in the schema with <warnin
      .. admonition:: Warning
 
        This field is likely to be deprecated in future versions of StationXML.
+
+
+
+
+  -     <Channel> <Type> : 
+
+     .. admonition:: Warning
+
+       This field is likely to be deprecated in future versions of StationXML
 

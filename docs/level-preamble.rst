@@ -69,6 +69,10 @@
 
       FDSNStationXML :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Source
 
+   .. admonition:: Warning
+
+      This field is likely to be a choice with Sender in future versions of StationXML
+
    .. container:: type
 
 			.. only:: latex
@@ -82,6 +86,10 @@
    .. container:: description
 
       Originator of the information contained in the document.
+      It is recommended that archives or services providing StationXML that are not
+      the original creator of the metadata set this to be
+      the empty element, especially because a StationXML document may
+      contain information from many unrelated networks.
 
 
 
@@ -98,6 +106,10 @@
 
       FDSNStationXML :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Sender
 
+   .. admonition:: Warning
+
+      This field is likely to be a choice with Source in future versions of StationXML
+
    .. container:: type
 
 			.. only:: latex
@@ -110,7 +122,13 @@
 
    .. container:: description
 
-      Name of the institution sending this document.
+      Name of the institution sending this document,
+      for example the institution hosting an FDSN Station web service.
+      It is recommended that authoratative StationXML
+      created by the originator of the metadata not use Sender and
+      use Source instead. For example metadata created by a network
+      operator for submission to other data archives would only use Source,
+      The data archive in response to a request would use Sender.
 
 
 
