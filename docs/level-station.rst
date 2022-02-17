@@ -15,7 +15,15 @@
 
    .. container:: description
 
-      The Station container. All channel metadata for this station is contained within this element. A Description element may be included with the official station name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference. A Comment element may be included for additional comments. An active Station should not use the endDate attribute. Unlike SEED, do not use an endDate in the distant future to mean active.
+      The Station container. All channel metadata for this station is contained within this element.
+      A Description element may be included with the official station name and other descriptive information.
+      An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation or reference.
+      A Comment element may be included for additional comments.
+
+      An active Station should not use the endDate attribute.
+      Unlike SEED, do not use an endDate in the distant future to mean active.
+
+
 
 
 
@@ -30,7 +38,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"ALQ\"" 
+      **alternateCode**, :ref:`string<type-glossary>`, no, "A code used for display or association", "alternateCode=\"ALQ\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Station", "code=\"ABCD\"" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of station epoch. Do not use if still active, endDate should not be in the future.", "endDate=\"2018-01-27T00:00:00Z\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"albq\"" 
@@ -98,7 +106,9 @@
 
    .. container:: description
 
-      Description of the Station.
+      Description of the Station
+
+
 
    .. container:: example
 
@@ -129,7 +139,11 @@
 
    .. container:: description
 
-      A type to document persistent identifiers. Identifier values should be specified without a URI scheme (prefix), instead the identifier type is documented as an attribute.
+      A type to document persistent identifiers.
+      Identifier values should be specified without a URI scheme (prefix),
+      instead the identifier type is documented as an attribute.
+
+
 
 
 
@@ -162,6 +176,8 @@
    .. container:: description
 
       Container for a comment or log entry.
+
+
 
 
 
@@ -226,9 +242,11 @@
 
       Comment text.
 
+
+
    .. container:: example
 
-      **Example**: <Value>GPS CLock is unlocked</Value>
+      **Example**: <Value>GPS Clock is unlocked</Value>
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -256,6 +274,8 @@
    .. container:: description
 
       Start time for when comment applies.
+
+
 
    .. container:: example
 
@@ -288,6 +308,8 @@
 
       End time for when comment applies.
 
+
+
    .. container:: example
 
       **Example**: <EndEffectiveTime>2008-09-16T12:00:00Z</EndEffectiveTime>
@@ -307,7 +329,12 @@
 
    .. container:: description
 
-      Author of Comment. Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
+      Author of Comment.
+
+      Person's contact information. A person can belong
+      to multiple agencies and have multiple email addresses and phone numbers.
+
+
 
 
 
@@ -354,7 +381,9 @@
 
    .. container:: description
 
-      Name of contact or author.
+      Name of contact or author
+
+
 
    .. container:: example
 
@@ -385,7 +414,9 @@
 
    .. container:: description
 
-      Agency of contact or author.
+      Agency of contact or author
+
+
 
    .. container:: example
 
@@ -416,7 +447,9 @@
 
    .. container:: description
 
-      Email of contact or author.
+      Email of contact or author
+
+
 
    .. container:: example
 
@@ -437,7 +470,9 @@
 
    .. container:: description
 
-      Phone of contact or author.
+      Phone of contact or author
+
+
 
 
 
@@ -498,7 +533,9 @@
 
    .. container:: description
 
-      Telephone country code.
+      Telephone country code
+
+
 
    .. container:: example
 
@@ -529,7 +566,9 @@
 
    .. container:: description
 
-      Telephone area code.
+      Telephone area code
+
+
 
    .. container:: example
 
@@ -560,7 +599,9 @@
 
    .. container:: description
 
-      Telephone number.
+      Telephone number
+
+
 
    .. container:: example
 
@@ -581,7 +622,17 @@
 
    .. container:: description
 
-      A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers. A type for describing data availability.
+      A description of time series data availability. This
+      information should be considered transient and is primarily useful as a
+      guide for generating time series data requests. The information for a
+      DataAvailability:Span may be specific to the time range used in a request
+      that resulted in the document or limited to the availability of data within
+      the request range. These details may or may not be retained when
+      synchronizing metadata between data centers.
+
+      A type for describing data availability.
+
+
 
 
 
@@ -616,7 +667,11 @@
 
    .. container:: description
 
-      Data availability extents, the earliest and latest data available. No information about the continuity of the data is included or implied.
+      Data availability extents, the earliest and
+      latest data available. No information about the continuity of the data
+      is included or implied.
+
+
 
 
 
@@ -649,7 +704,13 @@
 
    .. container:: description
 
-      A type for describing data availability spans, with variable continuity. The time range described may be based on the request parameters that generated the document and not necessarily relate to continuity outside of the range. It may also be a smaller time window than the request depending on the data characteristics.
+      A type for describing data availability spans, with variable
+      continuity. The time range described may be based on the request parameters that
+      generated the document and not necessarily relate to continuity outside of the
+      range. It may also be a smaller time window than the request depending on the data
+      characteristics.
+
+
 
 
 
@@ -698,7 +759,12 @@
 
    .. container:: description
 
-      Station latitude, in degrees. Where the bulk of the equipment is located (or another appropriate site location). The unit is fixed to be degrees, and datum defaults to WGS84. Latitude type extending the base type to add datum as an attribute with default.
+      Station latitude, in degrees. Where the bulk of the equipment is located (or another appropriate site location).
+      The unit is fixed to be degrees, and datum defaults to WGS84.
+
+      Latitude type extending the base type to add datum as an attribute with default.
+
+
 
    .. container:: example
 
@@ -752,7 +818,12 @@
 
    .. container:: description
 
-      Station longitude, in degrees. Where the bulk of the equipment is located (or another appropriate site location). The unit is fixed to be degrees, and datum defaults to WGS84. Longitude type extending the base type to add datum as an attribute with default.
+      Station longitude, in degrees. Where the bulk of the equipment is located (or another appropriate site location).
+      The unit is fixed to be degrees, and datum defaults to WGS84.
+
+      Longitude type extending the base type to add datum as an attribute with default.
+
+
 
    .. container:: example
 
@@ -802,7 +873,9 @@
 
    .. container:: description
 
-      Elevation of local ground surface level at station, in meters. Extension of FloatType for distances, elevations, and depths.
+      Elevation of local ground surface level at station, in meters.
+
+
 
    .. container:: example
 
@@ -841,7 +914,9 @@
 
    .. container:: description
 
-      Description of the location of the station using geopolitical entities (country, city, etc.). Description of a site location using name and optional geopolitical boundaries (country, city, etc.).
+      Description of a location using name and optional geopolitical boundaries (country, city, etc.).
+
+
 
 
 
@@ -890,7 +965,9 @@
 
    .. container:: description
 
-      Name of the site.
+      Name of the site
+
+
 
    .. container:: example
 
@@ -921,7 +998,9 @@
 
    .. container:: description
 
-      A longer description of the location of this station.
+      A longer description of the location of this station
+
+
 
    .. container:: example
 
@@ -954,6 +1033,8 @@
 
       The town or city closest to the station.
 
+
+
    .. container:: example
 
       **Example**: <Town>Albuquerque</Town>
@@ -983,7 +1064,9 @@
 
    .. container:: description
 
-      The county where the station is located.
+      The county where the station is located
+
+
 
    .. container:: example
 
@@ -1016,6 +1099,8 @@
 
       The state, province, or region of this site.
 
+
+
    .. container:: example
 
       **Example**: <Region>Southwest U.S.</Region>
@@ -1047,6 +1132,8 @@
 
       The country of this site.
 
+
+
    .. container:: example
 
       **Example**: <Country>U.S.A.</Country>
@@ -1076,7 +1163,12 @@
 
    .. container:: description
 
-      Elevation of the water surface in meters for underwater sites, where 0 is mean sea level. If you put an OBS on a lake bottom, where the lake surface is at elevation=1200 meters, then you should set WaterLevel=1200. An OBS in the ocean would have WaterLevel=0. Representation of floating-point numbers used as measurements.
+      Elevation of the water surface in meters for underwater sites, where 0 is mean sea level.
+      If you put an OBS on a lake bottom, where the lake surface is at elevation=1200 meters,
+      then you should set WaterLevel=1200. An OBS in the ocean would
+      have WaterLevel=0.
+
+
 
    .. container:: example
 
@@ -1125,7 +1217,10 @@
 
    .. container:: description
 
-      Type of vault, e.g. World-Wide Standardized Seismograph Network (WWSSN), tunnel, USArray Transportable Array Generation 2, etc.
+      Type of vault, e.g. World-Wide Standardized Seismograph Network (WWSSN), tunnel,
+      USArray Transportable Array Generation 2, etc.
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1155,6 +1250,8 @@
       Type of rock and/or geologic formation at the station.
 
 
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _station-equipment:
@@ -1169,7 +1266,12 @@
 
    .. container:: description
 
-      Equipment used by all channels at a station, Equipment that contributes to or affects the response of a channel should be documented on the channel. A type for equipment related to data acquisition or processing.
+      Equipment used by all channels at a station,
+      Equipment that contributes to or affects the response of a channel should be documented on the channel.
+
+      A type for equipment related to data acquisition or processing.
+
+
 
 
 
@@ -1236,7 +1338,9 @@
 
    .. container:: description
 
-      Type of equipment.
+      Type of equipment
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1263,7 +1367,9 @@
 
    .. container:: description
 
-      Description of equipment.
+      Description of equipment
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1290,7 +1396,9 @@
 
    .. container:: description
 
-      Manufacturer of equipment.
+      Manufacturer of equipment
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1317,7 +1425,9 @@
 
    .. container:: description
 
-      Vendor of equipment.
+      Vendor of equipment
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1344,7 +1454,9 @@
 
    .. container:: description
 
-      Model of equipment.
+      Model of equipment
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1371,7 +1483,9 @@
 
    .. container:: description
 
-      Serial number of equipment.
+      Serial number of equipment
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1398,7 +1512,9 @@
 
    .. container:: description
 
-      Date this equipment was installed.
+      Date this equipment was installed
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1425,7 +1541,9 @@
 
    .. container:: description
 
-      Date this equipment was removed.
+      Date this equipment was removed
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1452,7 +1570,9 @@
 
    .. container:: description
 
-      Date this equipment was calibrated.
+      Date this equipment was calibrated
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1469,7 +1589,15 @@
 
    .. container:: description
 
-      Agency and contact persons who manage this station. Only use if this differs from the Operator of the Network. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact's optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing element should be include in the Operator tag.
+      Agency who manage this station.
+      Only use if this differs from the Operator of the Network.
+
+      Since the Contact element is a generic type that represents any contact
+      person, it also has its own optional Agency element.
+      It is expected that typically the contact's optional Agency tag will match the Operator Agency.
+      Only contacts appropriate for the enclosing element should be included in the Operator tag.
+
+
 
 
 
@@ -1515,7 +1643,9 @@
 
    .. container:: description
 
-      An operating agency and associated contact persons.
+      The operating agency.
+
+
 
    .. container:: example
 
@@ -1536,7 +1666,10 @@
 
    .. container:: description
 
-      Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
+      Person's contact information. A person can belong
+      to multiple agencies and have multiple email addresses and phone numbers.
+
+
 
 
 
@@ -1583,7 +1716,9 @@
 
    .. container:: description
 
-      Name of contact or author.
+      Name of contact or author
+
+
 
    .. container:: example
 
@@ -1614,7 +1749,9 @@
 
    .. container:: description
 
-      Agency of contact or author.
+      Agency of contact or author
+
+
 
    .. container:: example
 
@@ -1645,7 +1782,9 @@
 
    .. container:: description
 
-      Email of contact or author.
+      Email of contact or author
+
+
 
    .. container:: example
 
@@ -1666,7 +1805,9 @@
 
    .. container:: description
 
-      Phone of contact or author.
+      Phone of contact or author
+
+
 
 
 
@@ -1727,7 +1868,9 @@
 
    .. container:: description
 
-      Telephone country code.
+      Telephone country code
+
+
 
    .. container:: example
 
@@ -1758,7 +1901,9 @@
 
    .. container:: description
 
-      Telephone area code.
+      Telephone area code
+
+
 
    .. container:: example
 
@@ -1789,7 +1934,9 @@
 
    .. container:: description
 
-      Telephone number.
+      Telephone number
+
+
 
    .. container:: example
 
@@ -1820,7 +1967,9 @@
 
    .. container:: description
 
-      Website of operating agency.
+      Website of operating agency
+
+
 
    .. container:: example
 
@@ -1858,6 +2007,8 @@
       Date and time (UTC) when the station was first installed.
 
 
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _station-terminationdate:
@@ -1886,7 +2037,10 @@
 
    .. container:: description
 
-      Date and time (UTC) when the station was terminated or will be terminated. Do not include this field if a termination date is not available or is not relevant.
+      Date and time (UTC) when the station was terminated or
+      will be terminated. Do not include this field if a termination date is not available or is not relevant.
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -1924,6 +2078,8 @@
       Total number of channels recorded at this station.
 
 
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _station-selectednumberchannels:
@@ -1959,6 +2115,8 @@
       The number of channels selected in the request that resulted in this document.
 
 
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _station-externalreference:
@@ -1973,7 +2131,12 @@
 
    .. container:: description
 
-      URI of any type of external report This type contains a Uniform Resource Identifier (URI) and and description for external information that users may want to reference.
+      URI of any type of external report
+
+      This type contains a Uniform Resource Identifier (URI) and description
+      for external information that users may want to reference.
+
+
 
 
 
@@ -2021,6 +2184,8 @@
       URI of the external reference.
 
 
+
+
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
 
 .. _station-externalreference-description:
@@ -2046,4 +2211,6 @@
    .. container:: description
 
       Description of the external reference.
+
+
 

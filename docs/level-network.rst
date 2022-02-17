@@ -15,7 +15,15 @@
 
    .. container:: description
 
-      The Network container. All station metadata for this network is contained within this element. A Description element may be included with the official network name and other descriptive information. An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation. A Comment element may be included for additional comments. An active Network should not use the endDate attribute. Unlike SEED, do not use an endDate in the distant future to mean active.
+      The Network container. All station metadata for this network is contained within this element.
+      A Description element may be included with the official network name and other descriptive information.
+      An Identifier element may be included to designate a persistent identifier (e.g. DOI) to use for citation.
+      A Comment element may be included for additional comments.
+
+      An active Network should not use the endDate attribute.
+      Unlike SEED, do not use an endDate in the distant future to mean active.
+
+
 
    .. container:: example
 
@@ -34,7 +42,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **alternateCode**, :ref:`string<type-glossary>`, no, "A code use for display or association", "alternateCode=\"GSN\"" 
+      **alternateCode**, :ref:`string<type-glossary>`, no, "A code used for display or association", "alternateCode=\"GSN\"" 
       **code**, :ref:`string<type-glossary>`, :red:`yes`, "Name of Network", "code=\"XX\"" 
       **endDate**, :ref:`dateTime<type-glossary>`, no, "End date of network. Do not use if still active, endDate should not be in the future.", "endDate=\"2018-01-27T00:00:00Z\"" 
       **historicalCode**, :ref:`string<type-glossary>`, no, "A previously used code if different from the current code", "historicalCode=\"XX\"" 
@@ -91,7 +99,9 @@
 
    .. container:: description
 
-      Description of the Network.
+      Description of the Network
+
+
 
    .. container:: example
 
@@ -122,7 +132,11 @@
 
    .. container:: description
 
-      A type to document persistent identifiers. Identifier values should be specified without a URI scheme (prefix), instead the identifier type is documented as an attribute.
+      A type to document persistent identifiers.
+      Identifier values should be specified without a URI scheme (prefix),
+      instead the identifier type is documented as an attribute.
+
+
 
 
 
@@ -155,6 +169,8 @@
    .. container:: description
 
       Container for a comment or log entry.
+
+
 
 
 
@@ -219,6 +235,8 @@
 
       Comment text.
 
+
+
    .. container:: example
 
       **Example**: <Value>Temporary network deployment</Value>
@@ -249,6 +267,8 @@
    .. container:: description
 
       Start time for when comment applies.
+
+
 
    .. container:: example
 
@@ -281,6 +301,8 @@
 
       End time for when comment applies.
 
+
+
    .. container:: example
 
       **Example**: <EndEffectiveTime>2008-09-16T12:00:00Z</EndEffectiveTime>
@@ -300,7 +322,12 @@
 
    .. container:: description
 
-      Author of Comment. Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
+      Author of Comment.
+
+      Person's contact information. A person can belong
+      to multiple agencies and have multiple email addresses and phone numbers.
+
+
 
 
 
@@ -347,7 +374,9 @@
 
    .. container:: description
 
-      Name of contact or author.
+      Name of contact or author
+
+
 
    .. container:: example
 
@@ -378,7 +407,9 @@
 
    .. container:: description
 
-      Agency of contact or author.
+      Agency of contact or author
+
+
 
    .. container:: example
 
@@ -409,7 +440,9 @@
 
    .. container:: description
 
-      Email of contact or author.
+      Email of contact or author
+
+
 
    .. container:: example
 
@@ -430,7 +463,9 @@
 
    .. container:: description
 
-      Phone of contact or author.
+      Phone of contact or author
+
+
 
 
 
@@ -491,7 +526,9 @@
 
    .. container:: description
 
-      Telephone country code.
+      Telephone country code
+
+
 
    .. container:: example
 
@@ -522,7 +559,9 @@
 
    .. container:: description
 
-      Telephone area code.
+      Telephone area code
+
+
 
    .. container:: example
 
@@ -553,7 +592,9 @@
 
    .. container:: description
 
-      Telephone number.
+      Telephone number
+
+
 
    .. container:: example
 
@@ -574,7 +615,17 @@
 
    .. container:: description
 
-      A description of time series data availability. This information should be considered transient and is primarily useful as a guide for generating time series data requests. The information for a DataAvailability:Span may be specific to the time range used in a request that resulted in the document or limited to the availability of data within the request range. These details may or may not be retained when synchronizing metadata between data centers. A type for describing data availability.
+      A description of time series data availability. This
+      information should be considered transient and is primarily useful as a
+      guide for generating time series data requests. The information for a
+      DataAvailability:Span may be specific to the time range used in a request
+      that resulted in the document or limited to the availability of data within
+      the request range. These details may or may not be retained when
+      synchronizing metadata between data centers.
+
+      A type for describing data availability.
+
+
 
 
 
@@ -609,7 +660,11 @@
 
    .. container:: description
 
-      Data availability extents, the earliest and latest data available. No information about the continuity of the data is included or implied.
+      Data availability extents, the earliest and
+      latest data available. No information about the continuity of the data
+      is included or implied.
+
+
 
 
 
@@ -642,7 +697,13 @@
 
    .. container:: description
 
-      A type for describing data availability spans, with variable continuity. The time range described may be based on the request parameters that generated the document and not necessarily relate to continuity outside of the range. It may also be a smaller time window than the request depending on the data characteristics.
+      A type for describing data availability spans, with variable
+      continuity. The time range described may be based on the request parameters that
+      generated the document and not necessarily relate to continuity outside of the
+      range. It may also be a smaller time window than the request depending on the data
+      characteristics.
+
+
 
 
 
@@ -677,7 +738,14 @@
 
    .. container:: description
 
-      Agency and contact persons who manage this network. Since the Contact element is a generic type that represents any contact person, it also has its own optional Agency element. It is expected that typically the contact's optional Agency tag will match the Operator Agency. Only contacts appropriate for the enclosing element should be include in the Operator tag.
+      Agency and contact persons who manage this network.
+
+      Since the Contact element is a generic type that represents any contact
+      person, it also has its own optional Agency element.
+      It is expected that typically the contact's optional Agency tag will match the Operator Agency.
+      Only contacts appropriate for the enclosing element should be included in the Operator tag.
+
+
 
 
 
@@ -723,7 +791,9 @@
 
    .. container:: description
 
-      An operating agency and associated contact persons.
+      The operating agency.
+
+
 
    .. container:: example
 
@@ -744,7 +814,10 @@
 
    .. container:: description
 
-      Person's contact information. A person can belong to multiple agencies and have multiple email addresses and phone numbers.
+      Person's contact information. A person can belong
+      to multiple agencies and have multiple email addresses and phone numbers.
+
+
 
 
 
@@ -791,7 +864,9 @@
 
    .. container:: description
 
-      Name of contact or author.
+      Name of contact or author
+
+
 
    .. container:: example
 
@@ -822,7 +897,9 @@
 
    .. container:: description
 
-      Agency of contact or author.
+      Agency of contact or author
+
+
 
    .. container:: example
 
@@ -853,7 +930,9 @@
 
    .. container:: description
 
-      Email of contact or author.
+      Email of contact or author
+
+
 
    .. container:: example
 
@@ -874,7 +953,9 @@
 
    .. container:: description
 
-      Phone of contact or author.
+      Phone of contact or author
+
+
 
 
 
@@ -935,7 +1016,9 @@
 
    .. container:: description
 
-      Telephone country code.
+      Telephone country code
+
+
 
    .. container:: example
 
@@ -966,7 +1049,9 @@
 
    .. container:: description
 
-      Telephone area code.
+      Telephone area code
+
+
 
    .. container:: example
 
@@ -997,7 +1082,9 @@
 
    .. container:: description
 
-      Telephone number.
+      Telephone number
+
+
 
    .. container:: example
 
@@ -1028,7 +1115,9 @@
 
    .. container:: description
 
-      Website of operating agency.
+      Website of operating agency
+
+
 
    .. container:: example
 
@@ -1067,7 +1156,10 @@
 
    .. container:: description
 
-      The total number of stations in this network, including inactive or terminated stations.
+      The total number of stations in this
+      network, including inactive or terminated stations.
+
+
 
    .. container:: example
 
@@ -1106,7 +1198,10 @@
 
    .. container:: description
 
-      The number of stations selected in the request that resulted in this document.
+      The number of stations selected in the request that resulted
+      in this document.
+
+
 
    .. container:: example
 

@@ -97,7 +97,32 @@ def write_tree(element, stop_element, outfile, first_time = True):
             ann_list = ann_has_level_choice
         else:
             ann_list = list(filter(lambda a: a.tag != "levelDesc" , element.annotation))
-        description = " ".join(map(lambda note: " ".join(note.text.split()) , ann_list))
+        ann_list_lines = []
+        for ann in ann_list:
+            lines = ann.text.strip().replace('\t', '  ').split("\n")
+            if len(lines) > 1:
+                # second non-empty line often has space indent, first can be on element line
+                leading_whitespace=0
+                for l in lines[1:]:
+                    if len(l.strip()) > 0:
+                        leading_whitespace = len(l)-len(l.lstrip(' '))
+                        break
+                white = " "*leading_whitespace
+                lines[0] = white+lines[0].strip()
+                for l in lines:
+                    if len(l.strip()) != 0:
+                        if l[:leading_whitespace] != white:
+                            raise ValueError(f"removing more spaces than there are! {leading_whitespace} from {l}")
+                        l = l[leading_whitespace:]
+                    else:
+                        l = ""
+                    ann_list_lines.append(f"      {l}\n")
+            else:
+                ann_list_lines.append(f"      {lines[0]}\n")
+            # blank line between annotations
+            ann_list_lines.append("\n")
+#        description = " ".join(map(lambda note: " ".join(note.text.split()) , ann_list))
+        description = "".join(ann_list_lines)
 
     if len(element.warning) > 0:
         with open("warnings.rst", "a") as warnfile:
@@ -146,17 +171,9 @@ def write_tree(element, stop_element, outfile, first_time = True):
         description=urlInserter(description)
         description=mathBlock(description,element.level)
 
-        # Remove whitespace from beginning and end
-        description=description.strip()
-
-        # Add period if needs it
         print("   .. container:: description\n", file=outfile)
-        if description[-1]==".":
-            print("      %s\n" % description, file=outfile)
-        else:
-            print("      %s.\n" % description, file=outfile)
+        print("%s\n" % description, file=outfile)
 
-    # Add period if needs it
     for example in element.example:
         exampleStr = ""
         if isinstance(example, ElementTree.Element):
@@ -550,6 +567,8 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
         for y in xsd_element.annotation.documentation:
             for ex in y.findall("example"):
                 this_elem.add_example(ex)
+            for ex in y.findall("warning"):
+                this_elem.add_warning(ex)
             for ld in y.findall("levelDesc"):
                 this_elem.add_annotation(ld)
             if len(y) == 0 and y.text != None:
@@ -560,6 +579,8 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
         for y in xsd_element.type.annotation.documentation:
             for ex in y.findall("example"):
                 this_elem.add_example(ex)
+            for ex in y.findall("warning"):
+                this_elem.add_warning(ex)
             for ld in y.findall("levelDesc"):
                 this_elem.add_annotation(ld)
             if len(y) == 0 and y.text is not None:
@@ -629,6 +650,10 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
 
                         if attrib.annotation is not None:
                             for y in attrib.annotation.documentation:
+                                for ex in y.findall("example"):
+                                    attr.add_example(ex)
+                                for ex in y.findall("warning"):
+                                    attr.add_warning(ex)
                                 for ld in y.findall("levelDesc"):
                                     subElement.add_annotation(ld)
                                 if len(y) == 0 and y.text != None:

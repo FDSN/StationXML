@@ -127,6 +127,10 @@ div.crumb > p {
   font-size:small !important;
 }
 
+/* added to override rtd css rule that separated grey sections with white */
+.rst-content .toctree-wrapper > p.caption, .rst-content h1, .rst-content h2, .rst-content h3, .rst-content h4, .rst-content h5, .rst-content h6 {
+  margin-bottom: 0px;
+}
 
 .breadcrumb
 {

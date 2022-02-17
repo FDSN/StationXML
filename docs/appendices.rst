@@ -92,6 +92,8 @@ details see the SI brochure at:
 
 * SI symbols are preferred over names to avoid language differences, for example `m/s` is preferred over `meter/second` or `metre/second`
 
+* Singular lowercase `count` is preferred for digital counts, do not use `counts` or `COUNT`
+
 In the SEED format all unit names are recommended to be uppercase and
 SI when possible.  For this reason, some unit documentation and
 required declarations in StationXML are in "uppercase SI" and these
