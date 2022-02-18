@@ -124,7 +124,10 @@ def write_tree(element, stop_element, outfile, first_time = True):
 #        description = " ".join(map(lambda note: " ".join(note.text.split()) , ann_list))
         description = "".join(ann_list_lines)
 
-    if len(element.warning) > 0:
+    num_el_attr_warnings = len(element.warning)
+    for attrib in element.attributes:
+        num_el_attr_warnings += len(attrib.warning)
+    if num_el_attr_warnings > 0:
         with open("warnings.rst", "a") as warnfile:
             for warning in element.warning:
                 print("   .. admonition:: Warning\n", file=outfile)
@@ -134,6 +137,15 @@ def write_tree(element, stop_element, outfile, first_time = True):
                 print(f"  -    {simplecrumb} : \n", file=warnfile)
                 print("     .. admonition:: Warning\n", file=warnfile)
                 print(f"       {warning.text}\n", file=warnfile)
+            for attrib in element.attributes:
+                for warning in attrib.warning:
+                    print("   .. admonition:: Warning\n", file=outfile)
+                    print("      %s\n" % warning.text, file=outfile)
+
+                    print(f"\n\n", file=warnfile)
+                    print(f"  -    {simplecrumb} {attrib.name} : \n", file=warnfile)
+                    print("     .. admonition:: Warning\n", file=warnfile)
+                    print(f"       {warning.text}\n", file=warnfile)
 
 
     if element.type:
