@@ -548,7 +548,7 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
     # Store the context for breadcrumbs
     context.append(xsd_element.local_name)
 
-    keep_type, range_string = get_type(xsd_element.type.content_type, xsd_element.local_name)
+    keep_type, range_string = get_type(xsd_element.type.content, xsd_element.local_name)
     this_elem = Element(name=xsd_element.local_name, level=level, type=keep_type, range_string=range_string, crumb=context)
     this_elem.min_occurs = xsd_element.min_occurs
     this_elem.max_occurs = xsd_element.max_occurs
@@ -608,10 +608,10 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
 
     # xsd_element.type is always some form of XsdComplexType
     # xsd_element.type.content_type is either XsdGroup, XsdAtomicBuiltin or XsdAtomicRestriction
-    if isinstance(xsd_element.type.content_type, XsdGroup):
+    if isinstance(xsd_element.type.content, XsdGroup):
 
         # Iterate through contained elements
-        for e in xsd_element.type.content_type.iter_elements():
+        for e in xsd_element.type.content.iter_elements():
 
             if not isinstance(e, XsdAnyElement):
 
