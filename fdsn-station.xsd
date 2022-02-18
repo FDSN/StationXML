@@ -1562,7 +1562,12 @@
 				Identifier values should be specified without a URI scheme (prefix),
 				instead the identifier type is documented as an attribute.
 			</xs:documentation>
-      <xs:documentation><example><identifier type="DOI">10.7914/SN/XX</identifier></example></xs:documentation>
+      <xs:documentation>
+        <example><identifier type="DOI">10.1000/140</identifier></example>
+      </xs:documentation>
+      <xs:documentation><example LevelChoice="N"><identifier type="DOI">10.7914/SN/XX</identifier></example></xs:documentation>
+      <xs:documentation><example LevelChoice="S"><identifier type="DOI">10.5555/12345678</identifier>ABCD</example></xs:documentation>
+      <xs:documentation><example LevelChoice="C"><identifier type="DOI">10.5555/12345678</identifier>BHZ</example></xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
