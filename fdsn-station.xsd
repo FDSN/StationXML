@@ -1743,6 +1743,7 @@
         <xs:documentation><levelDesc LevelChoice="S">Start date of station epoch</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="C">Start date of channel epoch</levelDesc></xs:documentation>
         <xs:documentation><example>2016-07-01T00:00:00Z</example></xs:documentation>
+        <xs:documentation><warning>This attribute is likely to require timezone of Z in future versions of StationXML</warning></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="endDate" type="xs:dateTime">
@@ -1752,6 +1753,8 @@
         <xs:documentation><levelDesc LevelChoice="S">End date of station epoch. Do not use if still active, endDate should not be in the future.</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="C">End date of channel epoch. Do not use if still active, endDate should not be in the future.</levelDesc></xs:documentation>
         <xs:documentation><example>2018-01-27T00:00:00Z</example></xs:documentation>
+        <xs:documentation><warning>This attribute should not be used if in the future.</warning></xs:documentation>
+        <xs:documentation><warning>This attribute is likely to require timezone of Z in future versions of StationXML</warning></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="sourceID" type="xs:anyURI">
