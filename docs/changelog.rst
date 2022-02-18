@@ -1,4 +1,43 @@
 
+Changes from version 1.1 to 1.1.1 (2022)
+------------------------------------------
+
+The 1.1.1 revision of StationXML makes no changes to the schema proper, only adding
+documentation via `<xs:annotation>` and `<xs:documentation>` elements, as well
+as external files. Any existing code that works with 1.1 should work with
+1.1.1 without modification. We recommend that services generating StationXML
+or distributing it, such as FDSNWS Station web services, update the
+`schemaVersion` attribute to '1.1.1' at the next convenient opportunity.
+
+Note that the documentation makes recommendatations in many cases and services
+that generate 1.1.1 StationXML should attempt to follow these recommentations
+where possible. These recommendations include:
+
+
+- Dates and times should be `W3C/ISO 8601 <https://www.w3.org/TR/xmlschema-2/#truncatedformats>`_
+  and should always include a timezone of 'Z' to indicate UTC
+
+- Do not use `endDate` in the future, it should not be present when currently active
+
+- Originiators of StationXML use `<Source>` and distributors use `<Sender>`
+
+- Network, Station and Channel `sourceId` should use the FDSN Source Identifiers
+  specification, http://docs.fdsn.org/projects/source-identifiers
+
+- Use SI symbols for unit name, like `m/s`, along with singular lowercase "count" for digital counts.
+
+- Avoid SEED-style uppercase unit symbols
+
+- Omit `Description` for common units like `m/s`, `m/s**2`, `count`, etc.
+
+- Use empty `Response` element when response is unknown or not applicable.
+
+- For low pass FIR filters, use gain at zero frequency (sum of coefficients)
+
+- Gain-only analog Stages should use PolesZeros with no poles or zeros
+
+- Gain-only digital Stages should use FIR with a single numerator of value 1
+
 Changes from version 1.0 to 1.1 (2019-5-3)
 ------------------------------------------
 (Edited 2019-12-18 for small clarifications)
