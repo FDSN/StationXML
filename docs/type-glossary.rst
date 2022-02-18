@@ -40,7 +40,7 @@
              :name: glossary-datetime
 
              dateTime
-     - ISO 8601 represention of a date or time. A "Z" should always be appended to a time represent the timezone as UTC.
+     - `W3C/ISO 8601 <https://www.w3.org/TR/xmlschema-2/#truncatedformats>`_ representation of a date or time. A "Z" should always be appended to a time represent the timezone as UTC.
      - * 2021-07-26Z
        * 2021-07-26T12:49:55Z
        * 2021-07-26T12:49:55.123Z
