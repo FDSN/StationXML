@@ -731,6 +731,9 @@ def main():
 
     # create warning.rst file for deprectaion warnings
     with open("warnings.rst", "w") as warnfile:
+        print(".. Put any comments here\n", file=warnfile)
+        print("  Warning, this file is regenerated from the annotations in the schema file.\n", file=warnfile)
+        print("  Any changes will be overwritten by convert_xsd_to_rst.py.\n\n\n", file=warnfile)
         print("\n", file=warnfile)
         print("The following are potential future changes, as tagged in the schema with <warning> elements in the documentation. They may result in modifications or deletions in future versions of StationXML.\n", file=warnfile)
         print("\n\n", file=warnfile)
@@ -763,6 +766,10 @@ def main():
             print (f'Writing to {rst_file}')
 
         with open(rst_file, 'w') as outfile:
+            print(".. Put any comments here\n", file=outfile)
+            print("  Warning, this file is regenerated from the annotations in the schema file.\n", file=outfile)
+            print("  Any changes will be overwritten by convert_xsd_to_rst.py.\n", file=outfile)
+
             write_tree(level_elem, stop_element, outfile = outfile)
 
         recur_spelling(words, level_elem)
