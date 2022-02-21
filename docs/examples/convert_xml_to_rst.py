@@ -32,19 +32,14 @@ for xmlfile in all_xml:
     introfile = rstfile.replace(".rst", "-intro.rst")
     pngfile = xmlfile.replace(".xml", ".png")
 
-    with open(xmlfile) as f:
-        lines = f.readlines()
-
     with open(rstfile, 'w') as out:
         if os.path.exists(introfile):
             out.write(f"\n.. include:: examples/{introfile}\n\n")
 
         out.write("%s\n" % ".. toggle-header::")
-        out.write("\t%s\n\n" % ":header: StationXML **Show/Hide**")
-        out.write("\t%s\n\n" % ".. code-block:: XML")
-
-        for line in lines:
-            out.write("\t\t%s\n" % line.rstrip())
+        out.write("  %s\n\n" % ":header: StationXML **Show/Hide**")
+        out.write(f"  .. literalinclude:: examples/{xmlfile}\n")
+        out.write(f"    :language: XML\n\n")
 
         if os.path.exists(pngfile):
             out.write("\n.. image:: examples/%s\n\n" % pngfile)
