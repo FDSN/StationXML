@@ -682,18 +682,25 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
     return level_elem
 
 def save_spelling(words):
-    with open('spelling/schema_words.txt', 'w') as words_file:
-        for w in words:
+    spelling_dir = 'spelling'
+    schema_words = 'schema_words.txt'
+    text_words = 'text_words.txt'
+    all_words = 'all_words.txt'
+    if not os.path.isdir(spelling_dir):
+        os.makedirs(spelling_dir)
+    with open(os.path.join(spelling_dir, schema_words), 'w') as words_file:
+        sort_words = list(words)
+        sort_words.sort()
+        for w in sort_words:
             print(w, file=words_file)
-    text_words = 'spelling/text_words.txt'
-    if os.path.isfile(text_words):
-        with open(text_words, 'r') as in_words_file:
+    if os.path.isfile(os.path.join(spelling_dir, text_words)):
+        with open(os.path.join(spelling_dir, text_words), 'r') as in_words_file:
             for w in in_words:
                 words.add(w.strip())
 
     sort_words = list(words)
     sort_words.sort()
-    with open('spelling/all_words.txt', 'w') as words_file:
+    with open(os.path.join(spelling_dir, all_words), 'w') as words_file:
         for w in sort_words:
             print(w, file=words_file)
 
