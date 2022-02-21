@@ -162,7 +162,7 @@ most of the shape is controlled by the polezero expansion of the analog sensor s
 
 
 In the figure above we plot the analog stage polezero expansion for a broadband
-seimometer (STS-2) and a short-period seismometer (L-22D).
+seismometer (STS-2) and a short-period seismometer (L-22D).
 In both cases, the A0 normalization frequency, :math:`f_n` is located within the
 flat part of the spectrum, and each response has a corner frequency, :math:`f_c`
 below which the magnitude response rolls off.  The corner frequency is the
@@ -193,14 +193,14 @@ By similar reasoning, the corner frequency of the short-period L-22D sensor is
    f_c =  \frac{\omega}{2\pi} = 2.0 Hz
 
 For many applications the exact instrument response is not needed and it is
-sufficient to calculate a single scalefactor to convert from recorded COUNTS
+sufficient to calculate a single scale factor to convert from recorded COUNTS
 to ground motion (e.g, M/S).  For instance, if the signal of interest only
 contains energy within the flat part of the spectrum (e.g., band-limited signal),
 then we might be able to ignore the polezero shape altogether and compute
-and overall scalefactor (to go from COUNTS to M/S) for the sensor + datalogger.
+and overall scale factor (to go from COUNTS to M/S) for the sensor + datalogger.
 
 For instance, if the STS-2 sensor discussed above were connected to a generic
-Reftek RT-130 datalogger, we can calculate an approximate forward scalefactor:
+Reftek RT-130 datalogger, we can calculate an approximate forward scale factor:
 
 .. math::
 
@@ -221,7 +221,7 @@ caveats must be mentioned.
       hence to compute the overall instrument response (sensor + datalogger), the
       datalogger gain often has to be recalculated at the frequency of the sensor normalization.
 
-   #. It ignores the phase response, which can be very important for modelling waveforms, etc.
+   #. It ignores the phase response, which can be very important for modeling waveforms, etc.
 
 Alternatively, when simple scaling is insufficient, it is necessary to use all of the
 response stages to compute the exact instrument response.
@@ -315,7 +315,7 @@ where the <Frequency> is normally chosen to be the same as the normalization fre
 An external pre-amplifier stage could have an associated filter, either implemented using a polezero or
 coefficient representation.
 
-Often, the preamplifier is integrated with the datalogger and merely adds a uniform scalefactor to
+Often, the preamplifier is integrated with the datalogger and merely adds a uniform scale factor to
 the instrument response.
 
 .. admonition:: Warning
