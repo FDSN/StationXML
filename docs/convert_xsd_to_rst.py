@@ -695,7 +695,7 @@ def save_spelling(words):
             print(w, file=words_file)
     if os.path.isfile(os.path.join(spelling_dir, text_words)):
         with open(os.path.join(spelling_dir, text_words), 'r') as in_words_file:
-            for w in in_words:
+            for w in in_words_file:
                 words.add(w.strip())
 
     sort_words = list(words)
