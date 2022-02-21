@@ -1667,8 +1667,10 @@
 						pressure transducers, extensometers, etc.), it is required to
 						express the sensor input (e.g., Temp) as a Maclaurin series expansion of powers of the
 						*output* units (e.g., Volts):
+            
 						.. math::
-						[Temp(V)=\sum_{k=0}^{N} a_k V^{k}]endEQ
+
+              Temp(V)=\sum_{k=0}^{N} a_k V^{k}
 
 						For such responses, two StationXML components are required to specify the response:
 						1. A Polynomial stage, which contains the values of the Maclaurin coefficients,
