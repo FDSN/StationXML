@@ -20,37 +20,10 @@ StationXML Example
 -----------------------
 
 .. toggle-header::
-    :header: Example of StationXML **Show/Hide Code**
+  :header: StationXML **Show/Hide**
 
-    ::
-
-      <?xml version='1.0' encoding='UTF-8'?>
-         <FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
-            <Source>IRIS-DMC</Source>
-            <Sender>IRIS-DMC</Sender>
-            <Module>IRIS WEB SERVICE: fdsnws-station | version: 1.1.35</Module>
-            <ModuleURI>http://service.iris.edu/fdsnws/station/1/query?starttime=1990-01-27T06&network=IU&level=response</ModuleURI>
-            <Created>2018-11-08T14:57:56.000000Z</Created>
-            <Network code="IU" restrictedStatus="open" startDate="1988-01-01T00:00:00.000000Z">
-               <Description>Global Seismograph Network (GSN - IRIS/USGS)</Description>
-               <TotalNumberStations>269</TotalNumberStations>
-               <SelectedNumberStations>6</SelectedNumberStations>
-               <Station code="ANMO" endDate="1995-07-14T00:00:00.000000Z" restrictedStatus="open" startDate="1989-08-29T00:00:00.000000Z">
-                  <Channel>
-                     <Response>
-                        ...
-                     </Response>
-                  </Channel>
-                  <Channel>
-                     <Response>
-                        ...
-                     </Response>
-                  </Channel>
-               </Station>
-               <Station code="CCM" endDate="1998-05-26T00:00:00.000000Z" restrictedStatus="open" startDate="1989-08-29T00:00:00.000000Z">
-               </Station>
-            </Network>
-         </FDSNStationXML>
+  .. literalinclude:: examples/overview_example.xml
+    :language: XML
 
 
 Note that each XML element must have a start tag (e.g., <Station>) and an end tag (</Station>)
@@ -63,10 +36,17 @@ The FDSN and StationXML schema
 StationXML was developed through the International Federation of Digital Seismograph Networks
 (`FDSN <https://www.fdsn.org/>`_) to provide a standardized format for geophysical metadata.
 
-Notice that the example StationXML excerpt above contains the following lines::
-   <?xml version='1.0' encoding='UTF-8'?>
+Notice that the example StationXML excerpt above contains the following lines
 
-   <FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
+.. code-block:: XML
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:iris="http://www.fdsn.org/xml/station/1/iris"
+     xsi:schemaLocation="http://www.fdsn.org/xml/station/1 http://www.fdsn.org/xml/station/fdsn-station-1.2.xsd"
+     schemaVersion="1.2">
+
 
 The first line, the xml prolog, specifies the xml version and the character encoding.
 
