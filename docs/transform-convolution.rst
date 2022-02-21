@@ -5,7 +5,7 @@
 Introduction
 ^^^^^^^^^^^^^^^^^^^^^
 
-As we'll see in the next sections, a geophysical sensor (e.g., seimometer)
+As we'll see in the next sections, a geophysical sensor (e.g., seismometer)
 connected to a datalogger that digitizes and records the
 input signal (e.g., ground motion), represents a linear time-invariant (LTI)
 system.  We can thus model the overall effect of the instrumentation on

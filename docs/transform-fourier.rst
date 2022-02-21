@@ -25,7 +25,7 @@ Some authors prefer to scale each transform by :math:`\frac{1}{\sqrt{2\pi}}`
 instead.
 What is important is that forward and reverse transforms must
 have exponents that are opposite in sign,
-and the product of the scalefactors must equal :math:`\frac{1}{2\pi}`.
+and the product of the scale factors must equal :math:`\frac{1}{2\pi}`.
 
 
 Discrete Time Fourier Transform (DTFT)
@@ -60,5 +60,3 @@ And finally, when both time and frequency are discrete, we define the Discrete F
    x[n]=\sum_{k=0}^{N-1}X[k]e^{+j2\pi kn/N}
 
 Note that the popular Fast Fourier Transform (FFT) is a particular implementation of the DFT.
-
-

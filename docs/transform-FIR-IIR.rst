@@ -169,7 +169,7 @@ FIR filter frequency response can be written
    H(e^{j\omega})=\sum_{k=0}^{M}b_{k}z^{-k}=\sum_{k=0}^{M}b_{k}e^{-j\omega k}=\sum_{k=0}^{M}h[k]e^{-j\omega k}
 
 where in the last expression, we identify the filter coefficients :math:`b_{k}` as the
-inpulse response values: :math:`h[k]=b_k` to show that the output of the FIR
+impulse response values: :math:`h[k]=b_k` to show that the output of the FIR
 filter is the convolution of the input signal :math:`x[n]` with the filter
 impulse response.
 
@@ -308,7 +308,7 @@ Type III (M even) and Type IV (M odd) FIR filters exhibit anti-symmetry about th
 :math:`h[k]=-h[M-k]`.
 
 As a result, their expansions reduce to summation of sine functions and can't be used
-to implement low-pass filters, hence they aren't used for anti-alias filtering.
+to implement low-pass filters, hence they are not used for anti-alias filtering.
 
 
 Practical Concerns

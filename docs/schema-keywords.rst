@@ -1,7 +1,7 @@
 
 The :ref:`reference` of this documentation is auto-generated from
 documentation tags in the StationXML schema document.  In this way a
-single source of documenation is maintained for the purposes of this
+single source of documentation is maintained for the purposes of this
 generated documentation and those reading the XSD schema specification
 directly.
 

@@ -208,7 +208,7 @@ Reftek RT-130 datalogger, we can calculate an approximate forward scalefactor:
 
 
 While this is often done to do a quick conversion to ground velocity, several
-caviats must be mentioned.
+caveats must be mentioned.
 
    #. Very few signals are truly bandlimited this way and we're essentially applying the
       wrong correction factor to the signals outside the bandwidth
