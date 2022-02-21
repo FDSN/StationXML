@@ -63,7 +63,7 @@ polynomial coefficients. In this case, because it is linear, only the
 
 .. math::
 
-   a^{\prime}_n=\frac{a_n}{(g0)^{n}}
+   a^{\prime}_n=\frac{a_n}{(g_0)^{n}}
 
 where :math:`g_0 = 51` is the overall gain, giving coefficients for the
 InstrumentPolynomial of :math:`a_0=600` and :math:`a_1=1.96`.

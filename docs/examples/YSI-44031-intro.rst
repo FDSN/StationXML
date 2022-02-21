@@ -56,9 +56,9 @@ for the remaining stages:
 
 .. math::
 
-   g0=\Pi_{n=1}^{N} gain_n
+   g_0=\Pi_{n=1}^{N} gain_n
 
-where :math:`g0` is the system gain. Note that the Polynomial stage cannot
+where :math:`g_0` is the system gain. Note that the Polynomial stage cannot
 have a StageGain element, and so the gain for that stage is unity.
 
 Then the :math:`n^{th}` coefficient of the MacLaurin series is scaled by the inverse
@@ -66,9 +66,9 @@ Then the :math:`n^{th}` coefficient of the MacLaurin series is scaled by the inv
 
 .. math::
 
-   a^{\prime}_n=\frac{a_n}{(g0)^{n}}
+   a^{\prime}_n=\frac{a_n}{(g_0)^{n}}
 
-For the example shown, the system gain is :math:`g0=838860.80`  so that
+For the example shown, the system gain is :math:`g_0=838860.80`  so that
 the scaled coefficients are:
 
 .. csv-table::
