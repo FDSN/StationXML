@@ -681,6 +681,31 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
 
     return level_elem
 
+def save_spelling(words):
+    with open('spelling/schema_words.txt', 'w') as words_file:
+        for w in words:
+            print(w, file=words_file)
+    text_words = 'spelling/text_words.txt'
+    if os.path.isfile(text_words):
+        with open(text_words, 'r') as in_words_file:
+            for w in in_words:
+                words.add(w.strip())
+
+    sort_words = list(words)
+    sort_words.sort()
+    with open('spelling/all_words.txt', 'w') as words_file:
+        for w in sort_words:
+            print(w, file=words_file)
+
+def recur_spelling(words, element):
+    words.add(element.name)
+    for a in element.attributes:
+        words.add(a.name)
+    for child in element.children:
+        recur_spelling(words, child)
+
+
+
 
 def main():
     """Generate RST from XSD documentation tags
@@ -709,6 +734,7 @@ def main():
                     'fsx:FDSNStationXML/fsx:Network/fsx:Station/fsx:Channel',
                     'fsx:FDSNStationXML/fsx:Network/fsx:Station/fsx:Channel/fsx:Response']
 
+    words = set()
     for i, xpath in enumerate(level_xpaths):
         xsd_element = schema.find(xpath)
 
@@ -731,6 +757,9 @@ def main():
 
         with open(rst_file, 'w') as outfile:
             write_tree(level_elem, stop_element, outfile = outfile)
+
+        recur_spelling(words, level_elem)
+    save_spelling(words)
 
 
 if __name__ == "__main__":
