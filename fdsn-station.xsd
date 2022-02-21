@@ -85,7 +85,7 @@
 				<xs:annotation>
 					<xs:documentation>Name of the institution sending this document,
             for example the institution hosting an FDSN Station web service.
-            It is recommended that authoratative StationXML
+            It is recommended that authoritative StationXML
             created by the originator of the metadata not use Sender and
             use Source instead. For example metadata created by a network
             operator for submission to other data archives would only use Source,
@@ -361,7 +361,7 @@
               <xs:documentation><example><Type>CONTINUOUS</Type></example></xs:documentation>
   							<xs:documentation>
                   This element existed primarily to hold the corresponding
-                  value from SEED, but should not be used for new stationXML.
+                  value from SEED, but should not be used for new StationXML.
 							</xs:documentation>
               <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
 						</xs:annotation>
@@ -476,7 +476,7 @@
 			<xs:element name="Value" type="xs:double">
 				<xs:annotation>
           <xs:documentation>
-            A scalar value representing the amount of amplification or diminuition, if any,
+            A scalar value representing the amount of amplification or diminution, if any,
             the current stage applies to the input signal.
 					</xs:documentation>
 				</xs:annotation>
@@ -780,7 +780,7 @@
                 For an analog stage this should be the units of the poles and zeros of
                 the Laplace Transform, either:
                 "LAPLACE (RADIANS/SECOND)" or "LAPLACE (HERTZ)".
-                For a digial z-transform (e.g., for an IIR filter), this should be
+                For a digital z-transform (e.g., for an IIR filter), this should be
                 "DIGITAL (Z-TRANSFORM)"
 							</xs:documentation>
               <xs:documentation><example><PzTransferFunctionType>LAPLACE (RADIANS/SECOND)</PzTransferFunctionType></example>
@@ -935,7 +935,7 @@
 	</xs:complexType>
 	<xs:complexType name="PolynomialType">
 		<xs:annotation>
-			<xs:documentation>Response type for a reponse represented as a polynomial expansion,
+			<xs:documentation>Response type for a response represented as a polynomial expansion,
 				which allows non-linear sensors to be described. Used at either a stage of
 				acquisition response or a complete system. </xs:documentation>
 		</xs:annotation>

@@ -287,18 +287,18 @@ and zero by :math:`2\pi`,
 and then scaling the given normalization factor
 :math:`A_{0}^{'}` by :math:`(2\pi)^{N-M}`.
 
-For example, the poleszeros of the Streckeisen STS-I sensor are shown
+For example, the poles and zeros of the Streckeisen STS-I sensor are shown
 in the table below for units = Hz (<PzTransferFunctionType>LAPLACE (HERTZ)</PzTransferFunctionType>)
 
 .. include:: pz_table_sts-1_Hz.rst
 
-Stage 2: The Pre-Amplifier
+Stage 2: The Preamplifier
 -----------------------------
-Not all response sequences have a pre-amplifier. When present, it may be implemented using
+Not all response sequences have a preamplifier. When present, it may be implemented using
 an analog circuit (V->V) or it may be a digital circuit integrated within the analog-to-digital
 (datalogger) recorder itself.
 
-For example, an analog pre-amplifier stage with a gain of 8 would be represented as:
+For example, an analog preamplifier stage with a gain of 8 would be represented as:
 
 .. code-block:: XML
 
@@ -312,7 +312,7 @@ For example, an analog pre-amplifier stage with a gain of 8 would be represented
 
 where the <Frequency> is normally chosen to be the same as the normalization frequency, :math:`f_n` in stage 1.
 
-An external pre-amplifier stage could have an associated filter, either implemented using a polezero or
+An external preamplifier stage could have an associated filter, either implemented using a polezero or
 coefficient representation.
 
 Often, the preamplifier is integrated with the datalogger and merely adds a uniform scale factor to
