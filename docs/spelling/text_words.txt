@@ -48,6 +48,7 @@ datalogger
 dataloggers
 dateTime
 digitizer
+downsampling
 evalresp
 extensometers
 fdsn
@@ -66,6 +67,7 @@ passband
 piecewise
 polezero
 preamplifier
+preamplifiers
 seismometer
 seismometers
 sinusoid
