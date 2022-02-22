@@ -43,7 +43,7 @@ This provides the following conversion from counts to pressure:
 
 .. csv-table::
   :class: rows
-  :header: "Counts", "Volts (V) = gain*counts", "Pressure (mbar) = pn(volts)"
+  :header: "Counts", "Volts (V) = gain*counts", "Pressure (mbar) = p(volts)"
   :widths: auto
 
   0, 0.0, 600

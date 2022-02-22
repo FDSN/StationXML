@@ -490,9 +490,9 @@
             #. For low pass FIR filters, use gain at zero frequency (sum of coefficients)
             #. If given, use manufacturer frequency/gain without recomputing
             #. For anything else, frequency should be in the "good" part of the passband
-            #. All stage frequencies should be below the final nyquist, as long as 2,3 are satisfied
+            #. All stage frequencies should be below the final Nyquist, as long as 2,3 are satisfied
             #. All stages, except lowpass FIR filters, should use the same frequencies, as long as 2,3 are satisfied
-            #. Overall gain should also use the same frequency as 5, as long as it is below the final nyquist and in the good part of the final passband
+            #. Overall gain should also use the same frequency as 5, as long as it is below the final Nyquist and in the good part of the final passband
 
 					</xs:documentation>
 				</xs:annotation>
@@ -1667,7 +1667,7 @@
 						pressure transducers, extensometers, etc.), it is required to
 						express the sensor input (e.g., Temp) as a Maclaurin series expansion of powers of the
 						*output* units (e.g., Volts):
-            
+
 						.. math::
 
               Temp(V)=\sum_{k=0}^{N} a_k V^{k}

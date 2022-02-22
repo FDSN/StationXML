@@ -12,7 +12,7 @@ system.  We can thus model the overall effect of the instrumentation on
 the input signal as a linear combination of stages representing each
 component of the instrumentation.  The stages are connected sequentially
 so that the output of stage 1, representing the sensor,
-forms the input of stage 2, which might represent either a pre-amplifier
+forms the input of stage 2, which might represent either a preamplifier
 or a digitizer.
 As the input signal passes through each stage, we say that it is "convolved"
 with the impulse response of that stage, to form the output signal that

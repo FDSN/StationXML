@@ -320,13 +320,13 @@ the instrument response.
 
 .. admonition:: Warning
 
-   Using *place-holder* pre-amps at stage 2 may not be good practice.
+   Using *place-holder* preamplifiers at stage 2 may not be good practice.
 
 Some entities (e.g., the Nominal Response Library or NRL)
-always include a pre-amp at stage 2 in order to
+always include a preamplifier at stage 2 in order to
 standardize the numbering of response stages
 (e.g., so that the datalogger response always begins at stage 3).
-If no pre-amp was actually present, then a *place-holder* stage
+If no preamplifier was actually present, then a *place-holder* stage
 with gain=1 is used.
 
 However, there is disagreement about whether *all* responses should have

@@ -47,9 +47,7 @@ dataless
 datalogger
 dataloggers
 dateTime
-desampling
 digitizer
-dsp
 evalresp
 extensometers
 fdsn
@@ -59,16 +57,14 @@ jane
 levelDesc
 lowpass
 mbar
-nyquist
+Nyquist
 obspy
 oversample
 oversampled
 oversamples
 passband
 piecewise
-pn
 polezero
-pre
 preamplifier
 seismometer
 seismometers

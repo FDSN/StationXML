@@ -324,7 +324,8 @@ and EVEN symmetry refer to a symmetric FIR filter (there is no flag to indicate
 an asymmetric filter), with the ODD symmetry indicating the total number of FIR
 coefficients, M, is odd (so that the point of symmetry corresponds to index
 (M-1)/2 in the coefficient array. This is also referred to as a "Type I" FIR
-filter in dsp literature and is often used in seismic datalogger desampling
+filter in digital signal processing literature
+and is often used in seismic datalogger downsampling
 sequences. In contrast, a symmetric FIR filter with EVEN symmetry has a total
 number of FIR coefficients, M, that is even. As a result, there is no actual
 index at the point of symmetry. This is also referred to as a "Type II" FIR
