@@ -896,7 +896,7 @@
 				instead. Digital filters with no denominator should use FIR instead.
       </xs:documentation>
       <xs:documentation>
-        <warning>The numerator field is likely to be changed to require at least one numerator in future versions of StationXML.</warning>
+        <warning>The Numerator element is likely to be changed to require at least one numerator.</warning>
       </xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
