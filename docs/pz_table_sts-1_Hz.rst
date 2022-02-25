@@ -3,7 +3,7 @@
    :stub-columns: 0
    :widths: 1 1 1 1
 
-   * - Sensor: Streckeisen STS-1 poleszeros given in Hz
+   * - Sensor: Streckeisen STS-1 poles and zeros given in Hz
 
    * - **Gain:**
      - 2400 [V/m/s]
@@ -42,4 +42,3 @@
      - -7.8177
      - ..
      - ..
-

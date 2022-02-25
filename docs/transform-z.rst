@@ -126,7 +126,7 @@ complex frequency response, :math:`H(f)` ?
 We start by only considering the magnitude response, :math:`|H(f)|`.
 
 The z-transform only exists within a region of the complex z-plane where
-the infinite sum [eqn X] converges. We call this region the
+the infinite sum converges. We call this region the
 Radius of Convergence (ROC) of the system.
 
 If our system, described by difference equations, is stable, then the ROC

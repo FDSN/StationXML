@@ -52,6 +52,33 @@ This will re-generate the following files from the XSD schema document:
  - level-station.rst
  - level-channel.rst
  - level-response.rst
+ - warnings.rst
+
+## Spell check
+```
+pip install sphinxcontrib-spelling
+```
+which require pyenchant and libenchant.
+
+See https://pyenchant.github.io/pyenchant/install.html
+
+For debian based linux:
+```
+sudo apt install libenchant-2-2
+```
+For MacOSX using homebrew (currently does not work on M1 processors):
+```
+brew install enchant
+```
+
+Then add `'sphinxcontrib.spelling'` to `extensions` in conf.py
+install libenchant library, see https://pyenchant.github.io/pyenchant/install.html
+
+then run:
+```
+make spelling
+```
+output will be in the _build/spelling directory.
 
 ## To modify the look and feel of the auto-generated level docs
 

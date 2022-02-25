@@ -40,7 +40,12 @@ rst_epilog = '.. |doc_version| replace:: %s' % doc_version
 # ones.
 extensions = ['sphinxcontrib.contentui',
               'linuxdoc.rstFlatTable',      # Implementation of the 'flat-table' reST-directive
+              #'sphinxcontrib.spelling',
              ]
+
+spelling_word_list_filename=['spelling/text_words.txt',
+                             'spelling/schema_words.txt',
+                             ]
 
 latex_maketitle = r'''
   \noindent\rule{\textwidth}{1pt}\par
@@ -84,6 +89,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
+# Note, some of these, like level-*, are included from other .rst files
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','example_1.rst','examples',
                     'level-preamble.rst','level-network.rst','level-channel.rst',
                     'level-response.rst','level-station.rst','response-practical.rst']

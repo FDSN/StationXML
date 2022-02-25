@@ -169,7 +169,7 @@ FIR filter frequency response can be written
    H(e^{j\omega})=\sum_{k=0}^{M}b_{k}z^{-k}=\sum_{k=0}^{M}b_{k}e^{-j\omega k}=\sum_{k=0}^{M}h[k]e^{-j\omega k}
 
 where in the last expression, we identify the filter coefficients :math:`b_{k}` as the
-inpulse response values: :math:`h[k]=b_k` to show that the output of the FIR
+impulse response values: :math:`h[k]=b_k` to show that the output of the FIR
 filter is the convolution of the input signal :math:`x[n]` with the filter
 impulse response.
 
@@ -308,7 +308,7 @@ Type III (M even) and Type IV (M odd) FIR filters exhibit anti-symmetry about th
 :math:`h[k]=-h[M-k]`.
 
 As a result, their expansions reduce to summation of sine functions and can't be used
-to implement low-pass filters, hence they aren't used for anti-alias filtering.
+to implement low-pass filters, hence they are not used for anti-alias filtering.
 
 
 Practical Concerns
@@ -324,7 +324,8 @@ and EVEN symmetry refer to a symmetric FIR filter (there is no flag to indicate
 an asymmetric filter), with the ODD symmetry indicating the total number of FIR
 coefficients, M, is odd (so that the point of symmetry corresponds to index
 (M-1)/2 in the coefficient array. This is also referred to as a "Type I" FIR
-filter in dsp literature and is often used in seismic datalogger desampling
+filter in digital signal processing literature
+and is often used in seismic datalogger downsampling
 sequences. In contrast, a symmetric FIR filter with EVEN symmetry has a total
 number of FIR coefficients, M, that is even. As a result, there is no actual
 index at the point of symmetry. This is also referred to as a "Type II" FIR

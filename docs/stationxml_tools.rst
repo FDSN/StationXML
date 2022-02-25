@@ -1,17 +1,17 @@
 .. Put any comments here
    Be sure to indent at this level to keep it in comment.
 
-As StationXML files are ordinary text files, they may be editted with
+As StationXML files are ordinary text files, they may be edited with
 any text editor (e.g., vi/VIM, TextWrangler, Notepad/Wordpad, etc)
 
-However, StationXML files can become very large and unwieldly as more
+However, StationXML files can become very large and unwieldy as more
 stations and channels are added.  For instance a regional seismic network
 can generate a StationXML file of size > 30Mb on disk (>400,000 lines).
 
-Fortunately, several tools exist that allow creation and editting of
+Fortunately, several tools exist that allow creation and editing of
 StationXML files.
 
-obspy + NRL
+ObsPy + NRL
 ==============
 
 ObsPy contains a number of very useful modules for working with StationXML.
@@ -167,7 +167,7 @@ The resulting response plot looks like
 
 
 
-Up until now we've been examining the response in ObsPy format, that is, as an instance
+Up until now we have been examining the response in ObsPy format, that is, as an instance
 of type obspy.core.inventory.response.Response.
 
 We can also examine this as part of a StationXML file, however, StationXML

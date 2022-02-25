@@ -48,7 +48,7 @@ Notice that the example StationXML excerpt above contains the following lines
      schemaVersion="1.2">
 
 
-The first line, the xml prolog, specifies the xml version and the character encoding.
+The first line, the xml prologue, specifies the xml version and the character encoding.
 
 The second line begins the StationXML document and
 specifies the location and version of the schema
@@ -67,7 +67,7 @@ located at:
 
 Character Encoding
 ----------------------------------
-UTF-8 is the default encoding for XML, specified in the prolog,
+UTF-8 is the default encoding for XML, specified in the prologue,
 allowing non-ascii characters to be used within StationXML. This
 is common within names of people and places and in comments and descriptions.
 However, authors should use ASCII when possible for maximum portability.

@@ -162,7 +162,7 @@ most of the shape is controlled by the polezero expansion of the analog sensor s
 
 
 In the figure above we plot the analog stage polezero expansion for a broadband
-seimometer (STS-2) and a short-period seismometer (L-22D).
+seismometer (STS-2) and a short-period seismometer (L-22D).
 In both cases, the A0 normalization frequency, :math:`f_n` is located within the
 flat part of the spectrum, and each response has a corner frequency, :math:`f_c`
 below which the magnitude response rolls off.  The corner frequency is the
@@ -193,14 +193,14 @@ By similar reasoning, the corner frequency of the short-period L-22D sensor is
    f_c =  \frac{\omega}{2\pi} = 2.0 Hz
 
 For many applications the exact instrument response is not needed and it is
-sufficient to calculate a single scalefactor to convert from recorded COUNTS
+sufficient to calculate a single scale factor to convert from recorded COUNTS
 to ground motion (e.g, M/S).  For instance, if the signal of interest only
 contains energy within the flat part of the spectrum (e.g., band-limited signal),
 then we might be able to ignore the polezero shape altogether and compute
-and overall scalefactor (to go from COUNTS to M/S) for the sensor + datalogger.
+and overall scale factor (to go from COUNTS to M/S) for the sensor + datalogger.
 
 For instance, if the STS-2 sensor discussed above were connected to a generic
-Reftek RT-130 datalogger, we can calculate an approximate forward scalefactor:
+Reftek RT-130 datalogger, we can calculate an approximate forward scale factor:
 
 .. math::
 
@@ -208,7 +208,7 @@ Reftek RT-130 datalogger, we can calculate an approximate forward scalefactor:
 
 
 While this is often done to do a quick conversion to ground velocity, several
-caviats must be mentioned.
+caveats must be mentioned.
 
    #. Very few signals are truly bandlimited this way and we're essentially applying the
       wrong correction factor to the signals outside the bandwidth
@@ -221,7 +221,7 @@ caviats must be mentioned.
       hence to compute the overall instrument response (sensor + datalogger), the
       datalogger gain often has to be recalculated at the frequency of the sensor normalization.
 
-   #. It ignores the phase response, which can be very important for modelling waveforms, etc.
+   #. It ignores the phase response, which can be very important for modeling waveforms, etc.
 
 Alternatively, when simple scaling is insufficient, it is necessary to use all of the
 response stages to compute the exact instrument response.
@@ -287,18 +287,18 @@ and zero by :math:`2\pi`,
 and then scaling the given normalization factor
 :math:`A_{0}^{'}` by :math:`(2\pi)^{N-M}`.
 
-For example, the poleszeros of the Streckeisen STS-I sensor are shown
+For example, the poles and zeros of the Streckeisen STS-I sensor are shown
 in the table below for units = Hz (<PzTransferFunctionType>LAPLACE (HERTZ)</PzTransferFunctionType>)
 
 .. include:: pz_table_sts-1_Hz.rst
 
-Stage 2: The Pre-Amplifier
+Stage 2: The Preamplifier
 -----------------------------
-Not all response sequences have a pre-amplifier. When present, it may be implemented using
+Not all response sequences have a preamplifier. When present, it may be implemented using
 an analog circuit (V->V) or it may be a digital circuit integrated within the analog-to-digital
 (datalogger) recorder itself.
 
-For example, an analog pre-amplifier stage with a gain of 8 would be represented as:
+For example, an analog preamplifier stage with a gain of 8 would be represented as:
 
 .. code-block:: XML
 
@@ -312,21 +312,21 @@ For example, an analog pre-amplifier stage with a gain of 8 would be represented
 
 where the <Frequency> is normally chosen to be the same as the normalization frequency, :math:`f_n` in stage 1.
 
-An external pre-amplifier stage could have an associated filter, either implemented using a polezero or
+An external preamplifier stage could have an associated filter, either implemented using a polezero or
 coefficient representation.
 
-Often, the preamplifier is integrated with the datalogger and merely adds a uniform scalefactor to
+Often, the preamplifier is integrated with the datalogger and merely adds a uniform scale factor to
 the instrument response.
 
 .. admonition:: Warning
 
-   Using *place-holder* pre-amps at stage 2 may not be good practice.
+   Using *place-holder* preamplifiers at stage 2 may not be good practice.
 
 Some entities (e.g., the Nominal Response Library or NRL)
-always include a pre-amp at stage 2 in order to
+always include a preamplifier at stage 2 in order to
 standardize the numbering of response stages
 (e.g., so that the datalogger response always begins at stage 3).
-If no pre-amp was actually present, then a *place-holder* stage
+If no preamplifier was actually present, then a *place-holder* stage
 with gain=1 is used.
 
 However, there is disagreement about whether *all* responses should have

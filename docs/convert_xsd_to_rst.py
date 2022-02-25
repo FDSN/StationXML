@@ -681,6 +681,38 @@ def walk_tree(xsd_element, level=1, last_elem=None, context=None):
 
     return level_elem
 
+def save_spelling(words):
+    spelling_dir = 'spelling'
+    schema_words = 'schema_words.txt'
+    text_words = 'text_words.txt'
+    all_words = 'all_words.txt'
+    if not os.path.isdir(spelling_dir):
+        os.makedirs(spelling_dir)
+    with open(os.path.join(spelling_dir, schema_words), 'w') as words_file:
+        sort_words = list(words)
+        sort_words.sort()
+        for w in sort_words:
+            print(w, file=words_file)
+    if os.path.isfile(os.path.join(spelling_dir, text_words)):
+        with open(os.path.join(spelling_dir, text_words), 'r') as in_words_file:
+            for w in in_words_file:
+                words.add(w.strip())
+
+    sort_words = list(words)
+    sort_words.sort()
+    with open(os.path.join(spelling_dir, all_words), 'w') as words_file:
+        for w in sort_words:
+            print(w, file=words_file)
+
+def recur_spelling(words, element):
+    words.add(element.name)
+    for a in element.attributes:
+        words.add(a.name)
+    for child in element.children:
+        recur_spelling(words, child)
+
+
+
 
 def main():
     """Generate RST from XSD documentation tags
@@ -699,6 +731,9 @@ def main():
 
     # create warning.rst file for deprectaion warnings
     with open("warnings.rst", "w") as warnfile:
+        print(".. Put any comments here\n", file=warnfile)
+        print("  Warning, this file is regenerated from the annotations in the schema file.\n", file=warnfile)
+        print("  Any changes will be overwritten by convert_xsd_to_rst.py.\n\n\n", file=warnfile)
         print("\n", file=warnfile)
         print("The following are potential future changes, as tagged in the schema with <warning> elements in the documentation. They may result in modifications or deletions in future versions of StationXML.\n", file=warnfile)
         print("\n\n", file=warnfile)
@@ -709,6 +744,7 @@ def main():
                     'fsx:FDSNStationXML/fsx:Network/fsx:Station/fsx:Channel',
                     'fsx:FDSNStationXML/fsx:Network/fsx:Station/fsx:Channel/fsx:Response']
 
+    words = set()
     for i, xpath in enumerate(level_xpaths):
         xsd_element = schema.find(xpath)
 
@@ -730,7 +766,14 @@ def main():
             print (f'Writing to {rst_file}')
 
         with open(rst_file, 'w') as outfile:
+            print(".. Put any comments here\n", file=outfile)
+            print("  Warning, this file is regenerated from the annotations in the schema file.\n", file=outfile)
+            print("  Any changes will be overwritten by convert_xsd_to_rst.py.\n", file=outfile)
+
             write_tree(level_elem, stop_element, outfile = outfile)
+
+        recur_spelling(words, level_elem)
+    save_spelling(words)
 
 
 if __name__ == "__main__":

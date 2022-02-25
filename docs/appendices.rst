@@ -4,6 +4,14 @@
    .. raw:: html
    .. include:: blockette_map.rst
 
+.. spelling::
+
+  ss
+  YYYY
+  DDThh
+  ssZ
+  SSSZ
+
 *******************************************
 Appendices
 *******************************************
@@ -101,7 +109,7 @@ details see the SI brochure at:
 In the SEED format all unit names are recommended to be uppercase and
 SI when possible.  For this reason, some unit documentation and
 required declarations in StationXML are in "uppercase SI" and these
-remain in order to maintain backward compatiblity with the initial
+remain in order to maintain backward compatibility with the initial
 schema version.  With the next major change to the specification the
 FDSN will very likely remove these "uppercase SI" unit names in favor
 of proper SI unit names.
@@ -121,7 +129,7 @@ to SI unit powers.
 
 Note that in ISO 8601 a time without a "Z" appended is generally assumed
 by most string to time conversion routines to be
-in local time. Because all times in StationXML should be UTC, 
+in local time. Because all times in StationXML should be UTC,
 the FDSN strongly recommends that dates and times
 have the "Z" timezone specifier appended to avoid this ambiguity.
 
