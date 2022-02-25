@@ -43,7 +43,6 @@ Notice that the example StationXML excerpt above contains the following lines
   <?xml version="1.0" encoding="UTF-8"?>
   <FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xmlns:iris="http://www.fdsn.org/xml/station/1/iris"
      xsi:schemaLocation="http://www.fdsn.org/xml/station/1 http://www.fdsn.org/xml/station/fdsn-station-1.2.xsd"
      schemaVersion="1.2">
 
