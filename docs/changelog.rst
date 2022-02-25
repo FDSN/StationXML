@@ -1,16 +1,17 @@
 
-Changes from version 1.1 to 1.1.1 (2022)
+Changes from version 1.1 to 1.2 (2022)
 ------------------------------------------
 
-The 1.1.1 revision of StationXML makes no changes to the schema proper, only adding
+The 1.2 revision of StationXML makes no changes to the schema proper, only
+changing the schema version and adding
 documentation via `<xs:annotation>` and `<xs:documentation>` elements, as well
 as external files. Any existing code that works with 1.1 should work with
-1.1.1 without modification. We recommend that services generating StationXML
+1.2 without modification. We recommend that services generating StationXML
 or distributing it, such as FDSNWS Station web services, update the
-`schemaVersion` attribute to '1.1.1' at the next convenient opportunity.
+`schemaVersion` attribute to '1.2' at the next convenient opportunity.
 
 Note that the documentation makes recommendations in many cases and services
-that generate 1.1.1 StationXML should attempt to follow these recommendations
+that generate 1.2 StationXML should attempt to follow these recommendations
 where possible. These recommendations include:
 
 
