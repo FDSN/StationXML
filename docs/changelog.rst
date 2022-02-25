@@ -9,8 +9,8 @@ as external files. Any existing code that works with 1.1 should work with
 or distributing it, such as FDSNWS Station web services, update the
 `schemaVersion` attribute to '1.1.1' at the next convenient opportunity.
 
-Note that the documentation makes recommendatations in many cases and services
-that generate 1.1.1 StationXML should attempt to follow these recommentations
+Note that the documentation makes recommendations in many cases and services
+that generate 1.1.1 StationXML should attempt to follow these recommendations
 where possible. These recommendations include:
 
 
@@ -19,7 +19,7 @@ where possible. These recommendations include:
 
 - Do not use `endDate` in the future, it should not be present when currently active
 
-- Originiators of StationXML use `<Source>` and distributors use `<Sender>`
+- Originators of StationXML use `<Source>` and distributors use `<Sender>`
 
 - Network, Station and Channel `sourceId` should use the FDSN Source Identifiers
   specification, http://docs.fdsn.org/projects/source-identifiers

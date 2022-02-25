@@ -50,7 +50,7 @@ element, etc.
 
 The excerpt below creates a generic structure to contain our Response object,
 exports this to StationXML, and validates it against the StationXML schema.
-Note at the time of this writting, ObsPy outputs StationXML 1.1 and does not
+Note at the time of this writing, ObsPy outputs StationXML 1.1 and does not
 follow all of the recommendations in StationXML 1.1.1.
 
 .. literalinclude:: examples/obspy/create_staxml.py
