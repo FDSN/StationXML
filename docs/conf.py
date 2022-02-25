@@ -40,7 +40,7 @@ rst_epilog = '.. |doc_version| replace:: %s' % doc_version
 # ones.
 extensions = ['sphinxcontrib.contentui',
               'linuxdoc.rstFlatTable',      # Implementation of the 'flat-table' reST-directive
-              #'sphinxcontrib.spelling',
+              'sphinxcontrib.spelling',
              ]
 
 spelling_word_list_filename=['spelling/text_words.txt',
