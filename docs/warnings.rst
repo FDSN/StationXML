@@ -196,11 +196,38 @@ The following are potential future changes, as tagged in the schema with <warnin
 
 
 
+  -     <Response> <Stage> <Coefficients> : 
+
+     .. admonition:: Warning, Future Change
+
+       <Coefficients>: The Numerator element is likely to be changed to require at least one numerator.
+
+
+
+
   -     <Response> <Stage> <Coefficients> <Numerator> : 
 
      .. admonition:: Warning, Future Change
 
        <Numerator>: At least one Numerator may be required.
+
+
+
+
+  -     <Response> <Stage> <FIR> : 
+
+     .. admonition:: Warning, Future Change
+
+       <FIR>: The NumeratorCoefficient field is likely to be changed to require at least one numerator in future versions of StationXML.
+
+
+
+
+  -     <Response> <Stage> <FIR> : 
+
+     .. admonition:: Warning, Future Change
+
+       <FIR>: The NumeratorCoefficient field is likely to be renamed to Numerator in future versions of StationXML.
 
 
 

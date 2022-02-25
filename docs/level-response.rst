@@ -1855,11 +1855,15 @@
 
       Response :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Stage :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Coefficients
 
+   .. admonition:: Warning, Future Change
+
+      <Coefficients>: The Numerator element is likely to be changed to require at least one numerator.
+
    .. container:: description
 
-      Response type for FIR coefficients. Laplace transforms or IIR
-      filters can both be expressed using type as well but the PolesAndZerosType should be used
-      instead.
+      Response type for filter giving coefficients. Laplace transforms or analog
+      filters can both be expressed using this type as well but the PolesZeros should be used
+      instead. Digital filters with no denominator should use FIR instead.
 
 
 
@@ -2200,7 +2204,7 @@
 
    .. container:: description
 
-      Numerator for the coefficient
+      Numerator for the coefficient. Should include at least one.
 
 
 
@@ -2738,10 +2742,19 @@
 
       Response :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Stage :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` FIR
 
+   .. admonition:: Warning, Future Change
+
+      <FIR>: The NumeratorCoefficient field is likely to be changed to require at least one numerator in future versions of StationXML.
+
+   .. admonition:: Warning, Future Change
+
+      <FIR>: The NumeratorCoefficient field is likely to be renamed to Numerator in future versions of StationXML.
+
    .. container:: description
 
       Response type for FIR filter.  FIR filters
-      are also commonly documented using the Coefficients element, with this newer type
+      are also commonly documented using a digital Coefficients element with no
+      denominators, but it is preferred to use this type
       allowing representation of symmetric FIR coefficients without repeating them.
 
 
@@ -3086,6 +3099,12 @@
 			.. only:: html
 
 					content type: `double <appendices.html#glossary-double>`_
+
+   .. container:: description
+
+      The coefficients of the FIR filter. Should include at least one.
+
+
 
 
 
