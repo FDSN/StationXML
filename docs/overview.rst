@@ -132,7 +132,7 @@ Documentation Changes
 
 Changes to this documentation.
 
-Version 2022-01-19:
+Version 2022-02-25:
 
 - Resolved issues with documentation by FDSN WG evaluation team.
 
