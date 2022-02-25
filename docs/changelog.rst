@@ -1,6 +1,6 @@
 
 Changes from version 1.1 to 1.2 (2022-2-25)
-------------------------------------------
+-------------------------------------------
 
 The 1.2 revision of StationXML makes no changes to the schema proper, only
 changing the schema version and adding
