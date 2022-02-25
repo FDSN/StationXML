@@ -55,7 +55,7 @@
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fsx="http://www.fdsn.org/xml/station/1"
 	targetNamespace="http://www.fdsn.org/xml/station/1" elementFormDefault="qualified"
-	attributeFormDefault="unqualified" version="1.1.1-alpha">
+	attributeFormDefault="unqualified" version="1.2">
 	<xs:annotation>
 		<xs:documentation>FDSN StationXML schema. A metadata
 		standard for seismological and related data.
@@ -120,7 +120,7 @@
 		<xs:attribute name="schemaVersion" type="xs:decimal" use="required">
 			<xs:annotation>
 				<xs:documentation>The StationXML schema version of this document.</xs:documentation>
-				<xs:documentation><example>1.1.1-alpha</example></xs:documentation>
+				<xs:documentation><example>1.2</example></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>

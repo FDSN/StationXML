@@ -59,10 +59,10 @@ The FDSN maintains all versions of the StationXML schema at:
 
    `<https://www.fdsn.org/xml/station/>`_
 
-For instance, at the time of this writing, the latest schema version is v1.1 and is
+For instance, at the time of this writing, the latest schema version is v1.2 and is
 located at:
 
-   `<https://www.fdsn.org/xml/station/fdsn-station-1.1.xsd>`_
+   `<https://www.fdsn.org/xml/station/fdsn-station-1.2.xsd>`_
 
 
 Character Encoding
