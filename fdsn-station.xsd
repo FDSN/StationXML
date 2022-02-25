@@ -121,6 +121,13 @@
 			<xs:annotation>
 				<xs:documentation>The StationXML schema version of this document.</xs:documentation>
 				<xs:documentation><example>1.2</example></xs:documentation>
+				<xs:documentation>
+          <warning>
+            schemaVersion may change to be a string to allow micro versions,
+            and potential '-' dash separators starting in version 2. Users
+            should not assume 'xs:decimal'.
+          </warning>
+        </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
