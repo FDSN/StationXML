@@ -1,7 +1,6 @@
 from obspy.clients.nrl import NRL
 from obspy.core.inventory import Inventory, Network, Station, Channel, Site
 from obspy.core import UTCDateTime
-from obspy.io.stationxml.core import validate_stationxml
 
 def do_xml():
     nrl = NRL('http://ds.iris.edu/NRL/')
@@ -32,14 +31,7 @@ def do_xml():
                      stations=[station])
     inventory = Inventory(networks=[network], source="demo")
 
-    inventory.write("Test.xml", format="stationxml", validate=False)
-    (is_valid, error_list) = validate_stationxml("Test.xml")
-    if is_valid:
-        print("Test.xml validation ok ")
-    else:
-        print("Errors in validation: ")
-        for err in error_list:
-            print(err)
+    inventory.write("Test.xml", format="stationxml", validate=True)
 
 
 if __name__ == '__main__':
