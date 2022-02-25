@@ -1,3 +1,9 @@
+.. Put any comments here
+
+  Warning, this file is regenerated from the annotations in the schema file.
+
+  Any changes will be overwritten by convert_xsd_to_rst.py.
+
 .. Auto-generated rst file from scan of fdsn xsd
 
 .. role:: blue
@@ -12,6 +18,18 @@
 <Network>     :red:`required`
 ============================================================
 .. container:: hatnote hatnote-gray
+
+   .. admonition:: Warning, Future Change
+
+      endDate: This attribute should not be used if it is in the future.
+
+   .. admonition:: Warning, Future Change
+
+      endDate: This attribute is likely to require timezone of Z.
+
+   .. admonition:: Warning, Future Change
+
+      startDate: This attribute is likely to require timezone of Z.
 
    .. container:: description
 
@@ -137,6 +155,10 @@
       instead the identifier type is documented as an attribute.
 
 
+
+   .. container:: example
+
+      **Example**: <identifier type="DOI">10.1000/140</identifier>
 
    .. container:: example
 
@@ -1140,9 +1162,9 @@
 
       Network :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` TotalNumberStations
 
-   .. admonition:: Warning
+   .. admonition:: Warning, Future Change
 
-      This field is likely to be deprecated in future versions of StationXML
+      <TotalNumberStations>: This element is likely to be removed.
 
    .. container:: type
 
@@ -1182,9 +1204,9 @@
 
       Network :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` SelectedNumberStations
 
-   .. admonition:: Warning
+   .. admonition:: Warning, Future Change
 
-      This field is likely to be deprecated in future versions of StationXML
+      <SelectedNumberStations>: This element is likely to be removed.
 
    .. container:: type
 

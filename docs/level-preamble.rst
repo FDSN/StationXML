@@ -1,3 +1,9 @@
+.. Put any comments here
+
+  Warning, this file is regenerated from the annotations in the schema file.
+
+  Any changes will be overwritten by convert_xsd_to_rst.py.
+
 .. Auto-generated rst file from scan of fdsn xsd
 
 .. role:: blue
@@ -12,6 +18,10 @@
 <FDSNStationXML>     :red:`required`
 ============================================================
 .. container:: hatnote hatnote-gray
+
+   .. admonition:: Warning, Future Change
+
+      schemaVersion: This attribute may change to be a string to allow micro versions, and potential dash, '-', separators starting in version 2. Users should not assume 'xs:decimal'.
 
    .. container:: description
 
@@ -32,7 +42,7 @@
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **schemaVersion**, :ref:`decimal<type-glossary>`, :red:`yes`, "The StationXML schema version of this document.", "schemaVersion=\"1.1.1-alpha\"" 
+      **schemaVersion**, :ref:`decimal<type-glossary>`, :red:`yes`, "The StationXML schema version of this document.", "schemaVersion=\"1.2\"" 
 
 
 
@@ -69,9 +79,9 @@
 
       FDSNStationXML :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Source
 
-   .. admonition:: Warning
+   .. admonition:: Warning, Future Change
 
-      This field is likely to be a choice with Sender in future versions of StationXML
+      <Source>: This element is likely to be a choice with Sender.
 
    .. container:: type
 
@@ -106,9 +116,9 @@
 
       FDSNStationXML :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Sender
 
-   .. admonition:: Warning
+   .. admonition:: Warning, Future Change
 
-      This field is likely to be a choice with Source in future versions of StationXML
+      <Sender>: This element is likely to be a choice with Source.
 
    .. container:: type
 
@@ -124,7 +134,7 @@
 
       Name of the institution sending this document,
       for example the institution hosting an FDSN Station web service.
-      It is recommended that authoratative StationXML
+      It is recommended that authoritative StationXML
       created by the originator of the metadata not use Sender and
       use Source instead. For example metadata created by a network
       operator for submission to other data archives would only use Source,

@@ -1,3 +1,9 @@
+.. Put any comments here
+
+  Warning, this file is regenerated from the annotations in the schema file.
+
+  Any changes will be overwritten by convert_xsd_to_rst.py.
+
 .. Auto-generated rst file from scan of fdsn xsd
 
 .. role:: blue
@@ -12,6 +18,18 @@
 <Station>
 ============================================================
 .. container:: hatnote hatnote-gray
+
+   .. admonition:: Warning, Future Change
+
+      endDate: This attribute should not be used if it is in the future.
+
+   .. admonition:: Warning, Future Change
+
+      endDate: This attribute is likely to require timezone of Z.
+
+   .. admonition:: Warning, Future Change
+
+      startDate: This attribute is likely to require timezone of Z.
 
    .. container:: description
 
@@ -147,7 +165,11 @@
 
    .. container:: example
 
-      **Example**: <identifier type="DOI">10.7914/SN/XX</identifier>
+      **Example**: <identifier type="DOI">10.1000/140</identifier>
+
+   .. container:: example
+
+     **Example**: <identifier type="DOI">10.5555/12345678</identifier>ABCD.
 
 
 
@@ -1992,9 +2014,9 @@
 
       Station :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` CreationDate
 
-   .. admonition:: Warning
+   .. admonition:: Warning, Future Change
 
-      This field is likely to be deprecated in future versions of StationXML
+      <CreationDate>: This element is likely to be removed.
 
    .. container:: type
 
@@ -2025,9 +2047,9 @@
 
       Station :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` TerminationDate
 
-   .. admonition:: Warning
+   .. admonition:: Warning, Future Change
 
-      This field is likely to be deprecated in future versions of StationXML
+      <TerminationDate>: This element is likely to be removed.
 
    .. container:: type
 
@@ -2042,7 +2064,7 @@
    .. container:: description
 
       Date and time (UTC) when the station was terminated or
-      will be terminated. Do not include this field if a termination date is not available or is not relevant.
+      will be terminated. Do not include this element if a termination date is not available or is not relevant.
 
 
 
@@ -2059,9 +2081,9 @@
 
       Station :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` TotalNumberChannels
 
-   .. admonition:: Warning
+   .. admonition:: Warning, Future Change
 
-      This field is likely to be deprecated in future versions of StationXML.
+      <TotalNumberChannels>: This element is likely to be removed.
 
    .. container:: type
 
@@ -2096,9 +2118,9 @@
 
       Station :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` SelectedNumberChannels
 
-   .. admonition:: Warning
+   .. admonition:: Warning, Future Change
 
-      This field is likely to be deprecated in future versions of StationXML.
+      <SelectedNumberChannels>: This element is likely to be removed.
 
    .. container:: type
 
