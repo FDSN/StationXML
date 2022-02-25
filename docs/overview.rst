@@ -43,7 +43,6 @@ Notice that the example StationXML excerpt above contains the following lines
   <?xml version="1.0" encoding="UTF-8"?>
   <FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xmlns:iris="http://www.fdsn.org/xml/station/1/iris"
      xsi:schemaLocation="http://www.fdsn.org/xml/station/1 http://www.fdsn.org/xml/station/fdsn-station-1.2.xsd"
      schemaVersion="1.2">
 
@@ -59,10 +58,10 @@ The FDSN maintains all versions of the StationXML schema at:
 
    `<https://www.fdsn.org/xml/station/>`_
 
-For instance, at the time of this writing, the latest schema version is v1.1 and is
+For instance, at the time of this writing, the latest schema version is v1.2 and is
 located at:
 
-   `<https://www.fdsn.org/xml/station/fdsn-station-1.1.xsd>`_
+   `<https://www.fdsn.org/xml/station/fdsn-station-1.2.xsd>`_
 
 
 Character Encoding
@@ -133,7 +132,7 @@ Documentation Changes
 
 Changes to this documentation.
 
-Version 2022-01-19:
+Version 2022-02-25:
 
 - Resolved issues with documentation by FDSN WG evaluation team.
 

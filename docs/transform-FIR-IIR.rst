@@ -400,10 +400,6 @@ When in doubt, simply enter all of the FIR coefficients with Symmetry = None, so
 that no assumptions will be made when calculating the frequency response of the
 filter.
 
-In contrast, a non-symmetrical FIR can only be stored in a more general
-`Coefficients <reference.html#response-stage-coefficients>`_ response stage,
-which retains all of the coefficients.
-
 In practice, even symmetric FIR filter coefficients are often
 stored in a `Coefficients <reference.html#response-stage-coefficients>`_ response stage.
 

@@ -1,3 +1,9 @@
+.. Put any comments here
+
+  Warning, this file is regenerated from the annotations in the schema file.
+
+  Any changes will be overwritten by convert_xsd_to_rst.py.
+
 .. Auto-generated rst file from scan of fdsn xsd
 
 .. role:: blue
@@ -135,7 +141,7 @@
 
    .. container:: description
 
-      A scalar value representing the amount of amplification or diminuition, if any,
+      A scalar value representing the amount of amplification or diminution, if any,
       the current stage applies to the input signal.
 
 
@@ -172,9 +178,9 @@
       #. For low pass FIR filters, use gain at zero frequency (sum of coefficients)
       #. If given, use manufacturer frequency/gain without recomputing
       #. For anything else, frequency should be in the "good" part of the passband
-      #. All stage frequencies should be below the final nyquist, as long as 2,3 are satisfied
+      #. All stage frequencies should be below the final Nyquist, as long as 2,3 are satisfied
       #. All stages, except lowpass FIR filters, should use the same frequencies, as long as 2,3 are satisfied
-      #. Overall gain should also use the same frequency as 5, as long as it is below the final nyquist and in the good part of the final passband
+      #. Overall gain should also use the same frequency as 5, as long as it is below the final Nyquist and in the good part of the final passband
 
 
 
@@ -500,8 +506,10 @@
       pressure transducers, extensometers, etc.), it is required to
       express the sensor input (e.g., Temp) as a Maclaurin series expansion of powers of the
       *output* units (e.g., Volts):
+      
       .. math::
-      [Temp(V)=\sum_{k=0}^{N} a_k V^{k}]endEQ
+      
+        Temp(V)=\sum_{k=0}^{N} a_k V^{k}
       
       For such responses, two StationXML components are required to specify the response:
       1. A Polynomial stage, which contains the values of the Maclaurin coefficients,
@@ -509,7 +517,7 @@
       same coefficients, but scaled by powers of the overall gain representing the
       combined effect of all the stages in the complete acquisition system.
 
-      Response type for a reponse represented as a polynomial expansion,
+      Response type for a response represented as a polynomial expansion,
       which allows non-linear sensors to be described. Used at either a stage of
       acquisition response or a complete system.
 
@@ -1061,6 +1069,10 @@
 
       Response :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Stage
 
+   .. admonition:: Warning, Future Change
+
+      <Stage>: A filter, (PolesZeros, Coefficients, FIR, etc) may be required.
+
    .. container:: description
 
       Type for channel response entry or stage.  A full response is
@@ -1448,7 +1460,7 @@
       For an analog stage this should be the units of the poles and zeros of
       the Laplace Transform, either:
       "LAPLACE (RADIANS/SECOND)" or "LAPLACE (HERTZ)".
-      For a digial z-transform (e.g., for an IIR filter), this should be
+      For a digital z-transform (e.g., for an IIR filter), this should be
       "DIGITAL (Z-TRANSFORM)"
 
 
@@ -1843,11 +1855,15 @@
 
       Response :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Stage :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Coefficients
 
+   .. admonition:: Warning, Future Change
+
+      <Coefficients>: The Numerator element is likely to be changed to require at least one numerator.
+
    .. container:: description
 
-      Response type for FIR coefficients. Laplace transforms or IIR
-      filters can both be expressed using type as well but the PolesAndZerosType should be used
-      instead.
+      Response type for filter giving coefficients. Laplace transforms or analog
+      filters can both be expressed using this type as well but the PolesZeros should be used
+      instead. Digital filters with no denominator should use FIR instead.
 
 
 
@@ -2172,6 +2188,10 @@
 
       Response :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Stage :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Coefficients :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Numerator
 
+   .. admonition:: Warning, Future Change
+
+      <Numerator>: At least one Numerator may be required.
+
    .. container:: type
 
 			.. only:: latex
@@ -2184,7 +2204,7 @@
 
    .. container:: description
 
-      Numerator for the coefficient
+      Numerator for the coefficient. Should include at least one.
 
 
 
@@ -2269,6 +2289,8 @@
    .. container:: description
 
       Response type for a list of frequency, amplitude, and phase values.
+      Because it is less flexible, the other filter types, PolesZeros,
+      Coefficients, FIR, etc, are preferred.
 
 
 
@@ -2720,10 +2742,19 @@
 
       Response :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Stage :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` FIR
 
+   .. admonition:: Warning, Future Change
+
+      <FIR>: The NumeratorCoefficient field is likely to be changed to require at least one numerator in future versions of StationXML.
+
+   .. admonition:: Warning, Future Change
+
+      <FIR>: The NumeratorCoefficient field is likely to be renamed to Numerator in future versions of StationXML.
+
    .. container:: description
 
       Response type for FIR filter.  FIR filters
-      are also commonly documented using the Coefficients element, with this newer type
+      are also commonly documented using a digital Coefficients element with no
+      denominators, but it is preferred to use this type
       allowing representation of symmetric FIR coefficients without repeating them.
 
 
@@ -3031,9 +3062,10 @@
    .. container:: description
 
       The symmetry code. Designates how the factors will be specified.
-      NONE: No Symmetry - all Coefficients are specified, corresponds to A in SEED.
-      ODD: Odd number Coefficients with symmetry, B in SEED.
-      EVEN: Even number Coefficients with symmetry. C in SEED.
+      
+      * NONE: No Symmetry - all Coefficients are specified, corresponds to A in SEED.
+      * ODD: Odd number Coefficients with symmetry, B in SEED.
+      * EVEN: Even number Coefficients with symmetry, C in SEED.
 
 
 
@@ -3050,6 +3082,14 @@
 
       Response :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Stage :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` FIR :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` NumeratorCoefficient
 
+   .. admonition:: Warning, Future Change
+
+      <NumeratorCoefficient>: At least one Numerator may be required.
+
+   .. admonition:: Warning, Future Change
+
+      <NumeratorCoefficient>: May be renamed to Numerator.
+
    .. container:: type
 
 			.. only:: latex
@@ -3059,6 +3099,12 @@
 			.. only:: html
 
 					content type: `double <appendices.html#glossary-double>`_
+
+   .. container:: description
+
+      The coefficients of the FIR filter. Should include at least one.
+
+
 
 
 
@@ -3389,7 +3435,7 @@
 
    .. container:: description
 
-      A scalar value representing the amount of amplification or diminuition, if any,
+      A scalar value representing the amount of amplification or diminution, if any,
       the current stage applies to the input signal.
 
 
@@ -3426,9 +3472,9 @@
       #. For low pass FIR filters, use gain at zero frequency (sum of coefficients)
       #. If given, use manufacturer frequency/gain without recomputing
       #. For anything else, frequency should be in the "good" part of the passband
-      #. All stage frequencies should be below the final nyquist, as long as 2,3 are satisfied
+      #. All stage frequencies should be below the final Nyquist, as long as 2,3 are satisfied
       #. All stages, except lowpass FIR filters, should use the same frequencies, as long as 2,3 are satisfied
-      #. Overall gain should also use the same frequency as 5, as long as it is below the final nyquist and in the good part of the final passband
+      #. Overall gain should also use the same frequency as 5, as long as it is below the final Nyquist and in the good part of the final passband
 
 
 
@@ -3455,7 +3501,7 @@
       to represent the whole acquisition process, which contains the same Maclaurin
       coefficients, but scaled by powers of the overall gain for all stages.
 
-      Response type for a reponse represented as a polynomial expansion,
+      Response type for a response represented as a polynomial expansion,
       which allows non-linear sensors to be described. Used at either a stage of
       acquisition response or a complete system.
 

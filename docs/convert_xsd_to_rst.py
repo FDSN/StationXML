@@ -130,22 +130,24 @@ def write_tree(element, stop_element, outfile, first_time = True):
     if num_el_attr_warnings > 0:
         with open("warnings.rst", "a") as warnfile:
             for warning in element.warning:
-                print("   .. admonition:: Warning\n", file=outfile)
-                print("      %s\n" % warning.text, file=outfile)
+                single_line_warning = " ".join(warning.text.strip().split())
+                print("   .. admonition:: Warning, Future Change\n", file=outfile)
+                print(f"      <{element.name}>: {single_line_warning}\n", file=outfile)
 
                 print(f"\n\n", file=warnfile)
                 print(f"  -    {simplecrumb} : \n", file=warnfile)
-                print("     .. admonition:: Warning\n", file=warnfile)
-                print(f"       {warning.text}\n", file=warnfile)
+                print("     .. admonition:: Warning, Future Change\n", file=warnfile)
+                print(f"       <{element.name}>: {single_line_warning}\n", file=warnfile)
             for attrib in element.attributes:
                 for warning in attrib.warning:
-                    print("   .. admonition:: Warning\n", file=outfile)
-                    print("      %s\n" % warning.text, file=outfile)
+                    single_line_warning = " ".join(warning.text.strip().split())
+                    print( "   .. admonition:: Warning, Future Change\n", file=outfile)
+                    print(f"      {attrib.name}: {single_line_warning}\n", file=outfile)
 
                     print(f"\n\n", file=warnfile)
                     print(f"  -    {simplecrumb} {attrib.name} : \n", file=warnfile)
-                    print("     .. admonition:: Warning\n", file=warnfile)
-                    print(f"       {warning.text}\n", file=warnfile)
+                    print("     .. admonition:: Warning, Future Change\n", file=warnfile)
+                    print(f"       {attrib.name}: {single_line_warning}\n", file=warnfile)
 
 
     if element.type:
@@ -685,7 +687,6 @@ def save_spelling(words):
     spelling_dir = 'spelling'
     schema_words = 'schema_words.txt'
     text_words = 'text_words.txt'
-    all_words = 'all_words.txt'
     if not os.path.isdir(spelling_dir):
         os.makedirs(spelling_dir)
     with open(os.path.join(spelling_dir, schema_words), 'w') as words_file:
@@ -693,16 +694,7 @@ def save_spelling(words):
         sort_words.sort()
         for w in sort_words:
             print(w, file=words_file)
-    if os.path.isfile(os.path.join(spelling_dir, text_words)):
-        with open(os.path.join(spelling_dir, text_words), 'r') as in_words_file:
-            for w in in_words_file:
-                words.add(w.strip())
 
-    sort_words = list(words)
-    sort_words.sort()
-    with open(os.path.join(spelling_dir, all_words), 'w') as words_file:
-        for w in sort_words:
-            print(w, file=words_file)
 
 def recur_spelling(words, element):
     words.add(element.name)

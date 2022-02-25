@@ -2,6 +2,7 @@
 
 SCHEMAURL='http://www.fdsn.org/xml/station/fdsn-station-1.1.xsd'
 SCHEMA='fdsn-station-1.1.xsd'
+IRIS_VALIDATOR='stationxml-validator-1.7.1.jar'
 
 if [[ ! -r 'xmlvalidator/ValidateStationXml.class' ]]
 then
@@ -51,4 +52,12 @@ else
            echo $ERRFILE
         fi
     fi
+fi
+
+# run iris content validator
+if [[ -e $IRIS_VALIDATOR ]]
+then
+  java -jar $IRIS_VALIDATOR --input $1
+else
+  echo "IRIS stationxml-validator not found"
 fi

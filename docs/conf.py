@@ -24,11 +24,11 @@ copyright = '2022, International FDSN'
 author = 'International FDSN'
 
 # The full version, including alpha/beta/rc tags
-version = '1.1.1-alpha'
+version = '1.2'
 
 # Documentation version, schema + date
 # ALSO UPDATE the release documentation version in overview.rst
-doc_version = version + ' (2022-01-21)'
+doc_version = version + ' (2022-02-25)'
 
 # Allow |doc_version| to be used in RST
 rst_epilog = '.. |doc_version| replace:: %s' % doc_version
@@ -40,7 +40,7 @@ rst_epilog = '.. |doc_version| replace:: %s' % doc_version
 # ones.
 extensions = ['sphinxcontrib.contentui',
               'linuxdoc.rstFlatTable',      # Implementation of the 'flat-table' reST-directive
-              #'sphinxcontrib.spelling',
+              'sphinxcontrib.spelling',
              ]
 
 spelling_word_list_filename=['spelling/text_words.txt',
@@ -90,7 +90,7 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 # Note, some of these, like level-*, are included from other .rst files
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','example_1.rst','examples',
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','examples',
                     'level-preamble.rst','level-network.rst','level-channel.rst',
                     'level-response.rst','level-station.rst','response-practical.rst']
 

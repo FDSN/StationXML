@@ -1,3 +1,9 @@
+.. Put any comments here
+
+  Warning, this file is regenerated from the annotations in the schema file.
+
+  Any changes will be overwritten by convert_xsd_to_rst.py.
+
 .. Auto-generated rst file from scan of fdsn xsd
 
 .. role:: blue
@@ -12,6 +18,18 @@
 <Channel>
 ============================================================
 .. container:: hatnote hatnote-gray
+
+   .. admonition:: Warning, Future Change
+
+      endDate: This attribute should not be used if it is in the future.
+
+   .. admonition:: Warning, Future Change
+
+      endDate: This attribute is likely to require timezone of Z.
+
+   .. admonition:: Warning, Future Change
+
+      startDate: This attribute is likely to require timezone of Z.
 
    .. container:: description
 
@@ -151,7 +169,11 @@
 
    .. container:: example
 
-      **Example**: <identifier type="DOI">10.7914/SN/XX</identifier>
+      **Example**: <identifier type="DOI">10.1000/140</identifier>
+
+   .. container:: example
+
+     **Example**: <identifier type="DOI">10.5555/12345678</identifier>BHZ.
 
 
 
@@ -1218,9 +1240,9 @@
 
       Channel :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Type
 
-   .. admonition:: Warning
+   .. admonition:: Warning, Future Change
 
-      This field is likely to be deprecated in future versions of StationXML
+      <Type>: This element is likely to be removed.
 
    .. container:: type
 
@@ -1240,7 +1262,7 @@
       TRIGGERED, CONTINUOUS, HEALTH, GEOPHYSICAL, WEATHER, FLAG or SYNTHESIZED.
 
       This element existed primarily to hold the corresponding
-      value from SEED, but should not be used for new stationXML.
+      value from SEED, but should not be used for new StationXML.
 
 
 
