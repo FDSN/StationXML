@@ -44,5 +44,4 @@ important case to avoid the specification of incorrect metadata.
 
 An [XSLT definition for StationXML 1.0 to 1.1 conversion](StationXML-1.0to1.1.xslt) exists to assist
 with the systematic conversion of version 1.0 documents to the version 1.1 schema.  This is done by removing the
-elements no longer allowed in 1.1.
-
+elements no longer allowed in 1.1. A similar [XSLT for version 1.0/1.1 to 1.2](StationXML-1.0to1.2.xslt) also exists.
