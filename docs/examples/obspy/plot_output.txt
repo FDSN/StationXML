@@ -1,0 +1,109 @@
+Response type: PolesZerosResponseStage, Stage Sequence Number: 1
+	From M/S (Velocity in Meters per Second) to V (Volts)
+	Stage gain: 1500.0, defined at 1.00 Hz
+	Transfer function type: LAPLACE (RADIANS/SECOND)
+	Normalization factor: 3.4684e+17, Normalization frequency: 1.00 Hz
+	Poles: (-0.037-0.037j), (-0.037+0.037j), (-15.64+0j), (-97.34-400.7j), (-97.34+400.7j), (-374.8+0j), (-520.3+0j), (-10530-10050j), (-10530+10050j), (-13300+0j), (-255.097+0j)
+	Zeros: 0j, 0j, (-15.15+0j), (-176.6+0j), (-463.1-430.5j), (-463.1+430.5j)
+Response type: ResponseStage, Stage Sequence Number: 2
+	From V to V
+	Stage gain: 1.0, defined at 0.05 Hz
+Response type: CoefficientsTypeResponseStage, Stage Sequence Number: 3
+	From V (Volts) to COUNTS (Digital Counts)
+	Stage gain: 629129.0, defined at 0.05 Hz
+	Decimation:
+		Input Sample Rate: 102400.00 Hz
+		Decimation Factor: 1
+		Decimation Offset: 0
+		Decimation Delay: 0.00
+		Decimation Correction: 0.00
+	Transfer function type: DIGITAL
+	Contains 1 numerators and 0 denominators
+Response type: CoefficientsTypeResponseStage, Stage Sequence Number: 4
+	From COUNTS (Digital Counts) to COUNTS (Digital Counts)
+	Stage gain: 1.0, defined at 0.05 Hz
+	Decimation:
+		Input Sample Rate: 102400.00 Hz
+		Decimation Factor: 8
+		Decimation Offset: 0
+		Decimation Delay: 0.00
+		Decimation Correction: 0.00
+	Transfer function type: DIGITAL
+	Contains 29 numerators and 0 denominators
+Response type: CoefficientsTypeResponseStage, Stage Sequence Number: 5
+	From COUNTS (Digital Counts) to COUNTS (Digital Counts)
+	Stage gain: 1.0, defined at 0.05 Hz
+	Decimation:
+		Input Sample Rate: 12800.00 Hz
+		Decimation Factor: 2
+		Decimation Offset: 0
+		Decimation Delay: 0.00
+		Decimation Correction: 0.00
+	Transfer function type: DIGITAL
+	Contains 13 numerators and 0 denominators
+Response type: CoefficientsTypeResponseStage, Stage Sequence Number: 6
+	From COUNTS (Digital Counts) to COUNTS (Digital Counts)
+	Stage gain: 1.0, defined at 0.05 Hz
+	Decimation:
+		Input Sample Rate: 6400.00 Hz
+		Decimation Factor: 2
+		Decimation Offset: 0
+		Decimation Delay: 0.00
+		Decimation Correction: 0.00
+	Transfer function type: DIGITAL
+	Contains 13 numerators and 0 denominators
+Response type: CoefficientsTypeResponseStage, Stage Sequence Number: 7
+	From COUNTS (Digital Counts) to COUNTS (Digital Counts)
+	Stage gain: 1.0, defined at 0.05 Hz
+	Decimation:
+		Input Sample Rate: 3200.00 Hz
+		Decimation Factor: 2
+		Decimation Offset: 0
+		Decimation Delay: 0.00
+		Decimation Correction: 0.00
+	Transfer function type: DIGITAL
+	Contains 13 numerators and 0 denominators
+Response type: CoefficientsTypeResponseStage, Stage Sequence Number: 8
+	From COUNTS (Digital Counts) to COUNTS (Digital Counts)
+	Stage gain: 1.0, defined at 0.05 Hz
+	Decimation:
+		Input Sample Rate: 1600.00 Hz
+		Decimation Factor: 2
+		Decimation Offset: 0
+		Decimation Delay: 0.00
+		Decimation Correction: 0.00
+	Transfer function type: DIGITAL
+	Contains 13 numerators and 0 denominators
+Response type: CoefficientsTypeResponseStage, Stage Sequence Number: 9
+	From COUNTS (Digital Counts) to COUNTS (Digital Counts)
+	Stage gain: 1.0, defined at 0.05 Hz
+	Decimation:
+		Input Sample Rate: 800.00 Hz
+		Decimation Factor: 2
+		Decimation Offset: 0
+		Decimation Delay: 0.01
+		Decimation Correction: 0.01
+	Transfer function type: DIGITAL
+	Contains 13 numerators and 0 denominators
+Response type: CoefficientsTypeResponseStage, Stage Sequence Number: 10
+	From COUNTS (Digital Counts) to COUNTS (Digital Counts)
+	Stage gain: 1.0, defined at 0.05 Hz
+	Decimation:
+		Input Sample Rate: 400.00 Hz
+		Decimation Factor: 2
+		Decimation Offset: 0
+		Decimation Delay: 0.12
+		Decimation Correction: 0.12
+	Transfer function type: DIGITAL
+	Contains 101 numerators and 0 denominators
+Response type: CoefficientsTypeResponseStage, Stage Sequence Number: 11
+	From COUNTS (Digital Counts) to COUNTS (Digital Counts)
+	Stage gain: 1.0, defined at 0.05 Hz
+	Decimation:
+		Input Sample Rate: 200.00 Hz
+		Decimation Factor: 5
+		Decimation Offset: 0
+		Decimation Delay: 0.58
+		Decimation Correction: 0.58
+	Transfer function type: DIGITAL
+	Contains 235 numerators and 0 denominators
