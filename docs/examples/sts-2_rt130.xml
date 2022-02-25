@@ -1,5 +1,8 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
+<?xml version="1.0" encoding="UTF-8"?>
+<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.fdsn.org/xml/station/1 http://www.fdsn.org/xml/station/fdsn-station-1.2.xsd"
+    schemaVersion="1.2">
   <Source>isti</Source>
   <Created>2020-06-05T21:58:37.500208Z</Created>
   <Network code="XX">
