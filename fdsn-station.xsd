@@ -40,7 +40,7 @@
            in the StationXML documentation. May have a LevelChoice attribute.
 
         2. <warning> - Text appears included in an admonition wrapper.
-           It is typically used to indicate features that may be deprecated in the future.
+           It is typically used to indicate features that may be removed in the future.
 
         3. <levelDesc> - An XML element that contains a description of the relevant element
             in the StationXML documentation at a given level. Must have a  LevelChoice attribute.
@@ -78,7 +78,7 @@
             the empty element, especially because a StationXML document may
             contain information from many unrelated networks.
 					</xs:documentation>
-          <xs:documentation><warning>This field is likely to be a choice with Sender in future versions of StationXML</warning></xs:documentation>
+          <xs:documentation><warning>This element is likely to be a choice with Sender.</warning></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Sender" type="xs:string" minOccurs="0">
@@ -91,7 +91,7 @@
             operator for submission to other data archives would only use Source,
             The data archive in response to a request would use Sender.
 					</xs:documentation>
-          <xs:documentation><warning>This field is likely to be a choice with Source in future versions of StationXML</warning></xs:documentation>
+          <xs:documentation><warning>This element is likely to be a choice with Source.</warning></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Module" type="xs:string" minOccurs="0">
@@ -123,8 +123,8 @@
 				<xs:documentation><example>1.2</example></xs:documentation>
 				<xs:documentation>
           <warning>
-            schemaVersion may change to be a string to allow micro versions,
-            and potential '-' dash separators starting in version 2. Users
+            This attribute may change to be a string to allow micro versions,
+            and potential dash, '-', separators starting in version 2. Users
             should not assume 'xs:decimal'.
           </warning>
         </xs:documentation>
@@ -160,7 +160,7 @@
 								network, including inactive or terminated stations.
 							</xs:documentation>
               <xs:documentation><example><TotalNumberStations>24</TotalNumberStations></example></xs:documentation>
-              <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
+              <xs:documentation><warning>This element is likely to be removed.</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="SelectedNumberStations" type="fsx:CounterType" minOccurs="0">
@@ -169,7 +169,7 @@
 								in this document.
 							</xs:documentation>
               <xs:documentation><example><SelectedNumberStations>12</SelectedNumberStations></example></xs:documentation>
-              <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
+              <xs:documentation><warning>This element is likely to be removed.</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Station" type="fsx:StationType" minOccurs="0"
@@ -258,27 +258,27 @@
 					<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
               <xs:documentation>Date and time (UTC) when the station was first installed.</xs:documentation>
-              <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
+              <xs:documentation><warning>This element is likely to be removed.</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="TerminationDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date and time (UTC) when the station was terminated or
-								will be terminated. Do not include this field if a termination date is not available or is not relevant.
+								will be terminated. Do not include this element if a termination date is not available or is not relevant.
 							</xs:documentation>
-              <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
+              <xs:documentation><warning>This element is likely to be removed.</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="TotalNumberChannels" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Total number of channels recorded at this station.</xs:documentation>
-							<xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML.</warning></xs:documentation>
+							<xs:documentation><warning>This element is likely to be removed.</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="SelectedNumberChannels" type="fsx:CounterType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>The number of channels selected in the request that resulted in this document.</xs:documentation>
-							<xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML.</warning></xs:documentation>
+							<xs:documentation><warning>This element is likely to be removed.</warning></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="ExternalReference" type="fsx:ExternalReferenceType"
@@ -370,7 +370,7 @@
                   This element existed primarily to hold the corresponding
                   value from SEED, but should not be used for new StationXML.
 							</xs:documentation>
-              <xs:documentation><warning>This field is likely to be deprecated in future versions of StationXML</warning></xs:documentation>
+              <xs:documentation><warning>This element is likely to be removed.</warning></xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:NMTOKEN">
@@ -657,6 +657,11 @@
         For a digital gain-only stage, use a FIR filter with one
         numerator with value 1.0, and symmetry=NONE. While a digital Coefficients
         filter can serve the same purpose and is common, the FIR filter is more concise.
+      </xs:documentation>
+      <xs:documentation>
+        <warning>
+          A filter, (PolesZeros, Coefficients, FIR, etc) may be required.
+        </warning>
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
@@ -841,9 +846,10 @@
         		<xs:annotation>
         			<xs:documentation>
                 The symmetry code. Designates how the factors will be specified.
-                NONE: No Symmetry - all Coefficients are specified, corresponds to A in SEED.
-                ODD: Odd number Coefficients with symmetry, B in SEED.
-                EVEN: Even number Coefficients with symmetry. C in SEED.
+
+                * NONE: No Symmetry - all Coefficients are specified, corresponds to A in SEED.
+                * ODD: Odd number Coefficients with symmetry, B in SEED.
+                * EVEN: Even number Coefficients with symmetry, C in SEED.
               </xs:documentation>
         		</xs:annotation>
 						<xs:simpleType>
@@ -855,6 +861,12 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="NumeratorCoefficient" minOccurs="0" maxOccurs="unbounded">
+        		<xs:annotation>
+              <xs:documentation>
+                <warning>At least one Numerator may be required.</warning>
+                <warning>May be renamed to Numerator.</warning>
+              </xs:documentation>
+            </xs:annotation>
 						<xs:complexType>
 							<xs:simpleContent>
 								<xs:extension base="xs:double">
@@ -871,7 +883,8 @@
 		<xs:annotation>
 			<xs:documentation>Response type for FIR coefficients. Laplace transforms or IIR
 				filters can both be expressed using type as well but the PolesAndZerosType should be used
-				instead.</xs:documentation>
+				instead.
+      </xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseFilterType">
@@ -894,6 +907,9 @@
 						<xs:annotation>
 							<xs:documentation>Numerator for the coefficient
 							</xs:documentation>
+              <xs:documentation>
+                <warning>At least one Numerator may be required.</warning>
+              </xs:documentation>
 						</xs:annotation>
 						<xs:complexType>
 							<xs:simpleContent>
@@ -929,7 +945,10 @@
 	</xs:complexType>
 	<xs:complexType name="ResponseListType">
 		<xs:annotation>
-			<xs:documentation>Response type for a list of frequency, amplitude, and phase values.</xs:documentation>
+      <xs:documentation>Response type for a list of frequency, amplitude, and phase values.
+        Because it is less flexible, the other filter types, PolesZeros,
+        Coefficients, FIR, etc, are preferred.
+      </xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fsx:BaseFilterType">
@@ -1752,7 +1771,7 @@
         <xs:documentation><levelDesc LevelChoice="S">Start date of station epoch</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="C">Start date of channel epoch</levelDesc></xs:documentation>
         <xs:documentation><example>2016-07-01T00:00:00Z</example></xs:documentation>
-        <xs:documentation><warning>This attribute is likely to require timezone of Z in future versions of StationXML</warning></xs:documentation>
+        <xs:documentation><warning>This attribute is likely to require timezone of Z.</warning></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="endDate" type="xs:dateTime">
@@ -1762,8 +1781,8 @@
         <xs:documentation><levelDesc LevelChoice="S">End date of station epoch. Do not use if still active, endDate should not be in the future.</levelDesc></xs:documentation>
         <xs:documentation><levelDesc LevelChoice="C">End date of channel epoch. Do not use if still active, endDate should not be in the future.</levelDesc></xs:documentation>
         <xs:documentation><example>2018-01-27T00:00:00Z</example></xs:documentation>
-        <xs:documentation><warning>This attribute should not be used if in the future.</warning></xs:documentation>
-        <xs:documentation><warning>This attribute is likely to require timezone of Z in future versions of StationXML</warning></xs:documentation>
+        <xs:documentation><warning>This attribute should not be used if it is in the future.</warning></xs:documentation>
+        <xs:documentation><warning>This attribute is likely to require timezone of Z.</warning></xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="sourceID" type="xs:anyURI">

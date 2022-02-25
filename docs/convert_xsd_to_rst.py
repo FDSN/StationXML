@@ -130,22 +130,24 @@ def write_tree(element, stop_element, outfile, first_time = True):
     if num_el_attr_warnings > 0:
         with open("warnings.rst", "a") as warnfile:
             for warning in element.warning:
-                print("   .. admonition:: Warning\n", file=outfile)
-                print("      %s\n" % warning.text, file=outfile)
+                single_line_warning = " ".join(warning.text.strip().split())
+                print("   .. admonition:: Warning, Future Change\n", file=outfile)
+                print(f"      <{element.name}>: {single_line_warning}\n", file=outfile)
 
                 print(f"\n\n", file=warnfile)
                 print(f"  -    {simplecrumb} : \n", file=warnfile)
-                print("     .. admonition:: Warning\n", file=warnfile)
-                print(f"       {warning.text}\n", file=warnfile)
+                print("     .. admonition:: Warning, Future Change\n", file=warnfile)
+                print(f"       <{element.name}>: {single_line_warning}\n", file=warnfile)
             for attrib in element.attributes:
                 for warning in attrib.warning:
-                    print("   .. admonition:: Warning\n", file=outfile)
-                    print("      %s\n" % warning.text, file=outfile)
+                    single_line_warning = " ".join(warning.text.strip().split())
+                    print( "   .. admonition:: Warning, Future Change\n", file=outfile)
+                    print(f"      {attrib.name}: {single_line_warning}\n", file=outfile)
 
                     print(f"\n\n", file=warnfile)
                     print(f"  -    {simplecrumb} {attrib.name} : \n", file=warnfile)
-                    print("     .. admonition:: Warning\n", file=warnfile)
-                    print(f"       {warning.text}\n", file=warnfile)
+                    print("     .. admonition:: Warning, Future Change\n", file=warnfile)
+                    print(f"       {attrib.name}: {single_line_warning}\n", file=warnfile)
 
 
     if element.type:
