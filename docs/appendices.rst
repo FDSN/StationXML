@@ -4,13 +4,6 @@
    .. raw:: html
    .. include:: blockette_map.rst
 
-.. spelling::
-
-  ss
-  YYYY
-  DDThh
-  ssZ
-  SSSZ
 
 *******************************************
 Appendices
