@@ -1,44 +1,13 @@
-alabaster==0.7.12
-Babel @ file:///home/conda/feedstock_root/build_artifacts/babel_1619719576210/work
-bottle==0.12.19
-brotlipy==0.7.0
-certifi==2021.10.8
-cffi @ file:///Users/runner/miniforge3/conda-bld/cffi_1625835350093/work
-chardet @ file:///Users/runner/miniforge3/conda-bld/chardet_1610093454858/work
-charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1626371162869/work
-colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1602866480661/work
-cryptography @ file:///Users/runner/miniforge3/conda-bld/cryptography_1616851494586/work
-docutils @ file:///Users/runner/miniforge3/conda-bld/docutils_1618676314448/work
-elementpath @ file:///home/conda/feedstock_root/build_artifacts/elementpath_1636485286030/work
-fspath==20190323
-idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1609836280497/work
-imagesize==1.2.0
-Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/jinja2_1621419064915/work
-linuxdoc @ git+http://github.com/return42/linuxdoc.git@5aaa00ab7facc87307d323235006d256cc30a0ff
-lxml @ file:///Users/runner/miniforge3/conda-bld/lxml_1635962205007/work
-MarkupSafe @ file:///Users/runner/miniforge3/conda-bld/markupsafe_1621455750847/work
-packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1625323647219/work
-Pillow==8.4.0
-pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1593275161868/work
-pyenchant==3.2.2
-Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1629119114968/work
-pyOpenSSL @ file:///home/conda/feedstock_root/build_artifacts/pyopenssl_1608055815057/work
-pyparsing==2.4.7
-PySocks @ file:///Users/runner/miniforge3/conda-bld/pysocks_1610291460269/work
-pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1612179539967/work
-requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1626393743643/work
-six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
-snowballstemmer @ file:///home/conda/feedstock_root/build_artifacts/snowballstemmer_1611270869511/work
-Sphinx @ file:///home/conda/feedstock_root/build_artifacts/sphinx_1627331724246/work
-sphinx-rtd-theme @ file:///home/conda/feedstock_root/build_artifacts/sphinx_rtd_theme_1631863601352/work
-sphinxcontrib-applehelp==1.0.2
-sphinxcontrib-contentui @ file:///home/conda/feedstock_root/build_artifacts/sphinxcontrib-contentui_1610240159163/work
-sphinxcontrib-devhelp==1.0.2
-sphinxcontrib-htmlhelp @ file:///home/conda/feedstock_root/build_artifacts/sphinxcontrib-htmlhelp_1621704829796/work
+wget==3.2
+xmlschema==1.2.2
+docutils==0.15.2
+sphinx== 3.*
+sphinx-rtd-theme==0.5.*
+sphinxcontrib-applehelp==1.0.1
+sphinxcontrib-contentui==0.2.4
+sphinxcontrib-devhelp==1.0.1
+sphinxcontrib-htmlhelp==1.0.2
 sphinxcontrib-jsmath==1.0.1
-sphinxcontrib-qthelp==1.0.3
-sphinxcontrib-serializinghtml @ file:///home/conda/feedstock_root/build_artifacts/sphinxcontrib-serializinghtml_1621704833237/work
-sphinxcontrib-spelling==7.3.2
-sphinxmark==1.0.0
-urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1624634538755/work
-xmlschema @ file:///home/conda/feedstock_root/build_artifacts/xmlschema_1638380836982/work
+sphinxcontrib-qthelp==1.0.2
+sphinxcontrib-serializinghtml==1.1.3
+git+http://github.com/return42/linuxdoc.git
