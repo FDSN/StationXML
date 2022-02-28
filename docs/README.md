@@ -28,7 +28,7 @@ conda create -n sphinx python=3.9
 conda activate sphinx
 conda install sphinx
 conda install -c conda-forge sphinxcontrib-contentui
-pip install git+http://github.com/return42/linuxdoc.git
+pip install linuxdoc
 conda install sphinx_rtd_theme
 conda install xmlschema
 conda install elementpath
