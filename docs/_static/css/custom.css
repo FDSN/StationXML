@@ -1,0 +1,254 @@
+
+/* FDSN-style font baseline */
+body {
+  font-family: "Quattrocento Sans", Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Keep the logo from dominating the upper search pane */
+.logo {
+  max-height: 80px;
+}
+
+/* Set colors for search and navigation sidebar */
+.wy-side-nav-search,
+.wy-side-nav-search > a,
+.wy-side-nav-search > div.version,
+.wy-nav-top {
+  color: black;
+  background: white;
+}
+
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+  color: lightgray;
+  font-weight: bolder;
+}
+
+.wy-menu-vertical a,
+.wy-menu-vertical li.current > a {
+  color: white;
+}
+
+.wy-menu-vertical li.toctree-l2 a,
+.wy-menu-vertical li.toctree-l3 a,
+.wy-menu-vertical li.toctree-l4 a,
+.wy-menu-vertical li.toctree-l5 a,
+.wy-menu-vertical li.toctree-l6 a {
+  color: #404040;
+}
+
+.wy-nav-side {
+  color: black;
+  background: rgb(51,123,184); /* Darker blue */
+}
+
+.wy-menu-vertical li.toctree-l1.current > a,
+.wy-menu-vertical li.toctree-l1.current {
+  background: rgb(116,182,236); /* Medium blue */
+  border-bottom: rgb(116,182,236);
+  border-top: rgb(116,182,236);
+}
+
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+  background: rgb(207,226,242); /* Light blue */
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 a:hover {
+  background: #d6d6d6;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3.current > a {
+  background: white;
+}
+
+/* Stuff ISTI set */
+h3, h4, h5, h6 {
+    display: block;
+    width: 100%;
+    background-color: #e8e8e8 ;
+    margin-bottom: 0 ;
+    margin-top: 0.9em ;
+    padding-left: 0.5em ;
+    padding-right: 0.5em ;
+    padding-top: 0.2em ;
+    padding-bottom: 0.2em ;
+}
+h2 {
+    display: block;
+    width: 100%;
+    /*background-color: #D6D6D6 ;*/
+    background-color: #e8e8e8 ;
+    margin-bottom: 0 ;
+    margin-top: 0.9em ;
+    padding-left: 0.5em ;
+    padding-right: 0.5em ;
+    padding-top: 0.2em ;
+    padding-bottom: 0.2em ;
+}
+h1 {
+    display: block;
+    width: 100%;
+    /*background-color: #2980b9 ;*/
+    background-color: #0088cc ;
+    margin-bottom: 0 ;
+    margin-top: 0.9em ;
+    padding-left: 0.5em ;
+    padding-right: 0.5em ;
+    padding-top: 0.2em ;
+    padding-bottom: 0.2em ;
+    color:white;
+}
+
+.MathJax_Display{
+}
+
+div.hatnote.hatnote-gray.docutils.container > div.description.docutils.container > blockquote > div > div > div {
+  font-size: 117% !important
+}
+
+.box
+{
+    border-color: #c8c8c8 ;
+    border-style: solid ;
+    border-width: 1px ;
+}
+
+.crumb {
+  height: 0;
+  position: relative;
+  left: 325px;
+  top: -25px;
+  color:#585858;
+}
+
+div.crumb > p {
+  font-size:small !important;
+}
+
+/* added to override rtd css rule that separated grey sections with white */
+.rst-content .toctree-wrapper > p.caption, .rst-content h1, .rst-content h2, .rst-content h3, .rst-content h4, .rst-content h5, .rst-content h6 {
+  margin-bottom: 0px;
+}
+
+.breadcrumb
+{
+  font-color:white;
+  font-size:medium;
+}
+
+.hatnote_table
+{
+    border-color: #c8c8c8 ;
+    border-style: solid ;
+    border-width: 1px ;
+    margin-left: 0 ;
+    margin-right: 0 ;
+    padding-left: 0px;
+    padding-right: 0px ;
+    padding-bottom: 0px ;
+    padding-top: 0px ;
+    margin-bottom: 0px ;
+    margin-top: 0px ;
+}
+
+.hatnote
+{
+    border-color: #e8e8e8 ;
+    border-width: 1px ;
+    border-style: solid ;
+  /*
+    border-color: #c8c8c8 ;
+    */
+    font-size: x-small ;
+    /*font-style: italic ;*/
+    margin-left: auto ;
+    margin-right: auto ;
+    padding-left: 2em;
+    padding-right: 0px ;
+    padding-bottom: 0px ;
+    padding-top: 0px ;
+    margin-bottom: 0px ;
+    margin-top: 0px ;
+}
+.hatnote_table-gray { background-color: #e8e8e8 ; color: #000000 ; }
+.hatnote-gray { background-color: #e8e8e8 ; color: #000000 ; }
+.hatnote-yellow { background-color: #ffffe8 ; color: #000000 ; }
+.hatnote-red { background-color: #ffe8e8 ; color: #000000 ; }
+.hatnote-icon { height: 16px ; width: 16px ; }
+
+.rst-content .myownstyle .admonition-title {
+   background: #b99976
+}
+
+.rst-content .myownstyle {
+   background: #e5d3b3
+}
+
+.white {
+  color:white;
+  font-style:italic;
+  font-size: medium;
+}
+
+.red {
+  color:red;
+}
+.blue {
+  color:blue;
+}
+.italic {
+  font-style:italic;
+}
+
+.pink {
+  height: 200px;
+  width: 100%;
+  width: 500px;
+  background-color: pink;
+}
+
+table {
+  width:100%;
+}
+
+table.rows {
+  margin:0px;
+  padding:0px;
+  /*
+  width: 100%;
+  */
+  font-size: x-small ;
+}
+
+table.rows th {
+    background-color: #909090;
+    border-style: solid solid solid solid;
+    border-width: 0px 0px 0px 0px;
+    border-color: #AAAAAA;
+    /*text-align: center;*/
+    text-align: left;
+}
+table.rows td {
+    border-style: solid solid solid solid;
+    border-width: 0px 0px 0px 0px;
+    border-color: #AAAAAA;
+}
+
+table.rows tr {
+    border-style: solid solid solid solid;
+    border-width: 0px 0px 0px 0px;
+    border-color: #AAAAAA;
+}
+
+table.rows tr:nth-child(even) {
+    background-color: #F3F3FF;
+}
+table.rows tr:nth-child(odd) {
+    background-color: #FFFFEE;
+}
+
+table.head {
+    margin-bottom:0px;
+}

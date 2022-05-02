@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.fdsn.org/xml/station/1 http://www.fdsn.org/xml/station/fdsn-station-1.2.xsd"
+    schemaVersion="1.2">
+  <Source>isti</Source>
+  <Created>2020-06-06T01:19:15.736834Z</Created>
+  <Network code="XX">
+    <Station code="ABCD">
+      <Latitude>0.0</Latitude>
+      <Longitude>0.0</Longitude>
+      <Elevation>10.0</Elevation>
+      <Site>
+        <Name>Nowhere</Name>
+      </Site>
+      <Channel code="BDO" locationCode="10">
+        <Latitude>0.0</Latitude>
+        <Longitude>0.0</Longitude>
+        <Elevation>10.0</Elevation>
+        <Depth>0.0</Depth>
+        <Azimuth>0.0</Azimuth>
+        <Dip>-90.0</Dip>
+        <SampleRate>40.0</SampleRate>
+        <Sensor><Description>Setra 270 pressure transducer</Description></Sensor>
+        <Response>
+           <InstrumentPolynomial name="InstrumentPolynomial">
+             <InputUnits>
+               <Name>mbar</Name>
+               <Description>Pressure in mbar</Description>
+             </InputUnits>
+             <OutputUnits>
+              <Name>count</Name>
+              <Description>Digital Counts</Description>
+             </OutputUnits>
+             <ApproximationType>MACLAURIN</ApproximationType>
+             <FrequencyLowerBound unit="HERTZ">0.0</FrequencyLowerBound>
+             <FrequencyUpperBound unit="HERTZ">0.0</FrequencyUpperBound>
+             <ApproximationLowerBound>600</ApproximationLowerBound>
+             <ApproximationUpperBound>1100</ApproximationUpperBound>
+             <MaximumError>0.0</MaximumError>
+             <Coefficient>600</Coefficient>
+             <Coefficient>1.96</Coefficient>
+           </InstrumentPolynomial>
+           <Stage number="1">
+              <Polynomial name=" SENSOR RESPONSE   ">
+                <InputUnits>
+                  <Name>mbar</Name>
+                  <Description>Pressure in mbar</Description>
+                </InputUnits>
+              <OutputUnits>
+                 <Name>V</Name>
+                 <Description>Volts</Description>
+              </OutputUnits>
+              <ApproximationType>MACLAURIN</ApproximationType>
+              <FrequencyLowerBound unit="HERTZ">0.0</FrequencyLowerBound>
+              <FrequencyUpperBound unit="HERTZ">0.0</FrequencyUpperBound>
+              <ApproximationLowerBound>600</ApproximationLowerBound>
+              <ApproximationUpperBound>1100</ApproximationUpperBound>
+              <MaximumError>0.0</MaximumError>
+              <Coefficient>600</Coefficient>
+              <Coefficient>100</Coefficient>
+              </Polynomial>
+           </Stage>
+           <Stage number="2">
+              <StageGain>
+              <Value>1.0</Value>
+              <Frequency>0.0</Frequency>
+              </StageGain>
+           </Stage>
+           <Stage number="3">
+              <Coefficients name=" DIGITIZER">
+              <InputUnits>
+                 <Name>V</Name>
+                 <Description>Volts</Description>
+              </InputUnits>
+              <OutputUnits>
+                 <Name>count</Name>
+                 <Description>Digital Counts</Description>
+              </OutputUnits>
+              <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
+              <Numerator>1.0</Numerator>
+              </Coefficients>
+              <Decimation>
+              <InputSampleRate unit="HERTZ">1.0</InputSampleRate>
+              <Factor>1</Factor>
+              <Offset>0</Offset>
+              <Delay>0.0</Delay>
+              <Correction>0.0</Correction>
+              </Decimation>
+              <StageGain>
+              <Value>51</Value>
+              <Frequency>0.0</Frequency>
+              </StageGain>
+           </Stage>
+        </Response>
+      </Channel>
+    </Station>
+  </Network>
+</FDSNStationXML>

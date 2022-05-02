@@ -1,0 +1,9 @@
+.. toggle-header::
+  :header: StationXML **Show/Hide**
+
+  .. literalinclude:: examples/l-22d_rt72a-08.xml
+    :language: XML
+
+
+.. image:: examples/l-22d_rt72a-08.png
+

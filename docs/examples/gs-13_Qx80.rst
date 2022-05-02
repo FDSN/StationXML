@@ -1,0 +1,9 @@
+.. toggle-header::
+  :header: StationXML **Show/Hide**
+
+  .. literalinclude:: examples/gs-13_Qx80.xml
+    :language: XML
+
+
+.. image:: examples/gs-13_Qx80.png
+
