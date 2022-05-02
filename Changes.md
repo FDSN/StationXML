@@ -1,5 +1,10 @@
 # Changes for FDSN StationXML format
 
+## Changes from version 1.1 to 1.2 (2022-02-25)
+
+Version 1.2 introduces no schema "as a schema" changes, other than the
+schemaVersion attribute. All changes are additions of annotations and other documentation.
+
 ## Changes from version 1.0 to 1.1 (2019-5-3)
 
 (Edited 2019-12-18 for small clarifications)
@@ -31,4 +36,3 @@
 * Add `<WaterLevel>` within `<Station>` and `<Channel>`
 
 * Add "subject" attribute to `<Comment>` to allow relating comments, make "id" attribute optional.
-

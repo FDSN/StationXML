@@ -28,7 +28,7 @@ Notice that on the unit circle, where :math:`|z|\equiv |r|=1` and :math:`z=e^{j\
 The z-transform measures the similarity between the input signal :math:`x[n]`
 and the signal :math:`z^{-n}`.
 
-:math:`z^{-n}` represents exponentially increasing (for r < 0) or decreasing (r > 0)
+:math:`z^{-n}` represents exponentially increasing (for r < 1) or decreasing (r > 1)
 sinusoids. e.g., :math:`e^{-j\omega n}` is a sinusoid with angular frequency
 :math:`\omega` [radians/sample] that expands with sample number n.
 
@@ -126,7 +126,7 @@ complex frequency response, :math:`H(f)` ?
 We start by only considering the magnitude response, :math:`|H(f)|`.
 
 The z-transform only exists within a region of the complex z-plane where
-the infinite sum [eqn X] converges. We call this region the
+the infinite sum converges. We call this region the
 Radius of Convergence (ROC) of the system.
 
 If our system, described by difference equations, is stable, then the ROC

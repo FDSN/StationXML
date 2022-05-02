@@ -1,24 +1,28 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
+<?xml version="1.0" encoding="UTF-8"?>
+<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.fdsn.org/xml/station/1 http://www.fdsn.org/xml/station/fdsn-station-1.2.xsd"
+    schemaVersion="1.2">
   <Source>isti</Source>
-  <Module>ObsPy 1.2.0rc8.post0+9.gfdab3d4f94.dirty.obspy.master</Module>
-  <ModuleURI>https://www.obspy.org</ModuleURI>
   <Created>2020-06-10T13:25:01.910728Z</Created>
-  <Network code="BK">
-    <Station code="ANMO">
-      <Latitude unit="DEGREES">34.945911</Latitude>
-      <Longitude unit="DEGREES">-106.457199</Longitude>
-      <Elevation unit="METERS">1820.0</Elevation>
+  <Network code="XX">
+    <Station code="ABCD">
+      <Latitude>0.0</Latitude>
+      <Longitude>0.0</Longitude>
+      <Elevation>10.0</Elevation>
       <Site>
-        <Name>Albuquerque, New Mexico, USA</Name>
+        <Name>Nowhere</Name>
       </Site>
-      <CreationDate>1970-01-01T00:00:00.000000Z</CreationDate>
-      <Channel code="BHZ" locationCode="10">
-        <Latitude unit="DEGREES">34.945911</Latitude>
-        <Longitude unit="DEGREES">-106.457199</Longitude>
-        <Elevation unit="METERS">1820.0</Elevation>
-        <Depth unit="METERS">0.0</Depth>
+      <Channel code="BKD" locationCode="10">
+        <Latitude>0.0</Latitude>
+        <Longitude>0.0</Longitude>
+        <Elevation>10.0</Elevation>
+        <Depth>0.0</Depth>
+        <Azimuth>0.0</Azimuth>
+        <Dip>-90.0</Dip>
         <SampleRate>40.0</SampleRate>
+        <Sensor><Description>YSI 44301 temperature</Description></Sensor>
+        <DataLogger><Description>Reftek RT130</Description></DataLogger>
         <Response>
           <InstrumentPolynomial name="InstrumentPolynomial">
             <Description>None</Description>
@@ -27,7 +31,7 @@
               <Description>TEMPERATURE in Celsius</Description>
             </InputUnits>
             <OutputUnits>
-              <Name>COUNTS</Name>
+              <Name>count</Name>
               <Description>Digital Counts</Description>
             </OutputUnits>
             <ApproximationType>MACLAURIN</ApproximationType>
@@ -90,14 +94,14 @@
                 <Description>Volts</Description>
               </InputUnits>
               <OutputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Digital Counts</Description>
               </OutputUnits>
               <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
               <Numerator>1.0</Numerator>
             </Coefficients>
             <Decimation>
-              <InputSampleRate unit="HERTZ">0.0</InputSampleRate>
+              <InputSampleRate unit="HERTZ">102400.0</InputSampleRate>
               <Factor>1</Factor>
               <Offset>0</Offset>
               <Delay>0.0</Delay>
@@ -111,11 +115,11 @@
           <Stage number="4">
             <Coefficients name=" DECIMATION">
               <InputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Volts</Description>
               </InputUnits>
               <OutputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Digital Counts</Description>
               </OutputUnits>
               <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -164,11 +168,11 @@
           <Stage number="5">
             <Coefficients name=" DECIMATION">
               <InputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Volts</Description>
               </InputUnits>
               <OutputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Digital Counts</Description>
               </OutputUnits>
               <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -201,11 +205,11 @@
           <Stage number="6">
             <Coefficients name=" DECIMATION">
               <InputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Volts</Description>
               </InputUnits>
               <OutputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Digital Counts</Description>
               </OutputUnits>
               <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -238,11 +242,11 @@
           <Stage number="7">
             <Coefficients name=" DECIMATION">
               <InputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Volts</Description>
               </InputUnits>
               <OutputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Digital Counts</Description>
               </OutputUnits>
               <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -275,11 +279,11 @@
           <Stage number="8">
             <Coefficients name=" DECIMATION">
               <InputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Volts</Description>
               </InputUnits>
               <OutputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Digital Counts</Description>
               </OutputUnits>
               <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -312,11 +316,11 @@
           <Stage number="9">
             <Coefficients name=" DECIMATION">
               <InputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Volts</Description>
               </InputUnits>
               <OutputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Digital Counts</Description>
               </OutputUnits>
               <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -349,11 +353,11 @@
           <Stage number="10">
             <Coefficients name=" DECIMATION">
               <InputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Volts</Description>
               </InputUnits>
               <OutputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Digital Counts</Description>
               </OutputUnits>
               <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
@@ -474,11 +478,11 @@
           <Stage number="11">
             <Coefficients name=" DECIMATION">
               <InputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Volts</Description>
               </InputUnits>
               <OutputUnits>
-                <Name>counts</Name>
+                <Name>count</Name>
                 <Description>Digital Counts</Description>
               </OutputUnits>
               <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>

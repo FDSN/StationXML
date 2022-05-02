@@ -1,3 +1,9 @@
+.. Put any comments here
+
+  Warning, this file is regenerated from the annotations in the schema file.
+
+  Any changes will be overwritten by convert_xsd_to_rst.py.
+
 .. Auto-generated rst file from scan of fdsn xsd
 
 .. role:: blue
@@ -13,19 +19,52 @@
 ============================================================
 .. container:: hatnote hatnote-gray
 
+   .. admonition:: Warning, Future Change
+
+      schemaVersion: This attribute may change to be a string to allow micro versions, and potential dash, '-', separators starting in version 2. Users should not assume 'xs:decimal'.
+
    .. container:: description
 
       Root-level for StationXML documents.
 
-.. tabularcolumns::|l|l|l|1|1| 
 
-.. csv-table::
+
+
+
+
+   **Attributes of <FDSNStationXML>**: 
+
+   .. tabularcolumns::|l|l|l|1|1| 
+
+   .. csv-table::
       :class: rows
       :escape: \ 
       :header: "attribute", "type", "required", "description", "example"
       :widths: auto
 
-      **schemaVersion**, :ref:`decimal<type-glossary>`, :red:`yes`, "The StationXML schema version of this document.", "schemaVersion='1.1'" 
+      **schemaVersion**, :ref:`decimal<type-glossary>`, :red:`yes`, "The StationXML schema version of this document.", "schemaVersion=\"1.2\"" 
+
+
+
+
+   **Sub Elements of <FDSNStationXML>**: 
+
+   .. tabularcolumns::|l|l|l|l| 
+
+   .. csv-table::
+      :class: rows
+      :escape: \ 
+      :header: "element", "type", "number"
+      :widths: auto
+
+      :ref:`\<Source\><FDSNStationXML-Source>`, string, ":red:`required`" 
+      :ref:`\<Sender\><FDSNStationXML-Sender>`, string, "optional" 
+      :ref:`\<Module\><FDSNStationXML-Module>`, string, "optional" 
+      :ref:`\<ModuleURI\><FDSNStationXML-ModuleURI>`, anyURI, "optional" 
+      :ref:`\<Created\><FDSNStationXML-Created>`, dateTime, ":red:`required`" 
+      :ref:`\<Network\><Network>`, , ":red:`required, many`" 
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -40,19 +79,29 @@
 
       FDSNStationXML :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Source
 
+   .. admonition:: Warning, Future Change
+
+      <Source>: This element is likely to be a choice with Sender.
+
    .. container:: type
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
       Originator of the information contained in the document.
+      It is recommended that archives or services providing StationXML that are not
+      the original creator of the metadata set this to be
+      the empty element, especially because a StationXML document may
+      contain information from many unrelated networks.
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -67,19 +116,31 @@
 
       FDSNStationXML :raw-html:`&rarr;`:raw-latex:`$\rightarrow$` Sender
 
+   .. admonition:: Warning, Future Change
+
+      <Sender>: This element is likely to be a choice with Source.
+
    .. container:: type
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
-      Name of the institution sending this document.
+      Name of the institution sending this document,
+      for example the institution hosting an FDSN Station web service.
+      It is recommended that authoritative StationXML
+      created by the originator of the metadata not use Sender and
+      use Source instead. For example metadata created by a network
+      operator for submission to other data archives would only use Source,
+      The data archive in response to a request would use Sender.
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -98,15 +159,17 @@
 
 			.. only:: latex
 
-					type: :ref:`string<type-glossary>`
+					content type: :ref:`string<type-glossary>`
 
 			.. only:: html
 
-					type:`string <appendices.html#glossary-string>`_
+					content type: `string <appendices.html#glossary-string>`_
 
    .. container:: description
 
       Name of the software module that generated this document.
+
+
 
    .. container:: example
 
@@ -129,15 +192,18 @@
 
 			.. only:: latex
 
-					type: :ref:`anyURI<type-glossary>`
+					content type: :ref:`anyURI<type-glossary>`
 
 			.. only:: html
 
-					type:`anyURI <appendices.html#glossary-anyuri>`_
+					content type: `anyURI <appendices.html#glossary-anyuri>`_
 
    .. container:: description
 
-      Resource identifier of the query that generated the document, or, if applicable, the resource identifier of the software that generated this document.
+      Resource identifier of the query that generated the document,
+      or, if applicable, the resource identifier of the software that generated this document.
+
+
 
 
 :raw-latex:`\noindent\rule{\textwidth}{1pt}`
@@ -156,13 +222,15 @@
 
 			.. only:: latex
 
-					type: :ref:`dateTime<type-glossary>`
+					content type: :ref:`dateTime<type-glossary>`
 
 			.. only:: html
 
-					type:`dateTime <appendices.html#glossary-datetime>`_
+					content type: `dateTime <appendices.html#glossary-datetime>`_
 
    .. container:: description
 
       Date that this document was generated.
+
+
 

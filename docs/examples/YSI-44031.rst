@@ -1,0 +1,12 @@
+
+.. include:: examples/YSI-44031-intro.rst
+
+.. toggle-header::
+  :header: StationXML **Show/Hide**
+
+  .. literalinclude:: examples/YSI-44031.xml
+    :language: XML
+
+
+.. image:: examples/YSI-44031.png
+

@@ -20,37 +20,10 @@ StationXML Example
 -----------------------
 
 .. toggle-header::
-    :header: Example of StationXML **Show/Hide Code**
+  :header: StationXML **Show/Hide**
 
-    ::
-
-      <?xml version='1.0' encoding='UTF-8'?>
-         <FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
-            <Source>IRIS-DMC</Source>
-            <Sender>IRIS-DMC</Sender>
-            <Module>IRIS WEB SERVICE: fdsnws-station | version: 1.1.35</Module>
-            <ModuleURI>http://service.iris.edu/fdsnws/station/1/query?starttime=1990-01-27T06&network=IU&level=response</ModuleURI>
-            <Created>2018-11-08T14:57:56.000000Z</Created>
-            <Network code="IU" restrictedStatus="open" startDate="1988-01-01T00:00:00.000000Z">
-               <Description>Global Seismograph Network (GSN - IRIS/USGS)</Description>
-               <TotalNumberStations>269</TotalNumberStations>
-               <SelectedNumberStations>6</SelectedNumberStations>
-               <Station code="ANMO" endDate="1995-07-14T00:00:00.000000Z" restrictedStatus="open" startDate="1989-08-29T00:00:00.000000Z">
-                  <Channel>
-                     <Response>
-                        ...
-                     </Response>
-                  </Channel>
-                  <Channel>
-                     <Response>
-                        ...
-                     </Response>
-                  </Channel>
-               </Station>
-               <Station code="CCM" endDate="1998-05-26T00:00:00.000000Z" restrictedStatus="open" startDate="1989-08-29T00:00:00.000000Z">
-               </Station>
-            </Network>
-         </FDSNStationXML>
+  .. literalinclude:: examples/overview_example.xml
+    :language: XML
 
 
 Note that each XML element must have a start tag (e.g., <Station>) and an end tag (</Station>)
@@ -63,11 +36,21 @@ The FDSN and StationXML schema
 StationXML was developed through the International Federation of Digital Seismograph Networks
 (`FDSN <https://www.fdsn.org/>`_) to provide a standardized format for geophysical metadata.
 
-Notice that the example StationXML excerpt above contains the following line::
+Notice that the example StationXML excerpt above contains the following lines
 
-   <FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
+.. code-block:: XML
 
-This specifies the location and version of the schema
+  <?xml version="1.0" encoding="UTF-8"?>
+  <FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.fdsn.org/xml/station/1 http://www.fdsn.org/xml/station/fdsn-station-1.2.xsd"
+     schemaVersion="1.2">
+
+
+The first line, the xml prologue, specifies the xml version and the character encoding.
+
+The second line begins the StationXML document and
+specifies the location and version of the schema
 to which the StationXML example must conform.
 
 
@@ -75,11 +58,21 @@ The FDSN maintains all versions of the StationXML schema at:
 
    `<https://www.fdsn.org/xml/station/>`_
 
-For instance, at the time of this writing, the latest schema version is v1.1 and is
+For instance, at the time of this writing, the latest schema version is v1.2 and is
 located at:
 
-   `<https://www.fdsn.org/xml/station/fdsn-station-1.1.xsd>`_
+   `<https://www.fdsn.org/xml/station/fdsn-station-1.2.xsd>`_
 
+
+Character Encoding
+----------------------------------
+UTF-8 is the default encoding for XML, specified in the prologue,
+allowing non-ascii characters to be used within StationXML. This
+is common within names of people and places and in comments and descriptions.
+However, authors should use ASCII when possible for maximum portability.
+
+In particular, text that will likely be used by software, as opposed to simply
+displayed, such as ids and units, should only use ASCII.
 
 Documentation Organization
 =========================================
@@ -138,6 +131,10 @@ Documentation Changes
 =================================
 
 Changes to this documentation.
+
+Version 2022-02-25:
+
+- Resolved issues with documentation by FDSN WG evaluation team.
 
 Version 2020-09-02:
 
