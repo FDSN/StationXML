@@ -15,7 +15,24 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import re
+import os
+import subprocess
+import sphinx_rtd_theme
 
+def get_context():
+    """Return the current RTD version or git branch name"""
+    try:
+        git_context = subprocess.check_output(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"]
+        ).strip().decode("utf-8")
+
+        # Check for RTD version, default to git_version if not on RTD
+        context = os.getenv("READTHEDOCS_VERSION", git_context)
+
+        return context
+    except Exception:
+        return ""
 
 # -- Project information -----------------------------------------------------
 
@@ -126,3 +143,9 @@ html_css_files = [
 html_js_files = [
   'js/sidebar_context.js'
 ]
+
+# Enable sphinxmark for draft documentation
+if get_context() == "draft":
+    extensions.append("sphinxmark")
+    sphinxmark_enable = True
+    sphinxmark_div = "document"

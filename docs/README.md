@@ -66,7 +66,7 @@ For debian based linux:
 ```
 sudo apt install libenchant-2-2
 ```
-For MacOSX using homebrew (currently does not work on M1 processors):
+For macOS using homebrew:
 ```
 brew install enchant
 ```
