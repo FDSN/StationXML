@@ -20,6 +20,19 @@ import os
 import subprocess
 import sphinx_rtd_theme
 
+def get_git_version():
+    """Return the short and long versions from git describe or return unknown"""
+    try:
+        version = subprocess.check_output(["git", "describe", "--tags", "--always"]).strip().decode("utf-8")
+
+        # Extract only the first two version numbers (e.g., "1.2" from "v1.2.3")
+        match = re.match(r"v?(\d+\.\d+)", version)
+        short_version = match.group(1) if match else version  # Default to base_version if no match
+
+        return short_version, version
+    except Exception:
+        return "unknown"
+
 def get_context():
     """Return the current RTD version or git branch name"""
     try:
@@ -40,8 +53,16 @@ project = 'StationXML'
 copyright = '2022, International FDSN'
 author = 'International FDSN'
 
-# The full version, including alpha/beta/rc tags
-version = '1.2'
+# Set the short (major.minor) version and full release values
+version, release = get_git_version()
+
+rtd_version = os.getenv("READTHEDOCS_VERSION", None)
+
+# Set RTD version that will be displayed for special cases
+if rtd_version == "latest":
+    os.environ["READTHEDOCS_VERSION"] = f"{rtd_version} ({version})"
+elif rtd_version == "draft":
+    os.environ["READTHEDOCS_VERSION"] = f"{rtd_version} ({release})"
 
 # Documentation version, schema + date
 # ALSO UPDATE the release documentation version in overview.rst
